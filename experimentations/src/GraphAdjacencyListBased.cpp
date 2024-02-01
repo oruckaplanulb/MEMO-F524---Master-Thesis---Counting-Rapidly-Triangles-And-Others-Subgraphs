@@ -32,12 +32,10 @@ bool GraphAdjacencyListBased::hasEdge(int vrtx1, int vrtx2) const {
 int GraphAdjacencyListBased::countTrianglesNodeIterator() const {
     double count = 0;
     for (int v = 0; v < numVertices; ++v) {
-        for (int u = 0; u < numVertices; ++u) {
-            if (hasEdge(v, u)) {
-                for (int w = 0; w < numVertices; ++w) {
-                    if (hasEdge(v, w) && hasEdge(u, w)) {
-                        count = count + 0.5;
-                    }
+        for (const int& u : adjacencyList[v]) {
+            for (const int& w : adjacencyList[v]) {
+                if (hasEdge(u, w)) {
+                    count = count + 0.5;
                 }
             }
         }
