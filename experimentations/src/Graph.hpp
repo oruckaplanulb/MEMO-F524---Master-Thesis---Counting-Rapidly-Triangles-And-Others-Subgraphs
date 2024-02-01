@@ -9,9 +9,10 @@ class Graph {
 public:
     virtual ~Graph() = default;
 
-    virtual void addEdge(int start, int end) = 0;
+    virtual void addEdge(int vrtx1, int vrtx2) = 0;
     virtual void printGraph() const = 0;
-    virtual bool hasEdge(int start, int end) const = 0;
+    virtual bool hasEdge(int vrtx1, int vrtx2) const = 0;
+    virtual int countTrianglesNodeIterator() const = 0;
 };
 
 class GraphAdjacencyMatrixBased : public Graph {
@@ -23,9 +24,10 @@ public:
     GraphAdjacencyMatrixBased(int vertices);
     ~GraphAdjacencyMatrixBased() override = default;
 
-    void addEdge(int start, int end) override;
+    void addEdge(int vrtx1, int vrtx2) override;
     void printGraph() const override;
-    bool hasEdge(int start, int end) const override;
+    bool hasEdge(int vrtx1, int vrtx2) const override;
+    int countTrianglesNodeIterator() const override;
 };
 
 class GraphAdjacencyListBased : public Graph {
@@ -37,9 +39,10 @@ public:
     GraphAdjacencyListBased(int vertices);
     ~GraphAdjacencyListBased() override = default;
 
-    void addEdge(int start, int end) override;
+    void addEdge(int vrtx1, int vrtx2) override;
     void printGraph() const override;
-    bool hasEdge(int start, int end) const override;
+    bool hasEdge(int vrtx1, int vrtx2) const override;
+    int countTrianglesNodeIterator() const override;
 };
 
 #endif // GRAPH_H

@@ -1,7 +1,7 @@
 CXX = g++
 CXXFLAGS = -std=c++11
 
-SRCS = Main.cpp
+SRCS = Main.cpp GraphAdjacencyListBased.cpp GraphAdjacencyMatrixBased.cpp
 EXEC = ../Main.exe
 
 all: $(EXEC)

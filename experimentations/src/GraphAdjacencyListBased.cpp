@@ -5,9 +5,9 @@ GraphAdjacencyListBased::GraphAdjacencyListBased(int vertices) {
     adjacencyList.resize(numVertices);
 }
 
-void GraphAdjacencyListBased::addEdge(int start, int end) {
-    adjacencyList[start].push_back(end);
-    adjacencyList[end].push_back(start);
+void GraphAdjacencyListBased::addEdge(int vrtx1, int vrtx2) {
+    adjacencyList[vrtx1].push_back(vrtx2);
+    adjacencyList[vrtx2].push_back(vrtx1);
 }
 
 void GraphAdjacencyListBased::printGraph() const {
@@ -20,11 +20,27 @@ void GraphAdjacencyListBased::printGraph() const {
     }
 }
 
-bool GraphAdjacencyListBased::hasEdge(int start, int end) const {
-    for (const int& neighbor : adjacencyList[start]) {
-        if (neighbor == end) {
+bool GraphAdjacencyListBased::hasEdge(int vrtx1, int vrtx2) const {
+    for (const int& neighbor : adjacencyList[vrtx1]) {
+        if (neighbor == vrtx2) {
             return true;
         }
     }
     return false;
+}
+
+int GraphAdjacencyListBased::countTrianglesNodeIterator() const {
+    double count = 0;
+    for (int v = 0; v < numVertices; ++v) {
+        for (int u = 0; u < numVertices; ++u) {
+            if (hasEdge(v, u)) {
+                for (int w = 0; w < numVertices; ++w) {
+                    if (hasEdge(v, w) && hasEdge(u, w)) {
+                        count = count + 0.5;
+                    }
+                }
+            }
+        }
+    }
+    return count/3;
 }
