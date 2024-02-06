@@ -1,9 +1,9 @@
-#ifndef GRAPH_H
-#define GRAPH_H
+#ifndef GRAPH_HPP
+#define GRAPH_HPP
 
 #include <iostream>
 #include <vector>
-#include <list>  // Add this include for std::list
+#include <list> 
 
 class Graph {
 public:
@@ -24,10 +24,13 @@ public:
     GraphAdjacencyMatrixBased(int vertices);
     ~GraphAdjacencyMatrixBased() override = default;
 
+    std::vector<std::vector<int>> getAdjacencyMatrix();
     void addEdge(int vrtx1, int vrtx2) override;
     void printGraph() const override;
     bool hasEdge(int vrtx1, int vrtx2) const override;
     int countTrianglesNodeIterator() const override;
+    int countTrianglesMatrixSquaring() const;
+    int countTrianglesMatrixCube() const;
 };
 
 class GraphAdjacencyListBased : public Graph {
@@ -45,4 +48,4 @@ public:
     int countTrianglesNodeIterator() const override;
 };
 
-#endif // GRAPH_H
+#endif

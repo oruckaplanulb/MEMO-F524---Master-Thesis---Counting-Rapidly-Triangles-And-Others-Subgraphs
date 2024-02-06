@@ -1,9 +1,14 @@
 #include "Graph.hpp"
+#include "Matrix.hpp"
 
 GraphAdjacencyMatrixBased::GraphAdjacencyMatrixBased(int vertices) {
     numVertices = vertices;
     // Initialize adjacency matrix with zeros
     adjacencyMatrix.resize(numVertices, std::vector<int>(numVertices, 0));
+}
+
+std::vector<std::vector<int>> GraphAdjacencyMatrixBased::getAdjacencyMatrix(){
+    return adjacencyMatrix;
 }
 
 void GraphAdjacencyMatrixBased::addEdge(int vrtx1, int vrtx2) {
@@ -39,4 +44,31 @@ int GraphAdjacencyMatrixBased::countTrianglesNodeIterator() const {
         }
     }
     return count/3;
+}
+
+int GraphAdjacencyMatrixBased::countTrianglesMatrixSquaring() const {
+    double count = 0;
+    std::vector<std::vector<int>> A = adjacencyMatrix;
+    std::vector<std::vector<int>> A2 = Matrix::multiplyNaive(A, A);
+
+    for(int i = 0; i < numVertices; i++){
+        for(int j = 0; j < numVertices; j++){
+            if(A2[i][j] > 0){
+                count += A2[i][j];
+            }
+        }
+    }
+    return count/3;
+}
+
+int GraphAdjacencyMatrixBased::countTrianglesMatrixCube() const {
+    double count = 0;
+    std::vector<std::vector<int>> A = adjacencyMatrix;
+    std::vector<std::vector<int>> A2 = Matrix::multiplyNaive(A, A);
+    std::vector<std::vector<int>> A3 = Matrix::multiplyNaive(A2, A);
+
+    for(int i = 0; i < numVertices; i++){
+        count += A3[i][i];
+    }
+    return count/6;
 }

@@ -1,8 +1,9 @@
 #include "Graph.hpp"
+#include "Matrix.hpp"
 
 int main() {
     // Create a graph with 5 vertices using the matrix-based implementation
-    Graph* graph = new GraphAdjacencyMatrixBased(3);
+    GraphAdjacencyMatrixBased* graph = new GraphAdjacencyMatrixBased(3);
     Graph* graph2 = new GraphAdjacencyListBased(3);
 
     // Add edges
@@ -19,16 +20,27 @@ int main() {
     std::cout << "Graph2:" << std::endl;
     graph2->printGraph();
 
+    std::vector<std::vector<int>> adjacencyMatrix = graph->getAdjacencyMatrix();
+
+    // square the matrix using existing function 
+    std::vector<std::vector<int>> squaredMatrix;
+
+    
+
     // Check if there is an edge between two vertices
     //std::cout << "Has edge between 1 and 3: " << (graph->hasEdge(1, 3) ? "Yes" : "No") << std::endl;
     //std::cout << "Has edge between 2 and 3: " << (graph->hasEdge(2, 3) ? "Yes" : "No") << std::endl;
 
     // Count the number of triangles using the node iterator
     std::cout << "Number of triangles: " << graph->countTrianglesNodeIterator() << std::endl;
+    std::cout << "Number of triangles: " << graph->countTrianglesMatrixSquaring() << std::endl;
+    std::cout << "Number of triangles: " << graph->countTrianglesMatrixCube() << std::endl;
     std::cout << "Number of triangles: " << graph2->countTrianglesNodeIterator() << std::endl;
+
 
     delete graph; // Don't forget to delete the dynamically allocated object
     delete graph2;
+
 
     return 0;
 }
