@@ -1,45 +1,34 @@
 #include "Graph.hpp"
 #include "Matrix.hpp"
+#include "GraphFiller.hpp"
 
 int main() {
     // Create a graph with 5 vertices using the matrix-based implementation
-    GraphAdjacencyMatrixBased* graph = new GraphAdjacencyMatrixBased(3);
-    Graph* graph2 = new GraphAdjacencyListBased(3);
 
-    // Add edges
-    graph->addEdge(0, 1);
-    graph->addEdge(0, 2);
-    graph->addEdge(1, 2);
-    graph2->addEdge(0, 1);
-    graph2->addEdge(0, 2);
-    graph2->addEdge(1, 2);
+    GraphFiller* graphFiller = new GraphFiller();
+    std::cout << "FILLER INIT"<< std::endl;
+
+    GraphAdjacencyMatrixBased* graph3 = graphFiller->setGraphFromFile("graphs/facebook_combined1.txt", new GraphAdjacencyMatrixBased());
+    std::cout << "BUILD DONE"<< std::endl;
 
     // Print the graph
     std::cout << "Graph:" << std::endl;
-    graph->printGraph();
-    std::cout << "Graph2:" << std::endl;
-    graph2->printGraph();
+    graph3->printGraph();
 
-    std::vector<std::vector<int>> adjacencyMatrix = graph->getAdjacencyMatrix();
-
-    // square the matrix using existing function 
-    std::vector<std::vector<int>> squaredMatrix;
-
-    
-
-    // Check if there is an edge between two vertices
-    //std::cout << "Has edge between 1 and 3: " << (graph->hasEdge(1, 3) ? "Yes" : "No") << std::endl;
-    //std::cout << "Has edge between 2 and 3: " << (graph->hasEdge(2, 3) ? "Yes" : "No") << std::endl;
+    std::cout << "PRINT DONE"<< std::endl;
 
     // Count the number of triangles using the node iterator
-    std::cout << "Number of triangles: " << graph->countTrianglesNodeIterator() << std::endl;
-    std::cout << "Number of triangles: " << graph->countTrianglesMatrixSquaring() << std::endl;
-    std::cout << "Number of triangles: " << graph->countTrianglesMatrixCube() << std::endl;
-    std::cout << "Number of triangles: " << graph2->countTrianglesNodeIterator() << std::endl;
+    std::cout << "Number of triangles: " << graph3->countTrianglesNodeIterator() << std::endl;
+    std::cout << "FCT1 DONE"<< std::endl;
+    std::cout << "Number of triangles: " << graph3->countTrianglesMatrixSquaring() << std::endl;
+    std::cout << "FCT2 DONE"<< std::endl;
+    std::cout << "Number of triangles: " << graph3->countTrianglesMatrixCube() << std::endl;
+    std::cout << "FCT3 DONE"<< std::endl;
+    std::cout << "Number of triangles: " << graph3->countTrianglesNodeIterator() << std::endl;
+    std::cout << "FCT4 DONE"<< std::endl;
 
-
-    delete graph; // Don't forget to delete the dynamically allocated object
-    delete graph2;
+    delete graph3;
+    delete graphFiller;
 
 
     return 0;

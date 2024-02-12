@@ -1,5 +1,7 @@
 #include "Graph.hpp"
 
+using namespace std;
+
 GraphAdjacencyListBased::GraphAdjacencyListBased(int vertices) {
     numVertices = vertices;
     adjacencyList.resize(numVertices);
@@ -12,11 +14,11 @@ void GraphAdjacencyListBased::addEdge(int vrtx1, int vrtx2) {
 
 void GraphAdjacencyListBased::printGraph() const {
     for (int i = 0; i < numVertices; ++i) {
-        std::cout << "Vertex " << i << ": ";
+        cout << "Vertex " << i << ": ";
         for (const int& neighbor : adjacencyList[i]) {
-            std::cout << neighbor << " ";
+            cout << neighbor << " ";
         }
-        std::cout << std::endl;
+        cout << endl;
     }
 }
 
