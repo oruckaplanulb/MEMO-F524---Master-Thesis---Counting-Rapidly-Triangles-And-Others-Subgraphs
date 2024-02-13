@@ -3,6 +3,10 @@
 using namespace std;
 
 GraphAdjacencyListBased::GraphAdjacencyListBased(int vertices) {
+    this->setSize(vertices);
+}
+
+void GraphAdjacencyListBased::setSize(int vertices) {
     numVertices = vertices;
     adjacencyList.resize(numVertices);
 }

@@ -4,13 +4,16 @@
 using namespace std;
 
 GraphAdjacencyMatrixBased::GraphAdjacencyMatrixBased(int vertices) {
-    numVertices = vertices;
-    // Initialize adjacency matrix with zeros
-    adjacencyMatrix.resize(numVertices, vector<int>(numVertices, 0));
+    this->setSize(vertices);
 }
 
 vector<vector<int>> GraphAdjacencyMatrixBased::getAdjacencyMatrix(){
     return adjacencyMatrix;
+}
+
+void GraphAdjacencyMatrixBased::setSize(int vertices) {
+    numVertices = vertices;
+    adjacencyMatrix.resize(numVertices, vector<int>(numVertices, 0));
 }
 
 void GraphAdjacencyMatrixBased::addEdge(int vrtx1, int vrtx2) {

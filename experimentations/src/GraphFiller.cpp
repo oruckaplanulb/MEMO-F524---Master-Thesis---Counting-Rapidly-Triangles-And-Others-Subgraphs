@@ -46,19 +46,14 @@ int GraphFiller::getNumberOfV(const std::string& path) {
     return maxVertex + 1; // Add 1 to get the number of vertices
 }
 
-Graph* GraphFiller::setGraphFromFile(const std::string& path, Graph* g) {
+void GraphFiller::setGraphFromFile(const std::string& path, Graph* g) {
+    //print path
+    std::cout << "Path: " << path << std::endl;
+
     int nbV = this->getNumberOfV(path);
 
-    if (typeid(*g) == typeid(GraphAdjacencyListBased)) {
-        std::cout << "Graph is of type GraphAdjacencyListBased" << std::endl;
-        g = new GraphAdjacencyListBased(nbV);
-    } else if (typeid(*g) == typeid(GraphAdjacencyMatrixBased)) {
-        std::cout << "Graph is of type GraphAdjacencyMatrixBased" << std::endl;
-        g = new GraphAdjacencyMatrixBased(nbV);
-    } else {
-        std::cout << "Graph is of unknown type" << std::endl;
-        return nullptr;
-    }
+    g->setSize(nbV);
+
 
     std::ifstream file(path);
     std::string line;
@@ -77,5 +72,4 @@ Graph* GraphFiller::setGraphFromFile(const std::string& path, Graph* g) {
         std::cerr << "Failed to open file: " << path << std::endl;
     }
 
-    return g;
 }
