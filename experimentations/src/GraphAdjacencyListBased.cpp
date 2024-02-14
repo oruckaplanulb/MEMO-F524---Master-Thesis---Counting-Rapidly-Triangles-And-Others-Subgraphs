@@ -16,6 +16,10 @@ void GraphAdjacencyListBased::addEdge(int vrtx1, int vrtx2) {
     adjacencyList[vrtx2].push_back(vrtx1);
 }
 
+int GraphAdjacencyListBased::degree(int vertex) const {
+    return adjacencyList[vertex].size();
+}
+
 void GraphAdjacencyListBased::printGraph() const {
     for (int i = 0; i < numVertices; ++i) {
         cout << "Vertex " << i << ": ";
@@ -48,3 +52,20 @@ int GraphAdjacencyListBased::countTrianglesNodeIterator() const {
     }
     return count/3;
 }
+
+int GraphAdjacencyListBased::countTrianglesNodeIteratorPlusPlus() const {
+    double count = 0;
+    for (int v = 0; v < numVertices; ++v) {
+        for (const int& u : adjacencyList[v]) {
+            if (u > v && degree(v) <= degree(u)) {
+                for (const int& w : adjacencyList[u]) {
+                    if (w > u && degree(v) <= degree(w) && hasEdge(w, v)) {
+                        count += 1.0;
+                    }
+                }
+            }
+        }
+    }
+    return count;
+}
+

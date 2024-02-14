@@ -11,9 +11,11 @@ public:
 
     virtual void setSize(int vertices) = 0;
     virtual void addEdge(int vrtx1, int vrtx2) = 0;
+    virtual int degree(int vertex) const = 0;
     virtual void printGraph() const = 0;
     virtual bool hasEdge(int vrtx1, int vrtx2) const = 0;
     virtual int countTrianglesNodeIterator() const = 0;
+    virtual int countTrianglesNodeIteratorPlusPlus() const = 0;
 };
 
 class GraphAdjacencyMatrixBased : public Graph {
@@ -29,9 +31,11 @@ public:
     std::vector<std::vector<int>> getAdjacencyMatrix();
     void setSize(int vertices) override;
     void addEdge(int vrtx1, int vrtx2) override;
+    int degree(int vertex) const override;
     void printGraph() const override;
     bool hasEdge(int vrtx1, int vrtx2) const override;
     int countTrianglesNodeIterator() const override;
+    int countTrianglesNodeIteratorPlusPlus() const override;
     int countTrianglesMatrixSquaring() const;
     int countTrianglesMatrixCube() const;
 };
@@ -48,9 +52,11 @@ public:
 
     void setSize(int vertices) override;
     void addEdge(int vrtx1, int vrtx2) override;
+    int degree(int vertex) const override;
     void printGraph() const override;
     bool hasEdge(int vrtx1, int vrtx2) const override;
     int countTrianglesNodeIterator() const override;
+    int countTrianglesNodeIteratorPlusPlus() const override;
 };
 
 #endif

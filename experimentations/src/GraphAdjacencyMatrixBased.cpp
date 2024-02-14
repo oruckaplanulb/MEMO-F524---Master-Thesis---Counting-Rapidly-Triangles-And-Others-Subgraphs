@@ -22,6 +22,16 @@ void GraphAdjacencyMatrixBased::addEdge(int vrtx1, int vrtx2) {
     adjacencyMatrix[vrtx2][vrtx1] = 1;
 }
 
+int GraphAdjacencyMatrixBased::degree(int vertex) const {
+    int degree = 0;
+    for (int i = 0; i < numVertices; ++i) {
+        if (adjacencyMatrix[vertex][i] == 1) {
+            degree++;
+        }
+    }
+    return degree;
+}
+
 void GraphAdjacencyMatrixBased::printGraph() const {
     for (int i = 0; i < numVertices; ++i) {
         for (int j = 0; j < numVertices; ++j) {
@@ -51,17 +61,36 @@ int GraphAdjacencyMatrixBased::countTrianglesNodeIterator() const {
     return count/3;
 }
 
+int GraphAdjacencyMatrixBased::countTrianglesNodeIteratorPlusPlus() const {
+    double count = 0;
+    for (int v = 0; v < numVertices; ++v) {
+        for (int u = 0; u < numVertices; ++u) {
+            if (hasEdge(v, u) && degree(v) <= degree(u)) {
+                for (int w = 0; w < numVertices; ++w) {
+                    if (hasEdge(v, w) && hasEdge(u, w) && degree(u) <= degree(w)) {
+                        count += 1.0;
+                    }
+                }
+            }
+        }
+    }
+    return count;
+}
+
 int GraphAdjacencyMatrixBased::countTrianglesMatrixSquaring() const {
     double count = 0;
     vector<vector<int>> A = adjacencyMatrix;
     vector<vector<int>> A2 = Matrix::multiplyNaive(A, A);
+    cout << "multiplication done" << endl;
 
     for(int i = 0; i < numVertices; i++){
+        //print current i value
+        cout << "i: " << i << endl;
         for(int j = 0; j < numVertices; j++){
             count += A[i][j]*A2[i][j];
         }
     }
-    return count/3;
+    return count/6;
 }
 
 int GraphAdjacencyMatrixBased::countTrianglesMatrixCube() const {

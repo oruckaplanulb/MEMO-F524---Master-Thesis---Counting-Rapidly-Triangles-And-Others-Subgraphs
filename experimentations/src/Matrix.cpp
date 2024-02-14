@@ -55,6 +55,9 @@ vector<vector<int>> Matrix::multiplyNaive(const vector<vector<int>>& mat1, const
     int p = mat2.size();
     result.resize(n, vector<int>(m, 0));
     for (int i = 0; i < n; ++i) {
+        //if i multiple of 50 print it
+        if(i%50 == 0)
+            cout << "i: " << i << endl;
         for (int j = 0; j < m; ++j) {
             for (int k = 0; k < p; ++k) {
                 result[i][j] += mat1[i][k] * mat2[k][j];
