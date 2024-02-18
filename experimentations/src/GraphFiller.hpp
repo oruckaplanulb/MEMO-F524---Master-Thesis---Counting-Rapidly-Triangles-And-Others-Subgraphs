@@ -9,7 +9,7 @@ public:
 
     void setGraphFromFile(const std::string& path, Graph* g);
 private:
-    int getNumberOfV(const std::string& path);
+    int getVertexMax(const std::string& path);
 
     bool startFromZero(const std::string& path);
 };

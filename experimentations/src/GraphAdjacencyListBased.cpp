@@ -1,9 +1,23 @@
 #include "Graph.hpp"
+#include "Matrix.hpp"
+#include <math.h>
 
 using namespace std;
 
 GraphAdjacencyListBased::GraphAdjacencyListBased(int vertices) {
     this->setSize(vertices);
+}
+
+int GraphAdjacencyListBased::getNumVertices() const {
+    return numVertices;
+}
+
+int GraphAdjacencyListBased::getNumEdges() const {
+    int count = 0;
+    for (int i = 0; i < numVertices; ++i) {
+        count += adjacencyList[i].size();
+    }
+    return count/2;
 }
 
 void GraphAdjacencyListBased::setSize(int vertices) {
@@ -54,13 +68,13 @@ int GraphAdjacencyListBased::countTrianglesNodeIterator() const {
 }
 
 int GraphAdjacencyListBased::countTrianglesNodeIteratorPlusPlus() const {
-    double count = 0;
+    int count = 0;
     for (int v = 0; v < numVertices; ++v) {
         for (const int& u : adjacencyList[v]) {
-            if (u > v && degree(v) <= degree(u)) {
+            if (degree(v) <= degree(u)) {
                 for (const int& w : adjacencyList[u]) {
-                    if (w > u && degree(v) <= degree(w) && hasEdge(w, v)) {
-                        count += 1.0;
+                    if (degree(v) <= degree(w) && hasEdge(w, v)) {
+                        count += 1;
                     }
                 }
             }
@@ -69,3 +83,74 @@ int GraphAdjacencyListBased::countTrianglesNodeIteratorPlusPlus() const {
     return count;
 }
 
+int GraphAdjacencyListBased::AYZ_Algorithm() const{
+    double beta = pow(getNumEdges(),2.0/4.0);
+
+    vector<int> delta(numVertices, 0);
+
+    vector<int> Vlow, Vhigh;
+
+    cout << "TEST1"<< endl;
+
+    for (int v = 0; v < numVertices; ++v) {
+        if (degree(v) <= beta) {
+            Vlow.push_back(v);
+        } else {
+            Vhigh.push_back(v);
+        }
+    }
+    //print Vlow and Vhigh size
+    cout << "Vlow size: " << Vlow.size() << endl;
+    cout << "Vhigh size: " << Vhigh.size() << endl;
+
+    cout << "TEST2"<< endl;
+
+    for (int v : Vlow) {
+        for (int u = 0; u < numVertices; ++u) {
+            for (int w = 0; w < numVertices; ++w) {
+                if (hasEdge(u,v) && hasEdge(w,v) && hasEdge(u, w)) {
+                    if (degree(u) <= beta && degree(w) <= beta) {
+                        delta[v] += 1;
+                        delta[u] += 1;
+                        delta[w] += 1;
+                    } else if (degree(u) > beta && degree(w) > beta) {
+                        delta[v] += 1;
+                        delta[u] += 1;
+                        delta[w] += 1;
+                    } else {
+                        delta[v] += 1;
+                        delta[u] += 1;
+                        delta[w] += 1;
+                    }
+                }
+            }
+        }
+    }
+
+    cout << "TEST3"<< endl;
+
+    vector<vector<int>> A(numVertices, vector<int>(numVertices, 0));
+    for (int v : Vhigh) {
+        for (int u = 0; u < numVertices; ++u) {
+            if (hasEdge(v, u)) {
+                A[v][u] = 1;
+            }
+        }
+    }
+    vector<vector<int>> M = Matrix::multiplyNaive(Matrix::multiplyNaive(A, A), A); // A^3
+
+    for (int v : Vhigh) {
+        delta[v] += M[v][v];
+    }
+
+    /*cout << "Delta values:" << endl;
+    for (int v = 0; v < numVertices; ++v) {
+        cout << "Vertex " << v << ": " << delta[v] << endl;
+    }*/
+
+    int count = 0;
+    for (int v = 0; v < numVertices; ++v) {
+        count += delta[v];
+    }
+    return count/6;
+}

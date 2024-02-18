@@ -3,33 +3,15 @@
 #include <sstream>
 #include <vector>
 
-/*bool GraphFiller::startFromZero(const std::string& path){
-    std::ifstream file(path);
-    std::string line;
-
-    bool isAZero = false;
-    bool isAOne = false;
-        
-    if (file.is_open()) {
-        while (std::getline(file, line)) {
-            // Process the tokens as needed
-
-            
-        }
-        file.close();
-    } else {
-        std::cout << "Failed to open file: " << path << std::endl;
-        return false;
-    }
-}*/
-
-int GraphFiller::getNumberOfV(const std::string& path) {
+int GraphFiller::getVertexMax(const std::string& path) {
     int maxVertex = -1; // Initialize maxVertex to -1
 
     std::ifstream file(path);
     std::string line;
     if (file.is_open()) {
         while (std::getline(file, line)) {
+            if (line.empty() || line[0] == '#')
+                continue;
             std::istringstream iss(line);
             int v1, v2;
             if (!(iss >> v1 >> v2)) {
@@ -43,33 +25,35 @@ int GraphFiller::getNumberOfV(const std::string& path) {
         std::cerr << "Failed to open file: " << path << std::endl;
     }
 
-    return maxVertex + 1; // Add 1 to get the number of vertices
+    return maxVertex; // Add 1 to get the number of vertices
 }
 
+
 void GraphFiller::setGraphFromFile(const std::string& path, Graph* g) {
-    //print path
     std::cout << "Path: " << path << std::endl;
 
-    int nbV = this->getNumberOfV(path);
-
+    int nbV = this->getVertexMax(path)+1;
     g->setSize(nbV);
-
 
     std::ifstream file(path);
     std::string line;
     if (file.is_open()) {
         while (std::getline(file, line)) {
+            if (line.empty() || line[0] == '#')
+                continue;
+
             std::istringstream iss(line);
             int v1, v2;
             if (!(iss >> v1 >> v2)) {
                 std::cerr << "Error reading edge from file." << std::endl;
                 continue;
             }
-            g->addEdge(v1, v2);
+            if (!g->hasEdge(v1, v2)) {
+                g->addEdge(v1, v2); 
+            }
         }
         file.close();
     } else {
         std::cerr << "Failed to open file: " << path << std::endl;
     }
-
 }
