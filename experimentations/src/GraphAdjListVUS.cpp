@@ -45,7 +45,7 @@ void GraphAdjListVUS::printGraph() const {
 }
 
 bool GraphAdjListVUS::hasEdge(int vrtx1, int vrtx2) const {
-    return (adjacencyList[vrtx1].find(vrtx2) != adjacencyList[vrtx1].end()) || (adjacencyList[vrtx2].find(vrtx1) != adjacencyList[vrtx2].end());
+    return (adjacencyList[vrtx1].find(vrtx2) != adjacencyList[vrtx1].end());
 }
 
 int GraphAdjListVUS::countTrianglesNodeIterator() const {
