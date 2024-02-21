@@ -79,6 +79,17 @@ int GraphAdjMatrixVV::countTrianglesNodeIterator() const {
 
 int GraphAdjMatrixVV::countTrianglesNodeIteratorPlusPlus() const {
     int count = 0;
+    for (int v = 0; v < numVertices; ++v) {
+        for (int u = 0; u < numVertices; ++u) {
+            if (hasEdge(v, u) && degree(v) > degree(u)) { // u & v
+                for (int w = 0; w < numVertices; ++w) {
+                    if (degree(u) > degree(w) && hasEdge(u, w)) { // w & u, w & v
+                        count++;
+                    }
+                }
+            }
+        }
+    }
     return count;
 }
 

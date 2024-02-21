@@ -52,23 +52,6 @@ int main(int argc, char* argv[]){
     elapsed_seconds = end-start;
     std::cout << "Number of triangles Node Iterator Plus Plus: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << std::endl;
 
-    start = std::chrono::high_resolution_clock::now();
-    cpt = graphMatrix->AYZ_Algorithm();
-    end = std::chrono::high_resolution_clock::now();
-    elapsed_seconds = end-start;
-    std::cout << "Number of triangles AYZ Algorithm: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << std::endl;
-
-    start = std::chrono::high_resolution_clock::now();
-    cpt = graphMatrix->countTrianglesMatrixSquaring();
-    end = std::chrono::high_resolution_clock::now();
-    elapsed_seconds = end-start;
-    std::cout << "Number of triangles Matrix Squaring: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << std::endl;
-
-    start = std::chrono::high_resolution_clock::now();
-    cpt = graphMatrix->countTrianglesMatrixCube();
-    end = std::chrono::high_resolution_clock::now();
-    elapsed_seconds = end-start;
-    std::cout << "Number of triangles Matrix Cube: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << std::endl;
 
     //================================================================================================
 
@@ -86,11 +69,6 @@ int main(int argc, char* argv[]){
     elapsed_seconds = end-start;
     std::cout << "Number of triangles Node Iterator Plus Plus: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << std::endl;
 
-    /*start = std::chrono::high_resolution_clock::now();
-    cpt = graphListVL->AYZ_Algorithm();
-    end = std::chrono::high_resolution_clock::now();
-    elapsed_seconds = end-start;
-    std::cout << "Number of triangles AYZ Algorithm: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << std::endl;*/
 
     //================================================================================================
 
@@ -107,12 +85,6 @@ int main(int argc, char* argv[]){
     end = std::chrono::high_resolution_clock::now();
     elapsed_seconds = end-start;
     std::cout << "Number of triangles Node Iterator Plus Plus: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << std::endl;
-
-    /*start = std::chrono::high_resolution_clock::now();
-    cpt = graphListVUS->AYZ_Algorithm();
-    end = std::chrono::high_resolution_clock::now();
-    elapsed_seconds = end-start;
-    std::cout << "Number of triangles AYZ Algorithm: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << std::endl;*/
 
 
     delete graphMatrix;
