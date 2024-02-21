@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <list> 
+#include <unordered_set>
 
 class Graph {
 public:
@@ -21,15 +22,15 @@ public:
     virtual int AYZ_Algorithm() const = 0;
 };
 
-class GraphAdjacencyMatrixBased : public Graph {
+class GraphAdjMatrixVV : public Graph {
 private:
     int numVertices;
     std::vector<std::vector<int>> adjacencyMatrix;
 
 public:
-    GraphAdjacencyMatrixBased(int vertices);
-    GraphAdjacencyMatrixBased() : numVertices(0), adjacencyMatrix(0, std::vector<int>(0, 0)) {}
-    ~GraphAdjacencyMatrixBased() override = default;
+    GraphAdjMatrixVV(int vertices);
+    GraphAdjMatrixVV() : numVertices(0), adjacencyMatrix(0, std::vector<int>(0, 0)) {}
+    ~GraphAdjMatrixVV() override = default;
 
     std::vector<std::vector<int>> getAdjacencyMatrix();
     int getNumVertices() const override;
@@ -46,15 +47,15 @@ public:
     int AYZ_Algorithm() const override;
 };
 
-class GraphAdjacencyListBased : public Graph {
+class GraphAdjListVL : public Graph {
 private:
     int numVertices;
     std::vector<std::list<int>> adjacencyList;
 
 public:
-    GraphAdjacencyListBased(int vertices);
-    GraphAdjacencyListBased() : numVertices(0), adjacencyList(0) {}
-    ~GraphAdjacencyListBased() override = default;
+    GraphAdjListVL(int vertices);
+    GraphAdjListVL() : numVertices(0), adjacencyList(0) {}
+    ~GraphAdjListVL() override = default;
 
     int getNumVertices() const override;
     int getNumEdges() const override;
@@ -67,5 +68,29 @@ public:
     int countTrianglesNodeIteratorPlusPlus() const override;
     int AYZ_Algorithm() const override;
 };
+
+class GraphAdjListVUS : public Graph {
+private:
+    int numVertices;
+    std::vector<std::unordered_set<int>> adjacencyList;
+
+public:
+    GraphAdjListVUS(int vertices);
+    GraphAdjListVUS() : numVertices(0), adjacencyList(0) {}
+    ~GraphAdjListVUS() override = default;
+
+    int getNumVertices() const override;
+    int getNumEdges() const override;
+    void setSize(int vertices) override;
+    void addEdge(int vrtx1, int vrtx2) override;
+    int degree(int vertex) const override;
+    void printGraph() const override;
+    bool hasEdge(int vrtx1, int vrtx2) const override;
+    int countTrianglesNodeIterator() const override;
+    int countTrianglesNodeIteratorPlusPlus() const override;
+    int AYZ_Algorithm() const override;
+};
+
+
 
 #endif

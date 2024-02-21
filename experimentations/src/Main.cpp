@@ -9,19 +9,28 @@ int main(int argc, char* argv[]){
     //get file path from args
     std::string filePath = argv[1];
 
-    GraphAdjacencyMatrixBased* graphMatrix = new GraphAdjacencyMatrixBased();
-    GraphAdjacencyListBased* graphList = new GraphAdjacencyListBased();
+    GraphAdjMatrixVV* graphMatrix = new GraphAdjMatrixVV();
+    GraphAdjListVL* graphListVL = new GraphAdjListVL();
+    GraphAdjListVUS* graphListVUS = new GraphAdjListVUS();
     graphFiller->setGraphFromFile(filePath, graphMatrix);
-    graphFiller->setGraphFromFile(filePath, graphList);
+    graphFiller->setGraphFromFile(filePath, graphListVL);
+    graphFiller->setGraphFromFile(filePath, graphListVUS);
 
     //print nb vertices and edges
     std::cout << "- Graph Matrix -"<< std::endl;
     std::cout << "Vertices: " << graphMatrix->getNumVertices() << std::endl;
     std::cout << "Edges: " << graphMatrix->getNumEdges() << std::endl;
+    //graphMatrix->printGraph();
     std::cout << std::endl;
-    std::cout << "- Graph List -"<< std::endl;
-    std::cout << "Vertices: " << graphList->getNumVertices() << std::endl;
-    std::cout << "Edges: " << graphList->getNumEdges() << std::endl;
+    std::cout << "- Graph List VL-"<< std::endl;
+    std::cout << "Vertices: " << graphListVL->getNumVertices() << std::endl;
+    std::cout << "Edges: " << graphListVL->getNumEdges() << std::endl;
+    //graphListVL->printGraph();
+    std::cout << std::endl;
+    std::cout << "- Graph List VUS-"<< std::endl;
+    std::cout << "Vertices: " << graphListVUS->getNumVertices() << std::endl;
+    std::cout << "Edges: " << graphListVUS->getNumEdges() << std::endl;
+    //graphListVUS->printGraph();
     std::cout << std::endl;
 
     int cpt = 0;
@@ -63,29 +72,51 @@ int main(int argc, char* argv[]){
 
     //================================================================================================
 
-    std::cout << "- Graph List Tests -"<<std::endl;
+    std::cout << "- Graph List VL Tests -"<<std::endl;
 
     start = std::chrono::high_resolution_clock::now();
-    cpt = graphList->countTrianglesNodeIterator();
+    cpt = graphListVL->countTrianglesNodeIterator();
     end = std::chrono::high_resolution_clock::now();
     elapsed_seconds = end-start;
     std::cout << "Number of triangles Node Iterator: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << std::endl;
 
     start = std::chrono::high_resolution_clock::now();
-    cpt = graphList->countTrianglesNodeIteratorPlusPlus();
+    cpt = graphListVL->countTrianglesNodeIteratorPlusPlus();
     end = std::chrono::high_resolution_clock::now();
     elapsed_seconds = end-start;
     std::cout << "Number of triangles Node Iterator Plus Plus: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << std::endl;
 
     start = std::chrono::high_resolution_clock::now();
-    cpt = graphList->AYZ_Algorithm();
+    cpt = graphListVL->AYZ_Algorithm();
+    end = std::chrono::high_resolution_clock::now();
+    elapsed_seconds = end-start;
+    std::cout << "Number of triangles AYZ Algorithm: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << std::endl;
+
+    //================================================================================================
+
+    std::cout << "- Graph List VUS Tests -"<<std::endl;
+
+    start = std::chrono::high_resolution_clock::now();
+    cpt = graphListVUS->countTrianglesNodeIterator();
+    end = std::chrono::high_resolution_clock::now();
+    elapsed_seconds = end-start;
+    std::cout << "Number of triangles Node Iterator: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << std::endl;
+
+    start = std::chrono::high_resolution_clock::now();
+    cpt = graphListVUS->countTrianglesNodeIteratorPlusPlus();
+    end = std::chrono::high_resolution_clock::now();
+    elapsed_seconds = end-start;
+    std::cout << "Number of triangles Node Iterator Plus Plus: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << std::endl;
+
+    start = std::chrono::high_resolution_clock::now();
+    cpt = graphListVUS->AYZ_Algorithm();
     end = std::chrono::high_resolution_clock::now();
     elapsed_seconds = end-start;
     std::cout << "Number of triangles AYZ Algorithm: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << std::endl;
 
 
     delete graphMatrix;
-    delete graphList;
+    delete graphListVL;
     delete graphFiller;
 
 

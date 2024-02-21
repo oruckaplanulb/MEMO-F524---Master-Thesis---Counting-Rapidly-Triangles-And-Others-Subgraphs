@@ -1,22 +1,23 @@
 #include "Graph.hpp"
 #include "Matrix.hpp"
 #include <math.h>
+#include <algorithm>
 
 using namespace std;
 
-GraphAdjacencyMatrixBased::GraphAdjacencyMatrixBased(int vertices) {
+GraphAdjMatrixVV::GraphAdjMatrixVV(int vertices) {
     this->setSize(vertices);
 }
 
-vector<vector<int>> GraphAdjacencyMatrixBased::getAdjacencyMatrix(){
+vector<vector<int>> GraphAdjMatrixVV::getAdjacencyMatrix(){
     return adjacencyMatrix;
 }
 
-int GraphAdjacencyMatrixBased::getNumVertices() const {
+int GraphAdjMatrixVV::getNumVertices() const {
     return numVertices;
 }
 
-int GraphAdjacencyMatrixBased::getNumEdges() const {
+int GraphAdjMatrixVV::getNumEdges() const {
     int count = 0;
     for (int i = 0; i < numVertices; ++i) {
         for (int j = 0; j < numVertices; ++j) {
@@ -26,18 +27,18 @@ int GraphAdjacencyMatrixBased::getNumEdges() const {
     return count/2;
 }
 
-void GraphAdjacencyMatrixBased::setSize(int vertices) {
+void GraphAdjMatrixVV::setSize(int vertices) {
     numVertices = vertices;
     adjacencyMatrix.resize(numVertices, vector<int>(numVertices, 0));
 }
 
-void GraphAdjacencyMatrixBased::addEdge(int vrtx1, int vrtx2) {
+void GraphAdjMatrixVV::addEdge(int vrtx1, int vrtx2) {
     // Assuming the graph is undirected
     adjacencyMatrix[vrtx1][vrtx2] = 1;
     adjacencyMatrix[vrtx2][vrtx1] = 1;
 }
 
-int GraphAdjacencyMatrixBased::degree(int vertex) const {
+int GraphAdjMatrixVV::degree(int vertex) const {
     int degree = 0;
     for (int i = 0; i < numVertices; ++i) {
         if (adjacencyMatrix[vertex][i] == 1) {
@@ -47,7 +48,7 @@ int GraphAdjacencyMatrixBased::degree(int vertex) const {
     return degree;
 }
 
-void GraphAdjacencyMatrixBased::printGraph() const {
+void GraphAdjMatrixVV::printGraph() const {
     for (int i = 0; i < numVertices; ++i) {
         for (int j = 0; j < numVertices; ++j) {
             cout << adjacencyMatrix[i][j] << " ";
@@ -56,11 +57,11 @@ void GraphAdjacencyMatrixBased::printGraph() const {
     }
 }
 
-bool GraphAdjacencyMatrixBased::hasEdge(int vrtx1, int vrtx2) const {
+bool GraphAdjMatrixVV::hasEdge(int vrtx1, int vrtx2) const {
     return adjacencyMatrix[vrtx1][vrtx2] == 1;
 }
 
-int GraphAdjacencyMatrixBased::countTrianglesNodeIterator() const {
+int GraphAdjMatrixVV::countTrianglesNodeIterator() const {
     double count = 0;
     for (int v = 0; v < numVertices; ++v) {
         for (int u = 0; u < numVertices; ++u) {
@@ -76,23 +77,12 @@ int GraphAdjacencyMatrixBased::countTrianglesNodeIterator() const {
     return count/3;
 }
 
-int GraphAdjacencyMatrixBased::countTrianglesNodeIteratorPlusPlus() const {
+int GraphAdjMatrixVV::countTrianglesNodeIteratorPlusPlus() const {
     int count = 0;
-    for (int v = 0; v < numVertices; ++v) {
-        for (int u = 0; u < numVertices; ++u) {
-            if (hasEdge(v, u) && degree(v) <= degree(u)) {
-                for (int w = 0; w < numVertices; ++w) {
-                    if (hasEdge(v, w) && hasEdge(u, w) && degree(u) <= degree(w)) {
-                        count += 1;
-                    }
-                }
-            }
-        }
-    }
     return count;
 }
 
-int GraphAdjacencyMatrixBased::countTrianglesMatrixSquaring() const {
+int GraphAdjMatrixVV::countTrianglesMatrixSquaring() const {
     double count = 0;
     vector<vector<int>> A = adjacencyMatrix;
     vector<vector<int>> A2 = Matrix::multiplyNaive(A, A);
@@ -106,7 +96,7 @@ int GraphAdjacencyMatrixBased::countTrianglesMatrixSquaring() const {
     return count/6;
 }
 
-int GraphAdjacencyMatrixBased::countTrianglesMatrixCube() const {
+int GraphAdjMatrixVV::countTrianglesMatrixCube() const {
     double count = 0;
     vector<vector<int>> A = adjacencyMatrix;
     vector<vector<int>> A2 = Matrix::multiplyNaive(A, A);
@@ -118,14 +108,12 @@ int GraphAdjacencyMatrixBased::countTrianglesMatrixCube() const {
     return count/6;
 }
 
-int GraphAdjacencyMatrixBased::AYZ_Algorithm() const{
+int GraphAdjMatrixVV::AYZ_Algorithm() const{
     double beta = pow(getNumEdges(),2.0/4.0);
 
     vector<int> delta(numVertices, 0);
 
     vector<int> Vlow, Vhigh;
-
-    cout << "TEST1"<< endl;
 
     for (int v = 0; v < numVertices; ++v) {
         if (degree(v) <= beta) {
@@ -137,8 +125,6 @@ int GraphAdjacencyMatrixBased::AYZ_Algorithm() const{
     //print Vlow and Vhigh size
     cout << "Vlow size: " << Vlow.size() << endl;
     cout << "Vhigh size: " << Vhigh.size() << endl;
-
-    cout << "TEST2"<< endl;
 
     for (int v : Vlow) {
         for (int u = 0; u < numVertices; ++u) {
@@ -162,17 +148,15 @@ int GraphAdjacencyMatrixBased::AYZ_Algorithm() const{
         }
     }
 
-    cout << "TEST3"<< endl;
-
-    vector<vector<int>> A(numVertices, vector<int>(numVertices, 0));
+    /*vector<vector<int>> A(numVertices, vector<int>(numVertices, 0));
     for (int v : Vhigh) {
         for (int u = 0; u < numVertices; ++u) {
             if (hasEdge(v, u)) {
                 A[v][u] = 1;
             }
         }
-    }
-    vector<vector<int>> M = Matrix::multiplyNaive(Matrix::multiplyNaive(A, A), A); // A^3
+    }*/
+    vector<vector<int>> M = Matrix::multiplyNaive((adjacencyMatrix,adjacencyMatrix),adjacencyMatrix); // A^3
 
     for (int v : Vhigh) {
         delta[v] += M[v][v];

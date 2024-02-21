@@ -4,15 +4,15 @@
 
 using namespace std;
 
-GraphAdjacencyListBased::GraphAdjacencyListBased(int vertices) {
+GraphAdjListVL::GraphAdjListVL(int vertices) {
     this->setSize(vertices);
 }
 
-int GraphAdjacencyListBased::getNumVertices() const {
+int GraphAdjListVL::getNumVertices() const {
     return numVertices;
 }
 
-int GraphAdjacencyListBased::getNumEdges() const {
+int GraphAdjListVL::getNumEdges() const {
     int count = 0;
     for (int i = 0; i < numVertices; ++i) {
         count += adjacencyList[i].size();
@@ -20,21 +20,21 @@ int GraphAdjacencyListBased::getNumEdges() const {
     return count/2;
 }
 
-void GraphAdjacencyListBased::setSize(int vertices) {
+void GraphAdjListVL::setSize(int vertices) {
     numVertices = vertices;
     adjacencyList.resize(numVertices);
 }
 
-void GraphAdjacencyListBased::addEdge(int vrtx1, int vrtx2) {
+void GraphAdjListVL::addEdge(int vrtx1, int vrtx2) {
     adjacencyList[vrtx1].push_back(vrtx2);
     adjacencyList[vrtx2].push_back(vrtx1);
 }
 
-int GraphAdjacencyListBased::degree(int vertex) const {
+int GraphAdjListVL::degree(int vertex) const {
     return adjacencyList[vertex].size();
 }
 
-void GraphAdjacencyListBased::printGraph() const {
+void GraphAdjListVL::printGraph() const {
     for (int i = 0; i < numVertices; ++i) {
         cout << "Vertex " << i << ": ";
         for (const int& neighbor : adjacencyList[i]) {
@@ -44,7 +44,7 @@ void GraphAdjacencyListBased::printGraph() const {
     }
 }
 
-bool GraphAdjacencyListBased::hasEdge(int vrtx1, int vrtx2) const {
+bool GraphAdjListVL::hasEdge(int vrtx1, int vrtx2) const {
     for (const int& neighbor : adjacencyList[vrtx1]) {
         if (neighbor == vrtx2) {
             return true;
@@ -53,7 +53,7 @@ bool GraphAdjacencyListBased::hasEdge(int vrtx1, int vrtx2) const {
     return false;
 }
 
-int GraphAdjacencyListBased::countTrianglesNodeIterator() const {
+int GraphAdjListVL::countTrianglesNodeIterator() const {
     double count = 0;
     for (int v = 0; v < numVertices; ++v) {
         for (const int& u : adjacencyList[v]) {
@@ -67,9 +67,9 @@ int GraphAdjacencyListBased::countTrianglesNodeIterator() const {
     return count/3;
 }
 
-int GraphAdjacencyListBased::countTrianglesNodeIteratorPlusPlus() const {
+int GraphAdjListVL::countTrianglesNodeIteratorPlusPlus() const {
     int count = 0;
-    for (int v = 0; v < numVertices; ++v) {
+    /*for (int v = 0; v < numVertices; ++v) {
         for (const int& u : adjacencyList[v]) {
             if (degree(v) <= degree(u)) {
                 for (const int& w : adjacencyList[u]) {
@@ -79,18 +79,16 @@ int GraphAdjacencyListBased::countTrianglesNodeIteratorPlusPlus() const {
                 }
             }
         }
-    }
+    }*/
     return count;
 }
 
-int GraphAdjacencyListBased::AYZ_Algorithm() const{
+int GraphAdjListVL::AYZ_Algorithm() const{
     double beta = pow(getNumEdges(),2.0/4.0);
 
     vector<int> delta(numVertices, 0);
 
     vector<int> Vlow, Vhigh;
-
-    cout << "TEST1"<< endl;
 
     for (int v = 0; v < numVertices; ++v) {
         if (degree(v) <= beta) {
@@ -102,8 +100,6 @@ int GraphAdjacencyListBased::AYZ_Algorithm() const{
     //print Vlow and Vhigh size
     cout << "Vlow size: " << Vlow.size() << endl;
     cout << "Vhigh size: " << Vhigh.size() << endl;
-
-    cout << "TEST2"<< endl;
 
     for (int v : Vlow) {
         for (int u = 0; u < numVertices; ++u) {
@@ -126,8 +122,6 @@ int GraphAdjacencyListBased::AYZ_Algorithm() const{
             }
         }
     }
-
-    cout << "TEST3"<< endl;
 
     vector<vector<int>> A(numVertices, vector<int>(numVertices, 0));
     for (int v : Vhigh) {

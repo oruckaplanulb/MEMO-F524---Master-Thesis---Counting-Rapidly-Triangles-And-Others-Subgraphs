@@ -48,7 +48,7 @@ void GraphFiller::setGraphFromFile(const std::string& path, Graph* g) {
                 std::cerr << "Error reading edge from file." << std::endl;
                 continue;
             }
-            if (!g->hasEdge(v1, v2)) {
+            if (!g->hasEdge(v1, v2) && v1 != v2) {
                 g->addEdge(v1, v2); 
             }
         }
