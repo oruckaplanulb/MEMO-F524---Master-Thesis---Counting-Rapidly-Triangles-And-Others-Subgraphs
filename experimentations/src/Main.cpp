@@ -117,7 +117,9 @@ int main(int argc, char* argv[]){
 
     delete graphMatrix;
     delete graphListVL;
+    delete graphListVUS;
     delete graphFiller;
+
 
 
     return 0;
