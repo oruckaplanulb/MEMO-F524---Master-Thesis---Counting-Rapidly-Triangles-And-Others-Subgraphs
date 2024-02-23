@@ -1,6 +1,7 @@
 #include "Graph.hpp"
 #include "Matrix.hpp"
 #include <math.h>
+#include <map>
 
 using namespace std;
 
@@ -106,35 +107,47 @@ int GraphAdjListVUS::AYZ_Algorithm() const{
             for (int w = 0; w < numVertices; ++w) {
                 if (hasEdge(u,v) && hasEdge(w,v) && hasEdge(u, w)) {
                     if (degree(u) <= beta && degree(w) <= beta) {
-                        delta[v] += 1/3;
-                        delta[u] += 1/3;
-                        delta[w] += 1/3;
+                        delta[v] += 1.0/3;
+                        delta[u] += 1.0/3;
+                        delta[w] += 1.0/3;
                     } else if (degree(u) > beta && degree(w) > beta) {
                         delta[v] += 1;
                         delta[u] += 1;
                         delta[w] += 1;
                     } else {
-                        delta[v] += 1/2;
-                        delta[u] += 1/2;
-                        delta[w] += 1/2;
+                        delta[v] += 1.0/2;
+                        delta[u] += 1.0/2;
+                        delta[w] += 1.0/2;
                     }
                 }
             }
         }
     }
 
-    vector<vector<int>> A(numVertices, vector<int>(numVertices, 0));
-    for (int v : Vhigh) {
-        for (int u = 0; u < numVertices; ++u) {
+    
+    vector<vector<int>> A(Vhigh.size(), vector<int>(Vhigh.size(), 0));
+
+    // Map from original vertex indices to indices in Vhigh
+    map<int, int> indexMap;
+    for (int i = 0; i < Vhigh.size(); ++i) {
+        indexMap[Vhigh[i]] = i;
+    }
+
+    for (int i = 0; i < Vhigh.size(); ++i) {
+        int v = Vhigh[i];
+        for (int j = 0; j < Vhigh.size(); ++j) {
+            int u = Vhigh[j];
             if (hasEdge(v, u)) {
-                A[v][u] = 1;
+                A[i][j] = 1;
             }
         }
     }
+
     vector<vector<int>> M = Matrix::multiplyNaive(Matrix::multiplyNaive(A, A), A); // A^3
 
-    for (int v : Vhigh) {
-        delta[v] += M[v][v]/2;
+    for (int i = 0; i < Vhigh.size(); ++i) {
+        int v = Vhigh[i];
+        delta[v] += M[i][i] / 2.0;
     }
 
     /*cout << "Delta values:" << endl;
@@ -147,4 +160,32 @@ int GraphAdjListVUS::AYZ_Algorithm() const{
         count += delta[v];
     }
     return count/6;
+}
+
+int GraphAdjListVUS::count4CyclesBasic() const{
+    //zero-initialized array L of size n indexed by V
+    int count = 0;
+    vector<int> L(numVertices, 0);
+    for(int v = 0 ; v < numVertices; v++){
+        for(int u : adjacencyList[v]){
+            if(isBiggerOrder(v,u)){
+                for(int w : adjacencyList[u]){
+                    if(isBiggerOrder(v,w)){
+                        count = count + L[w];
+                        L[w]++;
+                    }
+                }
+            }
+        }
+        for(int u : adjacencyList[v]){
+            if(isBiggerOrder(v,u)){
+                for(int w : adjacencyList[u]){
+                    if(isBiggerOrder(v,w)){
+                        L[w] = 0;
+                    }
+                }
+            }
+        }
+    }
+    return count;
 }

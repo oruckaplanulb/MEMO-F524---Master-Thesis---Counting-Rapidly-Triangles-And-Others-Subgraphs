@@ -18,9 +18,12 @@ public:
     virtual bool isBiggerOrder(int vrtx1, int vrtx2) const = 0;
     virtual void printGraph() const = 0;
     virtual bool hasEdge(int vrtx1, int vrtx2) const = 0;
+
     virtual int countTrianglesNodeIterator() const = 0;
     virtual int countTrianglesNodeIteratorPlusPlus() const = 0;
     virtual int AYZ_Algorithm() const = 0;
+
+    //virtual int count4CyclesBasic() const = 0;
 };
 
 class GraphAdjMatrixVV : public Graph {
@@ -42,6 +45,7 @@ public:
     bool isBiggerOrder(int vrtx1, int vrtx2) const override;
     void printGraph() const override;
     bool hasEdge(int vrtx1, int vrtx2) const override;
+
     int countTrianglesNodeIterator() const override;
     int countTrianglesNodeIteratorPlusPlus() const override;
     int countTrianglesMatrixSquaring() const;
@@ -67,6 +71,7 @@ public:
     bool isBiggerOrder(int vrtx1, int vrtx2) const override;
     void printGraph() const override;
     bool hasEdge(int vrtx1, int vrtx2) const override;
+
     int countTrianglesNodeIterator() const override;
     int countTrianglesNodeIteratorPlusPlus() const override;
     int AYZ_Algorithm() const override;
@@ -90,9 +95,12 @@ public:
     bool isBiggerOrder(int vrtx1, int vrtx2) const override;
     void printGraph() const override;
     bool hasEdge(int vrtx1, int vrtx2) const override;
+
     int countTrianglesNodeIterator() const override;
     int countTrianglesNodeIteratorPlusPlus() const override;
     int AYZ_Algorithm() const override;
+
+    int count4CyclesBasic() const ;
 };
 
 

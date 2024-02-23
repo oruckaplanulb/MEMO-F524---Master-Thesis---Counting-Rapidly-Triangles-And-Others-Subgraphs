@@ -86,11 +86,17 @@ int main(int argc, char* argv[]){
     elapsed_seconds = end-start;
     std::cout << "Number of triangles Node Iterator Plus Plus: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << std::endl;
 
-    start = std::chrono::high_resolution_clock::now();
+    /*start = std::chrono::high_resolution_clock::now();
     cpt = graphListVUS->AYZ_Algorithm();
     end = std::chrono::high_resolution_clock::now();
     elapsed_seconds = end-start;
-    std::cout << "Number of triangles AYZ Algorithm: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << std::endl;
+    std::cout << "Number of triangles AYZ Algorithm: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << std::endl;*/
+
+    start = std::chrono::high_resolution_clock::now();
+    cpt = graphListVUS->count4CyclesBasic();
+    end = std::chrono::high_resolution_clock::now();
+    elapsed_seconds = end-start;
+    std::cout << "Number of 4-cycles Basic: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << std::endl;  
 
 
     delete graphMatrix;
