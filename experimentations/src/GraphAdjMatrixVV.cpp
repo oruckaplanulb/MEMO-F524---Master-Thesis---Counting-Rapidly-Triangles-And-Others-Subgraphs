@@ -48,6 +48,12 @@ int GraphAdjMatrixVV::degree(int vertex) const {
     return degree;
 }
 
+bool GraphAdjMatrixVV::isBiggerOrder(int vrtx1, int vrtx2) const {
+    int dv1 = degree(vrtx1);
+    int dv2 = degree(vrtx2);
+    return (dv1 > dv2) || (dv1 == dv2 && vrtx1 > vrtx2);
+}
+
 void GraphAdjMatrixVV::printGraph() const {
     for (int i = 0; i < numVertices; ++i) {
         for (int j = 0; j < numVertices; ++j) {
@@ -81,9 +87,9 @@ int GraphAdjMatrixVV::countTrianglesNodeIteratorPlusPlus() const {
     int count = 0;
     for (int v = 0; v < numVertices; ++v) {
         for (int u = 0; u < numVertices; ++u) {
-            if (hasEdge(v, u) && degree(v) > degree(u)) { // u & v
+            if (hasEdge(v, u) && isBiggerOrder(u,v) ) {
                 for (int w = 0; w < numVertices; ++w) {
-                    if (degree(u) > degree(w) && hasEdge(u, w)) { // w & u, w & v
+                    if (hasEdge(v, w) && hasEdge(u, w) && isBiggerOrder(w,u)){
                         count++;
                     }
                 }

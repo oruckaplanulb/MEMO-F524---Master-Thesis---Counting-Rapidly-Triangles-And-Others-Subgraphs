@@ -34,6 +34,12 @@ int GraphAdjListVL::degree(int vertex) const {
     return adjacencyList[vertex].size();
 }
 
+bool GraphAdjListVL::isBiggerOrder(int vrtx1, int vrtx2) const {
+    int dv1 = degree(vrtx1);
+    int dv2 = degree(vrtx2);
+    return (dv1 > dv2) || (dv1 == dv2 && vrtx1 > vrtx2);
+}
+
 void GraphAdjListVL::printGraph() const {
     for (int i = 0; i < numVertices; ++i) {
         cout << "Vertex " << i << ": ";
@@ -69,17 +75,17 @@ int GraphAdjListVL::countTrianglesNodeIterator() const {
 
 int GraphAdjListVL::countTrianglesNodeIteratorPlusPlus() const {
     int count = 0;
-    /*for (int v = 0; v < numVertices; ++v) {
+    for (int v = 0; v < numVertices; ++v) {
         for (const int& u : adjacencyList[v]) {
-            if (degree(v) <= degree(u)) {
-                for (const int& w : adjacencyList[u]) {
-                    if (degree(v) <= degree(w) && hasEdge(w, v)) {
-                        count += 1;
-                    }
+            if(isBiggerOrder(u, v)){
+                for (const int& w : adjacencyList[v]) {
+                if (isBiggerOrder(w,u) && hasEdge(u, w)) {
+                    count++;
                 }
             }
+            }
         }
-    }*/
+    }
     return count;
 }
 

@@ -34,6 +34,12 @@ int GraphAdjListVUS::degree(int vertex) const {
     return adjacencyList[vertex].size();
 }
 
+bool GraphAdjListVUS::isBiggerOrder(int vrtx1, int vrtx2) const {
+    int dv1 = degree(vrtx1);
+    int dv2 = degree(vrtx2);
+    return (dv1 > dv2) || (dv1 == dv2 && vrtx1 > vrtx2);
+}
+
 void GraphAdjListVUS::printGraph() const {
     for (int i = 0; i < numVertices; ++i) {
         cout << "Vertex " << i << ": ";
@@ -63,23 +69,25 @@ int GraphAdjListVUS::countTrianglesNodeIterator() const {
 }
 
 int GraphAdjListVUS::countTrianglesNodeIteratorPlusPlus() const {
-    double count = 0;
-    /*for (int v = 0; v < numVertices; ++v) {
+    int count = 0;
+    for (int v = 0; v < numVertices; ++v) {
         for (const int& u : adjacencyList[v]) {
-            for (const int& w : adjacencyList[v]) {
-                if (hasEdge(u, w)) {
-                    count = count + 0.5;
+            if(isBiggerOrder(u, v)){
+                for (const int& w : adjacencyList[v]) {
+                if (isBiggerOrder(w,u) && hasEdge(u, w)) {
+                    count++;
                 }
             }
+            }
         }
-    }*/
+    }
     return count;
 }
 
 int GraphAdjListVUS::AYZ_Algorithm() const{
     double beta = pow(getNumEdges(),2.0/4.0);
 
-    vector<int> delta(numVertices, 0);
+    vector<double> delta(numVertices, 0);
     vector<int> Vlow, Vhigh;
 
     for (int v = 0; v < numVertices; ++v) {
@@ -98,17 +106,17 @@ int GraphAdjListVUS::AYZ_Algorithm() const{
             for (int w = 0; w < numVertices; ++w) {
                 if (hasEdge(u,v) && hasEdge(w,v) && hasEdge(u, w)) {
                     if (degree(u) <= beta && degree(w) <= beta) {
-                        delta[v] += 1;
-                        delta[u] += 1;
-                        delta[w] += 1;
+                        delta[v] += 1/3;
+                        delta[u] += 1/3;
+                        delta[w] += 1/3;
                     } else if (degree(u) > beta && degree(w) > beta) {
                         delta[v] += 1;
                         delta[u] += 1;
                         delta[w] += 1;
                     } else {
-                        delta[v] += 1;
-                        delta[u] += 1;
-                        delta[w] += 1;
+                        delta[v] += 1/2;
+                        delta[u] += 1/2;
+                        delta[w] += 1/2;
                     }
                 }
             }
@@ -126,7 +134,7 @@ int GraphAdjListVUS::AYZ_Algorithm() const{
     vector<vector<int>> M = Matrix::multiplyNaive(Matrix::multiplyNaive(A, A), A); // A^3
 
     for (int v : Vhigh) {
-        delta[v] += M[v][v];
+        delta[v] += M[v][v]/2;
     }
 
     /*cout << "Delta values:" << endl;
