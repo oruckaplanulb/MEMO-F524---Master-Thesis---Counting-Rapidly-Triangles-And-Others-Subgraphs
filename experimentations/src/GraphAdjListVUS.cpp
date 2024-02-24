@@ -98,7 +98,7 @@ int GraphAdjListVUS::AYZ_Algorithm() const{
             Vhigh.push_back(v);
         }
     }
-    //print Vlow and Vhigh size
+
     cout << "Vlow size: " << Vlow.size() << endl;
     cout << "Vhigh size: " << Vhigh.size() << endl;
 
@@ -127,7 +127,6 @@ int GraphAdjListVUS::AYZ_Algorithm() const{
     
     vector<vector<int>> A(Vhigh.size(), vector<int>(Vhigh.size(), 0));
 
-    // Map from original vertex indices to indices in Vhigh
     map<int, int> indexMap;
     for (int i = 0; i < Vhigh.size(); ++i) {
         indexMap[Vhigh[i]] = i;

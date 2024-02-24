@@ -33,7 +33,6 @@ void GraphAdjMatrixVV::setSize(int vertices) {
 }
 
 void GraphAdjMatrixVV::addEdge(int vrtx1, int vrtx2) {
-    // Assuming the graph is undirected
     adjacencyMatrix[vrtx1][vrtx2] = 1;
     adjacencyMatrix[vrtx2][vrtx1] = 1;
 }

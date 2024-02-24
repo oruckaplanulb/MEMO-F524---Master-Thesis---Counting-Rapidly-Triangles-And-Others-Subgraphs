@@ -6,16 +6,13 @@ using namespace std;
 vector<vector<int>> operator+(const vector<vector<int>>& m1, const vector<vector<int>>& m2) {
     vector<vector<int>> result;
 
-    // Check if matrices have same dimensions
     if (m1.size() != m2.size() || m1.empty() || m1[0].size() != m2[0].size()) {
         cerr << "Error: Matrices must have the same dimensions for addition.\n";
         return result; // Returning empty matrix
     }
 
-    // Resize the result matrix
     result.resize(m1.size(), vector<int>(m1[0].size(), 0));
 
-    // Perform matrix addition
     for (size_t i = 0; i < m1.size(); ++i) {
         for (size_t j = 0; j < m1[i].size(); ++j) {
             result[i][j] = m1[i][j] + m2[i][j];
@@ -28,16 +25,13 @@ vector<vector<int>> operator+(const vector<vector<int>>& m1, const vector<vector
 vector<vector<int>> operator-(const vector<vector<int>>& m1, const vector<vector<int>>& m2) {
     vector<vector<int>> result;
 
-    // Check if matrices have same dimensions
     if (m1.size() != m2.size() || m1.empty() || m1[0].size() != m2[0].size()) {
         cerr << "Error: Matrices must have the same dimensions for subtraction.\n";
         return result; // Returning empty matrix
     }
 
-    // Resize the result matrix
     result.resize(m1.size(), vector<int>(m1[0].size(), 0));
 
-    // Perform matrix subtraction
     for (size_t i = 0; i < m1.size(); ++i) {
         for (size_t j = 0; j < m1[i].size(); ++j) {
             result[i][j] = m1[i][j] - m2[i][j];
@@ -69,14 +63,12 @@ vector<vector<int>> Matrix::multiplyNaive(const vector<vector<int>>& mat1, const
 vector<vector<int>> Matrix::multiplyStrassen(const vector<vector<int>>& mat1, const vector<vector<int>>& mat2) {
     int n = mat1.size();
 
-    // Base case
     if (n == 1) {
         vector<vector<int>> C(1, vector<int>(1, 0));
         C[0][0] = mat1[0][0] * mat2[0][0];
         return C;
     }
 
-    // Split matrices into quadrants
     int newSize = n / 2;
     vector<vector<int>> A11(newSize, vector<int>(newSize, 0));
     vector<vector<int>> A12(newSize, vector<int>(newSize, 0));

@@ -4,7 +4,7 @@
 #include <vector>
 
 int GraphFiller::getVertexMax(const std::string& path) {
-    int maxVertex = -1; // Initialize maxVertex to -1
+    int maxVertex = -1;
 
     std::ifstream file(path);
     std::string line;
@@ -16,16 +16,16 @@ int GraphFiller::getVertexMax(const std::string& path) {
             int v1, v2;
             if (!(iss >> v1 >> v2)) {
                 std::cerr << "Error reading edge from file." << std::endl;
-                continue; // Skip this line if unable to read two integers
+                continue;
             }
-            maxVertex = std::max(maxVertex,std::max(v1, v2)); // Update maxVertex if needed
+            maxVertex = std::max(maxVertex,std::max(v1, v2));
         }
         file.close();
     } else {
         std::cerr << "Failed to open file: " << path << std::endl;
     }
 
-    return maxVertex; // Add 1 to get the number of vertices
+    return maxVertex;
 }
 
 
