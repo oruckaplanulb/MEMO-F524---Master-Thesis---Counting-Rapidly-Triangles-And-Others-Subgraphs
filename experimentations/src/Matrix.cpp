@@ -1,5 +1,6 @@
 #include "Matrix.hpp"
 #include <iostream>
+#include <thread>
 
 using namespace std;
 
@@ -59,6 +60,34 @@ vector<vector<int>> Matrix::multiplyNaive(const vector<vector<int>>& mat1, const
     }
     return result;
 }
+
+vector<vector<int>> Matrix::multiplyNaiveParallel(const vector<vector<int>>& mat1, const vector<vector<int>>& mat2, int numThreads) {
+    vector<vector<int>> result;
+    int n = mat1.size();
+    int m = mat2[0].size();
+    int p = mat2.size();
+    result.resize(n, vector<int>(m, 0));
+    vector<thread> threads;
+    int chunkSize = n / numThreads;
+    for (int i = 0; i < numThreads; ++i) {
+        threads.push_back(thread([i, chunkSize, &mat1, &mat2, &result, m, p, numThreads] {
+            int start = i * chunkSize;
+            int end = (i == numThreads - 1) ? mat1.size() : start + chunkSize;
+            for (int i = start; i < end; ++i) {
+                for (int j = 0; j < m; ++j) {
+                    for (int k = 0; k < p; ++k) {
+                        result[i][j] += mat1[i][k] * mat2[k][j];
+                    }
+                }
+            }
+        }));
+    }
+    for (auto& t : threads) {
+        t.join();
+    }
+    return result;
+}
+
 
 vector<vector<int>> Matrix::multiplyStrassen(const vector<vector<int>>& mat1, const vector<vector<int>>& mat2) {
     int n = mat1.size();

@@ -16,6 +16,7 @@ int main(int argc, char* argv[]){
     graphFiller->setGraphFromFile(filePath, graphListVL);
     graphFiller->setGraphFromFile(filePath, graphListVUS);
 
+
     //print nb vertices and edges
     std::cout << "- Graph Matrix -"<< std::endl;
     std::cout << "Vertices: " << graphMatrix->getNumVertices() << std::endl;
@@ -96,12 +97,12 @@ int main(int argc, char* argv[]){
     cpt = graphListVUS->count4CyclesBasic();
     end = std::chrono::high_resolution_clock::now();
     elapsed_seconds = end-start;
-    std::cout << "Number of 4-cycles Basic: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << std::endl;  
+    std::cout << "Number of 4-cycles Basic: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << std::endl;
 
 
     delete graphMatrix;
-    delete graphListVL;
-    delete graphListVUS;
+    //delete graphListVL;
+    //delete graphListVUS;
     delete graphFiller;
 
 
