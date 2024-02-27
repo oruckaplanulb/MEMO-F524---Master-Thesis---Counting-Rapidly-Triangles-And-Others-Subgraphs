@@ -3,7 +3,7 @@
 #include "GraphFiller.hpp"
 #include <chrono>
 
-int main(int argc, char* argv[]){
+void fct1(int argc, char* argv[]){
     GraphFiller* graphFiller = new GraphFiller();
 
     //get file path from args
@@ -104,7 +104,49 @@ int main(int argc, char* argv[]){
     //delete graphListVL;
     //delete graphListVUS;
     delete graphFiller;
+}
 
+void fct2(int argc, char* argv[]){
+
+    GraphFiller* graphFiller = new GraphFiller();
+    std::string filePath = argv[1];
+
+    GraphAdjListVUS* graphListVUS = new GraphAdjListVUS();
+    graphFiller->setGraphFromFileMapped(filePath, graphListVUS);
+    std::cout << "- Graph List VUS-"<< std::endl;
+    std::cout << "Vertices: " << graphListVUS->getNumVertices() << std::endl;
+    std::cout << "Edges: " << graphListVUS->getNumEdges() << std::endl;
+
+    int cpt = 0;
+    auto start = std::chrono::high_resolution_clock::now();
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed_seconds;
+
+    start = std::chrono::high_resolution_clock::now();
+    cpt = graphListVUS->countTrianglesNodeIterator();
+    end = std::chrono::high_resolution_clock::now();
+    elapsed_seconds = end-start;
+    std::cout << "Number of triangles Node Iterator: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << std::endl;
+
+    start = std::chrono::high_resolution_clock::now();
+    cpt = graphListVUS->countTrianglesNodeIteratorPlusPlus();
+    end = std::chrono::high_resolution_clock::now();
+    elapsed_seconds = end-start;
+    std::cout << "Number of triangles Node Iterator Plus Plus: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << std::endl;
+
+    start = std::chrono::high_resolution_clock::now();
+    cpt = graphListVUS->count4CyclesBasic();
+    end = std::chrono::high_resolution_clock::now();
+    elapsed_seconds = end-start;
+    std::cout << "Number of 4-cycles Basic: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << std::endl;
+
+    delete graphListVUS;
+    delete graphFiller;
+}
+
+int main(int argc, char* argv[]){
+    
+    fct2(argc, argv);
 
 
     return 0;

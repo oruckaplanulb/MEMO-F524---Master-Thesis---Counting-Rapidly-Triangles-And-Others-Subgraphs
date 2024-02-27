@@ -123,7 +123,6 @@ vector<vector<int>> Matrix::multiplyStrassen(const vector<vector<int>>& mat1, co
         }
     }
 
-    // Calculate intermediate matrices
     vector<vector<int>> M1 = multiplyStrassen(A11 + A22, B11 + B22);
     vector<vector<int>> M2 = multiplyStrassen(A21 + A22, B11);
     vector<vector<int>> M3 = multiplyStrassen(A11, B12 - B22);
@@ -132,13 +131,11 @@ vector<vector<int>> Matrix::multiplyStrassen(const vector<vector<int>>& mat1, co
     vector<vector<int>> M6 = multiplyStrassen(A21 - A11, B11 + B12);
     vector<vector<int>> M7 = multiplyStrassen(A12 - A22, B21 + B22);
 
-    // Calculate resulting quadrants
     vector<vector<int>> C11 = (M1 + M4) - (M5 - M7);
     vector<vector<int>> C12 = M3 + M5;
     vector<vector<int>> C21 = M2 + M4;
     vector<vector<int>> C22 = (M1 - M2) + (M3 + M6);
 
-    // Combine resulting quadrants into the result matrix
     vector<vector<int>> result(2 * newSize, vector<int>(2 * newSize, 0));
     for (int i = 0; i < newSize; ++i) {
         for (int j = 0; j < newSize; ++j) {

@@ -8,6 +8,7 @@ public:
     GraphFiller() = default;
 
     void setGraphFromFile(const std::string& path, Graph* g);
+    void setGraphFromFileMapped(const std::string& path, Graph* g);
 private:
     int getVertexMax(const std::string& path);
 

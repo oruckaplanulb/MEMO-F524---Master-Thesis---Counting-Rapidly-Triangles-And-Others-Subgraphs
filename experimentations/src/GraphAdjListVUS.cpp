@@ -75,10 +75,10 @@ int GraphAdjListVUS::countTrianglesNodeIteratorPlusPlus() const {
         for (const int& u : adjacencyList[v]) {
             if(isBiggerOrder(u, v)){
                 for (const int& w : adjacencyList[v]) {
-                if (isBiggerOrder(w,u) && hasEdge(u, w)) {
-                    count++;
+                    if (isBiggerOrder(w,u) && hasEdge(u, w)) {
+                        count++;
+                    }
                 }
-            }
             }
         }
     }
