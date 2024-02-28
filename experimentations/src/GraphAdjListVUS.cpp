@@ -103,34 +103,28 @@ int GraphAdjListVUS::AYZ_Algorithm() const{
     cout << "Vhigh size: " << Vhigh.size() << endl;
 
     for (int v : Vlow) {
-        for (int u = 0; u < numVertices; ++u) {
-            for (int w = 0; w < numVertices; ++w) {
-                if (hasEdge(u,v) && hasEdge(w,v) && hasEdge(u, w)) {
+        for (const int& u : adjacencyList[v]) {
+            for (const int& w : adjacencyList[v]) {
+                if (hasEdge(u, w)) {
                     if (degree(u) <= beta && degree(w) <= beta) {
-                        delta[v] += 1.0/3;
-                        delta[u] += 1.0/3;
-                        delta[w] += 1.0/3;
+                        delta[v] += 1.0/3.0;
+                        delta[u] += 1.0/3.0;
+                        delta[w] += 1.0/3.0;
                     } else if (degree(u) > beta && degree(w) > beta) {
-                        delta[v] += 1;
-                        delta[u] += 1;
-                        delta[w] += 1;
+                        delta[v] += 1.0;
+                        delta[u] += 1.0;
+                        delta[w] += 1.0;
                     } else {
-                        delta[v] += 1.0/2;
-                        delta[u] += 1.0/2;
-                        delta[w] += 1.0/2;
+                        delta[v] += 1.0/2.0;
+                        delta[u] += 1.0/2.0;
+                        delta[w] += 1.0/2.0;
                     }
                 }
             }
         }
     }
-
     
     vector<vector<int>> A(Vhigh.size(), vector<int>(Vhigh.size(), 0));
-
-    map<int, int> indexMap;
-    for (int i = 0; i < Vhigh.size(); ++i) {
-        indexMap[Vhigh[i]] = i;
-    }
 
     for (int i = 0; i < Vhigh.size(); ++i) {
         int v = Vhigh[i];
@@ -141,12 +135,14 @@ int GraphAdjListVUS::AYZ_Algorithm() const{
             }
         }
     }
+    cout << "TEST" << endl;
+    if(Vhigh.size() != 0){
+        vector<vector<int>> M = Matrix::multiplyNaive(Matrix::multiplyNaive(A, A), A); // A^3
 
-    vector<vector<int>> M = Matrix::multiplyNaive(Matrix::multiplyNaive(A, A), A); // A^3
-
-    for (int i = 0; i < Vhigh.size(); ++i) {
-        int v = Vhigh[i];
-        delta[v] += M[i][i] / 2.0;
+        for (int i = 0; i < Vhigh.size(); ++i) {
+            int v = Vhigh[i];
+            delta[v] += M[i][i] / 2.0;
+        }
     }
 
     /*cout << "Delta values:" << endl;

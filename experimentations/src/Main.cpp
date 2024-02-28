@@ -229,8 +229,37 @@ void fct4(int argc, char* argv[]){
 
 int main(int argc, char* argv[]){
     
-    fct4(argc, argv);
+    GraphFiller* graphFiller = new GraphFiller();
+    std::string filePath = argv[1];
 
+    GraphAdjListVUS* graphListVUS = new GraphAdjListVUS();
+    graphFiller->setGraphFromFileMapped(filePath, graphListVUS);
+    std::cout << "- Graph List VUS-"<< std::endl;
+    std::cout << "Vertices: " << graphListVUS->getNumVertices() << std::endl;
+    std::cout << "Edges: " << graphListVUS->getNumEdges() << std::endl;
+
+    int cpt = 0;
+    auto start = std::chrono::high_resolution_clock::now();
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed_seconds;
+
+    start = std::chrono::high_resolution_clock::now();
+    cpt = graphListVUS->countTrianglesNodeIterator();
+    end = std::chrono::high_resolution_clock::now();
+    elapsed_seconds = end-start;
+    std::cout << "Number of triangles NI: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << std::endl;
+
+    start = std::chrono::high_resolution_clock::now();
+    cpt = graphListVUS->countTrianglesNodeIteratorPlusPlus();
+    end = std::chrono::high_resolution_clock::now();
+    elapsed_seconds = end-start;
+    std::cout << "Number of triangles NIPP: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << std::endl;
+
+    start = std::chrono::high_resolution_clock::now();
+    cpt = graphListVUS->AYZ_Algorithm();
+    end = std::chrono::high_resolution_clock::now();
+    elapsed_seconds = end-start;
+    std::cout << "Number of triangles AYZ: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << std::endl;
 
     return 0;
 }
