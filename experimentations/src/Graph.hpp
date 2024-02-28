@@ -5,6 +5,7 @@
 #include <vector>
 #include <list> 
 #include <unordered_set>
+#include <functional>
 
 class Graph {
 public:
@@ -48,8 +49,10 @@ public:
 
     int countTrianglesNodeIterator() const override;
     int countTrianglesNodeIteratorPlusPlus() const override;
-    int countTrianglesMatrixSquaring() const;
-    int countTrianglesMatrixCube() const;
+    int countTrianglesMatrixSquaring(std::function<std::vector<std::vector<int>>(const std::vector<std::vector<int>>&, const std::vector<std::vector<int>>&, int)> multiplyFunc, int numThreads) const;
+    int countTrianglesMatrixSquaring(std::function<std::vector<std::vector<int>>(const std::vector<std::vector<int>>&, const std::vector<std::vector<int>>&)> multiplyFunc) const;
+    int countTrianglesMatrixCube(std::function<std::vector<std::vector<int>>(const std::vector<std::vector<int>>&, const std::vector<std::vector<int>>&, int)> multiplyFunc, int numThreads) const;
+    int countTrianglesMatrixCube(std::function<std::vector<std::vector<int>>(const std::vector<std::vector<int>>&, const std::vector<std::vector<int>>&)> multiplyFunc) const;
     int AYZ_Algorithm() const override;
 };
 

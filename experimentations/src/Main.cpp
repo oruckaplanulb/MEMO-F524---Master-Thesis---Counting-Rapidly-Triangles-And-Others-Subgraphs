@@ -144,9 +144,92 @@ void fct2(int argc, char* argv[]){
     delete graphFiller;
 }
 
+void fct3(int argc, char* argv[]){
+
+    GraphFiller* graphFiller = new GraphFiller();
+    std::string filePath = argv[1];
+
+    GraphAdjMatrixVV* graphMatrixVV = new GraphAdjMatrixVV();
+    graphFiller->setGraphFromFileMapped(filePath, graphMatrixVV);
+    std::cout << "- Graph List VUS-"<< std::endl;
+    std::cout << "Vertices: " << graphMatrixVV->getNumVertices() << std::endl;
+    std::cout << "Edges: " << graphMatrixVV->getNumEdges() << std::endl;
+
+    int cpt = 0;
+    auto start = std::chrono::high_resolution_clock::now();
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed_seconds;
+
+    start = std::chrono::high_resolution_clock::now();
+    cpt = graphMatrixVV->countTrianglesMatrixSquaring(Matrix::multiplyNaiveParallel, 1);
+    end = std::chrono::high_resolution_clock::now();
+    elapsed_seconds = end-start;
+    std::cout << "Number of triangles MS1: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << std::endl;
+
+    start = std::chrono::high_resolution_clock::now();
+    cpt = graphMatrixVV->countTrianglesMatrixSquaring(Matrix::multiplyNaiveParallel, 2);
+    end = std::chrono::high_resolution_clock::now();
+    elapsed_seconds = end-start;
+    std::cout << "Number of triangles MS2: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << std::endl;
+
+    start = std::chrono::high_resolution_clock::now();
+    cpt = graphMatrixVV->countTrianglesMatrixSquaring(Matrix::multiplyNaiveParallel, 4);
+    end = std::chrono::high_resolution_clock::now();
+    elapsed_seconds = end-start;
+    std::cout << "Number of triangles MS4: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << std::endl;
+
+    start = std::chrono::high_resolution_clock::now();
+    cpt = graphMatrixVV->countTrianglesMatrixSquaring(Matrix::multiplyNaiveParallel, 8);
+    end = std::chrono::high_resolution_clock::now();
+    elapsed_seconds = end-start;
+    std::cout << "Number of triangles MS8: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << std::endl;
+
+    start = std::chrono::high_resolution_clock::now();
+    cpt = graphMatrixVV->countTrianglesMatrixCube(Matrix::multiplyNaiveParallel, 8);
+    end = std::chrono::high_resolution_clock::now();
+    elapsed_seconds = end-start;
+    std::cout << "Number of triangles MC8: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << std::endl;
+
+
+    delete graphMatrixVV;
+    delete graphFiller;
+}
+
+void fct4(int argc, char* argv[]){
+
+    GraphFiller* graphFiller = new GraphFiller();
+    std::string filePath = argv[1];
+
+    GraphAdjMatrixVV* graphMatrixVV = new GraphAdjMatrixVV();
+    graphFiller->setGraphFromFileMapped(filePath, graphMatrixVV);
+    std::cout << "- Graph List VUS-"<< std::endl;
+    std::cout << "Vertices: " << graphMatrixVV->getNumVertices() << std::endl;
+    std::cout << "Edges: " << graphMatrixVV->getNumEdges() << std::endl;
+
+    int cpt = 0;
+    auto start = std::chrono::high_resolution_clock::now();
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed_seconds;
+
+    start = std::chrono::high_resolution_clock::now();
+    cpt = graphMatrixVV->countTrianglesMatrixSquaring(Matrix::multiplyNaive);
+    end = std::chrono::high_resolution_clock::now();
+    elapsed_seconds = end-start;
+    std::cout << "Number of triangles MS1 NaiveFct: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << std::endl;
+
+    start = std::chrono::high_resolution_clock::now();
+    cpt = graphMatrixVV->countTrianglesMatrixSquaring(Matrix::multiplyNaiveParallel, 1);
+    end = std::chrono::high_resolution_clock::now();
+    elapsed_seconds = end-start;
+    std::cout << "Number of triangles MS1 ParallelFct: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << std::endl;
+
+    delete graphMatrixVV;
+    delete graphFiller;
+}
+
 int main(int argc, char* argv[]){
     
-    fct2(argc, argv);
+    fct4(argc, argv);
 
 
     return 0;

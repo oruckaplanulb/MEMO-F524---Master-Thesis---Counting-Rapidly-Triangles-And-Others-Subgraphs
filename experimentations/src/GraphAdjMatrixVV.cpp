@@ -98,11 +98,10 @@ int GraphAdjMatrixVV::countTrianglesNodeIteratorPlusPlus() const {
     return count;
 }
 
-int GraphAdjMatrixVV::countTrianglesMatrixSquaring() const {
+int GraphAdjMatrixVV::countTrianglesMatrixSquaring(std::function<std::vector<std::vector<int>>(const std::vector<std::vector<int>>&, const std::vector<std::vector<int>>&, int)> multiplyFunc, int numThreads) const {
     double count = 0;
     vector<vector<int>> A = adjacencyMatrix;
-    vector<vector<int>> A2 = Matrix::multiplyNaive(A, A);
-    cout << "multiplication done" << endl;
+    vector<vector<int>> A2 = multiplyFunc(A, A, numThreads);
 
     for(int i = 0; i < numVertices; i++){
         for(int j = 0; j < numVertices; j++){
@@ -112,11 +111,36 @@ int GraphAdjMatrixVV::countTrianglesMatrixSquaring() const {
     return count/6;
 }
 
-int GraphAdjMatrixVV::countTrianglesMatrixCube() const {
+int GraphAdjMatrixVV::countTrianglesMatrixSquaring(std::function<std::vector<std::vector<int>>(const std::vector<std::vector<int>>&, const std::vector<std::vector<int>>&)> multiplyFunc) const {
     double count = 0;
     vector<vector<int>> A = adjacencyMatrix;
-    vector<vector<int>> A2 = Matrix::multiplyNaive(A, A);
-    vector<vector<int>> A3 = Matrix::multiplyNaive(A2, A);
+    vector<vector<int>> A2 = multiplyFunc(A, A);
+
+    for(int i = 0; i < numVertices; i++){
+        for(int j = 0; j < numVertices; j++){
+            count += A[i][j]*A2[i][j];
+        }
+    }
+    return count/6;
+}
+
+int GraphAdjMatrixVV::countTrianglesMatrixCube(std::function<std::vector<std::vector<int>>(const std::vector<std::vector<int>>&, const std::vector<std::vector<int>>&, int)> multiplyFunc, int numThreads) const {
+    double count = 0;
+    vector<vector<int>> A = adjacencyMatrix;
+    vector<vector<int>> A2 = multiplyFunc(A, A, numThreads);
+    vector<vector<int>> A3 = multiplyFunc(A2, A, numThreads);
+
+    for(int i = 0; i < numVertices; i++){
+        count += A3[i][i];
+    }
+    return count/6;
+}
+
+int GraphAdjMatrixVV::countTrianglesMatrixCube(std::function<std::vector<std::vector<int>>(const std::vector<std::vector<int>>&, const std::vector<std::vector<int>>&)> multiplyFunc) const {
+    double count = 0;
+    vector<vector<int>> A = adjacencyMatrix;
+    vector<vector<int>> A2 = multiplyFunc(A, A);
+    vector<vector<int>> A3 = multiplyFunc(A2, A);
 
     for(int i = 0; i < numVertices; i++){
         count += A3[i][i];
