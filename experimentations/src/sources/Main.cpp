@@ -1,6 +1,6 @@
-#include "Graph.hpp"
-#include "Matrix.hpp"
-#include "GraphFiller.hpp"
+#include "../headers/Graph.hpp"
+#include "../headers/Matrix.hpp"
+#include "../headers/GraphFiller.hpp"
 #include <chrono>
 
 void fct1(int argc, char* argv[]){

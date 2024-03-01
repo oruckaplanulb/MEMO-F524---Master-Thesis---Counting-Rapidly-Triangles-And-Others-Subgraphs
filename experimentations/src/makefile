@@ -3,7 +3,8 @@ CXX := g++
 CXXFLAGS := -std=c++11
 
 # Source files
-SRCS := Main.cpp GraphAdjListVL.cpp GraphAdjListVUS.cpp GraphAdjMatrixVV.cpp Matrix.cpp GraphFiller.cpp
+SRCDIR := sources
+SRCS := $(wildcard $(SRCDIR)/*.cpp)
 EXEC := ../Main.exe
 
 .PHONY: all clean optimize
@@ -22,3 +23,4 @@ $(EXEC): $(SRCS)
 # Clean rule
 clean:
 	rm -f $(EXEC)
+

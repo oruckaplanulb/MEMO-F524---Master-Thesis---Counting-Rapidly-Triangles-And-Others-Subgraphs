@@ -1,5 +1,5 @@
-#include "Graph.hpp"
-#include "Matrix.hpp"
+#include "../headers/Graph.hpp"
+#include "../headers/Matrix.hpp"
 #include <math.h>
 
 using namespace std;
@@ -87,8 +87,4 @@ int GraphAdjListVL::countTrianglesNodeIteratorPlusPlus() const {
         }
     }
     return count;
-}
-
-int GraphAdjListVL::AYZ_Algorithm() const{
-    return 0;
 }

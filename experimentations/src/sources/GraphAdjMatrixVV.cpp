@@ -1,5 +1,5 @@
-#include "Graph.hpp"
-#include "Matrix.hpp"
+#include "../headers/Graph.hpp"
+#include "../headers/Matrix.hpp"
 #include <math.h>
 #include <algorithm>
 
@@ -146,8 +146,4 @@ int GraphAdjMatrixVV::countTrianglesMatrixCube(std::function<std::vector<std::ve
         count += A3[i][i];
     }
     return count/6;
-}
-
-int GraphAdjMatrixVV::AYZ_Algorithm() const{
-    return 0;
 }

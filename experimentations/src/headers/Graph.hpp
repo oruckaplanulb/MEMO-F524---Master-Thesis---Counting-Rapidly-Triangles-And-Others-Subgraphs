@@ -22,7 +22,6 @@ public:
 
     virtual int countTrianglesNodeIterator() const = 0;
     virtual int countTrianglesNodeIteratorPlusPlus() const = 0;
-    virtual int AYZ_Algorithm() const = 0;
 
     //virtual int count4CyclesBasic() const = 0;
 };
@@ -53,7 +52,6 @@ public:
     int countTrianglesMatrixSquaring(std::function<std::vector<std::vector<int>>(const std::vector<std::vector<int>>&, const std::vector<std::vector<int>>&)> multiplyFunc) const;
     int countTrianglesMatrixCube(std::function<std::vector<std::vector<int>>(const std::vector<std::vector<int>>&, const std::vector<std::vector<int>>&, int)> multiplyFunc, int numThreads) const;
     int countTrianglesMatrixCube(std::function<std::vector<std::vector<int>>(const std::vector<std::vector<int>>&, const std::vector<std::vector<int>>&)> multiplyFunc) const;
-    int AYZ_Algorithm() const override;
 };
 
 class GraphAdjListVL : public Graph {
@@ -77,7 +75,6 @@ public:
 
     int countTrianglesNodeIterator() const override;
     int countTrianglesNodeIteratorPlusPlus() const override;
-    int AYZ_Algorithm() const override;
 };
 
 class GraphAdjListVUS : public Graph {
@@ -101,7 +98,7 @@ public:
 
     int countTrianglesNodeIterator() const override;
     int countTrianglesNodeIteratorPlusPlus() const override;
-    int AYZ_Algorithm() const override;
+    int AYZ_Algorithm() const;
 
     int count4CyclesBasic() const ;
 };

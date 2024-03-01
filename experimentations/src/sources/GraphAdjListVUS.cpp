@@ -1,5 +1,5 @@
-#include "Graph.hpp"
-#include "Matrix.hpp"
+#include "../headers/Graph.hpp"
+#include "../headers/Matrix.hpp"
 #include <math.h>
 #include <map>
 
