@@ -55,6 +55,10 @@ bool GraphAdjListVUS::hasEdge(int vrtx1, int vrtx2) const {
     return (adjacencyList[vrtx1].find(vrtx2) != adjacencyList[vrtx1].end());
 }
 
+unordered_set<int> GraphAdjListVUS::getNeighbors(int v) const {
+    return adjacencyList[v];
+}
+
 int GraphAdjListVUS::countTrianglesNodeIterator() const {
     double count = 0;
     for (int v = 0; v < numVertices; ++v) {

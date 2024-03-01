@@ -50,6 +50,10 @@ void GraphAdjListVL::printGraph() const {
     }
 }
 
+list<int> GraphAdjListVL::getNeighbors(int v) const {
+    return adjacencyList[v];
+}
+
 bool GraphAdjListVL::hasEdge(int vrtx1, int vrtx2) const {
     for (const int& neighbor : adjacencyList[vrtx1]) {
         if (neighbor == vrtx2) {

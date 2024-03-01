@@ -9,7 +9,7 @@ GraphAdjMatrixVV::GraphAdjMatrixVV(int vertices) {
     this->setSize(vertices);
 }
 
-vector<vector<int>> GraphAdjMatrixVV::getAdjacencyMatrix(){
+vector<vector<int>> GraphAdjMatrixVV::getAdjacencyMatrix() const{
     return adjacencyMatrix;
 }
 
@@ -64,6 +64,16 @@ void GraphAdjMatrixVV::printGraph() const {
 
 bool GraphAdjMatrixVV::hasEdge(int vrtx1, int vrtx2) const {
     return adjacencyMatrix[vrtx1][vrtx2] == 1;
+}
+
+vector<int> GraphAdjMatrixVV::getNeighbors(int v) const {
+    vector<int> neighbors;
+    for (int i = 0; i < numVertices; ++i) {
+        if (adjacencyMatrix[v][i] == 1) {
+            neighbors.push_back(i);
+        }
+    }
+    return neighbors;
 }
 
 int GraphAdjMatrixVV::countTrianglesNodeIterator() const {
