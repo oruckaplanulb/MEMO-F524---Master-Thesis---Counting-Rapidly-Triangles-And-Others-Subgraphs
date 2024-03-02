@@ -22,9 +22,6 @@ public:
     virtual bool hasEdge(int vrtx1, int vrtx2) const = 0;
     virtual T getNeighbors(int v) const = 0;
 
-    virtual int countTrianglesNodeIterator() const = 0;
-    virtual int countTrianglesNodeIteratorPlusPlus() const = 0;
-
     //virtual int count4CyclesBasic() const = 0;
 };
 
@@ -50,8 +47,8 @@ public:
     std::vector<int> getNeighbors(int v) const  override;
 
     //OLD
-    int countTrianglesNodeIterator() const override;
-    int countTrianglesNodeIteratorPlusPlus() const override;
+    int countTrianglesNodeIterator() const;
+    int countTrianglesNodeIteratorPlusPlus() const;
     int countTrianglesMatrixSquaring(std::function<std::vector<std::vector<int>>(const std::vector<std::vector<int>>&, const std::vector<std::vector<int>>&, int)> multiplyFunc, int numThreads) const;
     int countTrianglesMatrixSquaring(std::function<std::vector<std::vector<int>>(const std::vector<std::vector<int>>&, const std::vector<std::vector<int>>&)> multiplyFunc) const;
     int countTrianglesMatrixCube(std::function<std::vector<std::vector<int>>(const std::vector<std::vector<int>>&, const std::vector<std::vector<int>>&, int)> multiplyFunc, int numThreads) const;
@@ -79,8 +76,8 @@ public:
     std::list<int> getNeighbors(int v) const  override;
 
     //OLD
-    int countTrianglesNodeIterator() const override;
-    int countTrianglesNodeIteratorPlusPlus() const override;
+    int countTrianglesNodeIterator() const;
+    int countTrianglesNodeIteratorPlusPlus() const;
 };
 
 class GraphAdjListVUS : public Graph<std::unordered_set<int>> {
@@ -104,8 +101,9 @@ public:
     std::unordered_set<int> getNeighbors(int v) const override;
 
     //OLD
-    int countTrianglesNodeIterator() const override;
-    int countTrianglesNodeIteratorPlusPlus() const override;
+    int countTrianglesNodeIterator() const;
+    int countTrianglesNodeIteratorPlusPlus() const;
+    int countTrianglesEdgeIterator() const;
     int AYZ_Algorithm() const;
     int count4CyclesBasic() const ;
 };

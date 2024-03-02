@@ -89,6 +89,22 @@ int GraphAdjListVUS::countTrianglesNodeIteratorPlusPlus() const {
     return count;
 }
 
+int GraphAdjListVUS::countTrianglesEdgeIterator() const {
+    int count = 0;
+    for (int v = 0; v < numVertices; ++v) {
+        for (const int& u : adjacencyList[v]) {
+            unordered_set<int> intersection;
+            for (const int& w : adjacencyList[u]) {
+                if (adjacencyList[v].count(w)) {
+                    intersection.insert(w);
+                }
+            }
+            count += intersection.size();
+        }
+    }
+    return count/6;
+}
+
 int GraphAdjListVUS::AYZ_Algorithm() const{
     double beta = pow(getNumEdges(),2.0/4.0);
 

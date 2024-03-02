@@ -108,7 +108,7 @@ int GraphAdjMatrixVV::countTrianglesNodeIteratorPlusPlus() const {
     return count;
 }
 
-int GraphAdjMatrixVV::countTrianglesMatrixSquaring(std::function<std::vector<std::vector<int>>(const std::vector<std::vector<int>>&, const std::vector<std::vector<int>>&, int)> multiplyFunc, int numThreads) const {
+int GraphAdjMatrixVV::countTrianglesMatrixSquaring(function<vector<vector<int>>(const vector<vector<int>>&, const vector<vector<int>>&, int)> multiplyFunc, int numThreads) const {
     double count = 0;
     vector<vector<int>> A = adjacencyMatrix;
     vector<vector<int>> A2 = multiplyFunc(A, A, numThreads);
@@ -121,7 +121,7 @@ int GraphAdjMatrixVV::countTrianglesMatrixSquaring(std::function<std::vector<std
     return count/6;
 }
 
-int GraphAdjMatrixVV::countTrianglesMatrixSquaring(std::function<std::vector<std::vector<int>>(const std::vector<std::vector<int>>&, const std::vector<std::vector<int>>&)> multiplyFunc) const {
+int GraphAdjMatrixVV::countTrianglesMatrixSquaring(function<vector<vector<int>>(const vector<vector<int>>&, const vector<vector<int>>&)> multiplyFunc) const {
     double count = 0;
     vector<vector<int>> A = adjacencyMatrix;
     vector<vector<int>> A2 = multiplyFunc(A, A);
@@ -134,7 +134,7 @@ int GraphAdjMatrixVV::countTrianglesMatrixSquaring(std::function<std::vector<std
     return count/6;
 }
 
-int GraphAdjMatrixVV::countTrianglesMatrixCube(std::function<std::vector<std::vector<int>>(const std::vector<std::vector<int>>&, const std::vector<std::vector<int>>&, int)> multiplyFunc, int numThreads) const {
+int GraphAdjMatrixVV::countTrianglesMatrixCube(function<vector<vector<int>>(const vector<vector<int>>&, const vector<vector<int>>&, int)> multiplyFunc, int numThreads) const {
     double count = 0;
     vector<vector<int>> A = adjacencyMatrix;
     vector<vector<int>> A2 = multiplyFunc(A, A, numThreads);
@@ -146,7 +146,7 @@ int GraphAdjMatrixVV::countTrianglesMatrixCube(std::function<std::vector<std::ve
     return count/6;
 }
 
-int GraphAdjMatrixVV::countTrianglesMatrixCube(std::function<std::vector<std::vector<int>>(const std::vector<std::vector<int>>&, const std::vector<std::vector<int>>&)> multiplyFunc) const {
+int GraphAdjMatrixVV::countTrianglesMatrixCube(function<vector<vector<int>>(const vector<vector<int>>&, const vector<vector<int>>&)> multiplyFunc) const {
     double count = 0;
     vector<vector<int>> A = adjacencyMatrix;
     vector<vector<int>> A2 = multiplyFunc(A, A);
