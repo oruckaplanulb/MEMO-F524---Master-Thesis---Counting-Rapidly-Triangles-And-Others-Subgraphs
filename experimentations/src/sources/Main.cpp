@@ -134,12 +134,12 @@ void fct5(int argc, char* argv[]){
     GraphFiller* graphFiller = new GraphFiller();
     string filePath = argv[1];
 
-    GraphAdjListVUS* graphListVUS = new GraphAdjListVUS();
-    graphFiller->setGraphFromFileMapped(filePath, graphListVUS);
+    GraphAdjListVUS* graph = new GraphAdjListVUS();
+    graphFiller->setGraphFromFileMapped(filePath, graph);
 
     cout << "- Graph List VUS-"<< endl;
-    cout << "Vertices: " << graphListVUS->getNumVertices() << endl;
-    cout << "Edges: " << graphListVUS->getNumEdges() << endl;
+    cout << "Vertices: " << graph->getNumVertices() << endl;
+    cout << "Edges: " << graph->getNumEdges() << endl;
 
     int cpt = 0;
     auto start = chrono::high_resolution_clock::now();
@@ -147,37 +147,39 @@ void fct5(int argc, char* argv[]){
     chrono::duration<double> elapsed_seconds;
 
     start = chrono::high_resolution_clock::now();
-    cpt = Triangle::countTrianglesNodeIterator(graphListVUS);
+    cpt = Triangle::countTrianglesNodeIterator(graph);
     end = chrono::high_resolution_clock::now();
     elapsed_seconds = end-start;
     cout << "Number of triangles NI Generic Triangle Class: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << endl;
 
     start = chrono::high_resolution_clock::now();
-    cpt = Triangle::countTrianglesNodeIteratorPlusPlus(graphListVUS);
+    cpt = Triangle::countTrianglesNodeIteratorPlusPlus(graph);
     end = chrono::high_resolution_clock::now();
     elapsed_seconds = end-start;
     cout << "Number of triangles NIPP Generic Triangle Class: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << endl;
 
     start = chrono::high_resolution_clock::now();
-    cpt = graphListVUS->countTrianglesNodeIterator();
+    cpt = graph->countTrianglesNodeIterator();
     end = chrono::high_resolution_clock::now();
     elapsed_seconds = end-start;
     cout << "Number of triangles NI Function directly From Graph Class: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << endl;
 
     start = chrono::high_resolution_clock::now();
-    cpt = graphListVUS->countTrianglesNodeIteratorPlusPlus();
+    cpt = graph->countTrianglesNodeIteratorPlusPlus();
     end = chrono::high_resolution_clock::now();
     elapsed_seconds = end-start;
     cout << "Number of triangles NIPP Function directly From Graph Class: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << endl;
 
-    delete graphListVUS;
+    delete graph;
     delete graphFiller;
 }
 
 int main(int argc, char* argv[]){
     //execute the tests in the test cases
-    TestCases::testGnutellasNodeIteratorPlusPlus(100);
+    //TestCases::testGnutellasNodeIteratorPlusPlus(100);
     //TestCases::testGnutellasNodeIterator(100);
+    fct5(argc, argv);
+
 
 
     return 0;

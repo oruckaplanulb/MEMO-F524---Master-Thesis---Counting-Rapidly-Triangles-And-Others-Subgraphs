@@ -9,8 +9,7 @@ class Triangle
 {
 public:
     template <typename T>
-    static int countTrianglesNodeIterator(const Graph<T> *g)
-    {
+    static int countTrianglesNodeIterator(Graph<T> *g){
         double count = 0;
         for (int v = 0; v < g->getNumVertices(); ++v)
         {
@@ -29,13 +28,18 @@ public:
     }
 
     template <typename T>
-    static int countTrianglesNodeIteratorPlusPlus(const Graph<T> *g){
+    static int countTrianglesNodeIteratorPlusPlus(Graph<T> *g){
         int count = 0;
-        for (int v = 0; v < g->getNumVertices(); ++v){
-            for (const int &u : g->getNeighbors(v)){
-                if (g->isBiggerOrder(u, v)){
-                    for (const int &w : g->getNeighbors(v)){
-                        if (g->isBiggerOrder(w, u) && g->hasEdge(u, w)){
+        for (int v = 0; v < g->getNumVertices(); ++v)
+        {
+            for (const int &u : g->getNeighbors(v))
+            {
+                if (g->isBiggerOrder(u, v))
+                {
+                    for (const int &w : g->getNeighbors(v))
+                    {
+                        if (g->isBiggerOrder(w, u) && g->hasEdge(u, w))
+                        {
                             count++;
                         }
                     }
@@ -44,13 +48,9 @@ public:
         }
         return count;
     }
-
-    static int countTrianglesMatrixSquaring(const std::vector<std::vector<int>> &m, std::function<std::vector<std::vector<int>>(const std::vector<std::vector<int>> &, const std::vector<std::vector<int>> &, int)> multiplyFunc, int numThreads);
-    static int countTrianglesMatrixSquaring(const std::vector<std::vector<int>> &m, std::function<std::vector<std::vector<int>>(const std::vector<std::vector<int>> &, const std::vector<std::vector<int>> &)> multiplyFunc);
-    static int countTrianglesMatrixCube(const std::vector<std::vector<int>> &m, std::function<std::vector<std::vector<int>>(const std::vector<std::vector<int>> &, const std::vector<std::vector<int>> &, int)> multiplyFunc, int numThreads);
-    static int countTrianglesMatrixCube(const std::vector<std::vector<int>> &m, std::function<std::vector<std::vector<int>>(const std::vector<std::vector<int>> &, const std::vector<std::vector<int>> &)> multiplyFunc);
+    
     template <typename T>
-    static int AYZ_Algorithm(const Graph<T> *g);
+    static int AYZ_Algorithm(Graph<T> *g);
 };
 
 #endif

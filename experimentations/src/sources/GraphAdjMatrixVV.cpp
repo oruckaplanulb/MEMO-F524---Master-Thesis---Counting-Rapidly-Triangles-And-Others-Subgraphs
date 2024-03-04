@@ -30,6 +30,7 @@ int GraphAdjMatrixVV::getNumEdges() const {
 void GraphAdjMatrixVV::setSize(int vertices) {
     numVertices = vertices;
     adjacencyMatrix.resize(numVertices, vector<int>(numVertices, 0));
+    neighborsVector.resize(numVertices);
 }
 
 void GraphAdjMatrixVV::addEdge(int vrtx1, int vrtx2) {
@@ -66,14 +67,16 @@ bool GraphAdjMatrixVV::hasEdge(int vrtx1, int vrtx2) const {
     return adjacencyMatrix[vrtx1][vrtx2] == 1;
 }
 
-vector<int> GraphAdjMatrixVV::getNeighbors(int v) const {
-    vector<int> neighbors;
-    for (int i = 0; i < numVertices; ++i) {
-        if (adjacencyMatrix[v][i] == 1) {
-            neighbors.push_back(i);
+vector<int>& GraphAdjMatrixVV::getNeighbors(int v) {
+    neighborsVector[v].clear();
+    //if(neighborsVector[v].empty()){
+        for (int i = 0; i < numVertices; ++i) {
+            if (adjacencyMatrix[v][i] == 1) {
+                neighborsVector[v].push_back(i);
+            }
         }
-    }
-    return neighbors;
+    //}
+    return neighborsVector[v];
 }
 
 int GraphAdjMatrixVV::countTrianglesNodeIterator() const {

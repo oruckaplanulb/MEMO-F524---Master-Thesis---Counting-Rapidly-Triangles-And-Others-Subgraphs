@@ -50,7 +50,7 @@ void GraphAdjListVL::printGraph() const {
     }
 }
 
-list<int> GraphAdjListVL::getNeighbors(int v) const {
+list<int>& GraphAdjListVL::getNeighbors(int v) {
     return adjacencyList[v];
 }
 
