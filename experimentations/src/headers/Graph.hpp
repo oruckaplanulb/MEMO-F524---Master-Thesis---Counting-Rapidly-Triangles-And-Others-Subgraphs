@@ -42,7 +42,7 @@ public:
     void printGraph() const override;
     bool hasEdge(int vrtx1, int vrtx2) const override;
     std::vector<std::vector<int>> getAdjacencyMatrix() const;
-    std::vector<int>& getNeighbors(int v);
+    std::vector<int> getNeighbors(int v);
 
     //OLD
     int countTrianglesNodeIterator() const;
@@ -97,14 +97,37 @@ public:
     void printGraph() const override;
     bool hasEdge(int vrtx1, int vrtx2) const override;
     std::unordered_set<int>& getNeighbors(int v);
+    int countTrianglesEdgeIterator() const;
 
     //OLD
     int countTrianglesNodeIterator() const;
     int countTrianglesNodeIteratorPlusPlus() const;
-    int countTrianglesEdgeIterator() const;
-    int countTrianglesForward() const;
     int AYZ_Algorithm() const;
     int count4CyclesBasic() const ;
+};
+
+class GraphEdgListVP : public Graph {
+private:
+    int numVertices;
+    std::vector<std::pair<int, int>> edgeList;
+
+public:
+    GraphEdgListVP(int vertices);
+    GraphEdgListVP() : numVertices(0), edgeList(0) {}
+    ~GraphEdgListVP() override = default;
+
+    int getNumVertices() const override;
+    int getNumEdges() const override;
+    void setSize(int vertices) override;
+    void addEdge(int vrtx1, int vrtx2) override;
+    int degree(int vertex) const override;
+    bool isBiggerOrder(int vrtx1, int vrtx2) const override;
+    void printGraph() const override;
+    bool hasEdge(int vrtx1, int vrtx2) const override;
+    std::list<int> getNeighbors(int v);
+
+    int countTrianglesEdgeIterator() const;
+    int countTrianglesForward() const;
 };
 
 

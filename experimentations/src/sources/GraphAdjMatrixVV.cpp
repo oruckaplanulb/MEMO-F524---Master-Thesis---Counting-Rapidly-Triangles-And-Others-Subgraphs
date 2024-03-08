@@ -66,7 +66,7 @@ bool GraphAdjMatrixVV::hasEdge(int vrtx1, int vrtx2) const {
     return adjacencyMatrix[vrtx1][vrtx2] == 1;
 }
 
-vector<int>& GraphAdjMatrixVV::getNeighbors(int v) {
+vector<int> GraphAdjMatrixVV::getNeighbors(int v) {
     std::vector<int> neighborsVector;
     for (int i = 0; i < numVertices; ++i) {
         if (adjacencyMatrix[v][i] == 1) {
