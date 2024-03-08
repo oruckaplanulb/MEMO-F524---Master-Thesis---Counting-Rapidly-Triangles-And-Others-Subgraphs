@@ -4,7 +4,6 @@
 #include "../headers/Graph.hpp"
 #include "../headers/Matrix.hpp"
 #include "../headers/GraphFiller.hpp"
-#include "../headers/Triangle.hpp"
 #include <chrono>
 #include <iostream>
 

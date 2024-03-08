@@ -14,8 +14,7 @@ public:
     /*template <typename T>
     void setGraphFromFile(const std::string &path, Graph<T> *g);*/
 
-    template <typename T>
-    void setGraphFromFileMapped(const std::string &path, Graph<T> *g)
+    void setGraphFromFileMapped(const std::string &path, Graph *g)
     {
         std::cout << "Path: " << path << std::endl;
 
