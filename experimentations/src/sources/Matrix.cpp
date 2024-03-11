@@ -90,12 +90,12 @@ vector<vector<int>> Matrix::multiplyNaiveParallel(const vector<vector<int>>& mat
     return result;
 }
 
-std::vector<std::vector<int>> Matrix::multiplyBlas(const std::vector<std::vector<int>>& mat1, const std::vector<std::vector<int>>& mat2) {
-    std::vector<std::vector<int>> result;
+std::vector<std::vector<int>> Matrix::multiplyBlas(const std::vector<std::vector<int>>& mat1, const std::vector<std::vector<int>>& mat2, int numThreads) {
     int n = mat1.size();
     int m = mat2[0].size();
     int p = mat2.size();
-    result.resize(n, vector<int>(m, 0));
+
+    std::vector<std::vector<int>> result(n, std::vector<int>(m, 0));
 
     std::vector<double> mat1_flat;
     for (const auto& row : mat1) {
@@ -113,12 +113,14 @@ std::vector<std::vector<int>> Matrix::multiplyBlas(const std::vector<std::vector
 
     std::vector<double> result_flat(n * m, 0.0);
 
+    openblas_set_num_threads(numThreads);
+
     cblas_dgemm(CblasRowMajor, CblasNoTrans, CblasNoTrans,
                 n, m, p, 1.0, mat1_flat.data(), p, mat2_flat.data(), m, 0.0, result_flat.data(), m);
 
     for (int i = 0; i < n; ++i) {
         for (int j = 0; j < m; ++j) {
-            result[i][j] = static_cast<int>(result_flat[i * n + j]);
+            result[i][j] = static_cast<int>(result_flat[i * m + j]);
         }
     }
 

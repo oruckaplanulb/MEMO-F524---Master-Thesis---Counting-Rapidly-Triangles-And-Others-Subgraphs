@@ -114,7 +114,7 @@ void fct4(int argc, char* argv[]){
     chrono::duration<double> elapsed_seconds;
 
     start = chrono::high_resolution_clock::now();
-    cpt = graphMatrixVV->countTrianglesMatrixSquaring(Matrix::multiplyNaive);
+    //cpt = graphMatrixVV->countTrianglesMatrixSquaring(Matrix::multiplyNaive);
     end = chrono::high_resolution_clock::now();
     elapsed_seconds = end-start;
     cout << "Number of triangles MS1 NaiveFct: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << endl;
@@ -145,15 +145,26 @@ int main(int argc, char* argv[]){
     auto end = chrono::high_resolution_clock::now();
     chrono::duration<double> elapsed_seconds;
 
-
     start = chrono::high_resolution_clock::now();
-    cpt = g->countTrianglesMatrixSquaring(Matrix::multiplyBlas);
+    cpt = g->countTrianglesMatrixSquaring(Matrix::multiplyBlas, 8);
     end = chrono::high_resolution_clock::now();
     elapsed_seconds = end-start;
     cout << "Number of triangles Matrix Squaring Blas: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << endl;
 
     start = chrono::high_resolution_clock::now();
-    cpt = g->countTrianglesMatrixCube(Matrix::multiplyBlas);
+    cpt = g->countTrianglesMatrixSquaringParallel(Matrix::multiplyBlas, 8, 8);
+    end = chrono::high_resolution_clock::now();
+    elapsed_seconds = end-start;
+    cout << "Number of triangles Matrix Squaring Blas: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << endl;
+
+    start = chrono::high_resolution_clock::now();
+    cpt = g->countTrianglesMatrixCube(Matrix::multiplyBlas, 8);
+    end = chrono::high_resolution_clock::now();
+    elapsed_seconds = end-start;
+    cout << "Number of triangles Matrix Cube Blas: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << endl;
+
+    start = chrono::high_resolution_clock::now();
+    cpt = g->countTrianglesMatrixCubeParallel(Matrix::multiplyBlas, 8, 8);
     end = chrono::high_resolution_clock::now();
     elapsed_seconds = end-start;
     cout << "Number of triangles Matrix Cube Blas: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << endl;
