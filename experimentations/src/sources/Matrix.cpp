@@ -1,6 +1,8 @@
 #include "../headers/Matrix.hpp"
 #include <iostream>
 #include <thread>
+#include <cblas.h>
+#include <omp.h>
 
 using namespace std;
 
@@ -85,6 +87,41 @@ vector<vector<int>> Matrix::multiplyNaiveParallel(const vector<vector<int>>& mat
     for (auto& t : threads) {
         t.join();
     }
+    return result;
+}
+
+std::vector<std::vector<int>> Matrix::multiplyBlas(const std::vector<std::vector<int>>& mat1, const std::vector<std::vector<int>>& mat2) {
+    std::vector<std::vector<int>> result;
+    int n = mat1.size();
+    int m = mat2[0].size();
+    int p = mat2.size();
+    result.resize(n, vector<int>(m, 0));
+
+    std::vector<double> mat1_flat;
+    for (const auto& row : mat1) {
+        for (int element : row) {
+            mat1_flat.push_back(static_cast<double>(element));
+        }
+    }
+
+    std::vector<double> mat2_flat;
+    for (const auto& row : mat2) {
+        for (int element : row) {
+            mat2_flat.push_back(static_cast<double>(element));
+        }
+    }
+
+    std::vector<double> result_flat(n * m, 0.0);
+
+    cblas_dgemm(CblasRowMajor, CblasNoTrans, CblasNoTrans,
+                n, m, p, 1.0, mat1_flat.data(), p, mat2_flat.data(), m, 0.0, result_flat.data(), m);
+
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < m; ++j) {
+            result[i][j] = static_cast<int>(result_flat[i * n + j]);
+        }
+    }
+
     return result;
 }
 

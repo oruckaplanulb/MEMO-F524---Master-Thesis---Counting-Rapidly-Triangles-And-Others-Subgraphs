@@ -130,15 +130,11 @@ void fct4(int argc, char* argv[]){
 }
 
 int main(int argc, char* argv[]){
-    //execute the tests in the test cases
-    //TestCases::testGnutellasNodeIteratorPlusPlus(100);
-    //TestCases::testGnutellasNodeIterator(100);
-    //fct3(argc, argv);
 
     GraphFiller* graphFiller = new GraphFiller();
     string filePath = argv[1];
 
-    GraphEdgListVP* g = new GraphEdgListVP();
+    GraphAdjMatrixVV* g = new GraphAdjMatrixVV();
     graphFiller->setGraphFromFileMapped(filePath, g);
     cout << "- Graph Edg List-"<< endl;
     cout << "Vertices: " << g->getNumVertices() << endl;
@@ -149,13 +145,24 @@ int main(int argc, char* argv[]){
     auto end = chrono::high_resolution_clock::now();
     chrono::duration<double> elapsed_seconds;
 
+
     start = chrono::high_resolution_clock::now();
-    cpt = g->countTrianglesForward();
+    cpt = g->countTrianglesMatrixSquaring(Matrix::multiplyBlas);
     end = chrono::high_resolution_clock::now();
     elapsed_seconds = end-start;
-    cout << "Number of triangles Forward: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << endl;
+    cout << "Number of triangles Matrix Squaring Blas: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << endl;
 
+    start = chrono::high_resolution_clock::now();
+    cpt = g->countTrianglesMatrixCube(Matrix::multiplyBlas);
+    end = chrono::high_resolution_clock::now();
+    elapsed_seconds = end-start;
+    cout << "Number of triangles Matrix Cube Blas: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << endl;
 
+    start = chrono::high_resolution_clock::now();
+    cpt = g->countTrianglesNodeIterator();
+    end = chrono::high_resolution_clock::now();
+    elapsed_seconds = end-start;
+    cout << "Number of triangles Node Iterator: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << endl;
 
     delete g;
     delete graphFiller;

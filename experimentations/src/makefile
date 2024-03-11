@@ -1,6 +1,7 @@
 # Compiler settings
 CXX := g++
-CXXFLAGS := -std=c++11
+CXXFLAGS := -std=c++11 -I"D:/msys64/OpenBLAS/include"
+LDFLAGS := -L"D:/msys64/OpenBLAS/lib" -lopenblas
 
 # Source files
 SRCDIR := sources
@@ -18,7 +19,7 @@ optimize: $(EXEC)
 
 # Compilation rule
 $(EXEC): $(SRCS)
-	$(CXX) $(CXXFLAGS) $(SRCS) -o $(EXEC)
+	$(CXX) $(CXXFLAGS) $(SRCS) -o $(EXEC) $(LDFLAGS)
 
 # Clean rule
 clean:
