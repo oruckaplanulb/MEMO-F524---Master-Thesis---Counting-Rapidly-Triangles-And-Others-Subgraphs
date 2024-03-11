@@ -131,11 +131,34 @@ void fct4(int argc, char* argv[]){
 
 int main(int argc, char* argv[]){
     //execute the tests in the test cases
-    TestCases::testGnutellasNodeIteratorPlusPlus(100);
+    //TestCases::testGnutellasNodeIteratorPlusPlus(100);
     //TestCases::testGnutellasNodeIterator(100);
-    //fct5(argc, argv);
+    //fct3(argc, argv);
+
+    GraphFiller* graphFiller = new GraphFiller();
+    string filePath = argv[1];
+
+    GraphEdgListVP* g = new GraphEdgListVP();
+    graphFiller->setGraphFromFileMapped(filePath, g);
+    cout << "- Graph Edg List-"<< endl;
+    cout << "Vertices: " << g->getNumVertices() << endl;
+    cout << "Edges: " << g->getNumEdges() << endl;
+
+    int cpt = 0;
+    auto start = chrono::high_resolution_clock::now();
+    auto end = chrono::high_resolution_clock::now();
+    chrono::duration<double> elapsed_seconds;
+
+    start = chrono::high_resolution_clock::now();
+    cpt = g->countTrianglesForward();
+    end = chrono::high_resolution_clock::now();
+    elapsed_seconds = end-start;
+    cout << "Number of triangles Forward: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << endl;
 
 
+
+    delete g;
+    delete graphFiller;
 
     return 0;
 }

@@ -124,7 +124,7 @@ public:
     bool isBiggerOrder(int vrtx1, int vrtx2) const override;
     void printGraph() const override;
     bool hasEdge(int vrtx1, int vrtx2) const override;
-    std::list<int> getNeighbors(int v);
+    std::vector<int> getNeighbors(int v) const;
 
     int countTrianglesEdgeIterator() const;
     int countTrianglesForward() const;

@@ -1,4 +1,6 @@
 #include "../headers/Graph.hpp"
+#include <numeric>
+#include <algorithm>
 
 using namespace std;
 
@@ -54,11 +56,52 @@ bool GraphEdgListVP::hasEdge(int vrtx1, int vrtx2) const {
     return false;
 }
 
-int GraphEdgListVP::countTrianglesEdgeIterator() const {
+vector<int> GraphEdgListVP::getNeighbors(int v) const{
+    vector<int> neighbors;
+    for (const pair<int, int>& edge : edgeList) {
+        if (edge.first == v) {
+            neighbors.push_back(edge.second);
+        } else if (edge.second == v) {
+            neighbors.push_back(edge.first);
+        }
+    }
+    return neighbors;
+}
 
+int GraphEdgListVP::countTrianglesEdgeIterator() const {
     return 0;
 }
 
 int GraphEdgListVP::countTrianglesForward() const {
-    return 0;
+    int triangleCount = 0;
+    vector<unordered_set<int>> A(numVertices);
+
+    // Sort vertices by non-increasing degree
+    vector<int> vertices;
+    for (int i = 0; i < numVertices; ++i) {
+        vertices.push_back(i);
+    }
+    sort(vertices.begin(), vertices.end(), [this](int v1, int v2) {
+        return degree(v1) > degree(v2);
+    });
+
+    // Forward algorithm
+    for (int vi : vertices) {
+        for (int vl : getNeighbors(vi)) {
+            if (vi < vl) {
+                for (int v : A[vi]) {
+                    if (A[vl].count(v) > 0) {
+                        ++triangleCount;
+                    }
+                }
+            }
+        }
+        for (int vl : getNeighbors(vi)) {
+            if (vi < vl) {
+                A[vl].insert(vi);
+            }
+        }
+    }
+
+    return triangleCount;
 }
