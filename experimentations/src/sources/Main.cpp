@@ -146,25 +146,25 @@ int main(int argc, char* argv[]){
     chrono::duration<double> elapsed_seconds;
 
     start = chrono::high_resolution_clock::now();
-    cpt = g->countTrianglesMatrixSquaring(Matrix::multiplyBlas, 8);
+    cpt = g->countTrianglesMatrixSquaring(Matrix::multiplyBlasDSYMM, 8);
     end = chrono::high_resolution_clock::now();
     elapsed_seconds = end-start;
     cout << "Number of triangles Matrix Squaring Blas: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << endl;
 
     start = chrono::high_resolution_clock::now();
-    cpt = g->countTrianglesMatrixSquaringParallel(Matrix::multiplyBlas, 8, 8);
+    cpt = g->countTrianglesMatrixSquaring(Matrix::multiplyBlasSSYMM, 8);
     end = chrono::high_resolution_clock::now();
     elapsed_seconds = end-start;
     cout << "Number of triangles Matrix Squaring Blas: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << endl;
 
     start = chrono::high_resolution_clock::now();
-    cpt = g->countTrianglesMatrixCube(Matrix::multiplyBlas, 8);
+    cpt = g->countTrianglesMatrixCube(Matrix::multiplyBlasDSYMM, 8);
     end = chrono::high_resolution_clock::now();
     elapsed_seconds = end-start;
     cout << "Number of triangles Matrix Cube Blas: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << endl;
 
     start = chrono::high_resolution_clock::now();
-    cpt = g->countTrianglesMatrixCubeParallel(Matrix::multiplyBlas, 8, 8);
+    cpt = g->countTrianglesMatrixCube(Matrix::multiplyBlasSSYMM, 8);
     end = chrono::high_resolution_clock::now();
     elapsed_seconds = end-start;
     cout << "Number of triangles Matrix Cube Blas: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << endl;

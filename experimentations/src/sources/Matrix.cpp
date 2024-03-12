@@ -90,7 +90,7 @@ vector<vector<int>> Matrix::multiplyNaiveParallel(const vector<vector<int>>& mat
     return result;
 }
 
-std::vector<std::vector<int>> Matrix::multiplyBlas(const std::vector<std::vector<int>>& mat1, const std::vector<std::vector<int>>& mat2, int numThreads) {
+std::vector<std::vector<int>> Matrix::multiplyBlasDGEMM(const std::vector<std::vector<int>>& mat1, const std::vector<std::vector<int>>& mat2, int numThreads) {
     int n = mat1.size();
     int m = mat2[0].size();
     int p = mat2.size();
@@ -127,6 +127,120 @@ std::vector<std::vector<int>> Matrix::multiplyBlas(const std::vector<std::vector
     return result;
 }
 
+std::vector<std::vector<int>> Matrix::multiplyBlasSGEMM(const std::vector<std::vector<int>>& mat1, const std::vector<std::vector<int>>& mat2, int numThreads) {
+    int n = mat1.size();
+    int m = mat2[0].size();
+    int p = mat2.size();
+
+    std::vector<std::vector<int>> result(n, std::vector<int>(m, 0));
+
+    std::vector<float> mat1_flat;
+    for (const auto& row : mat1) {
+        for (int element : row) {
+            mat1_flat.push_back(static_cast<double>(element));
+        }
+    }
+
+    std::vector<float> mat2_flat;
+    for (const auto& row : mat2) {
+        for (int element : row) {
+            mat2_flat.push_back(static_cast<double>(element));
+        }
+    }
+
+    std::vector<float> result_flat(n * m, 0.0);
+
+    openblas_set_num_threads(numThreads);
+
+    cblas_sgemm(CblasRowMajor, CblasNoTrans, CblasNoTrans,
+                n, m, p, 1.0, mat1_flat.data(), p, mat2_flat.data(), m, 0.0, result_flat.data(), m);
+
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < m; ++j) {
+            result[i][j] = static_cast<int>(result_flat[i * m + j]);
+        }
+    }
+
+    return result;
+}
+
+std::vector<std::vector<int>> Matrix::multiplyBlasDSYMM(const std::vector<std::vector<int>>& mat1, const std::vector<std::vector<int>>& mat2, int numThreads) {
+    int n = mat1.size();
+    int m = mat2[0].size();
+    if (n != m) {
+        throw std::invalid_argument("Input matrices must have the same size");
+    }
+
+    std::vector<std::vector<int>> result(n, std::vector<int>(m, 0));
+
+    std::vector<double> mat1_flat;
+    for (const auto& row : mat1) {
+        for (int element : row) {
+            mat1_flat.push_back(static_cast<double>(element));
+        }
+    }
+
+    std::vector<double> mat2_flat;
+    for (const auto& row : mat2) {
+        for (int element : row) {
+            mat2_flat.push_back(static_cast<double>(element));
+        }
+    }
+
+    std::vector<double> result_flat(n * m, 0.0);
+
+    openblas_set_num_threads(numThreads);
+
+    cblas_dsymm(CblasRowMajor, CblasRight, CblasLower,
+                n, n, 1.0, mat1_flat.data(), n, mat2_flat.data(), n, 0.0, result_flat.data(), n);
+
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < m; ++j) {
+            result[i][j] = static_cast<int>(result_flat[i * m + j]);
+        }
+    }
+
+    return result;
+}
+
+std::vector<std::vector<int>> Matrix::multiplyBlasSSYMM(const std::vector<std::vector<int>>& mat1, const std::vector<std::vector<int>>& mat2, int numThreads) {
+    int n = mat1.size();
+    int m = mat2[0].size();
+    if (n != m) {
+        throw std::invalid_argument("Input matrices must have the same size");
+    }
+
+    std::vector<std::vector<int>> result(n, std::vector<int>(m, 0));
+
+    std::vector<float> mat1_flat;
+    for (const auto& row : mat1) {
+        for (int element : row) {
+            mat1_flat.push_back(static_cast<double>(element));
+        }
+    }
+
+    std::vector<float> mat2_flat;
+    for (const auto& row : mat2) {
+        for (int element : row) {
+            mat2_flat.push_back(static_cast<double>(element));
+        }
+    }
+
+    std::vector<float> result_flat(n * m, 0.0);
+
+    openblas_set_num_threads(numThreads);
+
+    cblas_ssymm(CblasRowMajor, CblasRight, CblasLower,
+                n, n, 1.0, mat1_flat.data(), n, mat2_flat.data(), n, 0.0, result_flat.data(), n);
+
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < m; ++j) {
+            result[i][j] = static_cast<int>(result_flat[i * m + j]);
+        }
+    }
+
+    return result;
+}
 
 vector<vector<int>> Matrix::multiplyStrassen(const vector<vector<int>>& mat1, const vector<vector<int>>& mat2) {
     int n = mat1.size();
