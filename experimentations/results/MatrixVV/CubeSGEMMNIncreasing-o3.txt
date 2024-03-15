@@ -1,0 +1,60 @@
+Graph: ../graphs/Network-gtc/email-eu-core.txt | Function: MatrixCubingSGEMM | Result: 105461
+Min: 79.7903 ms Max: 105.967 ms Avg: 84.2148 ms
+1. 105.967 ms
+2. 81.7477 ms
+3. 82.7796 ms
+4. 79.7903 ms
+5. 83.8097 ms
+6. 82.8063 ms
+7. 80.8224 ms
+8. 80.8098 ms
+9. 82.8143 ms
+10. 80.8011 ms
+Graph: ../graphs/Social-Network/ego-facebook.txt | Function: MatrixCubingSGEMM | Result: 1612010
+Min: 3029.94 ms Max: 3118.67 ms Avg: 3062.32 ms
+1. 3118.67 ms
+2. 3091.73 ms
+3. 3029.94 ms
+4. 3082.78 ms
+5. 3051.84 ms
+6. 3039.9 ms
+7. 3060.79 ms
+8. 3032.92 ms
+9. 3066.77 ms
+10. 3047.85 ms
+Graph: ../graphs/Social-Network/wiki-Vote.txt | Function: MatrixCubingSGEMM | Result: 608389
+Min: 15302.1 ms Max: 15607.3 ms Avg: 15432.5 ms
+1. 15538.5 ms
+2. 15396.8 ms
+3. 15420.8 ms
+4. 15505.6 ms
+5. 15519.5 ms
+6. 15312.1 ms
+7. 15349 ms
+8. 15372.9 ms
+9. 15302.1 ms
+10. 15607.3 ms
+Graph: ../graphs/Collaboration-Network/CA-HepPh.txt | Function: MatrixCubingSGEMM | Result: 3358499
+Min: 71031.1 ms Max: 74949.7 ms Avg: 72320.1 ms
+1. 72134.2 ms
+2. 71447 ms
+3. 71031.1 ms
+4. 71863.9 ms
+5. 72376.5 ms
+6. 72454.3 ms
+7. 72497.2 ms
+8. 72275.8 ms
+9. 72171 ms
+10. 74949.7 ms
+Graph: ../graphs/p2p-Gnutella/p2p-Gnutella25.txt | Function: MatrixCubingSGEMM | Result: 806
+Min: 512115 ms Max: 527861 ms Avg: 520383 ms
+1. 512115 ms
+2. 521573 ms
+3. 527861 ms
+4. 518406 ms
+5. 519383 ms
+6. 523676 ms
+7. 522766 ms
+8. 520565 ms
+9. 515253 ms
+10. 522232 ms

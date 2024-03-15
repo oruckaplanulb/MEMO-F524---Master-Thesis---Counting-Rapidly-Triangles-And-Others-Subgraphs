@@ -14,8 +14,14 @@ EXEC := ../Main.exe
 all: $(EXEC)
 
 # Target to compile with -O3 optimization level
-optimize: CXXFLAGS += -O3
-optimize: $(EXEC)
+optimizeO3: CXXFLAGS += -O3
+optimizeO3: $(EXEC)
+
+optimizeO2: CXXFLAGS += -O2
+optimizeO2: $(EXEC)
+
+optimizeO1: CXXFLAGS += -O1
+optimizeO1: $(EXEC)
 
 # Compilation rule
 $(EXEC): $(SRCS)

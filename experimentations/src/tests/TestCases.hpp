@@ -1,5 +1,5 @@
-#ifndef TEST_CASES_H
-#define TEST_CASES_H
+#ifndef TESTCASES_HPP
+#define TESTCASES_HPP
 
 #include "../headers/Graph.hpp"
 #include "../headers/Matrix.hpp"

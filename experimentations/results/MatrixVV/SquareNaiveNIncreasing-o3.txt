@@ -1,0 +1,9 @@
+Graph: ../graphs/Network-gtc/email-eu-core.txt | Function: MatrixSquaringNaive | Result: 105461
+Min: 1737.39 ms Max: 1737.39 ms Avg: 1737.39 ms
+1. 1737.39 ms
+Graph: ../graphs/Social-Network/ego-facebook.txt | Function: MatrixSquaringNaive | Result: 1612010
+Min: 456478 ms Max: 456478 ms Avg: 456478 ms
+1. 456478 ms
+Graph: ../graphs/Social-Network/wiki-Vote.txt | Function: MatrixSquaringNaive | Result: 608389
+Min: 2.41844e+06 ms Max: 2.41844e+06 ms Avg: 2.41844e+06 ms
+1. 2.41844e+06 ms

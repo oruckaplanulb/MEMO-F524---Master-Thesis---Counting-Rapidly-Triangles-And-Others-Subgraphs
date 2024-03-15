@@ -1,7 +1,7 @@
 #include "../headers/Graph.hpp"
 #include "../headers/Matrix.hpp"
 #include "../headers/GraphFiller.hpp"
-#include "../tests/TestCases.hpp"
+#include "../tests/TestMatrices.hpp"
 #include <chrono>
 
 using namespace std;
@@ -180,28 +180,7 @@ void fct5(int argc, char* argv[]){
 
 int main(int argc, char* argv[]){
 
-    GraphFiller* graphFiller = new GraphFiller();
-    string filePath = argv[1];
-
-    GraphAdjListVUS* g = new GraphAdjListVUS();
-    graphFiller->setGraphFromFileMapped(filePath, g);
-    cout << "- Graph -"<< endl;
-    cout << "Vertices: " << g->getNumVertices() << endl;
-    cout << "Edges: " << g->getNumEdges() << endl;
-
-    int cpt = 0;
-    auto start = chrono::high_resolution_clock::now();
-    auto end = chrono::high_resolution_clock::now();
-    chrono::duration<double> elapsed_seconds;
-
-    start = chrono::high_resolution_clock::now();
-    cpt = g->countTrianglesNodeIteratorPlusPlus();
-    end = chrono::high_resolution_clock::now();
-    elapsed_seconds = end-start;
-    cout << "Number of triangles: " << cpt << " ("<< elapsed_seconds.count()*1000 << "ms)" << endl;
-
-    delete g;
-    delete graphFiller;
+    TestMatrices::testCubeNIncreasingSGEMM(10);
 
     return 0;
 }
