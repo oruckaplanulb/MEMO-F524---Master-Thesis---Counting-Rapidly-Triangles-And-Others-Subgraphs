@@ -180,7 +180,7 @@ void fct5(int argc, char* argv[]){
 
 int main(int argc, char* argv[]){
 
-    TestMatrices::testCubeNIncreasingSGEMM(10);
+    TestMatrices::testCubeNIncreasingSSYMM(10);
 
     return 0;
 }
