@@ -6,7 +6,7 @@ LDFLAGS := -L"D:/msys64/OpenBLAS/lib" -lopenblas
 # Source files
 SRCDIR := sources
 SRCS := $(wildcard $(SRCDIR)/*.cpp)
-EXEC := ../Main.exe
+EXEC := ../AAMain.exe
 
 .PHONY: all clean optimize
 
