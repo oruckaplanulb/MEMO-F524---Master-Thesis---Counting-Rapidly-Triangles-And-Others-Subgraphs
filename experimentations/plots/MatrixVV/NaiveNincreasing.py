@@ -11,8 +11,8 @@ bar_width = 0.35
 index = range(len(inputs))
 
 fig, ax = plt.subplots(figsize=(10, 3), dpi=100)
-alg1_bars = ax.barh(index, alg1_times, bar_width, color="#fd7f6f", label='Matrix Cube')
-alg2_bars = ax.barh([i + bar_width for i in index], alg2_times, bar_width, color="#7eb0d5", label='Matrix Squaring')
+alg1_bars = ax.barh(index, alg1_times, bar_width, color="#fd7f6f", label='by Matrix Cube')
+alg2_bars = ax.barh([i + bar_width for i in index], alg2_times, bar_width, color="#7eb0d5", label='by Matrix Squaring')
 
 for i, v in enumerate(alg1_times):
     ax.text(v, i, str(v), va='center', ha='left', fontsize=9) 
@@ -30,9 +30,7 @@ ax.set_xlim(right=max(alg1_times + alg2_times) * 1.1)
 
 plt.tight_layout()
 
-# Get the directory of the script
 script_dir = os.path.dirname(os.path.abspath(__file__))
-# Save the plot in the same directory as the script
 plt.savefig(os.path.join(script_dir, 'NaiveNincreasing.png'))
 
 plt.show()

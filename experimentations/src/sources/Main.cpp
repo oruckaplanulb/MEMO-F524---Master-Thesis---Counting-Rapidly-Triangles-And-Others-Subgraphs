@@ -181,22 +181,7 @@ void fct5(int argc, char* argv[]){
 
 int main(int argc, char* argv[]){
 
-    //TestMatrices::testSquareNIncreasingSSYMM(10);
-
-    GraphFiller* graphFiller = new GraphFiller();
-    string filePath = argv[1];
-
-    GraphAdjMatrixVV* g = new GraphAdjMatrixVV();
-    graphFiller->setGraphFromFileMapped(filePath, g);
-    delete graphFiller;
-    cout << "- Graph Edg List-"<< endl;
-    cout << "Vertices: " << g->getNumVertices() << endl;
-    cout << "Edges: " << g->getNumEdges() << endl;
-
-    g->countTrianglesMatrixSquaring(Matrix::multiplyNaiveParallel, 1);
-
-    delete g;
-
+    TestMatrices::testSquareCubeDoubleVsSimplePrec(10);
     return 0;
 }
 

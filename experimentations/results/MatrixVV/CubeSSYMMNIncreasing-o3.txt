@@ -58,3 +58,15 @@ Min: 491920 ms Max: 511877 ms Avg: 502324 ms
 8. 500990 ms
 9. 511877 ms
 10. 501279 ms
+Graph: ../graphs/Citation-Network/Cit-HepTh.txt | Function: MatrixCubingSSYMM | Result: 1478735
+Min: 845556 ms Max: 860742 ms Avg: 850689 ms
+1. 860742 ms
+2. 845556 ms
+3. 852545 ms
+4. 851626 ms
+5. 849235 ms
+6. 848623 ms
+7. 850762 ms
+8. 847324 ms
+9. 849232 ms
+10. 851254 ms

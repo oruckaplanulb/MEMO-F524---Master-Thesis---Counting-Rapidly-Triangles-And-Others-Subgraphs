@@ -269,6 +269,92 @@ public:
             resultsEncoder->encodeResults("../results/MatrixVV/SquareSSYMMNIncreasing.txt", graphPath, "MatrixSquaringSSYMM", times, cpt); 
         }
     }
+
+    static void testSquareCubeDoubleVsSimplePrec(int nbRuns) {
+        string path = "../graphs/Social-Network/ego-facebook.txt";
+        GraphFiller* graphFiller = new GraphFiller();
+        GraphAdjMatrixVV* graphMatrixVV = new GraphAdjMatrixVV();
+        graphFiller->setGraphFromFileMapped(path, graphMatrixVV);
+        delete graphFiller;
+
+        cout << "- Graph Matrix VV-"<< endl;
+        cout << "Vertices: " << graphMatrixVV->getNumVertices() << endl;
+        cout << "Edges: " << graphMatrixVV->getNumEdges() << endl;
+
+        int cpt = 0;
+        auto start = chrono::high_resolution_clock::now();
+        auto end = chrono::high_resolution_clock::now();
+        chrono::duration<double> elapsed_seconds;
+        chrono::duration<double> total_seconds;
+        vector<chrono::duration<double>> SquareSGEMMtimes;
+        vector<chrono::duration<double>> SquareDGEMMtimes;
+        vector<chrono::duration<double>> CubeSGEMMtimes;
+        vector<chrono::duration<double>> CubeDGEMMtimes;
+        ResultsEncoder* resultsEncoder = new ResultsEncoder();
+
+        cout << "Graph: " << path << " | Function: " << "MatrixSquaringSGEMM" << " NbRun: "<< nbRuns << endl;
+        total_seconds = chrono::duration<double>::zero();
+        for (int i = 0; i < nbRuns; ++i) {
+            cout << "Run number: " << i << endl;
+            start = chrono::high_resolution_clock::now();
+            cpt = graphMatrixVV->countTrianglesMatrixSquaring(Matrix::multiplyBlasSGEMM,1); //1 thread
+            end = chrono::high_resolution_clock::now();
+            elapsed_seconds = end-start;
+            total_seconds += elapsed_seconds;
+            SquareSGEMMtimes.push_back(elapsed_seconds);
+        }
+        cout << "Average time: " << total_seconds.count()*(1000/nbRuns) << "ms" << endl;
+        resultsEncoder->encodeResults("../results/MatrixVV/DoubleVsSimplePrec.txt", path, "MatrixSquaringSGEMM", SquareSGEMMtimes, cpt);
+
+        cout << "Graph: " << path << " | Function: " << "MatrixSquaringDGEMM" << " NbRun: "<< nbRuns << endl;
+        total_seconds = chrono::duration<double>::zero();
+        for (int i = 0; i < nbRuns; ++i) {
+            cout << "Run number: " << i << endl;
+            start = chrono::high_resolution_clock::now();
+            cpt = graphMatrixVV->countTrianglesMatrixSquaring(Matrix::multiplyBlasDGEMM,1); //1 thread
+            end = chrono::high_resolution_clock::now();
+            elapsed_seconds = end-start;
+            total_seconds += elapsed_seconds;
+            SquareDGEMMtimes.push_back(elapsed_seconds);
+        }
+        cout << "Average time: " << total_seconds.count()*(1000/nbRuns) << "ms" << endl;
+        resultsEncoder->encodeResults("../results/MatrixVV/DoubleVsSimplePrec.txt", path, "MatrixSquaringDGEMM", SquareDGEMMtimes, cpt);
+
+        cout << "Graph: " << path << " | Function: " << "MatrixCubeSGEMM" << " NbRun: "<< nbRuns << endl;
+        total_seconds = chrono::duration<double>::zero();
+        for (int i = 0; i < nbRuns; ++i) {
+            cout << "Run number: " << i << endl;
+            start = chrono::high_resolution_clock::now();
+            cpt = graphMatrixVV->countTrianglesMatrixCube(Matrix::multiplyBlasSGEMM,1); //1 thread
+            end = chrono::high_resolution_clock::now();
+            elapsed_seconds = end-start;
+            total_seconds += elapsed_seconds;
+            CubeSGEMMtimes.push_back(elapsed_seconds);
+        }
+        cout << "Average time: " << total_seconds.count()*(1000/nbRuns) << "ms" << endl;
+        resultsEncoder->encodeResults("../results/MatrixVV/DoubleVsSimplePrec.txt", path, "MatrixCubeSGEMM", CubeSGEMMtimes, cpt);
+
+        cout << "Graph: " << path << " | Function: " << "MatrixCubeDGEMM" << " NbRun: "<< nbRuns << endl;
+        total_seconds = chrono::duration<double>::zero();
+        for (int i = 0; i < nbRuns; ++i) {
+            cout << "Run number: " << i << endl;
+            start = chrono::high_resolution_clock::now();
+            cpt = graphMatrixVV->countTrianglesMatrixCube(Matrix::multiplyBlasDGEMM,1); //1 thread
+            end = chrono::high_resolution_clock::now();
+            elapsed_seconds = end-start;
+            total_seconds += elapsed_seconds;
+            CubeDGEMMtimes.push_back(elapsed_seconds);
+        }
+        cout << "Average time: " << total_seconds.count()*(1000/nbRuns) << "ms" << endl;
+        resultsEncoder->encodeResults("../results/MatrixVV/DoubleVsSimplePrec.txt", path, "MatrixCubeDGEMM", CubeDGEMMtimes, cpt);
+
+
+
+
+
+
+        delete graphMatrixVV; 
+    }
         
 };
 

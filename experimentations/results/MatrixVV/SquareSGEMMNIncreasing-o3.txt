@@ -58,3 +58,15 @@ Min: 254947 ms Max: 265854 ms Avg: 258631 ms
 8. 261624 ms
 9. 265854 ms
 10. 262113 ms
+Graph: ../graphs/Citation-Network/Cit-HepTh.txt | Function: MatrixSquaringSGEMM | Result: 1478735
+Min: 416294 ms Max: 429604 ms Avg: 423290 ms
+1. 416294 ms
+2. 425000 ms
+3. 425509 ms
+4. 423360 ms
+5. 421191 ms
+6. 424752 ms
+7. 423488 ms
+8. 421117 ms
+9. 429604 ms
+10. 422584 ms
