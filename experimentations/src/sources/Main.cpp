@@ -181,7 +181,17 @@ void fct5(int argc, char* argv[]){
 
 int main(int argc, char* argv[]){
 
-    TestMatrices::testSquareCubeDoubleVsSimplePrec(10);
+    GraphFiller* graphFiller = new GraphFiller();
+    string filePath = argv[1];
+
+    GraphAdjMatrixVV* graphMatrixVV = new GraphAdjMatrixVV();
+    graphFiller->setGraphFromFileMapped(filePath, graphMatrixVV);
+    cout << "- Graph List VUS-"<< endl;
+    cout << "Vertices: " << graphMatrixVV->getNumVertices() << endl;
+    cout << "Edges: " << graphMatrixVV->getNumEdges() << endl;
+
+    cout << graphMatrixVV->countTrianglesMatrixSquaring(Matrix::multiplyNaiveParallel, 1) << endl;
+
     return 0;
 }
 

@@ -1,15 +1,15 @@
 Graph: ../graphs/Social-Network/ego-facebook.txt | Function: MatrixSquaringSGEMM | Result: 1612010
-Min: 1404.24 ms Max: 1446.13 ms Avg: 1437.39 ms
-1. 1445.35 ms
-2. 1443.17 ms
-3. 1445.15 ms
-4. 1436.16 ms
-5. 1437.17 ms
-6. 1443.14 ms
-7. 1434.16 ms
-8. 1404.24 ms
-9. 1446.13 ms
-10. 1439.18 ms
+Min: 1554.81 ms Max: 1751.35 ms Avg: 1594.24 ms
+1. 1751.35 ms
+2. 1554.81 ms
+3. 1559.83 ms
+4. 1583.8 ms
+5. 1592.74 ms
+6. 1593.77 ms
+7. 1590.72 ms
+8. 1566.8 ms
+9. 1572.81 ms
+10. 1575.78 ms
 Graph: ../graphs/Social-Network/ego-facebook.txt | Function: MatrixSquaringDGEMM | Result: 1612010
 Min: 2776.61 ms Max: 2968.09 ms Avg: 2832.51 ms
 1. 2968.09 ms
@@ -23,17 +23,17 @@ Min: 2776.61 ms Max: 2968.09 ms Avg: 2832.51 ms
 9. 2815.49 ms
 10. 2821.49 ms
 Graph: ../graphs/Social-Network/ego-facebook.txt | Function: MatrixCubeSGEMM | Result: 1612010
-Min: 2729.7 ms Max: 2838.44 ms Avg: 2774.89 ms
-1. 2838.44 ms
-2. 2805.5 ms
-3. 2784.55 ms
-4. 2759.65 ms
-5. 2733.69 ms
-6. 2764.64 ms
-7. 2729.7 ms
-8. 2747.65 ms
-9. 2788.58 ms
-10. 2796.51 ms
+Min: 3029.94 ms Max: 3118.67 ms Avg: 3062.32 ms
+1. 3118.67 ms
+2. 3091.73 ms
+3. 3029.94 ms
+4. 3082.78 ms
+5. 3051.84 ms
+6. 3039.9 ms
+7. 3060.79 ms
+8. 3032.92 ms
+9. 3066.77 ms
+10. 3047.85 ms
 Graph: ../graphs/Social-Network/ego-facebook.txt | Function: MatrixCubeDGEMM | Result: 1612010
 Min: 5459.4 ms Max: 5606.03 ms Avg: 5552.86 ms
 1. 5606.03 ms

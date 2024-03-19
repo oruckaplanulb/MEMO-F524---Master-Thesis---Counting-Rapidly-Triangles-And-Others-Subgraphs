@@ -111,8 +111,8 @@ int GraphAdjMatrixVV::countTrianglesNodeIteratorPlusPlus() const {
 
 int GraphAdjMatrixVV::countTrianglesMatrixSquaring(function<vector<vector<int>>(const vector<vector<int>>&, const vector<vector<int>>&, int)> multiplyFunc, int numThreads) const {
     double count = 0;
-    vector<vector<int>> A = adjacencyMatrix;
-    vector<vector<int>> A2 = multiplyFunc(A, A, numThreads);
+    const vector<vector<int>>& A = adjacencyMatrix;
+    const vector<vector<int>>& A2 = multiplyFunc(A, A, numThreads);
 
     for(int i = 0; i < numVertices; i++){
         for(int j = 0; j < numVertices; j++){
@@ -124,8 +124,8 @@ int GraphAdjMatrixVV::countTrianglesMatrixSquaring(function<vector<vector<int>>(
 
 int GraphAdjMatrixVV::countTrianglesMatrixSquaringParallel(function<vector<vector<int>>(const vector<vector<int>>&, const vector<vector<int>>&, int)> multiplyFunc, int numThreadsMM, int numThreads) const {
     double count = 0;
-    vector<vector<int>> A = adjacencyMatrix;
-    vector<vector<int>> A2 = multiplyFunc(A, A, numThreadsMM);
+    const vector<vector<int>>& A = adjacencyMatrix;
+    const vector<vector<int>>& A2 = multiplyFunc(A, A, numThreadsMM);
 
     int chunkSize = numVertices / numThreads;
     vector<thread> threads;
@@ -153,9 +153,9 @@ int GraphAdjMatrixVV::countTrianglesMatrixSquaringParallel(function<vector<vecto
 
 int GraphAdjMatrixVV::countTrianglesMatrixCube(function<vector<vector<int>>(const vector<vector<int>>&, const vector<vector<int>>&, int)> multiplyFunc, int numThreads) const {
     double count = 0;
-    vector<vector<int>> A = adjacencyMatrix;
-    vector<vector<int>> A2 = multiplyFunc(A, A, numThreads);
-    vector<vector<int>> A3 = multiplyFunc(A2, A, numThreads);
+    const vector<vector<int>>& A = adjacencyMatrix;
+    const vector<vector<int>>& A2 = multiplyFunc(A, A, numThreads);
+    const vector<vector<int>>& A3 = multiplyFunc(A2, A, numThreads);
 
     for(int i = 0; i < numVertices; i++){
         count += A3[i][i];
@@ -165,9 +165,9 @@ int GraphAdjMatrixVV::countTrianglesMatrixCube(function<vector<vector<int>>(cons
 
 int GraphAdjMatrixVV::countTrianglesMatrixCubeParallel(function<vector<vector<int>>(const vector<vector<int>>&, const vector<vector<int>>&, int)> multiplyFunc, int numThreadsMM, int numThreads) const {
     double count = 0;
-    vector<vector<int>> A = adjacencyMatrix;
-    vector<vector<int>> A2 = multiplyFunc(A, A, numThreadsMM);
-    vector<vector<int>> A3 = multiplyFunc(A2, A, numThreadsMM);
+    const vector<vector<int>>& A = adjacencyMatrix;
+    const vector<vector<int>>& A2 = multiplyFunc(A, A, numThreadsMM);
+    const vector<vector<int>>& A3 = multiplyFunc(A2, A, numThreadsMM);
 
     int chunkSize = numVertices/numThreads;
     vector<thread> threads;

@@ -1,10 +1,10 @@
 import os
 import matplotlib.pyplot as plt
 
-singleP_times = [1437.39, 2774.89]
+singleP_times = [1594.24, 3062.32]
 doubleP_times = [2832.51, 5552.86]
-singleP_min = [1404.24, 2729.7]
-singleP_max = [1446.13, 2838.44]
+singleP_min = [1554.81, 3029.94]
+singleP_max = [1751.35, 3118.67]
 doubleP_min = [2776.61, 5459.4]
 doubleP_max = [2968.09, 5606.03]
 

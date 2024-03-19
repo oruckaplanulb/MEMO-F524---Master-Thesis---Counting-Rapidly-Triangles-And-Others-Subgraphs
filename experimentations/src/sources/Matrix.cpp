@@ -71,8 +71,8 @@ vector<vector<int>> Matrix::multiplyNaiveParallel(const vector<vector<int>>& mat
     result.resize(n, vector<int>(m, 0));
     vector<thread> threads;
     int chunkSize = n / numThreads;
-    //cout << "HELLO" << endl;
-    //std::this_thread::sleep_for(std::chrono::seconds(20));
+    cout << "HELLO" << endl;
+    std::this_thread::sleep_for(std::chrono::seconds(20));
 
     for (int i = 0; i < numThreads; ++i) {
         threads.push_back(thread([i, chunkSize, &mat1, &mat2, &result, m, p, numThreads] {
