@@ -1,0 +1,60 @@
+Graph: ../graphs/Social-Network/ego-facebook.txt | Function: NodeIteratorVV | Result: 1612010
+Min: 849.731 ms Max: 945.467 ms Avg: 887.135 ms
+1. 897.61 ms
+2. 859.729 ms
+3. 864.703 ms
+4. 849.731 ms
+5. 891.65 ms
+6. 908.537 ms
+7. 945.467 ms
+8. 934.526 ms
+9. 856.705 ms
+10. 862.694 ms
+Graph: ../graphs/Social-Network/ego-facebook.txt | Function: NodeIteratorPlusPlusVV | Result: 1612010
+Min: 6215.38 ms Max: 6737.02 ms Avg: 6368.27 ms
+1. 6384.92 ms
+2. 6737.02 ms
+3. 6291.15 ms
+4. 6218.37 ms
+5. 6496.62 ms
+6. 6365.01 ms
+7. 6293.15 ms
+8. 6379.97 ms
+9. 6301.15 ms
+10. 6215.38 ms
+Graph: ../graphs/Social-Network/ego-facebook.txt | Function: NodeIteratorPlusPlusOrderVV | Result: 1612010
+Min: 427.824 ms Max: 482.74 ms Avg: 443.727 ms
+1. 461.764 ms
+2. 427.854 ms
+3. 482.74 ms
+4. 443.834 ms
+5. 440.854 ms
+6. 435.86 ms
+7. 439.823 ms
+8. 437.865 ms
+9. 427.824 ms
+10. 438.854 ms
+Graph: ../graphs/Social-Network/ego-facebook.txt | Function: NodeIteratorVUS | Result: 1612010
+Min: 417.878 ms Max: 450.794 ms Avg: 425.964 ms
+1. 422.87 ms
+2. 418.881 ms
+3. 419.878 ms
+4. 441.818 ms
+5. 450.794 ms
+6. 427.89 ms
+7. 418.877 ms
+8. 417.878 ms
+9. 421.873 ms
+10. 418.878 ms
+Graph: ../graphs/Social-Network/ego-facebook.txt | Function: NodeIteratorPlusPlusVUS | Result: 1612010
+Min: 92.7837 ms Max: 107.744 ms Avg: 96.556 ms
+1. 99.7336 ms
+2. 95.7794 ms
+3. 96.7413 ms
+4. 95.7797 ms
+5. 93.7707 ms
+6. 94.7469 ms
+7. 93.7325 ms
+8. 92.7837 ms
+9. 94.7482 ms
+10. 107.744 ms

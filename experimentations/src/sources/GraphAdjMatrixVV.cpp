@@ -109,6 +109,35 @@ int GraphAdjMatrixVV::countTrianglesNodeIteratorPlusPlus() const {
     return count;
 }
 
+int GraphAdjMatrixVV::countTrianglesNodeIteratorPlusPlusWithOrder() const {
+
+    vector<int> vSortedByOrder(numVertices);
+    for (int i = 0; i < numVertices; ++i) {
+        vSortedByOrder[i] = i;
+    }
+    sort(vSortedByOrder.begin(), vSortedByOrder.end(), [this](int v1, int v2) {
+        return isBiggerOrder(v1, v2);
+    });
+    vector<int> vPositionInSorted(numVertices);
+    for (int i = 0; i < numVertices; ++i) {
+        vPositionInSorted[vSortedByOrder[i]] = i;
+    }
+
+    int count = 0;
+    for (int v = 0; v < numVertices; ++v) {
+        for (int u = 0; u < numVertices; ++u) {
+            if (hasEdge(v, u) && vPositionInSorted[u] > vPositionInSorted[v]) {
+                for (int w = 0; w < numVertices; ++w) {
+                    if (hasEdge(v, w) && hasEdge(u, w) && vPositionInSorted[w] > vPositionInSorted[u]){
+                        count++;
+                    }
+                }
+            }
+        }
+    }
+    return count;
+}
+
 int GraphAdjMatrixVV::countTrianglesMatrixSquaring(function<vector<vector<int>>(const vector<vector<int>>&, const vector<vector<int>>&, int)> multiplyFunc, int numThreads) const {
     double count = 0;
     const vector<vector<int>>& A = adjacencyMatrix;

@@ -106,7 +106,7 @@ int GraphAdjListVUS::countTrianglesEdgeIterator() const {
 }
 
 int GraphAdjListVUS::AYZ_Algorithm() const{
-    double beta = pow(getNumEdges(),2.0/4.0);
+    double beta = pow(getNumEdges(),(3.0-1)/(3.0+1));
 
     vector<double> delta(numVertices, 0);
     vector<int> Vlow, Vhigh;
@@ -157,11 +157,21 @@ int GraphAdjListVUS::AYZ_Algorithm() const{
     }
     cout << "TEST" << endl;
     if(Vhigh.size() != 0){
-        vector<vector<int>> M = Matrix::multiplyNaive(Matrix::multiplyNaive(A, A), A); // A^3
+        const vector<vector<int>>& A2 = Matrix::multiplyBlasSSYMM(A, A);
+        const vector<vector<int>>& M = Matrix::multiplyBlasSSYMM(A2, A); // A^3
+
+        //print M
+        /*cout << "Matrix M:" << endl;
+        for (int i = 0; i < Vhigh.size(); ++i) {
+            for (int j = 0; j < Vhigh.size(); ++j) {
+                cout << M[i][j] << " ";
+            }
+            cout << endl;
+        }*/
 
         for (int i = 0; i < Vhigh.size(); ++i) {
             int v = Vhigh[i];
-            delta[v] += M[i][i] / 2.0;
+            delta[v] += M[i][i];
         }
     }
 
