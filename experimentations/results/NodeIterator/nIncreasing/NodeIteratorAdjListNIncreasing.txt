@@ -1,0 +1,72 @@
+Graph: ../graphs/Network-gtc/email-eu-core.txt | Function: NodeIteratorAdjListNIncreasing | Result: 105461
+Min: 70.8455 ms Max: 104.721 ms Avg: 77.8946 ms
+1. 73.7917 ms
+2. 104.721 ms
+3. 71.8416 ms
+4. 71.7749 ms
+5. 74.8295 ms
+6. 83.7485 ms
+7. 77.7923 ms
+8. 73.8034 ms
+9. 70.8455 ms
+10. 75.7975 ms
+Graph: ../graphs/Social-Network/ego-facebook.txt | Function: NodeIteratorAdjListNIncreasing | Result: 1612010
+Min: 410.884 ms Max: 482.708 ms Avg: 431.257 ms
+1. 482.708 ms
+2. 441.85 ms
+3. 472.75 ms
+4. 418.881 ms
+5. 412.897 ms
+6. 418.912 ms
+7. 410.884 ms
+8. 414.892 ms
+9. 422.905 ms
+10. 415.891 ms
+Graph: ../graphs/Social-Network/wiki-Vote.txt | Function: NodeIteratorAdjListNIncreasing | Result: 608389
+Min: 795.872 ms Max: 850.717 ms Avg: 819.724 ms
+1. 826.79 ms
+2. 850.717 ms
+3. 844.777 ms
+4. 797.866 ms
+5. 797.898 ms
+6. 807.841 ms
+7. 823.831 ms
+8. 835.801 ms
+9. 815.85 ms
+10. 795.872 ms
+Graph: ../graphs/Collaboration-Network/CA-HepPh.txt | Function: NodeIteratorAdjListNIncreasing | Result: 3358499
+Min: 547.536 ms Max: 692.176 ms Avg: 580.832 ms
+1. 553.546 ms
+2. 634.336 ms
+3. 552.506 ms
+4. 559.497 ms
+5. 567.512 ms
+6. 559.535 ms
+7. 692.176 ms
+8. 560.536 ms
+9. 581.141 ms
+10. 547.536 ms
+Graph: ../graphs/p2p-Gnutella/p2p-Gnutella25.txt | Function: NodeIteratorAdjListNIncreasing | Result: 806
+Min: 37.9336 ms Max: 54.8555 ms Avg: 42.4882 ms
+1. 37.9336 ms
+2. 39.8864 ms
+3. 40.8971 ms
+4. 40.8723 ms
+5. 44.9137 ms
+6. 42.8787 ms
+7. 40.8964 ms
+8. 54.8555 ms
+9. 41.8535 ms
+10. 39.8947 ms
+Graph: ../graphs/Citation-Network/Cit-HepTh.txt | Function: NodeIteratorAdjListNIncreasing | Result: 1478735
+Min: 2327.78 ms Max: 2407.56 ms Avg: 2363.49 ms
+1. 2407.56 ms
+2. 2331.77 ms
+3. 2385.62 ms
+4. 2346.72 ms
+5. 2377.64 ms
+6. 2375.68 ms
+7. 2360.69 ms
+8. 2360.72 ms
+9. 2360.72 ms
+10. 2327.78 ms

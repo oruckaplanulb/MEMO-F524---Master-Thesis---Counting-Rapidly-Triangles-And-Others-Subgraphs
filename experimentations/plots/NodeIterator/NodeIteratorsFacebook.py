@@ -27,7 +27,7 @@ ax.set_yticklabels([])  # Remove y-axis labels
 ax.invert_yaxis()
 ax.legend(bars, alg_names, loc='lower right', handlelength=3)  # Add algorithm names to the legend
 #set title
-ax.set_title('NodeIterators comparaison for ego-facebook')
+ax.set_title('NodeIterators comparison for ego-facebook')
 
 plt.xlim(0, 7250)
 plt.tight_layout()

@@ -52,7 +52,7 @@ for i in range(len(x)):
 
 plt.xlabel('Number of Vertices')
 plt.ylabel('Running Time (ms)')
-plt.title('BLAS functions comparaison over n')
+plt.title('BLAS functions comparison over n')
 plt.legend()
 
 plt.xticks(range(0, 30001, 2500))

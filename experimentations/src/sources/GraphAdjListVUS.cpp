@@ -127,9 +127,21 @@ int GraphAdjListVUS::AYZ_Algorithm() const{
             for (const int& w : adjacencyList[v]) {
                 if (hasEdge(u, w)) {
                     if (degree(u) <= beta && degree(w) <= beta) {
-                        delta[v] += 1.0/3.0;
-                        delta[u] += 1.0/3.0;
-                        delta[w] += 1.0/3.0;
+                        if(delta[v] > (0.5 + (int) delta[v])){
+                            delta[v] = (int) delta[v] + 1;
+                        } else {
+                            delta[v] += 1.0/3;
+                        }
+                        if(delta[u] > (0.5 + (int) delta[u])){
+                            delta[u] = (int) delta[u] + 1;
+                        } else {
+                            delta[u] += 1.0/3;
+                        }
+                        if(delta[w] > (0.5 + (int) delta[w])){
+                            delta[w] = (int) delta[w] + 1;
+                        } else {
+                            delta[w] += 1.0/3;
+                        }
                     } else if (degree(u) > beta && degree(w) > beta) {
                         delta[v] += 1.0;
                         delta[u] += 1.0;
@@ -144,41 +156,26 @@ int GraphAdjListVUS::AYZ_Algorithm() const{
         }
     }
     
-    vector<vector<int>> A(Vhigh.size(), vector<int>(Vhigh.size(), 0));
 
-    for (int i = 0; i < Vhigh.size(); ++i) {
-        int v = Vhigh[i];
-        for (int j = 0; j < Vhigh.size(); ++j) {
-            int u = Vhigh[j];
-            if (hasEdge(v, u)) {
-                A[i][j] = 1;
+    if(Vhigh.size() > 0){
+        //create a vector of vector of size edge count
+        vector<vector<int>> A(getNumVertices(), vector<int>(getNumVertices(), 0));
+        for(int v : Vhigh){
+            for(int u : adjacencyList[v]){
+                A[v][u] = 1;
+                A[u][v] = 1;
             }
         }
-    }
-    cout << "TEST" << endl;
-    if(Vhigh.size() != 0){
-        const vector<vector<int>>& A2 = Matrix::multiplyBlasSSYMM(A, A);
-        const vector<vector<int>>& M = Matrix::multiplyBlasSSYMM(A2, A); // A^3
 
-        //print M
-        /*cout << "Matrix M:" << endl;
-        for (int i = 0; i < Vhigh.size(); ++i) {
-            for (int j = 0; j < Vhigh.size(); ++j) {
-                cout << M[i][j] << " ";
-            }
-            cout << endl;
-        }*/
+        vector<vector<int>> M = Matrix::multiplyBlasSSYMM(A, A, 8);
 
-        for (int i = 0; i < Vhigh.size(); ++i) {
-            int v = Vhigh[i];
-            delta[v] += M[i][i];
+        cout << "M size: " << M.size() << endl;
+
+        for(int v : Vhigh){
+            delta[v] += M[v][v];
         }
     }
 
-    /*cout << "Delta values:" << endl;
-    for (int v = 0; v < numVertices; ++v) {
-        cout << "Vertex " << v << ": " << delta[v] << endl;
-    }*/
 
     int count = 0;
     for (int v = 0; v < numVertices; ++v) {
