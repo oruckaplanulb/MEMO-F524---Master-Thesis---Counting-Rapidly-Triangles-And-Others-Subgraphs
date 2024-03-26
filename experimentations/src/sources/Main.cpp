@@ -9,15 +9,22 @@
 using namespace std;
 
 int main(int argc, char *argv[]){
-
-    /*GraphFiller *graphFiller = new GraphFiller();
-    GraphAdjListVUS *g = new GraphAdjListVUS();
+    /*
+    GraphFiller *graphFiller = new GraphFiller();
+    GraphAdjMatrixVV *g = new GraphAdjMatrixVV();
     graphFiller->setGraphFromFileMapped(argv[1], g);
 
-    cout << "- Graph Matrix VV-" << endl;
+    cout << "- Graph -" << endl;
     cout << "Vertices: " << g->getNumVertices() << endl;
     cout << "Edges: " << g->getNumEdges() << endl;
 
+    delete graphFiller;
+
+    cout << "result : " << g->countTrianglesNodeIteratorPlusPlus() << endl;
+
+    delete g;*/
+
+    /*
     int cpt = 0;
     auto start = chrono::high_resolution_clock::now();
     auto end = chrono::high_resolution_clock::now();
@@ -32,10 +39,8 @@ int main(int argc, char *argv[]){
     cout << "Elapsed time: " << elapsed_seconds.count()*1000 << "ms" << endl;*/
 
 
-    TestNodeIterators::testNodeIteratorAdjListNIncreasing(10);
-    TestNodeIterators::testNodeIteratorPlusPlusAdjListNIncreasing(10);
-    TestNodeIterators::testNodeIteratorAdjMatrixNIncreasing(10);
-    TestNodeIterators::testNodeIteratorPlusPlusAdjMatrixNIncreasing(10);
+    TestNodeIterators::testNodeIteratorPlusPlusAdjListNotreDameVsStanford(10);
+    TestNodeIterators::testNodeIteratorAdjListNotreDameVsStanford(10);
 
     return 0;
 }

@@ -1,0 +1,48 @@
+Graph: ../graphs/Web-graph/web-NotreDame.txt | Function: NodeIteratorPlusPlusAdjListNotreDameVsStanford | Result: 8910005
+Min: 309.208 ms Max: 411.895 ms Avg: 330.525 ms
+1. 309.208 ms
+2. 321.155 ms
+3. 326.119 ms
+4. 323.166 ms
+5. 311.169 ms
+6. 324.134 ms
+7. 315.156 ms
+8. 325.151 ms
+9. 411.895 ms
+10. 338.097 ms
+Graph: ../graphs/Web-graph/web-Stanford.txt | Function: NodeIteratorPlusPlusAdjListNotreDameVsStanford | Result: 11329473
+Min: 914.55 ms Max: 966.448 ms Avg: 933.322 ms
+1. 926.523 ms
+2. 948.465 ms
+3. 943.478 ms
+4. 920.591 ms
+5. 925.556 ms
+6. 925.528 ms
+7. 914.55 ms
+8. 966.448 ms
+9. 940.517 ms
+10. 921.563 ms
+Graph: ../graphs/Web-graph/web-NotreDame.txt | Function: NodeIteratorAdjListNotreDameVsStanford | Result: 8910005
+Min: 10364.3 ms Max: 10570.8 ms Avg: 10484.5 ms
+1. 10502.9 ms
+2. 10510.9 ms
+3. 10458 ms
+4. 10544.8 ms
+5. 10364.3 ms
+6. 10474 ms
+7. 10570.8 ms
+8. 10559.8 ms
+9. 10383.2 ms
+10. 10476 ms
+Graph: ../graphs/Web-graph/web-Stanford.txt | Function: NodeIteratorAdjListNotreDameVsStanford | Result: 11329473
+Min: 239451 ms Max: 281171 ms Avg: 255027 ms
+1. 281171 ms
+2. 260040 ms
+3. 263507 ms
+4. 261545 ms
+5. 241525 ms
+6. 243415 ms
+7. 255216 ms
+8. 257160 ms
+9. 247243 ms
+10. 239451 ms

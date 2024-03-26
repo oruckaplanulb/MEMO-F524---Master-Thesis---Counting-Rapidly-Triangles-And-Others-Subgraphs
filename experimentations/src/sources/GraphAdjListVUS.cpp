@@ -2,6 +2,7 @@
 #include "../headers/Matrix.hpp"
 #include <math.h>
 #include <map>
+#include <thread>
 
 using namespace std;
 

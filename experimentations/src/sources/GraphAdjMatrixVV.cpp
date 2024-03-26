@@ -115,7 +115,7 @@ int GraphAdjMatrixVV::countTrianglesNodeIteratorPlusPlusWithOrder() const {
     for (int i = 0; i < numVertices; ++i) {
         vSortedByOrder[i] = i;
     }
-    sort(vSortedByOrder.begin(), vSortedByOrder.end(), [this](int v1, int v2) {
+    sort(vSortedByOrder.begin(), vSortedByOrder.end(), [this](int v1,int v2) {
         return isBiggerOrder(v1, v2);
     });
     vector<int> vPositionInSorted(numVertices);
