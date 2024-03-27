@@ -4,8 +4,8 @@ from matplotlib import patheffects
 
 names1 = ['p2p-Gnut04', 'p2p-Gnut25', 'p2p-Gnut24', 'p2p-Gnut30', 'p2p-Gnut31']
 num_vertices = [10876, 22687, 26518, 36682, 62586]
-adjMatrix = [463.960, 2014.512, 2751.068, 5262.000, 11658.000]
-adjMatrixBool = [463.960/4, 2014.512/4, 2751.068/4, 5262.000/4, 11658.000/4]
+adjMatrix = [463.960, 2014.512, 2751.068, 5262.000, 15658.000]
+adjMatrixBool = [463.960/4, 2014.512/4, 2751.068/4, 5262.000/4, 15658.000/4]
 names2 = ['p2p-Gnut08', 'p2p-Gnut09', 'p2p-Gnut06', 'p2p-Gnut04', 'p2p-Gnut25', 'p2p-Gnut24']
 num_edges = [20777, 26013, 31525, 39994, 54705, 65369]
 adjList = [3.508, 4.532, 4.640, 5.596, 9.012, 10.460 ] 
@@ -42,7 +42,7 @@ plt.xlabel('Number of Vertices (n) / Number of Edges (m)')
 plt.ylabel('Memory Consumption (MB)')
 
 plt.xlim(5000, 70000)
-plt.ylim(-100, 3300)
+plt.ylim(-100, 4000)
 
 plt.legend(loc='upper left')
 
