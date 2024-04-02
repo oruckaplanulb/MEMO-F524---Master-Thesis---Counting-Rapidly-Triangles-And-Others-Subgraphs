@@ -39,8 +39,8 @@ int main(int argc, char *argv[]){
     cout << "Elapsed time: " << elapsed_seconds.count()*1000 << "ms" << endl;*/
 
 
-    TestNodeIterators::testNodeIteratorPlusPlusAdjListNotreDameVsStanford(10);
-    TestNodeIterators::testNodeIteratorAdjListNotreDameVsStanford(10);
+    TestNodeIterators::testNodeIteratorPlusPlusAdjMatrixMIncreasing(10);
+    TestNodeIterators::testNodeIteratorAdjMatrixMIncreasing(10);
 
     return 0;
 }

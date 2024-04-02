@@ -52,9 +52,9 @@ y4_max = [round(y4_max[i], 2) for i in range(len(y4_max))]
 def add_contour(text):
     return [patheffects.withStroke(linewidth=3, foreground='white'), patheffects.Normal()]
 
-# Plotting y1 vs y2 on the left
-bars1 = axs[0].bar(x - width/2, y1, width, label='NodeIterator', color='#ff5733')
-bars2 = axs[0].bar(x + width/2, y2, width, label='NodeIteratorPlusPlus', color='#33ffbd')
+# Plotting y1 vs y2 on the left "#bd7ebe", "#ffb55a"
+bars1 = axs[0].bar(x - width/2, y1, width, label='NodeIterator', color='#bd7ebe')
+bars2 = axs[0].bar(x + width/2, y2, width, label='NodeIteratorPlusPlus', color='#ffb55a')
 axs[0].errorbar(x - width/2, y1, yerr=[y1_min, y1_max], fmt='none', capsize=5, color='black', alpha=0.5)
 axs[0].errorbar(x + width/2, y2, yerr=[y2_min, y2_max], fmt='none', capsize=5, color='black', alpha=0.5)
 axs[0].set_xticks(x)
@@ -75,9 +75,9 @@ for bar1, bar2, i in zip(bars1, bars2, x):
     text2 = axs[0].text(bar2.get_x() + bar2.get_width()/2, height2 + y2_max[i] + 10, f'+{y2_max[i]}\n{y2[i]}\n-{y2_min[i]}', ha='center', va='bottom', fontsize=6)
     text2.set_path_effects(add_contour(text2))
 
-# Plotting y3 vs y4 on the right
-bars3 = axs[1].bar(x - width/2, y3, width, label='NodeIterator', color='#ff338a')
-bars4 = axs[1].bar(x + width/2, y4, width, label='NodeIteratorPlusPlus', color='#3366ff')
+# Plotting y3 vs y4 on the right "#fd7f6f", "#b2e061"
+bars3 = axs[1].bar(x - width/2, y3, width, label='NodeIterator', color='#fd7f6f')
+bars4 = axs[1].bar(x + width/2, y4, width, label='NodeIteratorPlusPlus', color='#b2e061')
 axs[1].errorbar(x - width/2, y3, yerr=[y3_min, y3_max], fmt='none', capsize=5, color='black', alpha=0.5)
 axs[1].errorbar(x + width/2, y4, yerr=[y4_min, y4_max], fmt='none', capsize=5, color='black', alpha=0.5)
 axs[1].set_xticks(x)
