@@ -218,3 +218,25 @@ int GraphAdjMatrixVV::countTrianglesMatrixCubeParallel(function<vector<vector<in
 
     return count/6;
 }
+
+int GraphAdjMatrixVV::count4CyclesMatrixPow4(function<vector<vector<int>>(const vector<vector<int>>&, const vector<vector<int>>&, int)> multiplyFunc, int numThreads) const {
+    double countTrace = 0;
+    double countH2 = 0;
+    double countH1 = 0;
+    const vector<vector<int>>& A = adjacencyMatrix;
+    const vector<vector<int>>& A2 = multiplyFunc(A, A, numThreads);
+    const vector<vector<int>>& A4 = multiplyFunc(A2, A2, numThreads);
+
+    for(int i = 0; i < numVertices; i++){
+        countTrace += A4[i][i];
+    }
+
+    for(int i = 0; i < numVertices; i++){
+        int di = degree(i);
+        //di choose 2
+        countH2 += (di*(di-1))/2;
+    }
+    countH1 = getNumEdges();
+
+    return (countTrace - (4*countH2) - (2*countH1))/8;
+}

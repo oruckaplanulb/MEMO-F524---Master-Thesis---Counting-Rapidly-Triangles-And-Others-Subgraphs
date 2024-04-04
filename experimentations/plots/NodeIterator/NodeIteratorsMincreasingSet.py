@@ -64,9 +64,9 @@ def add_contour(text):
     return [patheffects.withStroke(linewidth=3, foreground='white'), patheffects.Normal()]
 
 # Plotting y1 vs y2 on the left subplot
-axs[1].plot(m, y1, marker='o', linestyle='-', color='#bd7ebe', label='NodeIterator')
+axs[1].plot(m, y1, marker='o',markersize=1, linestyle='-', color='#bd7ebe', label='NodeIterator')
 axs[1].errorbar(m, y1, yerr=[y1_min, y1_max], capsize=5, label='_error', color='#bd7ebe', alpha=0.5)
-axs[1].plot(m, y2, marker='o', linestyle='-', color='#ffb55a', label='NodeIteratorPlusPlus')
+axs[1].plot(m, y2, marker='o',markersize=1, linestyle='-', color='#ffb55a', label='NodeIteratorPlusPlus')
 axs[1].errorbar(m, y2, yerr=[y2_min, y2_max], capsize=5, label='_error', color='#ffb55a', alpha=0.5)
 
 for i in range(len(m)):
@@ -84,14 +84,16 @@ for i in range(len(m)):
 axs[1].set_xlabel('Number of edges (m)')
 axs[1].set_title('Adjacency List')
 axs[1].grid(True)
-axs[1].set_xlim(17000, 92000)
-axs[1].set_ylim(-1, 85)
+axs[1].set_xlim(16000, 93000)
+axs[1].set_ylim(-1, 86)
 axs[1].legend()
+#set legent top left
+axs[1].legend(loc='upper left')
 
 # Plotting y3 vs y4 on the right subplot
-axs[0].plot(m, y3, marker='o', linestyle='-', color='#fd7f6f', label='NodeIterator')
+axs[0].plot(m, y3, marker='o',markersize=1, linestyle='-', color='#fd7f6f', label='NodeIterator')
 axs[0].errorbar(m, y3, yerr=[y3_min, y3_max], capsize=5, label='_error', color='#fd7f6f', alpha=0.5)
-axs[0].plot(m, y4, marker='o', linestyle='-', color='#b2e061', label='NodeIteratorPlusPlus')
+axs[0].plot(m, y4, marker='o',markersize=1, linestyle='-', color='#b2e061', label='NodeIteratorPlusPlus')
 axs[0].errorbar(m, y4, yerr=[y4_min, y4_max], capsize=5, label='_error', color='#b2e061', alpha=0.5)
 
 for i in range(len(m)):
@@ -109,10 +111,11 @@ for i in range(len(m)):
 axs[0].set_xlabel('Number of edges (m)')
 axs[0].set_ylabel('Average Running Time (ms)')
 axs[0].set_title('Adjacency Matrix')
-axs[0].set_xlim(17000, 92000)
-axs[0].set_ylim(-200, 12500)
+axs[0].set_xlim(16000, 93000)
+axs[0].set_ylim(-200, 12700)
 axs[0].grid(True)
 axs[0].legend()
+axs[0].legend(loc='upper left')
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 plt.savefig(os.path.join(script_dir, 'NodeIteratosMincreasingSet.png'))

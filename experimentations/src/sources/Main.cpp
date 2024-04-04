@@ -10,12 +10,14 @@ using namespace std;
 
 int main(int argc, char *argv[]){
 
-    TestNodeIterators::testNodeIteratorPlusPlusAdjListMIncreasing(100);
-    TestNodeIterators::testNodeIteratorAdjListMIncreasing(100);
+    //TestNodeIterators::testNodeIteratorPlusPlusAdjListMIncreasing(100);
+    //TestNodeIterators::testNodeIteratorAdjListMIncreasing(100);
 
-    /*GraphFiller *graphFiller = new GraphFiller();
+    GraphFiller *graphFiller = new GraphFiller();
     GraphAdjMatrixVV *g = new GraphAdjMatrixVV();
     graphFiller->setGraphFromFileMapped(argv[1], g);
+    GraphAdjListVUS *g2 = new GraphAdjListVUS();
+    graphFiller->setGraphFromFileMapped(argv[1], g2);
 
     cout << "WITH -lpthread" << endl;
     int nbThreads = atoi(argv[2]);
@@ -33,12 +35,18 @@ int main(int argc, char *argv[]){
     chrono::duration<double> elapsed_seconds;
 
     start = chrono::high_resolution_clock::now();
-    cpt = g->countTrianglesMatrixSquaring(Matrix::multiplyBlasSSYMM,nbThreads);
+    cpt = g->count4CyclesMatrixPow4(Matrix::multiplyBlasSSYMM,nbThreads);
     end = chrono::high_resolution_clock::now();
     elapsed_seconds = end - start;
+    cout << "Number of C4: " << cpt << endl;
+    cout << "Elapsed time: " << elapsed_seconds.count()*1000 << "ms" << endl;
 
-    cout << "Number of triangles: " << cpt << endl;
-    cout << "Elapsed time: " << elapsed_seconds.count()*1000 << "ms" << endl;*/
+    start = chrono::high_resolution_clock::now();
+    cpt = g2->count4CyclesBasic();
+    end = chrono::high_resolution_clock::now();
+    elapsed_seconds = end - start;
+    cout << "Number of C4: " << cpt << endl;
+    cout << "Elapsed time: " << elapsed_seconds.count()*1000 << "ms" << endl;
 
     return 0;
 }
