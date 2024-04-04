@@ -141,7 +141,7 @@ public:
 
             cout << "Graph: " << graphPath << " | Function: " << "NodeIteratorAdjListMIncreasing" << " NbRun: "<< nbRuns << endl;
             for (int i = 0; i < nbRuns; ++i) {
-                cout << "Run number: " << i << endl;
+                //cout << "Run number: " << i << endl;
                 start = chrono::high_resolution_clock::now();
                 cpt = g->countTrianglesNodeIterator();
                 end = chrono::high_resolution_clock::now();
@@ -187,7 +187,7 @@ public:
 
             cout << "Graph: " << graphPath << " | Function: " << "NodeIteratorPlusPlusAdjListMIncreasing" << " NbRun: "<< nbRuns << endl;
             for (int i = 0; i < nbRuns; ++i) {
-                cout << "Run number: " << i << endl;
+                //cout << "Run number: " << i << endl;
                 start = chrono::high_resolution_clock::now();
                 cpt = g->countTrianglesNodeIteratorPlusPlus();
                 end = chrono::high_resolution_clock::now();

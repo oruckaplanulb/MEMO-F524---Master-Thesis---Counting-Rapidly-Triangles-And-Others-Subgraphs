@@ -1,0 +1,108 @@
+Graph: ../graphs/p2p-Gnutella/p2p-Gnutella08.txt | Function: NodeIteratorPlusPlusAdjListMIncreasing | Result: 2383
+Min: 4.0031 ms Max: 6.0039 ms Avg: 4.90702 ms
+1. 5.0178 ms
+2. 6.0012 ms
+3. 4.0154 ms
+4. 5.9571 ms
+5. 5.0363 ms
+6. 4.0213 ms
+7. 4.9973 ms
+8. 6.0039 ms
+9. 4.0031 ms
+10. 4.0168 ms
+Graph: ../graphs/p2p-Gnutella/p2p-Gnutella09.txt | Function: NodeIteratorPlusPlusAdjListMIncreasing | Result: 2354
+Min: 4.9595 ms Max: 7.0234 ms Avg: 5.99806 ms
+1. 7.0234 ms
+2. 5.0171 ms
+3. 4.9595 ms
+4. 5.9892 ms
+5. 7.0139 ms
+6. 5.0169 ms
+7. 6.9556 ms
+8. 5.0174 ms
+9. 6.9766 ms
+10. 6.011 ms
+Graph: ../graphs/p2p-Gnutella/p2p-Gnutella06.txt | Function: NodeIteratorPlusPlusAdjListMIncreasing | Result: 1142
+Min: 6.9481 ms Max: 11.0085 ms Avg: 8.28788 ms
+1. 9.0085 ms
+2. 7.9467 ms
+3. 11.0085 ms
+4. 7.0162 ms
+5. 8.9799 ms
+6. 6.9481 ms
+7. 8.9767 ms
+8. 8.0089 ms
+9. 7.9765 ms
+10. 7.0088 ms
+Graph: ../graphs/p2p-Gnutella/p2p-Gnutella05.txt | Function: NodeIteratorPlusPlusAdjListMIncreasing | Result: 1112
+Min: 6.0091 ms Max: 12.9655 ms Avg: 9.77894 ms
+1. 6.0091 ms
+2. 7.9783 ms
+3. 6.972 ms
+4. 10.9721 ms
+5. 11.9798 ms
+6. 10.9571 ms
+7. 8.9771 ms
+8. 12.9655 ms
+9. 9.9754 ms
+10. 11.003 ms
+Graph: ../graphs/p2p-Gnutella/p2p-Gnutella04.txt | Function: NodeIteratorPlusPlusAdjListMIncreasing | Result: 934
+Min: 8.983 ms Max: 15.959 ms Avg: 12.5685 ms
+1. 11.9675 ms
+2. 15.9573 ms
+3. 15.959 ms
+4. 12.9733 ms
+5. 11.9714 ms
+6. 9.9471 ms
+7. 13.9632 ms
+8. 12.9962 ms
+9. 8.983 ms
+10. 10.967 ms
+Graph: ../graphs/p2p-Gnutella/p2p-Gnutella25.txt | Function: NodeIteratorPlusPlusAdjListMIncreasing | Result: 806
+Min: 7.9985 ms Max: 13.9665 ms Avg: 11.7892 ms
+1. 7.9985 ms
+2. 12.9949 ms
+3. 13.9665 ms
+4. 12.0106 ms
+5. 10.0041 ms
+6. 12.9834 ms
+7. 12.9978 ms
+8. 12.0051 ms
+9. 10.9642 ms
+10. 11.9673 ms
+Graph: ../graphs/p2p-Gnutella/p2p-Gnutella24.txt | Function: NodeIteratorPlusPlusAdjListMIncreasing | Result: 986
+Min: 13.9959 ms Max: 17.997 ms Avg: 15.9657 ms
+1. 14.9919 ms
+2. 15.9549 ms
+3. 17.997 ms
+4. 15.9509 ms
+5. 13.9959 ms
+6. 16.954 ms
+7. 15.9937 ms
+8. 16.9206 ms
+9. 14.9654 ms
+10. 15.9325 ms
+Graph: ../graphs/p2p-Gnutella/p2p-Gnutella30.txt | Function: NodeIteratorPlusPlusAdjListMIncreasing | Result: 1590
+Min: 21.9394 ms Max: 25.9309 ms Avg: 23.6532 ms
+1. 21.9394 ms
+2. 23.9657 ms
+3. 25.9015 ms
+4. 22.9703 ms
+5. 25.9309 ms
+6. 21.9701 ms
+7. 23.9696 ms
+8. 21.9745 ms
+9. 22.9706 ms
+10. 24.9392 ms
+Graph: ../graphs/p2p-Gnutella/p2p-Gnutella31.txt | Function: NodeIteratorPlusPlusAdjListMIncreasing | Result: 2024
+Min: 35.9427 ms Max: 40.9259 ms Avg: 38.4171 ms
+1. 39.9244 ms
+2. 40.9259 ms
+3. 38.8644 ms
+4. 39.9255 ms
+5. 37.9279 ms
+6. 36.9017 ms
+7. 38.8973 ms
+8. 35.9427 ms
+9. 37.9267 ms
+10. 36.935 ms
