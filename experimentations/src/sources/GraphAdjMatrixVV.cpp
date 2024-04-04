@@ -229,9 +229,6 @@ int GraphAdjMatrixVV::count4CyclesMatrixPow4(function<vector<vector<int>>(const 
 
     for(int i = 0; i < numVertices; i++){
         countTrace += A4[i][i];
-    }
-
-    for(int i = 0; i < numVertices; i++){
         int di = degree(i);
         //di choose 2
         countH2 += (di*(di-1))/2;
