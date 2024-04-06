@@ -3,6 +3,7 @@
 #include "../headers/GraphFiller.hpp"
 #include "../tests/TestMatrices.hpp"
 #include "../tests/TestNodeIterators.hpp"
+#include "../tests/TestNodeIteratorsIndividual.hpp"
 #include <chrono>
 #include <thread>
 
@@ -10,10 +11,13 @@ using namespace std;
 
 int main(int argc, char *argv[]){
 
-    //TestNodeIterators::testNodeIteratorPlusPlusAdjListMIncreasing(100);
-    //TestNodeIterators::testNodeIteratorAdjListMIncreasing(100);
 
-    GraphFiller *graphFiller = new GraphFiller();
+    //TestNodeIteratorsIndividual::testNodeIteratorAdjListNotreDameVsRoadNetPA(10);
+    //TestNodeIteratorsIndividual::testNodeIteratorPlusPlusAdjListNotreDameVsRoadNetPA(10);
+    TestNodeIteratorsIndividual::testNodeIteratorAdjListGnutella08VsEmailEuCore(10);
+    TestNodeIteratorsIndividual::testNodeIteratorPlusPlusAdjListGnutella08VsEmailEuCore(10);
+
+    /*GraphFiller *graphFiller = new GraphFiller();
     GraphAdjMatrixVV *g = new GraphAdjMatrixVV();
     graphFiller->setGraphFromFileMapped(argv[1], g);
     GraphAdjListVUS *g2 = new GraphAdjListVUS();
@@ -46,7 +50,7 @@ int main(int argc, char *argv[]){
     end = chrono::high_resolution_clock::now();
     elapsed_seconds = end - start;
     cout << "Number of C4: " << cpt << endl;
-    cout << "Elapsed time: " << elapsed_seconds.count()*1000 << "ms" << endl;
+    cout << "Elapsed time: " << elapsed_seconds.count()*1000 << "ms" << endl;*/
 
     return 0;
 }

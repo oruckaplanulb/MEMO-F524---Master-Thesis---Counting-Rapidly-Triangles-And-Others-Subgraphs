@@ -1,0 +1,48 @@
+Graph: ../graphs/p2p-Gnutella/p2p-Gnutella08.txt | Function: NodeIteratorAdjListGnutella08VsEmailEuCore | Result: 2383
+Min: 16.9545 ms Max: 24.9378 ms Avg: 19.2519 ms
+1. 24.9378 ms
+2. 21.9696 ms
+3. 19.9494 ms
+4. 20.9423 ms
+5. 17.9512 ms
+6. 16.9545 ms
+7. 17.952 ms
+8. 17.9524 ms
+9. 16.9549 ms
+10. 16.9549 ms
+Graph: ../graphs/Network-gtc/email-Eu-core.txt | Function: NodeIteratorAdjListGnutella08VsEmailEuCore | Result: 105461
+Min: 62.8328 ms Max: 87.8006 ms Avg: 70.5131 ms
+1. 75.8106 ms
+2. 65.8065 ms
+3. 62.8489 ms
+4. 72.7749 ms
+5. 71.8386 ms
+6. 63.8294 ms
+7. 62.8328 ms
+8. 63.8287 ms
+9. 77.7602 ms
+10. 87.8006 ms
+Graph: ../graphs/p2p-Gnutella/p2p-Gnutella08.txt | Function: NodeIteratorPlusPlusAdjListGnutella08VsEmailEuCore | Result: 2383
+Min: 2.9886 ms Max: 5.9856 ms Avg: 4.19233 ms
+1. 5.9856 ms
+2. 4.0256 ms
+3. 2.9886 ms
+4. 2.9923 ms
+5. 5.9789 ms
+6. 3.9944 ms
+7. 2.992 ms
+8. 3.9912 ms
+9. 5.9764 ms
+10. 2.9983 ms
+Graph: ../graphs/Network-gtc/email-Eu-core.txt | Function: NodeIteratorPlusPlusAdjListGnutella08VsEmailEuCore | Result: 105461
+Min: 9.9733 ms Max: 12.9889 ms Avg: 11.4716 ms
+1. 11.9673 ms
+2. 12.9889 ms
+3. 11.966 ms
+4. 10.9748 ms
+5. 11.9656 ms
+6. 11.971 ms
+7. 9.9733 ms
+8. 11.9646 ms
+9. 10.9707 ms
+10. 9.9736 ms

@@ -1,0 +1,48 @@
+Graph: ../graphs/Web-graph/web-NotreDame.txt | Function: NodeIteratorAdjListNotreDameVsRoadNetPA | Result: 8910005
+Min: 9943.41 ms Max: 10207.7 ms Avg: 10026.1 ms
+1. 9965.4 ms
+2. 9943.41 ms
+3. 10006.3 ms
+4. 9991.29 ms
+5. 10035.2 ms
+6. 9998.3 ms
+7. 10207.7 ms
+8. 9996.28 ms
+9. 10020.2 ms
+10. 10097 ms
+Graph: ../graphs/Road-Network/roadNet-PA.txt | Function: NodeIteratorAdjListNotreDameVsRoadNetPA | Result: 67150
+Min: 191.486 ms Max: 195.511 ms Avg: 192.399 ms
+1. 193.484 ms
+2. 191.525 ms
+3. 193.482 ms
+4. 195.511 ms
+5. 191.518 ms
+6. 191.488 ms
+7. 191.524 ms
+8. 192.452 ms
+9. 191.524 ms
+10. 191.486 ms
+Graph: ../graphs/Web-graph/web-NotreDame.txt | Function: NodeIteratorPlusPlusAdjListNotreDameVsRoadNetPA | Result: 8910005
+Min: 300.229 ms Max: 307.211 ms Avg: 303.213 ms
+1. 307.211 ms
+2. 304.218 ms
+3. 302.192 ms
+4. 301.227 ms
+5. 300.229 ms
+6. 307.179 ms
+7. 301.228 ms
+8. 305.212 ms
+9. 301.228 ms
+10. 302.209 ms
+Graph: ../graphs/Road-Network/roadNet-PA.txt | Function: NodeIteratorPlusPlusAdjListNotreDameVsRoadNetPA | Result: 67150
+Min: 101.725 ms Max: 114.716 ms Avg: 104.336 ms
+1. 105.752 ms
+2. 101.725 ms
+3. 102.724 ms
+4. 102.725 ms
+5. 103.761 ms
+6. 103.75 ms
+7. 101.728 ms
+8. 114.716 ms
+9. 102.726 ms
+10. 103.755 ms
