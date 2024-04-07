@@ -1,14 +1,14 @@
 import os
 import matplotlib.pyplot as plt
 
-nodeIterator = [192.399, 10026.1]
-nodeIteratorplusplus = [104.336, 303.213]
-ni_min = [191.486, 9943.41]
-ni_max = [195.511, 10207.7]
-nipp_min = [101.725, 300.229]
-nipp_max = [114.716, 307.211]
+nodeIterator = [19.2519, 70.5131]
+nodeIteratorplusplus = [4.19233, 11.4716]
+ni_min = [16.9545, 62.8328]
+ni_max = [24.9378, 87.8006]
+nipp_min = [2.9886, 9.9733]
+nipp_max = [5.9856, 12.9889]
 
-inputs = [f'roadNet-PA\nccavg: {0.0465}', f'web-NotreDame\nccavg: {0.2346}']
+inputs = [f'p2p-Gnutella08\nccavg: {0.0411}', f'email-Eu-core\nccavg: {0.3994}']
 
 bar_width = 0.22
 index = range(len(inputs))
@@ -33,9 +33,9 @@ ax.invert_yaxis()
 ax.legend()
 
 for i, (v, vmin, vmax) in enumerate(zip(nodeIterator, ni_min, ni_max)):
-    ax.text(vmax + 50, i, f'-{v-vmin:.2f} | {v:.2f} | +{vmax-v:.2f}', va='center', fontsize=8)
+    ax.text(vmax + 1, i, f'-{v-vmin:.2f} | {v:.2f} | +{vmax-v:.2f}', va='center', fontsize=8)
 for i, (v, vmin, vmax) in enumerate(zip(nodeIteratorplusplus, nipp_min, nipp_max)):
-    ax.text(vmax + 50, i + bar_width, f'-{v-vmin:.2f} | {v:.2f} | +{vmax-v:.2f}', va='center', fontsize=8)
+    ax.text(vmax + 1, i + bar_width, f'-{v-vmin:.2f} | {v:.2f} | +{vmax-v:.2f}', va='center', fontsize=8)
 
 ax.set_xlim(right=max(nodeIterator + nodeIteratorplusplus) * 1.3)
 
@@ -45,6 +45,6 @@ plt.title('Comparison with the average clustering coefficient')
 plt.tight_layout()
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
-plt.savefig(os.path.join(script_dir, 'NotreDameVsRoadNetPA.png'))
+plt.savefig(os.path.join(script_dir, 'Gnutella08VsEmailEuCore.png'))
 
 plt.show()

@@ -14,22 +14,17 @@ int main(int argc, char *argv[]){
 
     //TestNodeIteratorsIndividual::testNodeIteratorAdjListNotreDameVsRoadNetPA(10);
     //TestNodeIteratorsIndividual::testNodeIteratorPlusPlusAdjListNotreDameVsRoadNetPA(10);
-    TestNodeIteratorsIndividual::testNodeIteratorAdjListGnutella08VsEmailEuCore(10);
-    TestNodeIteratorsIndividual::testNodeIteratorPlusPlusAdjListGnutella08VsEmailEuCore(10);
+    //TestNodeIteratorsIndividual::testNodeIteratorAdjListGnutella08VsEmailEuCore(10);
+    //TestNodeIteratorsIndividual::testNodeIteratorPlusPlusAdjListGnutella08VsEmailEuCore(10);
 
-    /*GraphFiller *graphFiller = new GraphFiller();
-    GraphAdjMatrixVV *g = new GraphAdjMatrixVV();
-    graphFiller->setGraphFromFileMapped(argv[1], g);
+    GraphFiller *graphFiller = new GraphFiller();
     GraphAdjListVUS *g2 = new GraphAdjListVUS();
     graphFiller->setGraphFromFileMapped(argv[1], g2);
 
-    cout << "WITH -lpthread" << endl;
-    int nbThreads = atoi(argv[2]);
-    cout << "Number of threads: " << nbThreads << endl;
 
     cout << "- Graph -" << endl;
-    cout << "Vertices: " << g->getNumVertices() << endl;
-    cout << "Edges: " << g->getNumEdges() << endl;
+    cout << "Vertices: " << g2->getNumVertices() << endl;
+    cout << "Edges: " << g2->getNumEdges() << endl;
 
     delete graphFiller;
     
@@ -39,18 +34,37 @@ int main(int argc, char *argv[]){
     chrono::duration<double> elapsed_seconds;
 
     start = chrono::high_resolution_clock::now();
-    cpt = g->count4CyclesMatrixPow4(Matrix::multiplyBlasSSYMM,nbThreads);
+    cpt = g2->findTriangles().size();
     end = chrono::high_resolution_clock::now();
     elapsed_seconds = end - start;
-    cout << "Number of C4: " << cpt << endl;
+    cout << "Number of C3: " << cpt << endl;
     cout << "Elapsed time: " << elapsed_seconds.count()*1000 << "ms" << endl;
 
     start = chrono::high_resolution_clock::now();
-    cpt = g2->count4CyclesBasic();
+    cpt = g2->countTrianglesNodeIterator();
     end = chrono::high_resolution_clock::now();
     elapsed_seconds = end - start;
-    cout << "Number of C4: " << cpt << endl;
-    cout << "Elapsed time: " << elapsed_seconds.count()*1000 << "ms" << endl;*/
+    cout << "Number of C3: " << cpt << endl;
+    cout << "Elapsed time: " << elapsed_seconds.count()*1000 << "ms" << endl;
+
+    start = chrono::high_resolution_clock::now();
+    cpt = g2->countTrianglesNodeIteratorPlusPlus();
+    end = chrono::high_resolution_clock::now();
+    elapsed_seconds = end - start;
+    cout << "Number of C3: " << cpt << endl;
+    cout << "Elapsed time: " << elapsed_seconds.count()*1000 << "ms" << endl;
+    //print all triangles
+    /*for (const vector<int>& triangle : triangles) {
+        cout << triangle[0] << " " << triangle[1] << " " << triangle[2] << endl;
+    }*/
+
+    /*GraphFiller *graphFiller = new GraphFiller();
+    GraphAdjListVUS *g2 = new GraphAdjListVUS();
+    graphFiller->setGraphFromFileMapped(argv[1], g2);
+
+    //print nb vertices and edges
+    cout << "Vertices: " << g2->getNumVertices() << endl;
+    cout << "Edges: " << g2->getNumEdges() << endl;*/
 
     return 0;
 }

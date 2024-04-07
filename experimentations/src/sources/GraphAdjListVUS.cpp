@@ -3,6 +3,7 @@
 #include <math.h>
 #include <map>
 #include <thread>
+#include <algorithm>
 
 using namespace std;
 
@@ -90,20 +91,39 @@ int GraphAdjListVUS::countTrianglesNodeIteratorPlusPlus() const {
     return count;
 }
 
-int GraphAdjListVUS::countTrianglesEdgeIterator() const {
-    int count = 0;
-    for (int v = 0; v < numVertices; ++v) {
-        for (const int& u : adjacencyList[v]) {
-            unordered_set<int> intersection;
-            for (const int& w : adjacencyList[u]) {
-                if (adjacencyList[v].count(w)) {
-                    intersection.insert(w);
-                }
+vector<vector<int>> GraphAdjListVUS::findTriangles() const {
+    vector<vector<int>> triangles;
+    vector<int> vSortedByOrder(numVertices);
+    for (int i = 0; i < numVertices; ++i) {
+        vSortedByOrder[i] = i;
+    }
+    sort(vSortedByOrder.begin(), vSortedByOrder.end(), [this](int v1,int v2) {
+        return isBiggerOrder(v1, v2);
+    });
+    vector<unordered_set<int>> graphCopy = adjacencyList;
+    vector<bool> marked(numVertices, false); 
+    for(int i = 0; i < numVertices-2; i++){
+        for (int adj : graphCopy[vSortedByOrder[i]]){
+            marked[adj] = true;
+        }
+        for (int u : graphCopy[vSortedByOrder[i]]){
+            if(!marked[u]){
+                continue;
             }
-            count += intersection.size();
+            for(int w : graphCopy[u]){
+                if(marked[w]){
+                    vector<int> triangle = {vSortedByOrder[i], u, w};
+                    triangles.push_back(triangle);
+                }
+                marked[u] = false;
+            }
+        }
+        //remove v from the graph
+        for(int adj : graphCopy[vSortedByOrder[i]]){
+            graphCopy[adj].erase(vSortedByOrder[i]);
         }
     }
-    return count/6;
+    return triangles;
 }
 
 int GraphAdjListVUS::AYZ_Algorithm() const{

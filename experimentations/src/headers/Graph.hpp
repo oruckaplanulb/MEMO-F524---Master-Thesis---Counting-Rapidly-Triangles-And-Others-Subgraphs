@@ -99,11 +99,10 @@ public:
     void printGraph() const override;
     bool hasEdge(int vrtx1, int vrtx2) const override;
     std::unordered_set<int>& getNeighbors(int v);
-    int countTrianglesEdgeIterator() const;
 
-    //OLD
     int countTrianglesNodeIterator() const;
     int countTrianglesNodeIteratorPlusPlus() const;
+    std::vector<std::vector<int>> findTriangles() const;
     int AYZ_Algorithm() const;
     int count4CyclesBasic() const ;
 };
