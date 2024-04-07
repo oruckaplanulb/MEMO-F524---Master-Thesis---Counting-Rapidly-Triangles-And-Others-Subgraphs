@@ -102,7 +102,9 @@ public:
 
     int countTrianglesNodeIterator() const;
     int countTrianglesNodeIteratorPlusPlus() const;
-    std::vector<std::vector<int>> findTriangles() const;
+    int countTrianglesChibaNishizeki() const;
+    std::vector<std::vector<int>> findTrianglesNodeIteratorPlusPlus() const;
+    std::vector<std::vector<int>> findTrianglesChibaNishizeki() const;
     int AYZ_Algorithm() const;
     int count4CyclesBasic() const ;
 };

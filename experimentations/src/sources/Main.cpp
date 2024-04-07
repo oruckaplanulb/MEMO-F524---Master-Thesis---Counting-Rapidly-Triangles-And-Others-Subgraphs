@@ -34,14 +34,7 @@ int main(int argc, char *argv[]){
     chrono::duration<double> elapsed_seconds;
 
     start = chrono::high_resolution_clock::now();
-    cpt = g2->findTriangles().size();
-    end = chrono::high_resolution_clock::now();
-    elapsed_seconds = end - start;
-    cout << "Number of C3: " << cpt << endl;
-    cout << "Elapsed time: " << elapsed_seconds.count()*1000 << "ms" << endl;
-
-    start = chrono::high_resolution_clock::now();
-    cpt = g2->countTrianglesNodeIterator();
+    cpt = g2->countTrianglesChibaNishizeki();
     end = chrono::high_resolution_clock::now();
     elapsed_seconds = end - start;
     cout << "Number of C3: " << cpt << endl;

@@ -91,7 +91,58 @@ int GraphAdjListVUS::countTrianglesNodeIteratorPlusPlus() const {
     return count;
 }
 
-vector<vector<int>> GraphAdjListVUS::findTriangles() const {
+int GraphAdjListVUS::countTrianglesChibaNishizeki() const {
+    int count = 0;
+    vector<int> vSortedByOrder(numVertices);
+    for (int i = 0; i < numVertices; ++i) {
+        vSortedByOrder[i] = i;
+    }
+    sort(vSortedByOrder.begin(), vSortedByOrder.end(), [this](int v1,int v2) {
+        return isBiggerOrder(v1, v2);
+    });
+    vector<unordered_set<int>> graphCopy = adjacencyList;
+    vector<bool> marked(numVertices, false); 
+    for(int i = 0; i < numVertices-2; i++){
+        for (int adj : graphCopy[vSortedByOrder[i]]){
+            marked[adj] = true;
+        }
+        for (int u : graphCopy[vSortedByOrder[i]]){
+            if(!marked[u]){
+                continue;
+            }
+            for(int w : graphCopy[u]){
+                if(marked[w]){
+                    count++;
+                }
+                marked[u] = false;
+            }
+        }
+        //remove v from the graph
+        for(int adj : graphCopy[vSortedByOrder[i]]){
+            graphCopy[adj].erase(vSortedByOrder[i]);
+        }
+    }
+    return count;
+}
+
+vector<vector<int>> GraphAdjListVUS::findTrianglesNodeIteratorPlusPlus() const {
+    vector<vector<int>> triangles;
+    for (int v = 0; v < numVertices; ++v) {
+        for (const int& u : adjacencyList[v]) {
+            if(isBiggerOrder(u, v)){
+                for (const int& w : adjacencyList[v]) {
+                    if (isBiggerOrder(w,u) && hasEdge(u, w)) {
+                        vector<int> triangle = {v, u, w};
+                        triangles.push_back(triangle);
+                    }
+                }
+            }
+        }
+    }
+    return triangles;
+}
+
+vector<vector<int>> GraphAdjListVUS::findTrianglesChibaNishizeki() const {
     vector<vector<int>> triangles;
     vector<int> vSortedByOrder(numVertices);
     for (int i = 0; i < numVertices; ++i) {
