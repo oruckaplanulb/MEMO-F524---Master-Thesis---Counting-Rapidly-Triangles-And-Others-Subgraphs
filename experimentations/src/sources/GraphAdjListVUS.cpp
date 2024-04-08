@@ -125,6 +125,33 @@ int GraphAdjListVUS::countTrianglesChibaNishizeki() const {
     return count;
 }
 
+int GraphAdjListVUS::countTrianglesForward() const {
+    int count = 0;
+    vector<unordered_set<int>> A(numVertices);
+    
+    vector<int> vSortedByOrder(numVertices);
+    for (int i = 0; i < numVertices; ++i) {
+        vSortedByOrder[i] = i;
+    }
+    sort(vSortedByOrder.begin(), vSortedByOrder.end(), [this](int v1, int v2) {
+        return !isBiggerOrder(v1, v2);
+    });
+
+    for(int vi : vSortedByOrder){
+        for(int vl : adjacencyList[vi]){
+            if(isBiggerOrder(vl,vi)){
+                for(int v : A[vi]){
+                    if(A[vl].find(v) != A[vl].end()){
+                        count++;
+                    }
+                }
+                A[vl].insert(vi);
+            }
+        }
+    }
+    return count;
+}
+
 vector<vector<int>> GraphAdjListVUS::findTrianglesNodeIteratorPlusPlus() const {
     vector<vector<int>> triangles;
     for (int v = 0; v < numVertices; ++v) {
@@ -172,6 +199,34 @@ vector<vector<int>> GraphAdjListVUS::findTrianglesChibaNishizeki() const {
         //remove v from the graph
         for(int adj : graphCopy[vSortedByOrder[i]]){
             graphCopy[adj].erase(vSortedByOrder[i]);
+        }
+    }
+    return triangles;
+}
+
+vector<vector<int>> GraphAdjListVUS::findTrianglesForward() const {
+    vector<vector<int>> triangles;
+    vector<unordered_set<int>> A(numVertices);
+    
+    vector<int> vSortedByOrder(numVertices);
+    for (int i = 0; i < numVertices; ++i) {
+        vSortedByOrder[i] = i;
+    }
+    sort(vSortedByOrder.begin(), vSortedByOrder.end(), [this](int v1, int v2) {
+        return !isBiggerOrder(v1, v2);
+    });
+
+    for(int vi : vSortedByOrder){
+        for(int vl : adjacencyList[vi]){
+            if(isBiggerOrder(vl,vi)){
+                for(int v : A[vi]){
+                    if(A[vl].find(v) != A[vl].end()){
+                        vector<int> triangle = {v, vi, vl};
+                        triangles.push_back(triangle);
+                    }
+                }
+                A[vl].insert(vi);
+            }
         }
     }
     return triangles;
@@ -231,20 +286,21 @@ int GraphAdjListVUS::AYZ_Algorithm() const{
 
     if(Vhigh.size() > 0){
         //create a vector of vector of size edge count
-        vector<vector<int>> A(getNumVertices(), vector<int>(getNumVertices(), 0));
-        for(int v : Vhigh){
-            for(int u : adjacencyList[v]){
-                A[v][u] = 1;
-                A[u][v] = 1;
+        vector<vector<int>> A(Vhigh.size(), vector<int>(Vhigh.size(), 0));
+        for(int v = 0 ; v < Vhigh.size(); v++){
+            for(int u = 0 ; u < Vhigh.size(); u++){
+                if(hasEdge(Vhigh[v], Vhigh[u])){
+                    A[v][u] = 1;
+                    A[u][v] = 1;
+                }
             }
         }
-
         vector<vector<int>> M = Matrix::multiplyBlasSSYMM(A, A, 8);
 
         cout << "M size: " << M.size() << endl;
 
-        for(int v : Vhigh){
-            delta[v] += M[v][v];
+        for(int vi = 0 ; vi < Vhigh.size(); vi++){
+            delta[Vhigh[vi]] += (((int)M[vi][vi])/2.0);
         }
     }
 
