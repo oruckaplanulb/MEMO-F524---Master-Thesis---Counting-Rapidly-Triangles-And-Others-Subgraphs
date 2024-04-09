@@ -18,7 +18,9 @@ int main(int argc, char *argv[]){
     //TestNodeIteratorsIndividual::testNodeIteratorPlusPlusAdjListGnutella08VsEmailEuCore(10);
 
     GraphFiller *graphFiller = new GraphFiller();
-    GraphAdjListVUS *g2 = new GraphAdjListVUS();
+    GraphAdjListVUS *g1 = new GraphAdjListVUS();
+    graphFiller->setGraphFromFileMapped(argv[1], g1);
+    GraphAdjMatrixVV *g2 = new GraphAdjMatrixVV();
     graphFiller->setGraphFromFileMapped(argv[1], g2);
 
 
@@ -28,23 +30,23 @@ int main(int argc, char *argv[]){
 
     delete graphFiller;
     
-    int cpt = 0;
+    long int cpt = 0;
     auto start = chrono::high_resolution_clock::now();
     auto end = chrono::high_resolution_clock::now();
     chrono::duration<double> elapsed_seconds;
 
     start = chrono::high_resolution_clock::now();
-    cpt = g2->AYZ_Algorithm();
+    cpt = g2->count4CyclesMatrixPow4(Matrix::multiplyBlasSSYMM, 8);
     end = chrono::high_resolution_clock::now();
     elapsed_seconds = end - start;
-    cout << "Number of C3: " << cpt << endl;
+    cout << "Number of C4: " << cpt << endl;
     cout << "Elapsed time: " << elapsed_seconds.count()*1000 << "ms" << endl;
 
     start = chrono::high_resolution_clock::now();
-    cpt = g2->countTrianglesNodeIteratorPlusPlus();
+    cpt = g1->count4CyclesBasic();
     end = chrono::high_resolution_clock::now();
     elapsed_seconds = end - start;
-    cout << "Number of C3: " << cpt << endl;
+    cout << "Number of C4: " << cpt << endl;
     cout << "Elapsed time: " << elapsed_seconds.count()*1000 << "ms" << endl;
     //print all triangles
     /*for (const vector<int>& triangle : triangles) {

@@ -1,5 +1,6 @@
 #include "../headers/Graph.hpp"
 #include "../headers/Matrix.hpp"
+#include "../headers/Utils.hpp"
 #include <math.h>
 #include <algorithm>
 #include <thread>
@@ -75,6 +76,36 @@ vector<int> GraphAdjMatrixVV::getNeighbors(int v) {
         }
     }
     return neighborsVector;
+}
+
+vector<double> GraphAdjMatrixVV::getNumberOfTrianglesPassThrough() const {
+    vector<double> delta(numVertices, 0);
+    for (int v = 0; v < numVertices; ++v) {
+        for (int u = 0; u < numVertices; ++u) {
+            if (hasEdge(v, u)) {
+                for (int w = 0; w < numVertices; ++w) {
+                    if (hasEdge(v, w) && hasEdge(u, w)) {  //All this to avoid the division by 3 to not correctly roundup
+                        if(delta[v] > (0.5 + (int) delta[v])){
+                            delta[v] = (int) delta[v] + 1;
+                        } else {
+                            delta[v] += 1.0/3;
+                        }
+                        if(delta[u] > (0.5 + (int) delta[u])){
+                            delta[u] = (int) delta[u] + 1;
+                        } else {
+                            delta[u] += 1.0/3;
+                        }
+                        if(delta[w] > (0.5 + (int) delta[w])){
+                            delta[w] = (int) delta[w] + 1;
+                        } else {
+                            delta[w] += 1.0/3;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return delta;
 }
 
 int GraphAdjMatrixVV::countTrianglesNodeIterator() const {
@@ -236,4 +267,75 @@ int GraphAdjMatrixVV::count4CyclesMatrixPow4(function<vector<vector<int>>(const 
     countH1 = getNumEdges();
 
     return (countTrace - (4*countH2) - (2*countH1))/8;
+}
+
+long int GraphAdjMatrixVV::count5CyclesMatrixPow5(function<vector<vector<int>>(const vector<vector<int>>&, const vector<vector<int>>&, int)> multiplyFunc, int numThreads) const {
+    unsigned long int countTrace = 0;
+    unsigned long int countH5 = 0;
+    unsigned long int countC3 = 0;
+    const vector<double> passThroughTriangles = getNumberOfTrianglesPassThrough();
+    const vector<vector<int>>& A = adjacencyMatrix;
+    const vector<vector<int>>& A2 = multiplyFunc(A, A, numThreads);
+    const vector<vector<int>>& A4 = multiplyFunc(A2, A2, numThreads);
+    const vector<vector<int>>& A5 = multiplyFunc(A4, A, numThreads);
+
+    for(int i = 0; i < numVertices; i++){
+        countTrace += A5[i][i];
+        countH5 += (passThroughTriangles[i])*(degree(i)-2);
+        countC3 += passThroughTriangles[i];
+    }
+    countH5 = countH5/2;
+    countC3 = countC3/6;
+
+    //cout << "countH5: " << 10*countH5 << endl;
+    //cout << "countC3: " << 30*countC3 << endl;
+    //cout << "countTrace: " << countTrace << endl;
+
+    return (countTrace - (10*countH5) - (30*countC3))/10;
+}
+
+//not finished
+long int GraphAdjMatrixVV::count6CyclesMatrixPow6(function<vector<vector<int>>(const vector<vector<int>>&, const vector<vector<int>>&, int)> multiplyFunc, int numThreads) const {
+    unsigned long int countTrace, countTraceC4 = 0;
+    unsigned long int countH1, countH2, countC3, countH3, countH4, countC4, countH6, countH9, countH11 = 0;
+
+    const vector<double> passThroughTriangles = getNumberOfTrianglesPassThrough();
+    const vector<vector<int>>& A = adjacencyMatrix;
+    const vector<vector<int>>& A2 = multiplyFunc(A, A, numThreads);
+    const vector<vector<int>>& A4 = multiplyFunc(A2, A2, numThreads);
+    const vector<vector<int>>& A5 = multiplyFunc(A4, A, numThreads);
+    const vector<vector<int>>& A6 = multiplyFunc(A5, A, numThreads);
+    Utils utils;
+
+    for(int i = 0; i < numVertices; i++){
+        countTrace += A6[i][i];
+        countTraceC4 += A4[i][i];
+        int di = degree(i);
+        countH2 += (di*(di-1))/2;
+        countC3 += passThroughTriangles[i];
+        countH4 += utils.comb(di, 3);
+        for(int j = 0; j < numVertices; j++){
+            if(hasEdge(i,j)){
+                countH3 += (di-1)*(degree(j)-1);
+                int aij2 = 0;
+                for(int k = 0; k < numVertices; k++){
+                    if(hasEdge(i,k) && hasEdge(j,k)){
+                        aij2++;
+                    }
+                }
+                countH6 += utils.comb(aij2, 2);
+            }
+        }
+    }
+    countH1 = getNumEdges();
+    countC3 = countC3/6;
+    countH3 = countH3 - 3*countC3;
+    countC4 = (countTraceC4 - (4*countH2) - (2*countH1))/8;
+
+
+    //cout << "countH5: " << 10*countH5 << endl;
+    //cout << "countC3: " << 30*countC3 << endl;
+    //cout << "countTrace: " << countTrace << endl;
+
+    return (countTrace - /*(10*countH5)*/ - (30*countC3))/10;
 }

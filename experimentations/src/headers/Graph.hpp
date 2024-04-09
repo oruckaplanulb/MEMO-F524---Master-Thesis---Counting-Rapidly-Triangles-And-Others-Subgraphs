@@ -6,6 +6,7 @@
 #include <list> 
 #include <unordered_set>
 #include <functional>
+#include <cmath>
 
 class Graph {
 public:
@@ -44,7 +45,8 @@ public:
     std::vector<std::vector<int>> getAdjacencyMatrix() const;
     std::vector<int> getNeighbors(int v);
 
-    //OLD
+    std::vector<double> getNumberOfTrianglesPassThrough() const;
+
     int countTrianglesNodeIterator() const;
     int countTrianglesNodeIteratorPlusPlus() const;
     int countTrianglesNodeIteratorPlusPlusWithOrder() const;
@@ -52,9 +54,14 @@ public:
     int countTrianglesMatrixSquaringParallel(std::function<std::vector<std::vector<int>>(const std::vector<std::vector<int>>&, const std::vector<std::vector<int>>&, int)> multiplyFunc, int numThreadsMM, int numThreads) const;
     int countTrianglesMatrixCube(std::function<std::vector<std::vector<int>>(const std::vector<std::vector<int>>&, const std::vector<std::vector<int>>&, int)> multiplyFunc, int numThreads) const;
     int countTrianglesMatrixCubeParallel(std::function<std::vector<std::vector<int>>(const std::vector<std::vector<int>>&, const std::vector<std::vector<int>>&, int)> multiplyFunc, int numThreadsMM, int numThreads) const;
+
     int count4CyclesMatrixPow4(std::function<std::vector<std::vector<int>>(const std::vector<std::vector<int>>&, const std::vector<std::vector<int>>&, int)> multiplyFunc, int numThreads) const;
+    long int count5CyclesMatrixPow5(std::function<std::vector<std::vector<int>>(const std::vector<std::vector<int>>&, const std::vector<std::vector<int>>&, int)> multiplyFunc, int numThreads) const;
+    long int count6CyclesMatrixPow6(std::function<std::vector<std::vector<int>>(const std::vector<std::vector<int>>&, const std::vector<std::vector<int>>&, int)> multiplyFunc, int numThreads) const;
 };
 
+
+//OLD CLASS
 class GraphAdjListVL : public Graph {
 private:
     int numVertices;
@@ -75,7 +82,6 @@ public:
     bool hasEdge(int vrtx1, int vrtx2) const override;
     std::list<int>& getNeighbors(int v);
 
-    //OLD
     int countTrianglesNodeIterator() const;
     int countTrianglesNodeIteratorPlusPlus() const;
 };
@@ -112,6 +118,8 @@ public:
     int count4CyclesBasic() const ;
 };
 
+
+//USELESS CLASS
 class GraphEdgListVP : public Graph {
 private:
     int numVertices;
