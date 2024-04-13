@@ -1,5 +1,6 @@
 #include "../headers/Graph.hpp"
 #include "../headers/Matrix.hpp"
+#include "../headers/Utils.hpp"
 #include <math.h>
 #include <map>
 #include <thread>
@@ -59,6 +60,45 @@ bool GraphAdjListVUS::hasEdge(int vrtx1, int vrtx2) const {
 
 unordered_set<int>& GraphAdjListVUS::getNeighbors(int v){
     return adjacencyList[v];
+}
+
+int GraphAdjListVUS::getSumDegreesSquared() const {
+    int sum = 0;
+    for (int i = 0; i < numVertices; ++i) {
+        sum += degree(i) * degree(i);
+    }
+    return sum;
+}
+
+vector<int> GraphAdjListVUS::getClusturingCoefficientDistrubition(int nbSplits) const {
+    vector<int> ccDistribution(nbSplits, 0);
+    int maxDegree = 0;
+    double splitSize = 1/((double)nbSplits);
+    Utils utils;
+    
+    for(int i = 0; i < numVertices; i++){
+        if(degree(i) > 1){
+            int nbEdgesBtwNeighbors = 0;
+            int degreeChoose2 = utils.comb(degree(i), 2);
+            for(int u : adjacencyList[i]){
+                for(int w : adjacencyList[i]){
+                    if(hasEdge(u,w)){
+                        nbEdgesBtwNeighbors++;
+                    }
+                }
+            }
+            double ccv = (double)nbEdgesBtwNeighbors/(double) degreeChoose2;
+            if(ccv == 1){
+                ccDistribution[nbSplits-1]++;
+            } else {
+                ccDistribution[(int)(ccv/splitSize)]++;
+            }
+        }else{
+            ccDistribution[0]++;
+        }
+    }
+
+    return ccDistribution;
 }
 
 int GraphAdjListVUS::countTrianglesNodeIterator() const {

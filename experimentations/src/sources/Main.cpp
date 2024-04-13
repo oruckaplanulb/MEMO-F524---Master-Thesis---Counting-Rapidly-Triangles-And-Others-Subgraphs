@@ -20,17 +20,17 @@ int main(int argc, char *argv[]){
     GraphFiller *graphFiller = new GraphFiller();
     GraphAdjListVUS *g1 = new GraphAdjListVUS();
     graphFiller->setGraphFromFileMapped(argv[1], g1);
-    GraphAdjMatrixVV *g2 = new GraphAdjMatrixVV();
-    graphFiller->setGraphFromFileMapped(argv[1], g2);
+    //GraphAdjMatrixVV *g2 = new GraphAdjMatrixVV();
+    //graphFiller->setGraphFromFileMapped(argv[1], g2);
 
 
     cout << "- Graph -" << endl;
-    cout << "Vertices: " << g2->getNumVertices() << endl;
-    cout << "Edges: " << g2->getNumEdges() << endl;
+    cout << "Vertices: " << g1->getNumVertices() << endl;
+    cout << "Edges: " << g1->getNumEdges() << endl;
 
     delete graphFiller;
     
-    long int cpt = 0;
+    /*long int cpt = 0;
     auto start = chrono::high_resolution_clock::now();
     auto end = chrono::high_resolution_clock::now();
     chrono::duration<double> elapsed_seconds;
@@ -47,19 +47,13 @@ int main(int argc, char *argv[]){
     end = chrono::high_resolution_clock::now();
     elapsed_seconds = end - start;
     cout << "Number of C4: " << cpt << endl;
-    cout << "Elapsed time: " << elapsed_seconds.count()*1000 << "ms" << endl;
+    cout << "Elapsed time: " << elapsed_seconds.count()*1000 << "ms" << endl;*/
     //print all triangles
-    /*for (const vector<int>& triangle : triangles) {
-        cout << triangle[0] << " " << triangle[1] << " " << triangle[2] << endl;
-    }*/
-
-    /*GraphFiller *graphFiller = new GraphFiller();
-    GraphAdjListVUS *g2 = new GraphAdjListVUS();
-    graphFiller->setGraphFromFileMapped(argv[1], g2);
-
-    //print nb vertices and edges
-    cout << "Vertices: " << g2->getNumVertices() << endl;
-    cout << "Edges: " << g2->getNumEdges() << endl;*/
+    
+    vector<int> distri = g1->getClusturingCoefficientDistrubition();
+    for(int i = 0; i < distri.size(); i++){
+        cout << (double)(i+1)/distri.size() << ": " << distri[i] << endl;
+    }
 
     return 0;
 }

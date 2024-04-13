@@ -105,6 +105,9 @@ public:
     void printGraph() const override;
     bool hasEdge(int vrtx1, int vrtx2) const override;
     std::unordered_set<int>& getNeighbors(int v);
+    
+    int getSumDegreesSquared() const;
+    std::vector<int> getClusturingCoefficientDistrubition(int nbSplits = 10) const;
 
     int countTrianglesNodeIterator() const;
     int countTrianglesNodeIteratorPlusPlus() const;
