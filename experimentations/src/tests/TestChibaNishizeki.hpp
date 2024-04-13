@@ -39,7 +39,7 @@ public:
 
             cout << "Graph: " << graphPath << " | Function: " << "CountChibaNishizekiNIncreasing" << " NbRun: "<< nbRuns << endl;
             for (int i = 0; i < nbRuns; ++i) {
-                cout << "Run number: " << i << endl;
+                //cout << "Run number: " << i << endl;
                 start = chrono::high_resolution_clock::now();
                 cpt = g->countTrianglesChibaNishizeki();
                 end = chrono::high_resolution_clock::now();
@@ -82,7 +82,7 @@ public:
 
             cout << "Graph: " << graphPath << " | Function: " << "FindChibaNishizekiNIncreasing" << " NbRun: "<< nbRuns << endl;
             for (int i = 0; i < nbRuns; ++i) {
-                cout << "Run number: " << i << endl;
+                //cout << "Run number: " << i << endl;
                 start = chrono::high_resolution_clock::now();
                 cpt = g->findTrianglesChibaNishizeki().size();
                 end = chrono::high_resolution_clock::now();
@@ -128,7 +128,7 @@ public:
 
             cout << "Graph: " << graphPath << " | Function: " << "CountChibaNishizekiMIncreasing" << " NbRun: "<< nbRuns << endl;
             for (int i = 0; i < nbRuns; ++i) {
-                cout << "Run number: " << i << endl;
+                //cout << "Run number: " << i << endl;
                 start = chrono::high_resolution_clock::now();
                 cpt = g->countTrianglesChibaNishizeki();
                 end = chrono::high_resolution_clock::now();
@@ -174,7 +174,7 @@ public:
 
             cout << "Graph: " << graphPath << " | Function: " << "FindChibaNishizekiMIncreasing" << " NbRun: "<< nbRuns << endl;
             for (int i = 0; i < nbRuns; ++i) {
-                cout << "Run number: " << i << endl;
+                //cout << "Run number: " << i << endl;
                 start = chrono::high_resolution_clock::now();
                 cpt = g->findTrianglesChibaNishizeki().size();
                 end = chrono::high_resolution_clock::now();

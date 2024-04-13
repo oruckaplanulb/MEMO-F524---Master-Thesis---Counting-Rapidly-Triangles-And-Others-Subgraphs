@@ -20,10 +20,10 @@ y4_max = [88.7619 - 82.4794, 3488.67 - 3053.64, 15640.2 - 15153.0, 74573.3 - 703
 
 plt.figure(figsize=(10, 6))
 
-plt.plot(x, y1, label='by Matrix Squaring using SGEMM', color='#ff5733')  # SGEMM
-plt.plot(x, y2, label='by Matrix Squaring using SSYMM', color='#33ffbd')  # SSYMM
 plt.plot(x, y3, label='by Matrix Cube using SGEMM', color='#ff338a')  # SGEMM
 plt.plot(x, y4, label='by Matrix Cube using SSYMM', color='#3366ff')  # SSYMM
+plt.plot(x, y1, label='by Matrix Squaring using SGEMM', color='#ff5733')  # SGEMM
+plt.plot(x, y2, label='by Matrix Squaring using SSYMM', color='#33ffbd')  # SSYMM
 
 plt.errorbar(x, y1, yerr=[y1_min, y1_max], capsize=5, label='_error', color='#ff5733', alpha=0.5)  # SGEMM
 plt.errorbar(x, y2, yerr=[y2_min, y2_max], capsize=5, label='_error', color='#33ffbd', alpha=0.5)  # SSYMM

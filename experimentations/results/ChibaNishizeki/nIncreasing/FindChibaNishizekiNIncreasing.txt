@@ -1,0 +1,72 @@
+Graph: ../graphs/Network-gtc/email-eu-core.txt | Function: FindChibaNishizekiNIncreasing | Result: 105461
+Min: 22.9389 ms Max: 28.9233 ms Avg: 25.3314 ms
+1. 28.9145 ms
+2. 28.9233 ms
+3. 25.9302 ms
+4. 23.9356 ms
+5. 23.9356 ms
+6. 24.9332 ms
+7. 23.9359 ms
+8. 22.9389 ms
+9. 23.9359 ms
+10. 25.9307 ms
+Graph: ../graphs/Social-Network/ego-facebook.txt | Function: FindChibaNishizekiNIncreasing | Result: 1612010
+Min: 306.176 ms Max: 410.902 ms Avg: 330.516 ms
+1. 410.902 ms
+2. 348.069 ms
+3. 335.103 ms
+4. 333.109 ms
+5. 318.183 ms
+6. 306.176 ms
+7. 315.162 ms
+8. 325.097 ms
+9. 307.178 ms
+10. 306.181 ms
+Graph: ../graphs/Social-Network/wiki-Vote.txt | Function: FindChibaNishizekiNIncreasing | Result: 608389
+Min: 180.516 ms Max: 221.374 ms Avg: 191.689 ms
+1. 204.474 ms
+2. 182.507 ms
+3. 182.519 ms
+4. 180.516 ms
+5. 184.506 ms
+6. 221.374 ms
+7. 207.445 ms
+8. 183.51 ms
+9. 186.534 ms
+10. 183.51 ms
+Graph: ../graphs/Collaboration-Network/CA-HepPh.txt | Function: FindChibaNishizekiNIncreasing | Result: 3358499
+Min: 626.325 ms Max: 709.135 ms Avg: 640.386 ms
+1. 650.281 ms
+2. 630.315 ms
+3. 627.322 ms
+4. 626.325 ms
+5. 628.318 ms
+6. 640.256 ms
+7. 709.135 ms
+8. 631.312 ms
+9. 629.283 ms
+10. 631.311 ms
+Graph: ../graphs/p2p-Gnutella/p2p-Gnutella25.txt | Function: FindChibaNishizekiNIncreasing | Result: 806
+Min: 26.9265 ms Max: 33.9413 ms Avg: 28.6273 ms
+1. 33.9413 ms
+2. 31.9149 ms
+3. 29.9194 ms
+4. 26.9321 ms
+5. 27.9275 ms
+6. 26.9265 ms
+7. 26.9275 ms
+8. 27.9247 ms
+9. 26.9294 ms
+10. 26.9296 ms
+Graph: ../graphs/Citation-Network/Cit-HepTh.txt | Function: FindChibaNishizekiNIncreasing | Result: 1478735
+Min: 619.344 ms Max: 664.224 ms Avg: 637.299 ms
+1. 661.232 ms
+2. 641.285 ms
+3. 648.267 ms
+4. 664.224 ms
+5. 634.338 ms
+6. 630.292 ms
+7. 624.349 ms
+8. 619.344 ms
+9. 627.322 ms
+10. 622.338 ms

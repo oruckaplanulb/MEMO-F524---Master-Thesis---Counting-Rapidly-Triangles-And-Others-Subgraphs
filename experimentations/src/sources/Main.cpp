@@ -4,6 +4,8 @@
 #include "../tests/TestMatrices.hpp"
 #include "../tests/TestNodeIterators.hpp"
 #include "../tests/TestNodeIteratorsIndividual.hpp"
+#include "../tests/TestForward.hpp"
+#include "../tests/TestChibaNishizeki.hpp"
 #include <chrono>
 #include <thread>
 
@@ -12,23 +14,27 @@ using namespace std;
 int main(int argc, char *argv[]){
 
 
-    //TestNodeIteratorsIndividual::testNodeIteratorAdjListNotreDameVsRoadNetPA(10);
-    //TestNodeIteratorsIndividual::testNodeIteratorPlusPlusAdjListNotreDameVsRoadNetPA(10);
-    //TestNodeIteratorsIndividual::testNodeIteratorAdjListGnutella08VsEmailEuCore(10);
-    //TestNodeIteratorsIndividual::testNodeIteratorPlusPlusAdjListGnutella08VsEmailEuCore(10);
+    TestForward::testCountForwardMIncreasing(10);
+    TestForward::testCountForwardNIncreasing(10);
+    TestForward::testFindForwardMIncreasing(10);
+    TestForward::testFindForwardNIncreasing(10);
 
+    TestChibaNishizeki::testCountChibaNishizekiMIncreasing(10);
+    TestChibaNishizeki::testCountChibaNishizekiNIncreasing(10);
+    TestChibaNishizeki::testFindChibaNishizekiMIncreasing(10);
+    TestChibaNishizeki::testFindChibaNishizekiNIncreasing(10);
+
+    /*
     GraphFiller *graphFiller = new GraphFiller();
     GraphAdjListVUS *g1 = new GraphAdjListVUS();
     graphFiller->setGraphFromFileMapped(argv[1], g1);
-    //GraphAdjMatrixVV *g2 = new GraphAdjMatrixVV();
-    //graphFiller->setGraphFromFileMapped(argv[1], g2);
 
 
     cout << "- Graph -" << endl;
     cout << "Vertices: " << g1->getNumVertices() << endl;
     cout << "Edges: " << g1->getNumEdges() << endl;
 
-    delete graphFiller;
+    delete graphFiller;*/
     
     /*long int cpt = 0;
     auto start = chrono::high_resolution_clock::now();
@@ -48,12 +54,11 @@ int main(int argc, char *argv[]){
     elapsed_seconds = end - start;
     cout << "Number of C4: " << cpt << endl;
     cout << "Elapsed time: " << elapsed_seconds.count()*1000 << "ms" << endl;*/
-    //print all triangles
     
-    vector<int> distri = g1->getClusturingCoefficientDistrubition();
+    /*vector<int> distri = g1->getClusturingCoefficientDistrubition();
     for(int i = 0; i < distri.size(); i++){
         cout << (double)(i+1)/distri.size() << ": " << distri[i] << endl;
-    }
+    }*/
 
     return 0;
 }
