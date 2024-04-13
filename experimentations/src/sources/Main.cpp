@@ -14,15 +14,8 @@ using namespace std;
 int main(int argc, char *argv[]){
 
 
-    TestForward::testCountForwardMIncreasing(10);
-    TestForward::testCountForwardNIncreasing(10);
-    TestForward::testFindForwardMIncreasing(10);
-    TestForward::testFindForwardNIncreasing(10);
-
-    TestChibaNishizeki::testCountChibaNishizekiMIncreasing(10);
-    TestChibaNishizeki::testCountChibaNishizekiNIncreasing(10);
-    TestChibaNishizeki::testFindChibaNishizekiMIncreasing(10);
-    TestChibaNishizeki::testFindChibaNishizekiNIncreasing(10);
+    TestNodeIterators::testFindNodeIteratorPlusPlusMIncreasing(10);
+    TestNodeIterators::testFindNodeIteratorPlusPlusNIncreasing(10);
 
     /*
     GraphFiller *graphFiller = new GraphFiller();
