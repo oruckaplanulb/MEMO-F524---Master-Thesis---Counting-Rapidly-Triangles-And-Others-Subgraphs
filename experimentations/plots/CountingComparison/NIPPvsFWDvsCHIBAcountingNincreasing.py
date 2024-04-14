@@ -15,7 +15,7 @@ t = [105461, 1612010, 608389, 3358499, 806, 1478735] #nb triangle
 xticks = [f'{names[i]}\nn = {n[i]}\nm = {m[i]}\nccavg = {ccavg[i]}\nd(G) = {dg[i]}%\nT = {t[i]}' for i in range(len(names))]
 
 x = np.arange(len(names))
-width = 0.20
+width = 0.30
 fig, axs = plt.subplots(figsize=(14, 6))
 
 y1 = [12.1763, 99.044, 140.642, 138.552, 10.496, 370.032]  # NodeIteratorPlusPlus
@@ -56,7 +56,7 @@ axs.errorbar(x + width, y3, yerr=[y3_min, y3_max], fmt='none', capsize=5, color=
 axs.set_xticks(x)
 axs.set_xticklabels(xticks)
 for tick in axs.get_xticklabels():
-    tick.set_fontsize(8)
+    tick.set_fontsize(9)
 axs.set_title('Comparison with NodeIteratorPlusPlus, Forward and ChibaNishizeki adapted for counting')
 axs.legend()
 axs.grid(True)
@@ -67,11 +67,11 @@ for bar1, bar2, bar3, i in zip(bars1, bars2, bars3, x):
     height1 = bar1.get_height()
     height2 = bar2.get_height()
     height3 = bar3.get_height()
-    text1 = axs.text(bar1.get_x() + bar1.get_width()/2, height1 + y1_max[i] + 1, f'+{y1_max[i]}\n{y1[i]}\n-{y1_min[i]}', ha='center', va='bottom', fontsize=6)
+    text1 = axs.text(bar1.get_x() + bar1.get_width()/2, height1 + y1_max[i] + 1, f'+{y1_max[i]}\n{y1[i]}\n-{y1_min[i]}', ha='center', va='bottom', fontsize=8)
     text1.set_path_effects(add_contour(text1))
-    text2 = axs.text(bar2.get_x() + bar2.get_width()/2, height2 + y2_max[i] + 1, f'+{y2_max[i]}\n{y2[i]}\n-{y2_min[i]}', ha='center', va='bottom', fontsize=6)
+    text2 = axs.text(bar2.get_x() + bar2.get_width()/2, height2 + y2_max[i] + 1, f'+{y2_max[i]}\n{y2[i]}\n-{y2_min[i]}', ha='center', va='bottom', fontsize=8)
     text2.set_path_effects(add_contour(text2))
-    text3 = axs.text(bar3.get_x() + bar3.get_width()/2, height3 + y3_max[i] + 1, f'+{y3_max[i]}\n{y3[i]}\n-{y3_min[i]}', ha='center', va='bottom', fontsize=6)
+    text3 = axs.text(bar3.get_x() + bar3.get_width()/2, height3 + y3_max[i] + 1, f'+{y3_max[i]}\n{y3[i]}\n-{y3_min[i]}', ha='center', va='bottom', fontsize=8)
     text3.set_path_effects(add_contour(text3))
 
 

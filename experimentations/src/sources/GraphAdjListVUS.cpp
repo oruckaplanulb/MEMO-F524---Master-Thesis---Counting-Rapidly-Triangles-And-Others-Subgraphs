@@ -101,6 +101,16 @@ vector<int> GraphAdjListVUS::getClusturingCoefficientDistrubition(int nbSplits) 
     return ccDistribution;
 }
 
+int GraphAdjListVUS::getAverageDegeneracy() const{
+    int sumDegeneracy = 0;
+    for(int i = 0; i < numVertices; i++){
+        for(int j : adjacencyList[i]){
+            sumDegeneracy += min(degree(i), degree(j));
+        }
+    }
+    return sumDegeneracy/getNumEdges();
+}
+
 int GraphAdjListVUS::countTrianglesNodeIterator() const {
     double count = 0;
     for (int v = 0; v < numVertices; ++v) {

@@ -14,10 +14,10 @@ using namespace std;
 int main(int argc, char *argv[]){
 
 
-    TestNodeIterators::testFindNodeIteratorPlusPlusMIncreasing(10);
-    TestNodeIterators::testFindNodeIteratorPlusPlusNIncreasing(10);
+    //TestNodeIterators::testFindNodeIteratorPlusPlusMIncreasing(10);
+    //TestNodeIterators::testFindNodeIteratorPlusPlusNIncreasing(10);
 
-    /*
+    
     GraphFiller *graphFiller = new GraphFiller();
     GraphAdjListVUS *g1 = new GraphAdjListVUS();
     graphFiller->setGraphFromFileMapped(argv[1], g1);
@@ -27,7 +27,9 @@ int main(int argc, char *argv[]){
     cout << "Vertices: " << g1->getNumVertices() << endl;
     cout << "Edges: " << g1->getNumEdges() << endl;
 
-    delete graphFiller;*/
+    delete graphFiller;
+
+    cout << "avg degeneracy: " << g1->getAverageDegeneracy() << endl;
     
     /*long int cpt = 0;
     auto start = chrono::high_resolution_clock::now();

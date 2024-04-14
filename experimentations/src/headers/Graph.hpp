@@ -108,6 +108,7 @@ public:
     
     int getSumDegreesSquared() const;
     std::vector<int> getClusturingCoefficientDistrubition(int nbSplits = 10) const;
+    int getAverageDegeneracy() const;
 
     int countTrianglesNodeIterator() const;
     int countTrianglesNodeIteratorPlusPlus() const;
