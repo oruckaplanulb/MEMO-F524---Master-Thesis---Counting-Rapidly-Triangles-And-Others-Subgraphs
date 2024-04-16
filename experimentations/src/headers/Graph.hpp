@@ -119,7 +119,8 @@ public:
     std::vector<std::vector<int>> findTrianglesChibaNishizeki() const;
     std::vector<std::vector<int>> findTrianglesForward() const;
     int AYZ_Algorithm() const;
-    int count4CyclesBasic() const ;
+    int count4CyclesBasic() const;
+    std::vector<std::vector<int>> find4Cycles() const;
 };
 
 

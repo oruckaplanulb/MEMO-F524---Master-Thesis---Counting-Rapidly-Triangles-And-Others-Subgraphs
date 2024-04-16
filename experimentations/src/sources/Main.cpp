@@ -21,33 +21,45 @@ int main(int argc, char *argv[]){
     GraphFiller *graphFiller = new GraphFiller();
     GraphAdjListVUS *g1 = new GraphAdjListVUS();
     graphFiller->setGraphFromFileMapped(argv[1], g1);
+    GraphAdjMatrixVV *g2 = new GraphAdjMatrixVV();
+    graphFiller->setGraphFromFileMapped(argv[1], g2);
 
 
     cout << "- Graph -" << endl;
-    cout << "Vertices: " << g1->getNumVertices() << endl;
-    cout << "Edges: " << g1->getNumEdges() << endl;
+    cout << "Vertices: " << g2->getNumVertices() << endl;
+    cout << "Edges: " << g2->getNumEdges() << endl;
 
     delete graphFiller;
 
     cout << "avg degeneracy: " << g1->getAverageDegeneracy() << endl;
     
-    /*long int cpt = 0;
+    long int cpt = 0;
     auto start = chrono::high_resolution_clock::now();
     auto end = chrono::high_resolution_clock::now();
     chrono::duration<double> elapsed_seconds;
 
+    /*start = chrono::high_resolution_clock::now();
+    cpt = g2->countTrianglesMatrixCube(Matrix::multiplyBlasSSYMM, 1);
+    end = chrono::high_resolution_clock::now();
+    elapsed_seconds = end - start;
+    cout << "Number of C3: " << cpt << endl;
+    cout << "Elapsed time: " << elapsed_seconds.count()*1000 << "ms" << endl;
+    cout << "Actual number of C3: " << g1->countTrianglesNodeIteratorPlusPlus() << endl;*/
+
     start = chrono::high_resolution_clock::now();
-    cpt = g2->count4CyclesMatrixPow4(Matrix::multiplyBlasSSYMM, 8);
+    cpt = g2->count4CyclesMatrixPow4(Matrix::multiplyBlasSSYMM, 1);
     end = chrono::high_resolution_clock::now();
     elapsed_seconds = end - start;
     cout << "Number of C4: " << cpt << endl;
     cout << "Elapsed time: " << elapsed_seconds.count()*1000 << "ms" << endl;
+    cout << "Actual number of C4: " << g1->count4CyclesBasic() << endl;
+    cout << "Nb C4 with listing: " << g1->find4Cycles().size() << endl;
 
-    start = chrono::high_resolution_clock::now();
-    cpt = g1->count4CyclesBasic();
+    /*start = chrono::high_resolution_clock::now();
+    cpt = g2->count5CyclesMatrixPow5(Matrix::multiplyBlasSSYMM, 1);
     end = chrono::high_resolution_clock::now();
     elapsed_seconds = end - start;
-    cout << "Number of C4: " << cpt << endl;
+    cout << "Number of C5: " << cpt << endl;
     cout << "Elapsed time: " << elapsed_seconds.count()*1000 << "ms" << endl;*/
     
     /*vector<int> distri = g1->getClusturingCoefficientDistrubition();

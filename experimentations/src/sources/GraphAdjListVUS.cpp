@@ -389,3 +389,35 @@ int GraphAdjListVUS::count4CyclesBasic() const{
     }
     return count;
 }
+
+std::vector<std::vector<int>> GraphAdjListVUS::find4Cycles() const {
+    std::vector<std::vector<int>> cycles;
+
+    // linked-list L(v) for each vertex v ∈ V , all initialized to be empty
+    std::vector<std::vector<int>> L(numVertices);
+
+    for (int v = 0; v < numVertices; ++v) {
+        for (int u : adjacencyList[v]) {
+            if (isBiggerOrder(v, u)) {
+                for (int y : adjacencyList[u]) {
+                    if (isBiggerOrder(v, y)) {
+                        for (int x : L[y]) {
+                            std::vector<int> cycle = {v, u, y, x};
+                            cycles.push_back(cycle);
+                        }
+                        L[y].push_back(u);
+                    }
+                }
+            }
+        }
+        for (int u : adjacencyList[v]) {
+            if (isBiggerOrder(v, u)) {
+                for (int y : adjacencyList[u]) {
+                    L[y].clear();
+                }
+            }
+        }
+    }
+
+    return cycles;
+}
