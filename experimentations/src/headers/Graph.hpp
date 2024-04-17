@@ -5,6 +5,7 @@
 #include <vector>
 #include <list> 
 #include <unordered_set>
+#include <map>
 #include <functional>
 #include <cmath>
 
@@ -60,32 +61,6 @@ public:
     long int count6CyclesMatrixPow6(std::function<std::vector<std::vector<int>>(const std::vector<std::vector<int>>&, const std::vector<std::vector<int>>&, int)> multiplyFunc, int numThreads) const;
 };
 
-
-//OLD CLASS
-class GraphAdjListVL : public Graph {
-private:
-    int numVertices;
-    std::vector<std::list<int>> adjacencyList;
-
-public:
-    GraphAdjListVL(int vertices);
-    GraphAdjListVL() : numVertices(0), adjacencyList(0) {}
-    ~GraphAdjListVL() override = default;
-
-    int getNumVertices() const override;
-    int getNumEdges() const override;
-    void setSize(int vertices) override;
-    void addEdge(int vrtx1, int vrtx2) override;
-    int degree(int vertex) const override;
-    bool isBiggerOrder(int vrtx1, int vrtx2) const override;
-    void printGraph() const override;
-    bool hasEdge(int vrtx1, int vrtx2) const override;
-    std::list<int>& getNeighbors(int v);
-
-    int countTrianglesNodeIterator() const;
-    int countTrianglesNodeIteratorPlusPlus() const;
-};
-
 class GraphAdjListVUS : public Graph {
 private:
     int numVertices;
@@ -125,6 +100,57 @@ public:
     std::vector<int> count4CyclesVertexLocal() const;
 };
 
+class GraphAdjListVV : public Graph {
+private:
+    int numVertices;
+    std::vector<std::vector<int>> adjacencyList;
+
+public:
+    GraphAdjListVV(int vertices);
+    GraphAdjListVV() : numVertices(0), adjacencyList(0) {}
+    ~GraphAdjListVV() override = default;
+
+    int getNumVertices() const override;
+    int getNumEdges() const override;
+    void setSize(int vertices) override;
+    void addEdge(int vrtx1, int vrtx2) override;
+    int degree(int vertex) const override;
+    bool isBiggerOrder(int vrtx1, int vrtx2) const override;
+    void printGraph() const override;
+    bool hasEdge(int vrtx1, int vrtx2) const override;
+    std::vector<int>& getNeighbors(int v);
+
+    std::map<std::pair<int, int>, int> count4CyclesEdgeLocal() const;
+};
+
+
+
+////////////////////////////////////////////////////////////////
+
+//OLD CLASS
+class GraphAdjListVL : public Graph {
+private:
+    int numVertices;
+    std::vector<std::list<int>> adjacencyList;
+
+public:
+    GraphAdjListVL(int vertices);
+    GraphAdjListVL() : numVertices(0), adjacencyList(0) {}
+    ~GraphAdjListVL() override = default;
+
+    int getNumVertices() const override;
+    int getNumEdges() const override;
+    void setSize(int vertices) override;
+    void addEdge(int vrtx1, int vrtx2) override;
+    int degree(int vertex) const override;
+    bool isBiggerOrder(int vrtx1, int vrtx2) const override;
+    void printGraph() const override;
+    bool hasEdge(int vrtx1, int vrtx2) const override;
+    std::list<int>& getNeighbors(int v);
+
+    int countTrianglesNodeIterator() const;
+    int countTrianglesNodeIteratorPlusPlus() const;
+};
 
 //USELESS CLASS
 class GraphEdgListVP : public Graph {

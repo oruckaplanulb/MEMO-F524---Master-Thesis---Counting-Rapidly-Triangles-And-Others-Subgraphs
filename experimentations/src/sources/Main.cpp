@@ -23,11 +23,18 @@ int main(int argc, char *argv[]){
     graphFiller->setGraphFromFileMapped(argv[1], g1);
     GraphAdjMatrixVV *g2 = new GraphAdjMatrixVV();
     graphFiller->setGraphFromFileMapped(argv[1], g2);
+    GraphAdjListVV *g3 = new GraphAdjListVV();
+    graphFiller->setGraphFromFileMapped(argv[1], g3);
 
-
-    cout << "- Graph -" << endl;
+    cout << "- Graph VUS -" << endl;
+    cout << "Vertices: " << g1->getNumVertices() << endl;
+    cout << "Edges: " << g1->getNumEdges() << endl;
+    cout << "- Graph MTX VV -" << endl;
     cout << "Vertices: " << g2->getNumVertices() << endl;
     cout << "Edges: " << g2->getNumEdges() << endl;
+    cout << "- Graph LST VV-" << endl;
+    cout << "Vertices: " << g3->getNumVertices() << endl;
+    cout << "Edges: " << g3->getNumEdges() << endl;
 
     delete graphFiller;
 
@@ -62,6 +69,13 @@ int main(int argc, char *argv[]){
     }
 
     cout << "Nb C4 with local Vrtx: " << cpt/4 << endl;
+
+    cpt = 0;
+    map<pair<int, int>, int> edgeCount = g3->count4CyclesEdgeLocal();
+    for (auto it = edgeCount.begin(); it != edgeCount.end(); it++){
+        cpt += it->second;
+    }
+    cout << "Nb C4 with local Edge: " << cpt/4 << endl;
 
     /*start = chrono::high_resolution_clock::now();
     cpt = g2->count5CyclesMatrixPow5(Matrix::multiplyBlasSSYMM, 1);
