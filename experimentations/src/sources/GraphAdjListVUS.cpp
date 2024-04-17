@@ -390,11 +390,11 @@ int GraphAdjListVUS::count4CyclesBasic() const{
     return count;
 }
 
-std::vector<std::vector<int>> GraphAdjListVUS::find4Cycles() const {
-    std::vector<std::vector<int>> cycles;
+vector<vector<int>> GraphAdjListVUS::find4Cycles() const {
+    vector<vector<int>> cycles;
 
     // linked-list L(v) for each vertex v ∈ V , all initialized to be empty
-    std::vector<std::vector<int>> L(numVertices);
+    vector<vector<int>> L(numVertices);
 
     for (int v = 0; v < numVertices; ++v) {
         for (int u : adjacencyList[v]) {
@@ -420,4 +420,37 @@ std::vector<std::vector<int>> GraphAdjListVUS::find4Cycles() const {
     }
 
     return cycles;
+}
+
+vector<int> GraphAdjListVUS::count4CyclesVertexLocal() const{
+    vector<int> L(numVertices, 0);
+    vector<int> Lbis(numVertices, 0);
+    vector<int> count(numVertices, 0);
+
+    for(int v = 0 ; v < numVertices; v++){
+        for(int u : adjacencyList[v]){
+            if(isBiggerOrder(v,u)){
+                for(int y : adjacencyList[u]){
+                    if(isBiggerOrder(v,y)){
+                        count[v] += Lbis[y];
+                        count[y] += Lbis[y];
+                        L[y] = Lbis[y];
+                        Lbis[y]++;
+                    }
+                }
+            }
+        }
+        for(int u : adjacencyList[v]){
+            if(isBiggerOrder(v,u)){
+                for(int y : adjacencyList[u]){
+                    if(isBiggerOrder(v,y)){
+                        count[u] += L[y];
+                        Lbis[y] = 0;
+                    }
+                }
+            }
+        }
+    }
+    
+    return count;
 }

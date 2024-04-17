@@ -55,6 +55,14 @@ int main(int argc, char *argv[]){
     cout << "Actual number of C4: " << g1->count4CyclesBasic() << endl;
     cout << "Nb C4 with listing: " << g1->find4Cycles().size() << endl;
 
+    cpt = 0;
+    vector<int> v = g1->count4CyclesVertexLocal();
+    for (int i = 0; i < v.size(); i++){
+        cpt += v[i];
+    }
+
+    cout << "Nb C4 with local Vrtx: " << cpt/4 << endl;
+
     /*start = chrono::high_resolution_clock::now();
     cpt = g2->count5CyclesMatrixPow5(Matrix::multiplyBlasSSYMM, 1);
     end = chrono::high_resolution_clock::now();
