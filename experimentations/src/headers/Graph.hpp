@@ -85,6 +85,8 @@ public:
     std::vector<int> getClusturingCoefficientDistrubition(int nbSplits = 10) const;
     int getAverageDegeneracy() const;
 
+    double nbTwoPathsNodeIterator() const;
+    double nbTwoPathsNodeIteratorPlusPlus() const;
     int countTrianglesNodeIterator() const;
     int countTrianglesNodeIteratorPlusPlus() const;
     int countTrianglesChibaNishizeki() const;

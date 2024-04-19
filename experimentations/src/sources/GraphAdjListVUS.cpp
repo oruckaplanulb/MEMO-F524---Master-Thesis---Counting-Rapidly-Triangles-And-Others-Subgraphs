@@ -111,6 +111,39 @@ int GraphAdjListVUS::getAverageDegeneracy() const{
     return sumDegeneracy/getNumEdges();
 }
 
+double GraphAdjListVUS::nbTwoPathsNodeIterator() const {
+    double count = 0;
+    for (int v = 0; v < numVertices; ++v) {
+        for (const int& u : adjacencyList[v]) {
+            //count++;
+            for (const int& w : adjacencyList[v]) {
+                count++;
+                if (hasEdge(u, w)) {
+                }
+            }
+        }
+    }
+    return count;
+}
+
+double GraphAdjListVUS::nbTwoPathsNodeIteratorPlusPlus() const {
+    double count = 0;
+    for (int v = 0; v < numVertices; ++v) {
+        for (const int& u : adjacencyList[v]) {
+            //count++;
+            if(isBiggerOrder(u, v)){
+                for (const int& w : adjacencyList[v]) {
+                    count++;
+                    if (isBiggerOrder(w,u) && hasEdge(u, w)) {
+                    }
+                }
+            }
+        }
+    }
+    return count;
+}
+
+
 int GraphAdjListVUS::countTrianglesNodeIterator() const {
     double count = 0;
     for (int v = 0; v < numVertices; ++v) {
@@ -392,8 +425,6 @@ int GraphAdjListVUS::count4CyclesBasic() const{
 
 vector<vector<int>> GraphAdjListVUS::find4Cycles() const {
     vector<vector<int>> cycles;
-
-    // linked-list L(v) for each vertex v ∈ V , all initialized to be empty
     vector<vector<int>> L(numVertices);
 
     for (int v = 0; v < numVertices; ++v) {
