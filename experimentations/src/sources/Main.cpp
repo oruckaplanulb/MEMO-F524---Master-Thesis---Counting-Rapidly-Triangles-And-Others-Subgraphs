@@ -14,7 +14,7 @@ using namespace std;
 
 int main(int argc, char *argv[]){
 
-    TestNodeIteratorsAcceleration::testNodeIteratorVSNodeIteratorPlusPlusMincreasing(10);
+    TestNodeIteratorsAcceleration::testNodeIteratorVSNodeIteratorPlusPlusAcceleractionAll(1);
 
     
     /*GraphFiller *graphFiller = new GraphFiller();

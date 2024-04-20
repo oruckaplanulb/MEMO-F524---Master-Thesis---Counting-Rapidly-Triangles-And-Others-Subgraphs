@@ -1,0 +1,120 @@
+Graph: ../graphs/Road-Network/roadNet-PA.txt | Function: NodeIteratorVSNodeIteratorPlusPlusAcceleractionincreasing | ResultA: 67150 | ResultB: 67150
+Expected speedup: 2.25922x (9.86513e+06/4.36661e+06) | Actual speedup: 2.12079x
+Algo A : Min: 186.499 ms Max: 235.361 ms Avg: 203.06 ms
+1. 202.456 ms
+2. 216.455 ms
+3. 197.471 ms
+4. 210.437 ms
+5. 235.361 ms
+6. 215.437 ms
+7. 191.487 ms
+8. 188.494 ms
+9. 186.504 ms
+10. 186.499 ms
+Algo B : Min: 92.7497 ms Max: 103.755 ms Avg: 95.7472 ms
+1. 103.755 ms
+2. 94.7476 ms
+3. 94.7138 ms
+4. 94.7462 ms
+5. 97.7717 ms
+6. 93.752 ms
+7. 94.7447 ms
+8. 92.7497 ms
+9. 94.7147 ms
+10. 95.7763 ms
+Graph: ../graphs/p2p-Gnutella/p2p-Gnutella08.txt | Function: NodeIteratorVSNodeIteratorPlusPlusAcceleractionincreasing | ResultA: 2383 | ResultB: 2383
+Expected speedup: 3.99286x (733620/183733) | Actual speedup: 4.62456x
+Algo A : Min: 17.9504 ms Max: 23.9355 ms Avg: 19.8485 ms
+1. 21.9742 ms
+2. 20.9111 ms
+3. 23.9355 ms
+4. 20.9762 ms
+5. 18.9514 ms
+6. 17.9504 ms
+7. 17.9521 ms
+8. 17.9518 ms
+9. 17.9512 ms
+10. 19.9316 ms
+Algo B : Min: 2.9899 ms Max: 6.9831 ms Avg: 4.29199 ms
+1. 3.0183 ms
+2. 3.9899 ms
+3. 2.9927 ms
+4. 4.9593 ms
+5. 3.0187 ms
+6. 5.9851 ms
+7. 3.9883 ms
+8. 6.9831 ms
+9. 4.9946 ms
+10. 2.9899 ms
+Graph: ../graphs/Network-gtc/email-Eu-core.txt | Function: NodeIteratorVSNodeIteratorPlusPlusAcceleractionincreasing | ResultA: 105461 | ResultB: 105461
+Expected speedup: 3.35748x (2.39856e+06/714393) | Actual speedup: 6.2537x
+Algo A : Min: 62.8305 ms Max: 79.7995 ms Avg: 69.2185 ms
+1. 75.8327 ms
+2. 72.8054 ms
+3. 62.8314 ms
+4. 64.7974 ms
+5. 79.7995 ms
+6. 72.8183 ms
+7. 69.7841 ms
+8. 65.8576 ms
+9. 62.8305 ms
+10. 64.8277 ms
+Algo B : Min: 9.9734 ms Max: 11.9682 ms Avg: 11.0684 ms
+1. 10.9694 ms
+2. 10.985 ms
+3. 11.9682 ms
+4. 10.9497 ms
+5. 10.9584 ms
+6. 11.9681 ms
+7. 9.9873 ms
+8. 11.9543 ms
+9. 10.9702 ms
+10. 9.9734 ms
+Graph: ../graphs/Web-graph/web-NotreDame.txt | Function: NodeIteratorVSNodeIteratorPlusPlusAcceleractionincreasing | ResultA: 8910005 | ResultB: 8910005
+Expected speedup: 19.5052x (6.11943e+08/3.13733e+07) | Actual speedup: 34.2903x
+Algo A : Min: 9883.53 ms Max: 10233.6 ms Avg: 10040.8 ms
+1. 10233.6 ms
+2. 9971.36 ms
+3. 10020.2 ms
+4. 9961.39 ms
+5. 9883.53 ms
+6. 10155.9 ms
+7. 10103.9 ms
+8. 10047.1 ms
+9. 9986.29 ms
+10. 10045.2 ms
+Algo B : Min: 287.232 ms Max: 305.208 ms Avg: 292.819 ms
+1. 305.208 ms
+2. 292.185 ms
+3. 289.228 ms
+4. 293.216 ms
+5. 289.226 ms
+6. 287.232 ms
+7. 289.226 ms
+8. 298.235 ms
+9. 290.227 ms
+10. 294.204 ms
+Graph: ../graphs/Web-graph/web-Stanford.txt | Function: NodeIteratorVSNodeIteratorPlusPlusAcceleractionincreasing | ResultA: 11329473 | ResultB: 11329473
+Expected speedup: 162.43x (7.89212e+09/4.85877e+07) | Actual speedup: 273.246x
+Min: 239451 ms Max: 281171 ms Avg: 255027 ms
+1. 281171 ms
+2. 260040 ms
+3. 263507 ms
+4. 261545 ms
+5. 241525 ms
+6. 243415 ms
+7. 255216 ms
+8. 257160 ms
+9. 247243 ms
+10. 239451 ms
+Algo B : Min: 914.55 ms Max: 966.448 ms Avg: 933.322 ms
+1. 926.523 ms
+2. 948.465 ms
+3. 943.478 ms
+4. 920.591 ms
+5. 925.556 ms
+6. 925.528 ms
+7. 914.55 ms
+8. 966.448 ms
+9. 940.517 ms
+10. 921.563 ms

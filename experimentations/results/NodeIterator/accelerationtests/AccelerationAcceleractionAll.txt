@@ -1,0 +1,240 @@
+Graph: ../graphs/Amazon/Amazon0302.txt | Function: NodeIteratorVSNodeIteratorPlusPlusAcceleractionAll | ResultA: 717719 | ResultB: 717719
+Expected speedup: 3.55702x (2.00403e+07/5.634e+06) | Actual speedup: 2.80029x
+Algo A : Min: 952.438 ms Max: 952.438 ms Avg: 952.438 ms
+1. 952.438 ms
+Algo B : Min: 340.121 ms Max: 340.121 ms Avg: 340.121 ms
+1. 340.121 ms
+Graph: ../graphs/Amazon/Amazon0312.txt | Function: NodeIteratorVSNodeIteratorPlusPlusAcceleractionAll | ResultA: 3686467 | ResultB: 3686467
+Expected speedup: 5.31552x (1.42521e+08/2.68122e+07) | Actual speedup: 4.74896x
+Algo A : Min: 5323.75 ms Max: 5323.75 ms Avg: 5323.75 ms
+1. 5323.75 ms
+Algo B : Min: 1121.03 ms Max: 1121.03 ms Avg: 1121.03 ms
+1. 1121.03 ms
+Graph: ../graphs/Amazon/Amazon0505.txt | Function: NodeIteratorVSNodeIteratorPlusPlusAcceleractionAll | ResultA: 3951063 | ResultB: 3951063
+Expected speedup: 5.26645x (1.509e+08/2.8653e+07) | Actual speedup: 5.17782x
+Algo A : Min: 5344.74 ms Max: 5344.74 ms Avg: 5344.74 ms
+1. 5344.74 ms
+Algo B : Min: 1032.24 ms Max: 1032.24 ms Avg: 1032.24 ms
+1. 1032.24 ms
+Graph: ../graphs/Amazon/Amazon0601.txt | Function: NodeIteratorVSNodeIteratorPlusPlusAcceleractionAll | ResultA: 3986507 | ResultB: 3986507
+Expected speedup: 5.20289x (1.49306e+08/2.86968e+07) | Actual speedup: 5.04869x
+Algo A : Min: 5266.95 ms Max: 5266.95 ms Avg: 5266.95 ms
+1. 5266.95 ms
+Algo B : Min: 1043.23 ms Max: 1043.23 ms Avg: 1043.23 ms
+1. 1043.23 ms
+Graph: ../graphs/Citation-Network/Cit-HepPh.txt | Function: NodeIteratorVSNodeIteratorPlusPlusAcceleractionAll | ResultA: 1276868 | ResultB: 1276868
+Expected speedup: 3.85769x (5.34395e+07/1.38527e+07) | Actual speedup: 4.76114x
+Algo A : Min: 1752.35 ms Max: 1752.35 ms Avg: 1752.35 ms
+1. 1752.35 ms
+Algo B : Min: 368.053 ms Max: 368.053 ms Avg: 368.053 ms
+1. 368.053 ms
+Graph: ../graphs/Citation-Network/Cit-HepTh.txt | Function: NodeIteratorVSNodeIteratorPlusPlusAcceleractionAll | ResultA: 1478735 | ResultB: 1478735
+Expected speedup: 5.37197x (7.49078e+07/1.39442e+07) | Actual speedup: 6.48595x
+Algo A : Min: 2380.67 ms Max: 2380.67 ms Avg: 2380.67 ms
+1. 2380.67 ms
+Algo B : Min: 367.05 ms Max: 367.05 ms Avg: 367.05 ms
+1. 367.05 ms
+Graph: ../graphs/Collaboration-Network/CA-AstroPh.txt | Function: NodeIteratorVSNodeIteratorPlusPlusAcceleractionAll | ResultA: 1351441 | ResultB: 1351441
+Expected speedup: 3.28013x (2.58949e+07/7.89447e+06) | Actual speedup: 5.04734x
+Algo A : Min: 725.062 ms Max: 725.062 ms Avg: 725.062 ms
+1. 725.062 ms
+Algo B : Min: 143.652 ms Max: 143.652 ms Avg: 143.652 ms
+1. 143.652 ms
+Graph: ../graphs/Collaboration-Network/CA-CondMat.txt | Function: NodeIteratorVSNodeIteratorPlusPlusAcceleractionAll | ResultA: 173361 | ResultB: 173361
+Expected speedup: 3.71424x (4.12218e+06/1.10983e+06) | Actual speedup: 4.95257x
+Algo A : Min: 123.672 ms Max: 123.672 ms Avg: 123.672 ms
+1. 123.672 ms
+Algo B : Min: 24.9713 ms Max: 24.9713 ms Avg: 24.9713 ms
+1. 24.9713 ms
+Graph: ../graphs/Collaboration-Network/CA-GrQc.txt | Function: NodeIteratorVSNodeIteratorPlusPlusAcceleractionAll | ResultA: 48260 | ResultB: 48260
+Expected speedup: 2.62369x (488702/186265) | Actual speedup: 4.00686x
+Algo A : Min: 8.0025 ms Max: 8.0025 ms Avg: 8.0025 ms
+1. 8.0025 ms
+Algo B : Min: 1.9972 ms Max: 1.9972 ms Avg: 1.9972 ms
+1. 1.9972 ms
+Graph: ../graphs/Collaboration-Network/CA-HepPh.txt | Function: NodeIteratorVSNodeIteratorPlusPlusAcceleractionAll | ResultA: 3358499 | ResultB: 3358499
+Expected speedup: 2.64461x (3.0793e+07/1.16437e+07) | Actual speedup: 3.95001x
+Algo A : Min: 559.537 ms Max: 559.537 ms Avg: 559.537 ms
+1. 559.537 ms
+Algo B : Min: 141.654 ms Max: 141.654 ms Avg: 141.654 ms
+1. 141.654 ms
+Graph: ../graphs/Collaboration-Network/CA-HepTh.txt | Function: NodeIteratorVSNodeIteratorPlusPlusAcceleractionAll | ResultA: 28339 | ResultB: 28339
+Expected speedup: 3.14481x (650658/206899) | Actual speedup: 2.79636x
+Algo A : Min: 14.0268 ms Max: 14.0268 ms Avg: 14.0268 ms
+1. 14.0268 ms
+Algo B : Min: 5.0161 ms Max: 5.0161 ms Avg: 5.0161 ms
+1. 5.0161 ms
+Graph: ../graphs/Communication-Network/Email-Enron.txt | Function: NodeIteratorVSNodeIteratorPlusPlusAcceleractionAll | ResultA: 727044 | ResultB: 727044
+Expected speedup: 7.49747x (5.15014e+07/6.86918e+06) | Actual speedup: 8.14471x
+Algo A : Min: 1210.79 ms Max: 1210.79 ms Avg: 1210.79 ms
+1. 1210.79 ms
+Algo B : Min: 148.66 ms Max: 148.66 ms Avg: 148.66 ms
+1. 148.66 ms
+Graph: ../graphs/Communication-Network/Email-EuAll.txt | Function: NodeIteratorVSNodeIteratorPlusPlusAcceleractionAll | ResultA: 267313 | ResultB: 267313
+Expected speedup: 56.3554x (3.91306e+08/6.94354e+06) | Actual speedup: 35.7011x
+Algo A : Min: 6124.66 ms Max: 6124.66 ms Avg: 6124.66 ms
+1. 6124.66 ms
+Algo B : Min: 171.554 ms Max: 171.554 ms Avg: 171.554 ms
+1. 171.554 ms
+Graph: ../graphs/Communication-Network/WikiTalk.txt | Function: NodeIteratorVSNodeIteratorPlusPlusAcceleractionAll | ResultA: 9203519 | ResultB: 9203519
+Expected speedup: 75.5944x (2.51964e+10/3.3331e+08) | Actual speedup: 60.39x
+Algo A : Min: 436780 ms Max: 436780 ms Avg: 436780 ms
+1. 436780 ms
+Algo B : Min: 7232.65 ms Max: 7232.65 ms Avg: 7232.65 ms
+1. 7232.65 ms
+Graph: ../graphs/Network-gtc/com-amazon.txt | Function: NodeIteratorVSNodeIteratorPlusPlusAcceleractionAll | ResultA: 667129 | ResultB: 667129
+Expected speedup: 4.36946x (2.13561e+07/4.88759e+06) | Actual speedup: 3.25652x
+Algo A : Min: 746.995 ms Max: 746.995 ms Avg: 746.995 ms
+1. 746.995 ms
+Algo B : Min: 229.385 ms Max: 229.385 ms Avg: 229.385 ms
+1. 229.385 ms
+Graph: ../graphs/Network-gtc/com-dblp.txt | Function: NodeIteratorVSNodeIteratorPlusPlusAcceleractionAll | ResultA: 2224385 | ResultB: 2224385
+Expected speedup: 3.71349x (4.56615e+07/1.22961e+07) | Actual speedup: 4.61413x
+Algo A : Min: 1325.49 ms Max: 1325.49 ms Avg: 1325.49 ms
+1. 1325.49 ms
+Algo B : Min: 287.267 ms Max: 287.267 ms Avg: 287.267 ms
+1. 287.267 ms
+Graph: ../graphs/Network-gtc/com-youtube.txt | Function: NodeIteratorVSNodeIteratorPlusPlusAcceleractionAll | ResultA: 3056386 | ResultB: 3056386
+Expected speedup: 36.2733x (2.95494e+09/8.14633e+07) | Actual speedup: 25.1553x
+Algo A : Min: 60563 ms Max: 60563 ms Avg: 60563 ms
+1. 60563 ms
+Algo B : Min: 2407.56 ms Max: 2407.56 ms Avg: 2407.56 ms
+1. 2407.56 ms
+Graph: ../graphs/Network-gtc/email-Eu-core.txt | Function: NodeIteratorVSNodeIteratorPlusPlusAcceleractionAll | ResultA: 105461 | ResultB: 105461
+Expected speedup: 3.35748x (2.39856e+06/714393) | Actual speedup: 6.31732x
+Algo A : Min: 75.8274 ms Max: 75.8274 ms Avg: 75.8274 ms
+1. 75.8274 ms
+Algo B : Min: 12.0031 ms Max: 12.0031 ms Avg: 12.0031 ms
+1. 12.0031 ms
+Graph: ../graphs/p2p-Gnutella/p2p-Gnutella04.txt | Function: NodeIteratorVSNodeIteratorPlusPlusAcceleractionAll | ResultA: 934 | ResultB: 934
+Expected speedup: 3.0706x (1.11738e+06/363895) | Actual speedup: 3.88729x
+Algo A : Min: 34.8919 ms Max: 34.8919 ms Avg: 34.8919 ms
+1. 34.8919 ms
+Algo B : Min: 8.9759 ms Max: 8.9759 ms Avg: 8.9759 ms
+1. 8.9759 ms
+Graph: ../graphs/p2p-Gnutella/p2p-Gnutella05.txt | Function: NodeIteratorVSNodeIteratorPlusPlusAcceleractionAll | ResultA: 1112 | ResultB: 1112
+Expected speedup: 3.36104x (941810/280214) | Actual speedup: 3.45808x
+Algo A : Min: 30.9398 ms Max: 30.9398 ms Avg: 30.9398 ms
+1. 30.9398 ms
+Algo B : Min: 8.9471 ms Max: 8.9471 ms Avg: 8.9471 ms
+1. 8.9471 ms
+Graph: ../graphs/p2p-Gnutella/p2p-Gnutella06.txt | Function: NodeIteratorVSNodeIteratorPlusPlusAcceleractionAll | ResultA: 1142 | ResultB: 1142
+Expected speedup: 3.19851x (908184/283940) | Actual speedup: 4.99779x
+Algo A : Min: 29.9053 ms Max: 29.9053 ms Avg: 29.9053 ms
+1. 29.9053 ms
+Algo B : Min: 5.9837 ms Max: 5.9837 ms Avg: 5.9837 ms
+1. 5.9837 ms
+Graph: ../graphs/p2p-Gnutella/p2p-Gnutella08.txt | Function: NodeIteratorVSNodeIteratorPlusPlusAcceleractionAll | ResultA: 2383 | ResultB: 2383
+Expected speedup: 3.99286x (733620/183733) | Actual speedup: 4.19613x
+Algo A : Min: 20.9278 ms Max: 20.9278 ms Avg: 20.9278 ms
+1. 20.9278 ms
+Algo B : Min: 4.9874 ms Max: 4.9874 ms Avg: 4.9874 ms
+1. 4.9874 ms
+Graph: ../graphs/p2p-Gnutella/p2p-Gnutella09.txt | Function: NodeIteratorVSNodeIteratorPlusPlusAcceleractionAll | ResultA: 2354 | ResultB: 2354
+Expected speedup: 3.87012x (874720/226019) | Actual speedup: 5.4175x
+Algo A : Min: 26.9293 ms Max: 26.9293 ms Avg: 26.9293 ms
+1. 26.9293 ms
+Algo B : Min: 4.9708 ms Max: 4.9708 ms Avg: 4.9708 ms
+1. 4.9708 ms
+Graph: ../graphs/p2p-Gnutella/p2p-Gnutella24.txt | Function: NodeIteratorVSNodeIteratorPlusPlusAcceleractionAll | ResultA: 986 | ResultB: 986
+Expected speedup: 3.46296x (1.57315e+06/454279) | Actual speedup: 4.21547x
+Algo A : Min: 58.8619 ms Max: 58.8619 ms Avg: 58.8619 ms
+1. 58.8619 ms
+Algo B : Min: 13.9633 ms Max: 13.9633 ms Avg: 13.9633 ms
+1. 13.9633 ms
+Graph: ../graphs/p2p-Gnutella/p2p-Gnutella25.txt | Function: NodeIteratorVSNodeIteratorPlusPlusAcceleractionAll | ResultA: 806 | ResultB: 806
+Expected speedup: 3.21432x (1.17565e+06/365755) | Actual speedup: 3.57524x
+Algo A : Min: 42.9183 ms Max: 42.9183 ms Avg: 42.9183 ms
+1. 42.9183 ms
+Algo B : Min: 12.0043 ms Max: 12.0043 ms Avg: 12.0043 ms
+1. 12.0043 ms
+Graph: ../graphs/p2p-Gnutella/p2p-Gnutella30.txt | Function: NodeIteratorVSNodeIteratorPlusPlusAcceleractionAll | ResultA: 1590 | ResultB: 1590
+Expected speedup: 3.24631x (2.02417e+06/623529) | Actual speedup: 3.99397x
+Algo A : Min: 83.7787 ms Max: 83.7787 ms Avg: 83.7787 ms
+1. 83.7787 ms
+Algo B : Min: 20.9763 ms Max: 20.9763 ms Avg: 20.9763 ms
+1. 20.9763 ms
+Graph: ../graphs/p2p-Gnutella/p2p-Gnutella31.txt | Function: NodeIteratorVSNodeIteratorPlusPlusAcceleractionAll | ResultA: 2024 | ResultB: 2024
+Expected speedup: 3.31596x (3.43213e+06/1.03503e+06) | Actual speedup: 4.05395x
+Algo A : Min: 145.646 ms Max: 145.646 ms Avg: 145.646 ms
+1. 145.646 ms
+Algo B : Min: 35.9269 ms Max: 35.9269 ms Avg: 35.9269 ms
+1. 35.9269 ms
+Graph: ../graphs/Road-Network/roadNet-CA.txt | Function: NodeIteratorVSNodeIteratorPlusPlusAcceleractionAll | ResultA: 120676 | ResultB: 120676
+Expected speedup: 2.2576x (1.75234e+07/7.76195e+06) | Actual speedup: 1.91044x
+Algo A : Min: 341.119 ms Max: 341.119 ms Avg: 341.119 ms
+1. 341.119 ms
+Algo B : Min: 178.556 ms Max: 178.556 ms Avg: 178.556 ms
+1. 178.556 ms
+Graph: ../graphs/Road-Network/roadNet-PA.txt | Function: NodeIteratorVSNodeIteratorPlusPlusAcceleractionAll | ResultA: 67150 | ResultB: 67150
+Expected speedup: 2.25922x (9.86513e+06/4.36661e+06) | Actual speedup: 1.90363x
+Algo A : Min: 197.512 ms Max: 197.512 ms Avg: 197.512 ms
+1. 197.512 ms
+Algo B : Min: 103.755 ms Max: 103.755 ms Avg: 103.755 ms
+1. 103.755 ms
+Graph: ../graphs/Road-Network/roadNet-TX.txt | Function: NodeIteratorVSNodeIteratorPlusPlusAcceleractionAll | ResultA: 82869 | ResultB: 82869
+Expected speedup: 2.25096x (1.20994e+07/5.37521e+06) | Actual speedup: 1.93493x
+Algo A : Min: 239.361 ms Max: 239.361 ms Avg: 239.361 ms
+1. 239.361 ms
+Algo B : Min: 123.705 ms Max: 123.705 ms Avg: 123.705 ms
+1. 123.705 ms
+Graph: ../graphs/Social-Network/ego-facebook.txt | Function: NodeIteratorVSNodeIteratorPlusPlusAcceleractionAll | ResultA: 1612010 | ResultB: 1612010
+Expected speedup: 2.89233x (1.88062e+07/6.50208e+06) | Actual speedup: 4.66921x
+Algo A : Min: 437.864 ms Max: 437.864 ms Avg: 437.864 ms
+1. 437.864 ms
+Algo B : Min: 93.7768 ms Max: 93.7768 ms Avg: 93.7768 ms
+1. 93.7768 ms
+Graph: ../graphs/Social-Network/ego-twitter.txt | Function: NodeIteratorVSNodeIteratorPlusPlusAcceleractionAll | ResultA: 13082506 | ResultB: 13082506
+Expected speedup: 5.49009x (4.62871e+08/8.43104e+07) | Actual speedup: 8.20003x
+Algo A : Min: 13698.4 ms Max: 13698.4 ms Avg: 13698.4 ms
+1. 13698.4 ms
+Algo B : Min: 1670.53 ms Max: 1670.53 ms Avg: 1670.53 ms
+1. 1670.53 ms
+Graph: ../graphs/Social-Network/soc-Epinions1.txt | Function: NodeIteratorVSNodeIteratorPlusPlusAcceleractionAll | ResultA: 1624481 | ResultB: 1624481
+Expected speedup: 5.52151x (1.49214e+08/2.70241e+07) | Actual speedup: 7.26268x
+Algo A : Min: 4874.96 ms Max: 4874.96 ms Avg: 4874.96 ms
+1. 4874.96 ms
+Algo B : Min: 671.234 ms Max: 671.234 ms Avg: 671.234 ms
+1. 671.234 ms
+Graph: ../graphs/Social-Network/soc-Slashdot0811.txt | Function: NodeIteratorVSNodeIteratorPlusPlusAcceleractionAll | ResultA: 551724 | ResultB: 551724
+Expected speedup: 6.23739x (1.37971e+08/2.212e+07) | Actual speedup: 7.33299x
+Algo A : Min: 4322.46 ms Max: 4322.46 ms Avg: 4322.46 ms
+1. 4322.46 ms
+Algo B : Min: 589.455 ms Max: 589.455 ms Avg: 589.455 ms
+1. 589.455 ms
+Graph: ../graphs/Social-Network/soc-Slashdot0922.txt | Function: NodeIteratorVSNodeIteratorPlusPlusAcceleractionAll | ResultA: 602592 | ResultB: 602592
+Expected speedup: 6.32264x (1.50976e+08/2.38786e+07) | Actual speedup: 7.17577x
+Algo A : Min: 4551.82 ms Max: 4551.82 ms Avg: 4551.82 ms
+1. 4551.82 ms
+Algo B : Min: 634.332 ms Max: 634.332 ms Avg: 634.332 ms
+1. 634.332 ms
+Graph: ../graphs/Social-Network/wiki-Vote.txt | Function: NodeIteratorVSNodeIteratorPlusPlusAcceleractionAll | ResultA: 608389 | ResultB: 608389
+Expected speedup: 4.14229x (2.92927e+07/7.07162e+06) | Actual speedup: 4.30588x
+Algo A : Min: 828.818 ms Max: 828.818 ms Avg: 828.818 ms
+1. 828.818 ms
+Algo B : Min: 192.485 ms Max: 192.485 ms Avg: 192.485 ms
+1. 192.485 ms
+Graph: ../graphs/Web-graph/web-BerkStan.txt | Function: NodeIteratorVSNodeIteratorPlusPlusAcceleractionAll | ResultA: 64690980 | ResultB: 64690980
+Expected speedup: 218.115x (5.59793e+10/2.5665e+08) | Actual speedup: 592.095x
+Algo A : Min: 1.91328e+06 ms Max: 1.91328e+06 ms Avg: 1.91328e+06 ms
+1. 1.91328e+06 ms
+Algo B : Min: 3231.37 ms Max: 3231.37 ms Avg: 3231.37 ms
+1. 3231.37 ms
+Graph: ../graphs/Web-graph/web-Google.txt | Function: NodeIteratorVSNodeIteratorPlusPlusAcceleractionAll | ResultA: 13391903 | ResultB: 13391903
+Expected speedup: 25.1489x (1.46348e+09/5.81925e+07) | Actual speedup: 28.0725x
+Algo A : Min: 38301.6 ms Max: 38301.6 ms Avg: 38301.6 ms
+1. 38301.6 ms
+Algo B : Min: 1364.38 ms Max: 1364.38 ms Avg: 1364.38 ms
+1. 1364.38 ms
+Graph: ../graphs/Web-graph/web-NotreDame.txt | Function: NodeIteratorVSNodeIteratorPlusPlusAcceleractionAll | ResultA: 8910005 | ResultB: 8910005
+Expected speedup: 19.5052x (6.11943e+08/3.13733e+07) | Actual speedup: 32.0197x
+Algo A : Min: 9803.81 ms Max: 9803.81 ms Avg: 9803.81 ms
+1. 9803.81 ms
+Algo B : Min: 306.181 ms Max: 306.181 ms Avg: 306.181 ms
+1. 306.181 ms
+Graph: ../graphs/Web-graph/web-Stanford.txt | Function: NodeIteratorVSNodeIteratorPlusPlusAcceleractionAll | ResultA: 11329473 | ResultB: 11329473
+Expected speedup: 162.43x (7.89212e+09/4.85877e+07) | Actual speedup: 277.785x
+Algo A : Min: 250181 ms Max: 250181 ms Avg: 250181 ms
+1. 250181 ms
+Algo B : Min: 900.628 ms Max: 900.628 ms Avg: 900.628 ms
+1. 900.628 ms

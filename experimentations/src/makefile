@@ -1,6 +1,6 @@
 # Compiler settings
 CXX := g++
-CXXFLAGS := -std=c++11 -I"D:/msys64/OpenBLAS/include"
+CXXFLAGS := -std=c++17 -I"D:/msys64/OpenBLAS/include"
 LDFLAGS := -L"D:/msys64/OpenBLAS/lib" -lopenblas
 
 # Source files
