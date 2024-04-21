@@ -15,6 +15,19 @@ class ResultsEncoder
 public:
     ResultsEncoder() = default;
 
+    void write(const string &path, const string &content)
+    {
+        ofstream file(path, ios::app);
+        if (!file.is_open())
+        {
+            cerr << "Error: Unable to open/create file: " << path << endl;
+            return;
+        }
+
+        file << content << endl;
+        file.close();
+    }
+
     void encodeResults(const string &path, const string &graphName, const string &function, const vector<chrono::duration<double>> &times, const int result){
         ofstream file(path, ios::app);
         if (!file.is_open())

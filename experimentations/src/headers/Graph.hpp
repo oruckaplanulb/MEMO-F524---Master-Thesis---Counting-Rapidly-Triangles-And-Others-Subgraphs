@@ -82,8 +82,9 @@ public:
     std::unordered_set<int>& getNeighbors(int v);
     
     int getSumDegreesSquared() const;
-    std::vector<int> getClusturingCoefficientDistrubition(int nbSplits = 10) const;
-    int getAverageDegeneracy() const;
+    std::vector<int> getClusturingCoefficientDistribution(int nbSplits = 10) const;
+    double getAverageClusturingCoefficient() const;
+    double getAverageDegeneracy() const;
 
     double nbTwoPathsNodeIterator() const;
     double nbTwoPathsNodeIteratorPlusPlus() const;

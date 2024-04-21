@@ -24,10 +24,6 @@ realWeb = [592.095, 28.0725, 32.0197, 277.785]
 
 plt.figure(figsize=(12, 6))
 
-# Plotting diagonal line
-x = np.logspace(0, 3, 100)
-plt.plot(x, x, '--', color='gray', alpha=0.4)
-
 # Scatter plot
 plt.subplot(1, 2, 1)
 plt.plot([1, 1000], [1, 1000], '--', color='gray', alpha=0.4)

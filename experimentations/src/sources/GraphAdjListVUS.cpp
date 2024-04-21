@@ -70,9 +70,8 @@ int GraphAdjListVUS::getSumDegreesSquared() const {
     return sum;
 }
 
-vector<int> GraphAdjListVUS::getClusturingCoefficientDistrubition(int nbSplits) const {
+vector<int> GraphAdjListVUS::getClusturingCoefficientDistribution(int nbSplits) const {
     vector<int> ccDistribution(nbSplits, 0);
-    int maxDegree = 0;
     double splitSize = 1/((double)nbSplits);
     Utils utils;
     
@@ -87,6 +86,7 @@ vector<int> GraphAdjListVUS::getClusturingCoefficientDistrubition(int nbSplits) 
                     }
                 }
             }
+            nbEdgesBtwNeighbors /= 2;
             double ccv = (double)nbEdgesBtwNeighbors/(double) degreeChoose2;
             if(ccv == 1){
                 ccDistribution[nbSplits-1]++;
@@ -101,8 +101,31 @@ vector<int> GraphAdjListVUS::getClusturingCoefficientDistrubition(int nbSplits) 
     return ccDistribution;
 }
 
-int GraphAdjListVUS::getAverageDegeneracy() const{
-    int sumDegeneracy = 0;
+double GraphAdjListVUS::getAverageClusturingCoefficient() const {
+    double sum = 0;
+    Utils utils;
+    for(int i = 0; i < numVertices; i++){
+        double ccv;
+        if(degree(i) > 1){
+            int nbEdgesBtwNeighbors = 0;
+            int degreeChoose2 = utils.comb(degree(i), 2);
+            for(int u : adjacencyList[i]){
+                for(int w : adjacencyList[i]){
+                    if(hasEdge(u,w)){
+                        nbEdgesBtwNeighbors++;
+                    }
+                }
+            }
+            nbEdgesBtwNeighbors /= 2;
+            ccv = (double)nbEdgesBtwNeighbors/(double) degreeChoose2;
+            sum += ccv;
+        }
+    }
+    return sum/(numVertices);
+}
+
+double GraphAdjListVUS::getAverageDegeneracy() const{
+    double sumDegeneracy = 0;
     for(int i = 0; i < numVertices; i++){
         for(int j : adjacencyList[i]){
             sumDegeneracy += min(degree(i), degree(j));

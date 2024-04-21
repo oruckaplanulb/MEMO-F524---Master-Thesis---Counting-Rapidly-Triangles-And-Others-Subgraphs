@@ -1,0 +1,128 @@
+Graph: ../graphs/Road-Network/roadNet-PA.txt - Infos
+Density: 0.000003 | computed in: 3.025700ms
+Average Degeneracy: 5.663939 | computed in: 35.905100ms
+Average Clustering Coefficient: 0.046477 | computed in: 201.467500ms
+Clustering Coefficient Distribution: (computed in: 203.491300ms)
+Clustering coefficient 0.000000 - 0.100000: 908765
+Clustering coefficient 0.100000 - 0.200000: 71439
+Clustering coefficient 0.200000 - 0.300000: 1974
+Clustering coefficient 0.300000 - 0.400000: 99501
+Clustering coefficient 0.400000 - 0.500000: 12
+Clustering coefficient 0.500000 - 0.600000: 482
+Clustering coefficient 0.600000 - 0.700000: 2640
+Clustering coefficient 0.700000 - 0.800000: 0
+Clustering coefficient 0.800000 - 0.900000: 0
+Clustering coefficient 0.900000 - 1.000000: 3279
+
+Graph: ../graphs/p2p-Gnutella/p2p-Gnutella08.txt - Infos
+Density: 0.001047 | computed in: 0.000000ms
+Average Degeneracy: 17.686191 | computed in: 1.978800ms
+Average Clustering Coefficient: 0.010868 | computed in: 22.940600ms
+Clustering Coefficient Distribution: (computed in: 26.908300ms)
+Clustering coefficient 0.000000 - 0.100000: 6119
+Clustering coefficient 0.100000 - 0.200000: 130
+Clustering coefficient 0.200000 - 0.300000: 11
+Clustering coefficient 0.300000 - 0.400000: 32
+Clustering coefficient 0.400000 - 0.500000: 0
+Clustering coefficient 0.500000 - 0.600000: 0
+Clustering coefficient 0.600000 - 0.700000: 1
+Clustering coefficient 0.700000 - 0.800000: 0
+Clustering coefficient 0.800000 - 0.900000: 0
+Clustering coefficient 0.900000 - 1.000000: 8
+
+Graph: ../graphs/Social-Network/soc-Slashdot0811.txt - Infos
+Density: 0.000157 | computed in: 0.000000ms
+Average Degeneracy: 94.292050 | computed in: 55.851900ms
+Average Clustering Coefficient: 0.055499 | computed in: 4692.483200ms
+Clustering Coefficient Distribution: (computed in: 4518.948000ms)
+Clustering coefficient 0.000000 - 0.100000: 68802
+Clustering coefficient 0.100000 - 0.200000: 3044
+Clustering coefficient 0.200000 - 0.300000: 1017
+Clustering coefficient 0.300000 - 0.400000: 1513
+Clustering coefficient 0.400000 - 0.500000: 193
+Clustering coefficient 0.500000 - 0.600000: 294
+Clustering coefficient 0.600000 - 0.700000: 367
+Clustering coefficient 0.700000 - 0.800000: 21
+Clustering coefficient 0.800000 - 0.900000: 69
+Clustering coefficient 0.900000 - 1.000000: 2040
+
+Graph: ../graphs/Web-graph/web-NotreDame.txt - Infos
+Density: 0.000021 | computed in: 1.018900ms
+Average Degeneracy: 57.560033 | computed in: 51.894500ms
+Average Clustering Coefficient: 0.234624 | computed in: 10614.638800ms
+Clustering Coefficient Distribution: (computed in: 10507.889700ms)
+Clustering coefficient 0.000000 - 0.100000: 210376
+Clustering coefficient 0.100000 - 0.200000: 6394
+Clustering coefficient 0.200000 - 0.300000: 4309
+Clustering coefficient 0.300000 - 0.400000: 20155
+Clustering coefficient 0.400000 - 0.500000: 4927
+Clustering coefficient 0.500000 - 0.600000: 12830
+Clustering coefficient 0.600000 - 0.700000: 13149
+Clustering coefficient 0.700000 - 0.800000: 6334
+Clustering coefficient 0.800000 - 0.900000: 13843
+Clustering coefficient 0.900000 - 1.000000: 33412
+
+Graph: ../graphs/Network-gtc/com-youtube.txt - Infos
+Density: 0.000005 | computed in: 4.024400ms
+Average Degeneracy: 54.533826 | computed in: 286.265600ms
+Average Clustering Coefficient: 0.080802 | computed in: 64718.916400ms
+Clustering Coefficient Distribution: (computed in: 62436.986500ms)
+Clustering coefficient 0.000000 - 0.100000: 949360
+Clustering coefficient 0.100000 - 0.200000: 53182
+Clustering coefficient 0.200000 - 0.300000: 23316
+Clustering coefficient 0.300000 - 0.400000: 34687
+Clustering coefficient 0.400000 - 0.500000: 5477
+Clustering coefficient 0.500000 - 0.600000: 8094
+Clustering coefficient 0.600000 - 0.700000: 10643
+Clustering coefficient 0.700000 - 0.800000: 313
+Clustering coefficient 0.800000 - 0.900000: 1541
+Clustering coefficient 0.900000 - 1.000000: 48277
+
+Graph: ../graphs/Communication-Network/WikiTalk.txt - Infos
+Density: 0.000002 | computed in: 8.005000ms
+Average Degeneracy: 143.064883 | computed in: 403.919400ms
+Average Clustering Coefficient: 0.052554 | computed in: 478026.378700ms
+Clustering Coefficient Distribution: (computed in: 476942.228100ms)
+Clustering coefficient 0.000000 - 0.100000: 2170642
+Clustering coefficient 0.100000 - 0.200000: 48448
+Clustering coefficient 0.200000 - 0.300000: 20689
+Clustering coefficient 0.300000 - 0.400000: 47176
+Clustering coefficient 0.400000 - 0.500000: 4528
+Clustering coefficient 0.500000 - 0.600000: 7397
+Clustering coefficient 0.600000 - 0.700000: 14062
+Clustering coefficient 0.700000 - 0.800000: 174
+Clustering coefficient 0.800000 - 0.900000: 1135
+Clustering coefficient 0.900000 - 1.000000: 80134
+
+Graph: ../graphs/Web-graph/web-BerkStan.txt - Infos
+Density: 0.000028 | computed in: 2.029800ms
+Average Degeneracy: 77.194221 | computed in: 440.858400ms
+Average Clustering Coefficient: 0.596697 | computed in: 2947855.226500ms
+Clustering Coefficient Distribution: (computed in: 3180413.516400ms)
+Clustering coefficient 0.000000 - 0.100000: 116493
+Clustering coefficient 0.100000 - 0.200000: 21632
+Clustering coefficient 0.200000 - 0.300000: 23542
+Clustering coefficient 0.300000 - 0.400000: 38656
+Clustering coefficient 0.400000 - 0.500000: 35155
+Clustering coefficient 0.500000 - 0.600000: 48152
+Clustering coefficient 0.600000 - 0.700000: 95057
+Clustering coefficient 0.700000 - 0.800000: 37648
+Clustering coefficient 0.800000 - 0.900000: 70250
+Clustering coefficient 0.900000 - 1.000000: 198645
+
+Graph: ../graphs/Web-graph/web-Stanford.txt - Infos
+Density: 0.000050 | computed in: 1.035800ms
+Average Degeneracy: 48.767286 | computed in: 178.523100ms
+Average Clustering Coefficient: 0.597630 | computed in: 322963.441700ms
+Clustering Coefficient Distribution: (computed in: 338100.597200ms)
+Clustering coefficient 0.000000 - 0.100000: 46643
+Clustering coefficient 0.100000 - 0.200000: 7124
+Clustering coefficient 0.200000 - 0.300000: 7567
+Clustering coefficient 0.300000 - 0.400000: 15512
+Clustering coefficient 0.400000 - 0.500000: 10482
+Clustering coefficient 0.500000 - 0.600000: 28541
+Clustering coefficient 0.600000 - 0.700000: 40941
+Clustering coefficient 0.700000 - 0.800000: 13533
+Clustering coefficient 0.800000 - 0.900000: 39042
+Clustering coefficient 0.900000 - 1.000000: 72518
+
