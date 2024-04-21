@@ -31,7 +31,9 @@ for key, (x_values, y_values) in graph_data.items():
     plt.title(f'Distribution of Clustering Coefficient for {key}')
     plt.xticks(bar_positions, x_values)
     plt.xlim(0, 10)
+    #make y log
+    plt.yscale('log')
     plt.tight_layout()
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    plt.savefig(os.path.join(script_dir, f'CCdistribution-{key}.png'))
+    plt.savefig(os.path.join(script_dir, f'CCdistributionLOG-{key}.png'))
     plt.show()
