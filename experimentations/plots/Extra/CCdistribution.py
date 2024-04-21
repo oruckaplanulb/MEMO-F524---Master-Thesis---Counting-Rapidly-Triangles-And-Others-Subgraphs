@@ -22,18 +22,26 @@ graph_data = {
 }
 
 # Plotting each graph's data
+i = 0
 for key, (x_values, y_values) in graph_data.items():
+    i += 1
+    if i in [1, 2, 3]:
+        color = '#fd7f6f'
+    elif i in [4, 5, 6]:
+        color = '#ffb55a'
+    else:
+        color = '#7eb0d5'
+
     bar_positions = range(len(x_values))
     plt.figure(figsize=(6, 5))
-    plt.bar(bar_positions, y_values, color='#fd7f6f', width=1.0, align='edge', edgecolor='black')
+    plt.bar(bar_positions, y_values, color=color, width=1.0, align='edge', edgecolor='black')
     plt.xlabel('Clustering Coefficient')
     plt.ylabel('Number of Vertices')
     plt.title(f'Distribution of Clustering Coefficient for {key}')
     plt.xticks(bar_positions, x_values)
     plt.xlim(0, 10)
-    #make y log
-    plt.yscale('log')
+    #plt.yscale('log')
     plt.tight_layout()
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    plt.savefig(os.path.join(script_dir, f'CCdistributionLOG-{key}.png'))
+    plt.savefig(os.path.join(script_dir, f'CCdistribution-{key}.png'))
     plt.show()
