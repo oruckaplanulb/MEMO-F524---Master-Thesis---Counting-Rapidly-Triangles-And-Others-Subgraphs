@@ -134,6 +134,10 @@ double GraphAdjListVUS::getAverageDegeneracy() const{
     return sumDegeneracy/getNumEdges();
 }
 
+double GraphAdjListVUS::getGraphDensity() const {
+    return (double) getNumEdges() / ((double) numVertices * (numVertices - 1) / 2.0);
+}
+
 double GraphAdjListVUS::nbTwoPathsNodeIterator() const {
     double count = 0;
     for (int v = 0; v < numVertices; ++v) {

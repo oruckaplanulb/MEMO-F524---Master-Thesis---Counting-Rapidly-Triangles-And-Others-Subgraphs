@@ -85,6 +85,7 @@ public:
     std::vector<int> getClusturingCoefficientDistribution(int nbSplits = 10) const;
     double getAverageClusturingCoefficient() const;
     double getAverageDegeneracy() const;
+    double getGraphDensity() const;
 
     double nbTwoPathsNodeIterator() const;
     double nbTwoPathsNodeIteratorPlusPlus() const;

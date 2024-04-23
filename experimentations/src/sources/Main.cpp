@@ -13,14 +13,35 @@
 
 using namespace std;
 
-int main(int argc, char *argv[]){
+int main(int argc, char *argv[]){ 
 
-    TestNodeIterators::testFindNodeIteratorPlusPlusLowMedHigh(10);
-    TestNodeIterators::testCountNodeIteratorPlusPlusLowMedHigh(10);
-    TestChibaNishizeki::testFindChibaNishizekiLowMedHigh(10);
-    TestChibaNishizeki::testCountChibaNishizekiLowMedHigh(10);
-    TestForward::testFindForwardLowMedHigh(10);
-    TestForward::testCountForwardLowMedHigh(10);
+    vector<string> graphsPaths = {  "../graphs/Road-Network/roadNet-PA.txt",
+                                        "../graphs/p2p-Gnutella/p2p-Gnutella08.txt",
+                                        "../graphs/Social-Network/soc-Slashdot0811.txt",
+                                        "../graphs/Web-graph/web-NotreDame.txt",
+                                        "../graphs/Network-gtc/com-youtube.txt",
+                                        "../graphs/Communication-Network/WikiTalk.txt",
+                                        "../graphs/Web-graph/web-BerkStan.txt",
+                                        "../graphs/Web-graph/web-Stanford.txt"};
+    
+    for(int i = 0; i < graphsPaths.size(); i++){
+        GraphFiller *graphFiller = new GraphFiller();
+        GraphAdjListVUS *g1 = new GraphAdjListVUS();
+        graphFiller->setGraphFromFileMapped(graphsPaths[i], g1);
+
+        cout << "- Graph VUS -" << endl;
+        cout << "Vertices: " << g1->getNumVertices() << endl;
+        cout << "Edges: " << g1->getNumEdges() << endl;
+
+        cout << "nb triangles: " << g1->countTrianglesNodeIteratorPlusPlus() << endl;
+        cout << "graph density (in %): " << g1->getGraphDensity()*100 << endl;
+
+
+        delete graphFiller;
+
+        delete g1;
+    }
+    
 
     /*
     GraphFiller *graphFiller = new GraphFiller();
