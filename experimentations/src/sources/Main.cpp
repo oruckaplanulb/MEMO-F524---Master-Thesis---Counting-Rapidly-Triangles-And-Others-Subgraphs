@@ -15,9 +15,12 @@ using namespace std;
 
 int main(int argc, char *argv[]){
 
-    //TestNodeIteratorsAcceleration::testNodeIteratorVSNodeIteratorPlusPlusAcceleractionAll(1);
-
-    TestExtra::getGraphInfos1();
+    TestNodeIterators::testFindNodeIteratorPlusPlusLowMedHigh(10);
+    TestNodeIterators::testCountNodeIteratorPlusPlusLowMedHigh(10);
+    TestChibaNishizeki::testFindChibaNishizekiLowMedHigh(10);
+    TestChibaNishizeki::testCountChibaNishizekiLowMedHigh(10);
+    TestForward::testFindForwardLowMedHigh(10);
+    TestForward::testCountForwardLowMedHigh(10);
 
     /*
     GraphFiller *graphFiller = new GraphFiller();

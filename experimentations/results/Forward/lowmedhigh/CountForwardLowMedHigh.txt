@@ -1,0 +1,96 @@
+Graph: ../graphs/Road-Network/roadNet-PA.txt | Function: CountForwardLowMedHigh | Result: 67150
+Min: 672.168 ms Max: 746.037 ms Avg: 681.181 ms
+1. 746.037 ms
+2. 673.199 ms
+3. 679.149 ms
+4. 673.233 ms
+5. 672.168 ms
+6. 675.23 ms
+7. 673.194 ms
+8. 672.205 ms
+9. 673.199 ms
+10. 674.197 ms
+Graph: ../graphs/p2p-Gnutella/p2p-Gnutella08.txt | Function: CountForwardLowMedHigh | Result: 2383
+Min: 5.9531 ms Max: 9.9815 ms Avg: 7.87685 ms
+1. 6.9622 ms
+2. 9.9815 ms
+3. 7.9878 ms
+4. 9.9708 ms
+5. 6.9985 ms
+6. 9.971 ms
+7. 5.9531 ms
+8. 7.9781 ms
+9. 6.9813 ms
+10. 5.9842 ms
+Graph: ../graphs/Social-Network/soc-Slashdot0811.txt | Function: CountForwardLowMedHigh | Result: 551724
+Min: 945.468 ms Max: 1090.12 ms Avg: 968.812 ms
+1. 1090.12 ms
+2. 965.418 ms
+3. 959.435 ms
+4. 955.443 ms
+5. 958.414 ms
+6. 955.466 ms
+7. 953.452 ms
+8. 953.448 ms
+9. 945.468 ms
+10. 951.458 ms
+Graph: ../graphs/Web-graph/web-NotreDame.txt | Function: CountForwardLowMedHigh | Result: 8910005
+Min: 519.607 ms Max: 552.555 ms Avg: 526.802 ms
+1. 552.555 ms
+2. 527.668 ms
+3. 527.59 ms
+4. 525.592 ms
+5. 524.594 ms
+6. 520.611 ms
+7. 522.605 ms
+8. 519.607 ms
+9. 523.602 ms
+10. 523.596 ms
+Graph: ../graphs/Network-gtc/com-youtube.txt | Function: CountForwardLowMedHigh | Result: 3056386
+Min: 5752.65 ms Max: 5804.47 ms Avg: 5772.82 ms
+1. 5804.47 ms
+2. 5765.61 ms
+3. 5760.56 ms
+4. 5779.57 ms
+5. 5779.12 ms
+6. 5768.6 ms
+7. 5782.53 ms
+8. 5775.55 ms
+9. 5759.56 ms
+10. 5752.65 ms
+Graph: ../graphs/Communication-Network/WikiTalk.txt | Function: CountForwardLowMedHigh | Result: 9203519
+Min: 19968.1 ms Max: 20279.8 ms Avg: 20149 ms
+1. 19968.1 ms
+2. 20094.3 ms
+3. 20158.1 ms
+4. 20125.7 ms
+5. 20160 ms
+6. 20279.8 ms
+7. 20220.1 ms
+8. 20141.1 ms
+9. 20177 ms
+10. 20165.7 ms
+Graph: ../graphs/Web-graph/web-BerkStan.txt | Function: CountForwardLowMedHigh | Result: 64690980
+Min: 4039.23 ms Max: 4177.83 ms Avg: 4111.9 ms
+1. 4177.83 ms
+2. 4039.23 ms
+3. 4061.14 ms
+4. 4082.05 ms
+5. 4113.03 ms
+6. 4128.92 ms
+7. 4125.96 ms
+8. 4141.95 ms
+9. 4113.99 ms
+10. 4134.94 ms
+Graph: ../graphs/Web-graph/web-Stanford.txt | Function: CountForwardLowMedHigh | Result: 11329473
+Min: 1357.37 ms Max: 1422.23 ms Avg: 1377.32 ms
+1. 1422.23 ms
+2. 1368.34 ms
+3. 1371.3 ms
+4. 1392.31 ms
+5. 1359.36 ms
+6. 1377.32 ms
+7. 1361.36 ms
+8. 1376.32 ms
+9. 1357.37 ms
+10. 1387.29 ms

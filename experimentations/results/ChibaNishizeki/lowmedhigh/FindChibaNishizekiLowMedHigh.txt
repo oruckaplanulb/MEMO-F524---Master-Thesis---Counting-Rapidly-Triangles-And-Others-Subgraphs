@@ -1,0 +1,96 @@
+Graph: ../graphs/Road-Network/roadNet-PA.txt | Function: FindChibaNishizekiLowMedHigh | Result: 67150
+Min: 825.778 ms Max: 859.691 ms Avg: 831.874 ms
+1. 859.691 ms
+2. 830.777 ms
+3. 835.764 ms
+4. 830.776 ms
+5. 826.801 ms
+6. 825.778 ms
+7. 826.788 ms
+8. 827.786 ms
+9. 827.786 ms
+10. 826.79 ms
+Graph: ../graphs/p2p-Gnutella/p2p-Gnutella08.txt | Function: FindChibaNishizekiLowMedHigh | Result: 2383
+Min: 6.981 ms Max: 41.852 ms Avg: 13.0678 ms
+1. 9.0045 ms
+2. 41.852 ms
+3. 18.9562 ms
+4. 8.0023 ms
+5. 11.9741 ms
+6. 9.9696 ms
+7. 7.9816 ms
+8. 7.976 ms
+9. 6.981 ms
+10. 7.9812 ms
+Graph: ../graphs/Social-Network/soc-Slashdot0811.txt | Function: FindChibaNishizekiLowMedHigh | Result: 551724
+Min: 611.536 ms Max: 639.296 ms Avg: 623.452 ms
+1. 636.328 ms
+2. 625.332 ms
+3. 612.357 ms
+4. 639.296 ms
+5. 622.335 ms
+6. 622.335 ms
+7. 619.343 ms
+8. 620.342 ms
+9. 611.536 ms
+10. 625.321 ms
+Graph: ../graphs/Web-graph/web-NotreDame.txt | Function: FindChibaNishizekiLowMedHigh | Result: 8910005
+Min: 2127.31 ms Max: 2251.98 ms Avg: 2152.64 ms
+1. 2134.31 ms
+2. 2144.26 ms
+3. 2131.3 ms
+4. 2132.3 ms
+5. 2183.16 ms
+6. 2251.98 ms
+7. 2142.27 ms
+8. 2127.31 ms
+9. 2130.3 ms
+10. 2149.23 ms
+Graph: ../graphs/Network-gtc/com-youtube.txt | Function: FindChibaNishizekiLowMedHigh | Result: 3056386
+Min: 3933.51 ms Max: 4026.74 ms Avg: 3968.34 ms
+1. 3934.51 ms
+2. 3941.46 ms
+3. 3960.4 ms
+4. 3974.34 ms
+5. 3976.36 ms
+6. 3933.51 ms
+7. 4009.27 ms
+8. 4026.74 ms
+9. 3967.39 ms
+10. 3959.41 ms
+Graph: ../graphs/Communication-Network/WikiTalk.txt | Function: FindChibaNishizekiLowMedHigh | Result: 9203519
+Min: 8382.56 ms Max: 9910.52 ms Avg: 8972.96 ms
+1. 8382.56 ms
+2. 8602.99 ms
+3. 8591.02 ms
+4. 9910.52 ms
+5. 9609.91 ms
+6. 9189.45 ms
+7. 8907.14 ms
+8. 8832.41 ms
+9. 8826.39 ms
+10. 8877.26 ms
+Graph: ../graphs/Web-graph/web-BerkStan.txt | Function: FindChibaNishizekiLowMedHigh | Result: 64690980
+Min: 17743.1 ms Max: 19748.8 ms Avg: 19023.1 ms
+1. 17743.1 ms
+2. 18744.9 ms
+3. 18809.7 ms
+4. 18840.2 ms
+5. 19097.9 ms
+6. 19337.3 ms
+7. 19280 ms
+8. 19120.9 ms
+9. 19507.8 ms
+10. 19748.8 ms
+Graph: ../graphs/Web-graph/web-Stanford.txt | Function: FindChibaNishizekiLowMedHigh | Result: 11329473
+Min: 3582.45 ms Max: 3897.61 ms Avg: 3662.31 ms
+1. 3897.61 ms
+2. 3770.88 ms
+3. 3582.45 ms
+4. 3606.35 ms
+5. 3655.22 ms
+6. 3621.28 ms
+7. 3609.35 ms
+8. 3596.38 ms
+9. 3635.31 ms
+10. 3648.24 ms
