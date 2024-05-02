@@ -1,0 +1,12 @@
+Graph: ../graphs/Social-Network/ego-facebook.txt | Function: FindForwardLowMedHigh | Result: 1612010
+Min: 392.517 ms Max: 586.05 ms Avg: 460.63 ms
+1. 448.632 ms
+2. 497.302 ms
+3. 586.05 ms
+4. 551.068 ms
+5. 460.764 ms
+6. 445.105 ms
+7. 420.874 ms
+8. 392.517 ms
+9. 410.452 ms
+10. 393.537 ms

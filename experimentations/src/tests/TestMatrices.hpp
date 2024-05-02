@@ -349,13 +349,56 @@ public:
         resultsEncoder->encodeResults("../results/MatrixVV/DoubleVsSimplePrec.txt", path, "MatrixCubeDGEMM", CubeDGEMMtimes, cpt);
 
 
-
-
-
-
         delete graphMatrixVV; 
     }
+
+
+    static void test4CyclePow4NIncreasingSSYMM(int nbRuns) {
+        vector<string> graphsPaths = {  "../graphs/Network-gtc/email-eu-core.txt",
+                                        "../graphs/Social-Network/ego-facebook.txt",
+                                        "../graphs/Social-Network/wiki-Vote.txt",
+                                        "../graphs/Collaboration-Network/CA-HepPh.txt",
+                                        "../graphs/p2p-Gnutella/p2p-Gnutella25.txt",
+                                        "../graphs/Citation-Network/Cit-HepTh.txt"};
+
+        //for each graph Path
+        for (const string& graphPath : graphsPaths) {
+            GraphFiller* graphFiller = new GraphFiller();
+            GraphAdjMatrixVV* graphMatrixVV = new GraphAdjMatrixVV();
+            graphFiller->setGraphFromFileMapped(graphPath, graphMatrixVV);
+            cout << "- Graph Matrix VV-"<< endl;
+            cout << "Vertices: " << graphMatrixVV->getNumVertices() << endl;
+            cout << "Edges: " << graphMatrixVV->getNumEdges() << endl;
+
+            int cpt = 0;
+            auto start = chrono::high_resolution_clock::now();
+            auto end = chrono::high_resolution_clock::now();
+            chrono::duration<double> elapsed_seconds;
+            chrono::duration<double> total_seconds;
+            vector<chrono::duration<double>> times;
+
+            cout << "Graph: " << graphPath << " | Function: " << "4CyclePow4NIncreasingSSYMM" << " NbRun: "<< nbRuns << endl;
+            for (int i = 0; i < nbRuns; ++i) {
+                cout << "Run number: " << i << endl;
+                start = chrono::high_resolution_clock::now();
+                cpt = graphMatrixVV->count4CyclesMatrixPow4(Matrix::multiplyBlasSSYMM,1); //1 thread
+                end = chrono::high_resolution_clock::now();
+                elapsed_seconds = end-start;
+                total_seconds += elapsed_seconds;
+                times.push_back(elapsed_seconds);
+            }
+            cout << "Average time: " << total_seconds.count()*(1000/nbRuns) << "ms" << endl;
+            delete graphMatrixVV;
+            delete graphFiller;
+
+            ResultsEncoder* resultsEncoder = new ResultsEncoder();
+            resultsEncoder->encodeResults("../results/MatrixVV/4CyclePow4NIncreasingSSYMM.txt", graphPath, "4CyclePow4NIncreasingSSYMM", times, cpt); 
+        }
+    }
+
         
 };
+
+
 
 #endif

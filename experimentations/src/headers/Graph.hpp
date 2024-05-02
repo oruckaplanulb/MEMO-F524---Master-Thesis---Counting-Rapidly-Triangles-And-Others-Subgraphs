@@ -80,6 +80,8 @@ public:
     void printGraph() const override;
     bool hasEdge(int vrtx1, int vrtx2) const override;
     std::unordered_set<int>& getNeighbors(int v);
+
+    std::vector<double> getNumberOfTrianglesPassThrough() const;
     
     int getSumDegreesSquared() const;
     std::vector<int> getClusturingCoefficientDistribution(int nbSplits = 10) const;
@@ -102,6 +104,9 @@ public:
     int count4CyclesBasic() const;
     std::vector<std::vector<int>> find4Cycles() const;
     std::vector<int> count4CyclesVertexLocal() const;
+
+    int count4CyclesGeneralization() const;
+    long int count5CyclesGeneralization() const;
 };
 
 class GraphAdjListVV : public Graph {

@@ -170,6 +170,33 @@ double GraphAdjListVUS::nbTwoPathsNodeIteratorPlusPlus() const {
     return count;
 }
 
+vector<double> GraphAdjListVUS::getNumberOfTrianglesPassThrough() const {
+    vector<double> delta(numVertices, 0);
+    for (int v = 0; v < numVertices; ++v) {
+        for (const int& u : adjacencyList[v]) {
+            for (const int& w : adjacencyList[u]) {
+                if (hasEdge(v, w)) {  //All this to avoid the division by 3 to not correctly roundup
+                    if(delta[v] > (0.5 + (int) delta[v])){
+                        delta[v] = (int) delta[v] + 1;
+                    } else {
+                        delta[v] += 1.0/3;
+                    }
+                    if(delta[u] > (0.5 + (int) delta[u])){
+                        delta[u] = (int) delta[u] + 1;
+                    } else {
+                        delta[u] += 1.0/3;
+                    }
+                    if(delta[w] > (0.5 + (int) delta[w])){
+                        delta[w] = (int) delta[w] + 1;
+                    } else {
+                        delta[w] += 1.0/3;
+                    }
+                }
+            }
+        }
+    }
+    return delta;
+}
 
 int GraphAdjListVUS::countTrianglesNodeIterator() const {
     double count = 0;
@@ -511,4 +538,60 @@ vector<int> GraphAdjListVUS::count4CyclesVertexLocal() const{
     }
     
     return count;
+}
+
+int GraphAdjListVUS::count4CyclesGeneralization() const {
+    double countTrace = 0;
+    double countH2 = 0;
+    double countH1 = 0;
+
+    //nb path of len 4
+    for(int v = 0; v < numVertices; v++){
+        for(int u : adjacencyList[v]){
+            for(int w : adjacencyList[u]){
+                for(int x : adjacencyList[w]){
+                    if(hasEdge(v,x)){
+                        countTrace++;
+                    }
+                }
+            }
+        }
+        int di = degree(v);
+        //di choose 2
+        countH2 += (di*(di-1))/2;
+    }
+    countH1 = getNumEdges();
+
+    return (countTrace - (4*countH2) - (2*countH1))/8;
+}
+
+long int GraphAdjListVUS::count5CyclesGeneralization() const {
+    unsigned long int countTrace = 0;
+    unsigned long int countH5 = 0;
+    unsigned long int countC3 = 0;
+    const vector<double> passThroughTriangles = getNumberOfTrianglesPassThrough();
+
+    for(int v = 0; v < numVertices; v++){
+        for(int u : adjacencyList[v]){
+            for(int w : adjacencyList[u]){
+                for(int x : adjacencyList[w]){
+                    for(int y : adjacencyList[x]){
+                        if(hasEdge(v,y)){
+                            countTrace++;
+                        }
+                    }
+                }
+            }
+        }
+        countH5 += (passThroughTriangles[v])*(degree(v)-2);
+        countC3 += passThroughTriangles[v];
+    }
+    countH5 = countH5/2;
+    countC3 = countC3/6;
+
+    //cout << "countH5: " << 10*countH5 << endl;
+    //cout << "countC3: " << 30*countC3 << endl;
+    //cout << "countTrace: " << countTrace << endl;
+
+    return (countTrace - (10*countH5) - (30*countC3))/10;
 }

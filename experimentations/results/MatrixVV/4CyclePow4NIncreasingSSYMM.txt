@@ -1,0 +1,48 @@
+Graph: ../graphs/Network-gtc/email-eu-core.txt | Function: 4CyclePow4NIncreasingSSYMM | Result: 4647873
+Min: 68.8175 ms Max: 98.7342 ms Avg: 75.805 ms
+1. 69.8162 ms
+2. 69.8506 ms
+3. 69.8119 ms
+4. 70.8089 ms
+5. 94.7497 ms
+6. 72.8084 ms
+7. 70.8424 ms
+8. 98.7342 ms
+9. 68.8175 ms
+10. 71.8101 ms
+Graph: ../graphs/Social-Network/ego-facebook.txt | Function: 4CyclePow4NIncreasingSSYMM | Result: 144023053
+Min: 2751.64 ms Max: 2917.2 ms Avg: 2791.85 ms
+1. 2917.2 ms
+2. 2804.53 ms
+3. 2755.6 ms
+4. 2775.59 ms
+5. 2789.57 ms
+6. 2792.56 ms
+7. 2751.64 ms
+8. 2773.61 ms
+9. 2765.6 ms
+10. 2792.56 ms
+Graph: ../graphs/Social-Network/wiki-Vote.txt | Function: 4CyclePow4NIncreasingSSYMM | Result: 57654491
+Min: 14220 ms Max: 15226.3 ms Avg: 14459.5 ms
+1. 15226.3 ms
+2. 14878.2 ms
+3. 14352.6 ms
+4. 14448.4 ms
+5. 14220 ms
+6. 14288.8 ms
+7. 14343.6 ms
+8. 14269.8 ms
+9. 14242.9 ms
+10. 14324.7 ms
+Graph: ../graphs/Collaboration-Network/CA-HepPh.txt | Function: 4CyclePow4NIncreasingSSYMM | Result: 486866957
+Min: 65828.9 ms Max: 68202.6 ms Avg: 66535.1 ms
+1. 66730.5 ms
+2. 68202.6 ms
+3. 67070.9 ms
+4. 66262.2 ms
+5. 66220.9 ms
+6. 66063.3 ms
+7. 66202.9 ms
+8. 66092.2 ms
+9. 65828.9 ms
+10. 66676.7 ms
