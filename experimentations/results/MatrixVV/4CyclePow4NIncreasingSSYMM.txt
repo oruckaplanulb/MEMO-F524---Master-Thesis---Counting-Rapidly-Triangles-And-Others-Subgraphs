@@ -46,3 +46,27 @@ Min: 65828.9 ms Max: 68202.6 ms Avg: 66535.1 ms
 8. 66092.2 ms
 9. 65828.9 ms
 10. 66676.7 ms
+Graph: ../graphs/p2p-Gnutella/p2p-Gnutella25.txt | Function: 4CyclePow4NIncreasingSSYMM | Result: 13517
+Min: 444666 ms Max: 472758 ms Avg: 455675 ms
+1. 454859 ms
+2. 453308 ms
+3. 444666 ms
+4. 450682 ms
+5. 471764 ms
+6. 472758 ms
+7. 453345 ms
+8. 449081 ms
+9. 450891 ms
+10. 455396 ms
+Graph: ../graphs/Citation-Network/Cit-HepTh.txt | Function: 4CyclePow4NIncreasingSSYMM | Result: 63698507
+Min: 834184 ms Max: 873585 ms Avg: 847219 ms
+1. 873585 ms
+2. 862693 ms
+3. 847182 ms
+4. 835151 ms
+5. 848727 ms
+6. 834184 ms
+7. 837986 ms
+8. 847278 ms
+9. 841103 ms
+10. 844300 ms
