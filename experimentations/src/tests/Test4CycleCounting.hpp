@@ -15,11 +15,11 @@ class Test4CycleCounting {
 public:
 
     static void testCount4CycleLowMedHigh(int nbRuns) {
-        vector<string> graphsPaths = {  /*"../graphs/Road-Network/roadNet-PA.txt",
+        vector<string> graphsPaths = {  "../graphs/Road-Network/roadNet-PA.txt",
                                         "../graphs/p2p-Gnutella/p2p-Gnutella08.txt",
                                         "../graphs/Social-Network/soc-Slashdot0811.txt",
                                         "../graphs/Web-graph/web-NotreDame.txt",
-                                        "../graphs/Network-gtc/com-youtube.txt",*/
+                                        "../graphs/Network-gtc/com-youtube.txt",
                                         "../graphs/Communication-Network/WikiTalk.txt",
                                         "../graphs/Web-graph/web-BerkStan.txt",
                                         "../graphs/Web-graph/web-Stanford.txt"};
@@ -105,14 +105,14 @@ public:
     }
 
     static void testCount4CycleEdgeLocalLowMedHigh(int nbRuns) {
-        vector<string> graphsPaths = {  //"../graphs/Road-Network/roadNet-PA.txt",
-                                        //"../graphs/p2p-Gnutella/p2p-Gnutella08.txt",
-                                        //"../graphs/Social-Network/soc-Slashdot0811.txt",
-                                        //"../graphs/Web-graph/web-NotreDame.txt",
-                                        //"../graphs/Network-gtc/com-youtube.txt",
-                                        //"../graphs/Communication-Network/WikiTalk.txt",
+        vector<string> graphsPaths = {  "../graphs/Road-Network/roadNet-PA.txt",
+                                        /*"../graphs/p2p-Gnutella/p2p-Gnutella08.txt",
+                                        "../graphs/Social-Network/soc-Slashdot0811.txt",
+                                        "../graphs/Web-graph/web-NotreDame.txt",
+                                        "../graphs/Network-gtc/com-youtube.txt",
+                                        "../graphs/Communication-Network/WikiTalk.txt",
                                         "../graphs/Web-graph/web-BerkStan.txt",
-                                        "../graphs/Web-graph/web-Stanford.txt"};
+                                        "../graphs/Web-graph/web-Stanford.txt"*/};
 
         //for each graph Path
         for (const string& graphPath : graphsPaths) {

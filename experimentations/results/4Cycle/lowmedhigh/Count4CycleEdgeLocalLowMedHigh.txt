@@ -70,3 +70,15 @@ Min: 36210.1 ms Max: 42354.7 ms Avg: 38864.5 ms
 8. 37873.7 ms
 9. 36422.6 ms
 10. 36210.1 ms
+Graph: ../graphs/Road-Network/roadNet-PA.txt | Function: Count4CycleEdgeLocalLowMedHigh | Result: 1541898
+Min: 745545 ms Max: 765808 ms Avg: 749733 ms
+1. 760063 ms
+2. 765808 ms
+3. 746049 ms
+4. 748137 ms
+5. 746914 ms
+6. 745802 ms
+7. 745545 ms
+8. 746765 ms
+9. 746608 ms
+10. 745636 ms
