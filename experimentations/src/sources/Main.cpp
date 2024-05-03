@@ -7,6 +7,7 @@
 #include "../tests/TestNodeIteratorsAcceleration.hpp"
 #include "../tests/TestForward.hpp"
 #include "../tests/TestChibaNishizeki.hpp"
+#include "../tests/Test4CycleCounting.hpp"
 #include "../tests/TestExtra.hpp"
 #include <chrono>
 #include <thread>
@@ -15,12 +16,11 @@ using namespace std;
 
 int main(int argc, char *argv[]){ 
 
-    TestMatrices::test4CyclePow4NIncreasingSSYMM(10);
-    TestMatrices::testCubeNIncreasingSSYMM(10);
-    TestMatrices::testSquareNIncreasingSSYMM(10);
-
-    /*
-    GraphFiller *graphFiller = new GraphFiller();
+    //Test4CycleCounting::testCount4CycleLowMedHigh(10);
+    //Test4CycleCounting::testCount4CycleVertexLocalLowMedHigh(10);
+    Test4CycleCounting::testCount4CycleEdgeLocalLowMedHigh(10);
+    
+    /*GraphFiller *graphFiller = new GraphFiller();
     GraphAdjMatrixVV *g1 = new GraphAdjMatrixVV();
     graphFiller->setGraphFromFileMapped(argv[1], g1);
 
@@ -61,6 +61,43 @@ int main(int argc, char *argv[]){
     delete g1;
     delete g2;
     delete graphFiller;*/
+
+    /*GraphFiller *graphFiller = new GraphFiller();
+    GraphAdjListVV *g1 = new GraphAdjListVV();
+    graphFiller->setGraphFromFileMapped(argv[1], g1);
+    GraphAdjListVUS *g2 = new GraphAdjListVUS();
+    graphFiller->setGraphFromFileMapped(argv[1], g2);
+
+    cout << "- Graph VUS -" << endl;
+    cout << "Vertices: " << g1->getNumVertices() << endl;
+    cout << "Edges: " << g1->getNumEdges() << endl;
+
+    vector<vector<int>> edgecount;
+    auto start = chrono::high_resolution_clock::now();
+    auto end = chrono::high_resolution_clock::now();
+    chrono::duration<double> elapsed_secondsNI;
+    chrono::duration<double> elapsed_secondsNIPP;
+
+    long int cpt = 0;
+    start = chrono::high_resolution_clock::now();
+    cpt = g2->count4CyclesBasic();
+    end = chrono::high_resolution_clock::now();
+    elapsed_secondsNI = end - start;
+    cout << "Nb 4Cycles " << cpt << endl;
+    cout << "Elapsed time: " << elapsed_secondsNI.count()*1000 << "ms" << endl;
+
+
+    start = chrono::high_resolution_clock::now();
+    edgecount = g1->count4CyclesEdgeLocalVector();
+    end = chrono::high_resolution_clock::now();
+    elapsed_secondsNI = end - start;
+
+    cpt = 0;
+    for (int i = 0; i < edgecount.size(); ++i) {
+        cpt += edgecount[i][2];
+    }
+    cout << "Nb 4Cycles " << cpt/4 << endl;
+    cout << "Elapsed time: " << elapsed_secondsNI.count()*1000 << "ms" << endl;*/
 
     return 0;
 }

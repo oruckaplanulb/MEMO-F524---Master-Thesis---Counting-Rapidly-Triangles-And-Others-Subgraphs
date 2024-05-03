@@ -101,12 +101,12 @@ public:
     std::vector<std::vector<int>> findTrianglesForward() const;
     int AYZ_Algorithm() const;
 
-    int count4CyclesBasic() const;
+    long long int count4CyclesBasic() const;
     std::vector<std::vector<int>> find4Cycles() const;
     std::vector<int> count4CyclesVertexLocal() const;
 
-    int count4CyclesGeneralization() const;
-    long int count5CyclesGeneralization() const;
+    long long int count4CyclesGeneralization() const;
+    long long int count5CyclesGeneralization() const;
 };
 
 class GraphAdjListVV : public Graph {
@@ -129,7 +129,8 @@ public:
     bool hasEdge(int vrtx1, int vrtx2) const override;
     std::vector<int>& getNeighbors(int v);
 
-    std::map<std::pair<int, int>, int> count4CyclesEdgeLocal() const;
+    std::map<std::pair<int, int>, int> count4CyclesEdgeLocalMap() const;
+    std::vector<std::vector<int>> count4CyclesEdgeLocalVector() const;
 };
 
 

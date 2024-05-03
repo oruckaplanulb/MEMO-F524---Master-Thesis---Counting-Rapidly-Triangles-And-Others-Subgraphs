@@ -67,7 +67,7 @@ vector<int>& GraphAdjListVV::getNeighbors(int v){
     return adjacencyList[v];
 }
 
-map<pair<int, int>, int>  GraphAdjListVV::count4CyclesEdgeLocal() const{
+map<pair<int, int>, int>  GraphAdjListVV::count4CyclesEdgeLocalMap() const{
     vector<int> L(numVertices, 0);
     vector<int> Lbis(numVertices, 0);
     vector<int> M(2*getNumEdges(), 0);
@@ -117,6 +117,66 @@ map<pair<int, int>, int>  GraphAdjListVV::count4CyclesEdgeLocal() const{
                 for(int y : adjacencyList[u]){
                     if(y == v){
                         edgeCount[make_pair(v,u)] = M[T[v]+i] + M[T[u]+j];
+                    }
+                    j++;
+                }
+            }
+        }
+    }
+    
+    return edgeCount;
+}
+
+vector<vector<int>> GraphAdjListVV::count4CyclesEdgeLocalVector() const{
+    vector<int> L(numVertices, 0);
+    vector<int> Lbis(numVertices, 0);
+    vector<int> M(2*getNumEdges(), 0);
+    vector<vector<int>> edgeCount;
+    vector<int> T(numVertices, 0);
+    //define T
+    for(int v = 0; v < numVertices; v++){
+        for(int vp = 0; vp < v; vp++){
+            T[v]+=degree(vp);
+        }
+    }
+
+    //the algo
+    for(int v = 0 ; v < numVertices; v++){
+        for(int i = 0; i < adjacencyList[v].size(); i++){
+            int u = adjacencyList[v][i];
+            if(isBiggerOrder(v,u)){
+                for(int j = 0; j < adjacencyList[u].size(); j++){
+                    int y = adjacencyList[u][j];
+                    if(isBiggerOrder(v,y)){
+                        L[y] = Lbis[y];
+                        Lbis[y]++;
+                    }
+                }
+            }
+        }
+        for(int i = 0; i < adjacencyList[v].size(); i++){
+            int u = adjacencyList[v][i];
+            if(isBiggerOrder(v,u)){
+                for(int j = 0; j < adjacencyList[u].size(); j++){
+                    int y = adjacencyList[u][j];
+                    if(isBiggerOrder(v,y)){
+                        M[T[v]+i] += L[y];
+                        M[T[u]+j] += L[y];
+                        Lbis[y] = 0;
+                    }
+                }
+            }
+        }
+    }
+
+    for(int v = 0 ; v < numVertices; v++){
+        for(int i = 0; i < adjacencyList[v].size(); i++){
+            int u = adjacencyList[v][i];
+            if(isBiggerOrder(v,u)){
+                int j = 0;
+                for(int y : adjacencyList[u]){
+                    if(y == v){
+                        edgeCount.push_back({v,u,M[T[v]+i] + M[T[u]+j]});
                     }
                     j++;
                 }

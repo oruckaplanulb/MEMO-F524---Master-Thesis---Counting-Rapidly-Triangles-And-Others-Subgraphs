@@ -28,7 +28,7 @@ public:
         file.close();
     }
 
-    void encodeResults(const string &path, const string &graphName, const string &function, const vector<chrono::duration<double>> &times, const int result){
+    void encodeResults(const string &path, const string &graphName, const string &function, const vector<chrono::duration<double>> &times, const long long int result){
         ofstream file(path, ios::app);
         if (!file.is_open())
         {

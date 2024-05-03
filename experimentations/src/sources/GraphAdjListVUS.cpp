@@ -5,6 +5,7 @@
 #include <map>
 #include <thread>
 #include <algorithm>
+#include <climits>
 
 using namespace std;
 
@@ -422,7 +423,6 @@ int GraphAdjListVUS::AYZ_Algorithm() const{
     
 
     if(Vhigh.size() > 0){
-        //create a vector of vector of size edge count
         vector<vector<int>> A(Vhigh.size(), vector<int>(Vhigh.size(), 0));
         for(int v = 0 ; v < Vhigh.size(); v++){
             for(int u = 0 ; u < Vhigh.size(); u++){
@@ -449,9 +449,8 @@ int GraphAdjListVUS::AYZ_Algorithm() const{
     return count/6;
 }
 
-int GraphAdjListVUS::count4CyclesBasic() const{
-    //zero-initialized array L of size n indexed by V
-    int count = 0;
+long long int GraphAdjListVUS::count4CyclesBasic() const{
+    long long int count = 0;
     vector<int> L(numVertices, 0);
     for(int v = 0 ; v < numVertices; v++){
         for(int u : adjacencyList[v]){
@@ -540,7 +539,7 @@ vector<int> GraphAdjListVUS::count4CyclesVertexLocal() const{
     return count;
 }
 
-int GraphAdjListVUS::count4CyclesGeneralization() const {
+long long int GraphAdjListVUS::count4CyclesGeneralization() const {
     double countTrace = 0;
     double countH2 = 0;
     double countH1 = 0;
@@ -565,10 +564,10 @@ int GraphAdjListVUS::count4CyclesGeneralization() const {
     return (countTrace - (4*countH2) - (2*countH1))/8;
 }
 
-long int GraphAdjListVUS::count5CyclesGeneralization() const {
-    unsigned long int countTrace = 0;
-    unsigned long int countH5 = 0;
-    unsigned long int countC3 = 0;
+long long int GraphAdjListVUS::count5CyclesGeneralization() const {
+    long long int countTrace = 0;
+    long long int countH5 = 0;
+    long long int countC3 = 0;
     const vector<double> passThroughTriangles = getNumberOfTrianglesPassThrough();
 
     for(int v = 0; v < numVertices; v++){

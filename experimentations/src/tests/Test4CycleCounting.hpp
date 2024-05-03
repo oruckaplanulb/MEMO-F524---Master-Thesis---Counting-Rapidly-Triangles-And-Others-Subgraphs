@@ -15,11 +15,11 @@ class Test4CycleCounting {
 public:
 
     static void testCount4CycleLowMedHigh(int nbRuns) {
-        vector<string> graphsPaths = {  "../graphs/Road-Network/roadNet-PA.txt",
+        vector<string> graphsPaths = {  /*"../graphs/Road-Network/roadNet-PA.txt",
                                         "../graphs/p2p-Gnutella/p2p-Gnutella08.txt",
                                         "../graphs/Social-Network/soc-Slashdot0811.txt",
                                         "../graphs/Web-graph/web-NotreDame.txt",
-                                        "../graphs/Network-gtc/com-youtube.txt",
+                                        "../graphs/Network-gtc/com-youtube.txt",*/
                                         "../graphs/Communication-Network/WikiTalk.txt",
                                         "../graphs/Web-graph/web-BerkStan.txt",
                                         "../graphs/Web-graph/web-Stanford.txt"};
@@ -33,7 +33,7 @@ public:
             cout << "Vertices: " << g->getNumVertices() << endl;
             cout << "Edges: " << g->getNumEdges() << endl;
 
-            int cpt = 0;
+            long long int cpt = 0;
             auto start = chrono::high_resolution_clock::now();
             auto end = chrono::high_resolution_clock::now();
             chrono::duration<double> elapsed_seconds;
@@ -105,12 +105,12 @@ public:
     }
 
     static void testCount4CycleEdgeLocalLowMedHigh(int nbRuns) {
-        vector<string> graphsPaths = {  "../graphs/Road-Network/roadNet-PA.txt",
-                                        "../graphs/p2p-Gnutella/p2p-Gnutella08.txt",
-                                        "../graphs/Social-Network/soc-Slashdot0811.txt",
-                                        "../graphs/Web-graph/web-NotreDame.txt",
-                                        "../graphs/Network-gtc/com-youtube.txt",
-                                        "../graphs/Communication-Network/WikiTalk.txt",
+        vector<string> graphsPaths = {  //"../graphs/Road-Network/roadNet-PA.txt",
+                                        //"../graphs/p2p-Gnutella/p2p-Gnutella08.txt",
+                                        //"../graphs/Social-Network/soc-Slashdot0811.txt",
+                                        //"../graphs/Web-graph/web-NotreDame.txt",
+                                        //"../graphs/Network-gtc/com-youtube.txt",
+                                        //"../graphs/Communication-Network/WikiTalk.txt",
                                         "../graphs/Web-graph/web-BerkStan.txt",
                                         "../graphs/Web-graph/web-Stanford.txt"};
 
@@ -132,9 +132,9 @@ public:
 
             cout << "Graph: " << graphPath << " | Function: " << "Count4CycleEdgeLocalLowMedHigh" << " NbRun: "<< nbRuns << endl;
             for (int i = 0; i < nbRuns; ++i) {
-                //cout << "Run number: " << i << endl;
+                cout << "Run number: " << i << endl;
                 start = chrono::high_resolution_clock::now();
-                cpt = g->count4CyclesEdgeLocal().size();
+                cpt = g->count4CyclesEdgeLocalVector().size();
                 end = chrono::high_resolution_clock::now();
                 elapsed_seconds = end-start;
                 total_seconds += elapsed_seconds;
