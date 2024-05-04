@@ -1,5 +1,17 @@
+Graph: ../graphs/Road-Network/roadNet-PA.txt | Function: Count4CycleEdgeLocalLowMedHigh | Result: 1541898 (nb edges in the return array)
+Min: 745545 ms Max: 765808 ms Avg: 749733 ms AvgT: 744580 ms
+1. 760063 ms
+2. 765808 ms
+3. 746049 ms
+4. 748137 ms
+5. 746914 ms
+6. 745802 ms
+7. 745545 ms
+8. 746765 ms
+9. 746608 ms
+10. 745636 ms
 Graph: ../graphs/p2p-Gnutella/p2p-Gnutella08.txt | Function: Count4CycleEdgeLocalLowMedHigh | Result: 20777 (nb edges in the return array)
-Min: 22.9657 ms Max: 24.9334 ms Avg: 23.5506 ms
+Min: 22.9657 ms Max: 24.9334 ms Avg: 23.5506 ms AvgT: 14.9589 ms
 1. 22.974 ms
 2. 24.9334 ms
 3. 22.9736 ms
@@ -11,7 +23,7 @@ Min: 22.9657 ms Max: 24.9334 ms Avg: 23.5506 ms
 9. 23.9415 ms
 10. 23.9353 ms
 Graph: ../graphs/Social-Network/soc-Slashdot0811.txt | Function: Count4CycleEdgeLocalLowMedHigh | Result: 469180 (nb edges in the return array)
-Min: 2583.12 ms Max: 2757.63 ms Avg: 2649.33 ms
+Min: 2583.12 ms Max: 2757.63 ms Avg: 2649.33 ms AvgT: 2376.43 ms
 1. 2757.63 ms
 2. 2647.95 ms
 3. 2616.01 ms
@@ -23,7 +35,7 @@ Min: 2583.12 ms Max: 2757.63 ms Avg: 2649.33 ms
 9. 2611.01 ms
 10. 2652.92 ms
 Graph: ../graphs/Web-graph/web-NotreDame.txt | Function: Count4CycleEdgeLocalLowMedHigh | Result: 1090108 (nb edges in the return array)
-Min: 49570.4 ms Max: 57224 ms Avg: 50782 ms
+Min: 49570.4 ms Max: 57224 ms Avg: 50782 ms AvgT: 50341.3 ms
 1. 57224 ms
 2. 50558.7 ms
 3. 51136.2 ms
@@ -35,7 +47,7 @@ Min: 49570.4 ms Max: 57224 ms Avg: 50782 ms
 9. 49725 ms
 10. 50162.8 ms
 Graph: ../graphs/Network-gtc/com-youtube.txt | Function: Count4CycleEdgeLocalLowMedHigh | Result: 2987624 (nb edges in the return array)
-Min: 816930 ms Max: 831217 ms Avg: 820358 ms
+Min: 816930 ms Max: 831217 ms Avg: 820358 ms AvgT: 810358 ms
 1. 831217 ms
 2. 819360 ms
 3. 818991 ms
@@ -47,7 +59,7 @@ Min: 816930 ms Max: 831217 ms Avg: 820358 ms
 9. 823047 ms
 10. 821529 ms
 Graph: ../graphs/Web-graph/web-BerkStan.txt | Function: Count4CycleEdgeLocalLowMedHigh | Result: 6649470 (nb edges in the return array)
-Min: 280182 ms Max: 309070 ms Avg: 290714 ms
+Min: 280182 ms Max: 309070 ms Avg: 290714 ms AvgT: 288714 ms
 1. 298654 ms
 2. 280291 ms
 3. 280182 ms
@@ -59,7 +71,7 @@ Min: 280182 ms Max: 309070 ms Avg: 290714 ms
 9. 297587 ms
 10. 284482 ms
 Graph: ../graphs/Web-graph/web-Stanford.txt | Function: Count4CycleEdgeLocalLowMedHigh | Result: 1992636 (nb edges in the return array)
-Min: 36210.1 ms Max: 42354.7 ms Avg: 38864.5 ms
+Min: 36210.1 ms Max: 42354.7 ms Avg: 38864.5 ms AvgT: 37864.5 ms
 1. 39413.6 ms
 2. 37600.4 ms
 3. 38158.9 ms
@@ -70,15 +82,3 @@ Min: 36210.1 ms Max: 42354.7 ms Avg: 38864.5 ms
 8. 37873.7 ms
 9. 36422.6 ms
 10. 36210.1 ms
-Graph: ../graphs/Road-Network/roadNet-PA.txt | Function: Count4CycleEdgeLocalLowMedHigh | Result: 1541898
-Min: 745545 ms Max: 765808 ms Avg: 749733 ms
-1. 760063 ms
-2. 765808 ms
-3. 746049 ms
-4. 748137 ms
-5. 746914 ms
-6. 745802 ms
-7. 745545 ms
-8. 746765 ms
-9. 746608 ms
-10. 745636 ms

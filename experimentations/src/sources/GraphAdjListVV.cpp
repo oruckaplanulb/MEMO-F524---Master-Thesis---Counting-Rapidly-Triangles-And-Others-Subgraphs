@@ -5,6 +5,7 @@
 #include <map>
 #include <thread>
 #include <algorithm>
+#include <chrono>
 
 using namespace std;
 
@@ -133,12 +134,21 @@ vector<vector<int>> GraphAdjListVV::count4CyclesEdgeLocalVector() const{
     vector<int> M(2*getNumEdges(), 0);
     vector<vector<int>> edgeCount;
     vector<int> T(numVertices, 0);
+
+    /*
+    auto start = chrono::high_resolution_clock::now();*/
+
     //define T
     for(int v = 0; v < numVertices; v++){
         for(int vp = 0; vp < v; vp++){
             T[v]+=degree(vp);
         }
     }
+
+    /*
+    auto end = chrono::high_resolution_clock::now();
+    chrono::duration<double> elapsed_seconds = end-start;
+    cout << "T defined in " << elapsed_seconds.count()*1000 << "ms" << endl;*/
 
     //the algo
     for(int v = 0 ; v < numVertices; v++){
