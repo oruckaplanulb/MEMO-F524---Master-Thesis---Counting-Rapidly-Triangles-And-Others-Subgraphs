@@ -135,8 +135,8 @@ vector<vector<int>> GraphAdjListVV::count4CyclesEdgeLocalVector() const{
     vector<vector<int>> edgeCount;
     vector<int> T(numVertices, 0);
 
-    /*
-    auto start = chrono::high_resolution_clock::now();*/
+    
+    auto start = chrono::high_resolution_clock::now();
 
     //define T
     for(int v = 0; v < numVertices; v++){
@@ -145,10 +145,10 @@ vector<vector<int>> GraphAdjListVV::count4CyclesEdgeLocalVector() const{
         }
     }
 
-    /*
+    
     auto end = chrono::high_resolution_clock::now();
     chrono::duration<double> elapsed_seconds = end-start;
-    cout << "T defined in " << elapsed_seconds.count()*1000 << "ms" << endl;*/
+    cout << "T defined in " << elapsed_seconds.count()*1000 << "ms" << endl;
 
     //the algo
     for(int v = 0 ; v < numVertices; v++){
@@ -195,4 +195,70 @@ vector<vector<int>> GraphAdjListVV::count4CyclesEdgeLocalVector() const{
     }
     
     return edgeCount;
+}
+
+chrono::duration<double> GraphAdjListVV::count4CyclesEdgeLocalTtime() const{
+    vector<int> L(numVertices, 0);
+    vector<int> Lbis(numVertices, 0);
+    vector<int> M(2*getNumEdges(), 0);
+    vector<vector<int>> edgeCount;
+    vector<int> T(numVertices, 0);
+
+    
+    auto start = chrono::high_resolution_clock::now();
+
+    //define T
+    for(int v = 0; v < numVertices; v++){
+        for(int vp = 0; vp < v; vp++){
+            T[v]+=degree(vp);
+        }
+    }   
+    auto end = chrono::high_resolution_clock::now();
+    chrono::duration<double> elapsed_seconds = end-start;
+
+    //the algo
+    for(int v = 0 ; v < numVertices; v++){
+        for(int i = 0; i < adjacencyList[v].size(); i++){
+            int u = adjacencyList[v][i];
+            if(isBiggerOrder(v,u)){
+                for(int j = 0; j < adjacencyList[u].size(); j++){
+                    int y = adjacencyList[u][j];
+                    if(isBiggerOrder(v,y)){
+                        L[y] = Lbis[y];
+                        Lbis[y]++;
+                    }
+                }
+            }
+        }
+        for(int i = 0; i < adjacencyList[v].size(); i++){
+            int u = adjacencyList[v][i];
+            if(isBiggerOrder(v,u)){
+                for(int j = 0; j < adjacencyList[u].size(); j++){
+                    int y = adjacencyList[u][j];
+                    if(isBiggerOrder(v,y)){
+                        M[T[v]+i] += L[y];
+                        M[T[u]+j] += L[y];
+                        Lbis[y] = 0;
+                    }
+                }
+            }
+        }
+    }
+
+    for(int v = 0 ; v < numVertices; v++){
+        for(int i = 0; i < adjacencyList[v].size(); i++){
+            int u = adjacencyList[v][i];
+            if(isBiggerOrder(v,u)){
+                int j = 0;
+                for(int y : adjacencyList[u]){
+                    if(y == v){
+                        edgeCount.push_back({v,u,M[T[v]+i] + M[T[u]+j]});
+                    }
+                    j++;
+                }
+            }
+        }
+    }
+    
+    return elapsed_seconds;
 }

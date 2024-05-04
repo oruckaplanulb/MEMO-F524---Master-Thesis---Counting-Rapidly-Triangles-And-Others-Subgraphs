@@ -16,9 +16,9 @@ using namespace std;
 
 int main(int argc, char *argv[]){ 
 
-    Test4CycleCounting::testCount4CycleNMIncreasing(10);
-    Test4CycleCounting::testCount4CycleVertexLocalNMIncreasing(10);
-    Test4CycleCounting::testCount4CycleEdgeLocalNMIncreasing(10);
+    //Test4CycleCounting::testCount4CycleNMIncreasing(10);
+    //Test4CycleCounting::testCount4CycleVertexLocalNMIncreasing(10);
+    Test4CycleCounting::testCount4CycleEdgeLocalNMIncreasingTtime(10);
     
     /*GraphFiller *graphFiller = new GraphFiller();
     GraphAdjMatrixVV *g1 = new GraphAdjMatrixVV();

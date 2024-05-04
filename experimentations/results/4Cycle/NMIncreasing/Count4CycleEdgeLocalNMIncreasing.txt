@@ -95,7 +95,7 @@ Min: 514.623 ms Max: 564.457 ms Avg: 527.988 ms
 9. 530.581 ms
 10. 520.574 ms
 Graph: ../graphs/p2p-Gnutella/p2p-Gnutella31.txt | Function: Count4CycleEdgeLocalNMIncreasing | Result: 147892
-Min: 1451.12 ms Max: 1605.74 ms Avg: 1492.53 ms
+Min: 1451.12 ms Max: 1605.74 ms Avg: 1492.53 ms (IF Avg = 1601.53, Tavg = 1542.476)
 1. 1605.74 ms
 2. 1485.99 ms
 3. 1451.12 ms

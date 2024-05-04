@@ -8,6 +8,7 @@
 #include <map>
 #include <functional>
 #include <cmath>
+#include <chrono>
 
 class Graph {
 public:
@@ -131,6 +132,7 @@ public:
 
     std::map<std::pair<int, int>, int> count4CyclesEdgeLocalMap() const;
     std::vector<std::vector<int>> count4CyclesEdgeLocalVector() const;
+    std::chrono::duration<double> count4CyclesEdgeLocalTtime() const;
 };
 
 
