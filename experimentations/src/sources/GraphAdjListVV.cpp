@@ -68,6 +68,113 @@ vector<int>& GraphAdjListVV::getNeighbors(int v){
     return adjacencyList[v];
 }
 
+int GraphAdjListVV::countTrianglesNodeIteratorPlusPlus() const {
+    int count = 0;
+    for (int v = 0; v < numVertices; ++v) {
+        for (const int& u : adjacencyList[v]) {
+            if(isBiggerOrder(u, v)){
+                for (const int& w : adjacencyList[v]) {
+                    if (isBiggerOrder(w,u) && hasEdge(u, w)) {
+                        count++;
+                    }
+                }
+            }
+        }
+    }
+    return count;
+}
+
+long long int GraphAdjListVV::count4CyclesBasic() const{
+    long long int count = 0;
+    vector<int> L(numVertices, 0);
+    for(int v = 0 ; v < numVertices; v++){
+        for(int u : adjacencyList[v]){
+            if(isBiggerOrder(v,u)){
+                for(int w : adjacencyList[u]){
+                    if(isBiggerOrder(v,w)){
+                        count = count + L[w];
+                        L[w]++;
+                    }
+                }
+            }
+        }
+        for(int u : adjacencyList[v]){
+            if(isBiggerOrder(v,u)){
+                for(int w : adjacencyList[u]){
+                    if(isBiggerOrder(v,w)){
+                        L[w] = 0;
+                    }
+                }
+            }
+        }
+    }
+    return count;
+}
+
+vector<vector<int>> GraphAdjListVV::find4Cycles() const {
+    vector<vector<int>> cycles;
+    vector<vector<int>> L(numVertices);
+
+    for (int v = 0; v < numVertices; ++v) {
+        for (int u : adjacencyList[v]) {
+            if (isBiggerOrder(v, u)) {
+                for (int y : adjacencyList[u]) {
+                    if (isBiggerOrder(v, y)) {
+                        for (int x : L[y]) {
+                            std::vector<int> cycle = {v, u, y, x};
+                            cycles.push_back(cycle);
+                        }
+                        L[y].push_back(u);
+                    }
+                }
+            }
+        }
+        for (int u : adjacencyList[v]) {
+            if (isBiggerOrder(v, u)) {
+                for (int y : adjacencyList[u]) {
+                    L[y].clear();
+                }
+            }
+        }
+    }
+
+    return cycles;
+}
+
+vector<long long int> GraphAdjListVV::count4CyclesVertexLocal() const{
+    vector<int> L(numVertices, 0);
+    vector<int> Lbis(numVertices, 0);
+    vector<long long int> count(numVertices, 0);
+
+    for(int v = 0 ; v < numVertices; v++){
+        for(int u : adjacencyList[v]){
+            if(isBiggerOrder(v,u)){
+                for(int y : adjacencyList[u]){
+                    if(isBiggerOrder(v,y)){
+                        count[v] += Lbis[y];
+                        count[y] += Lbis[y];
+                        L[y] = Lbis[y];
+                        Lbis[y]++;
+                    }
+                }
+            }
+        }
+        for(int u : adjacencyList[v]){
+            if(isBiggerOrder(v,u)){
+                for(int y : adjacencyList[u]){
+                    if(isBiggerOrder(v,y)){
+                        count[u] += L[y];
+                        Lbis[y] = 0;
+                    }
+                }
+            }
+        }
+    }
+    
+    return count;
+}
+
+
 map<pair<int, int>, int>  GraphAdjListVV::count4CyclesEdgeLocalMap() const{
     vector<int> L(numVertices, 0);
     vector<int> Lbis(numVertices, 0);
@@ -75,10 +182,15 @@ map<pair<int, int>, int>  GraphAdjListVV::count4CyclesEdgeLocalMap() const{
     std::map<std::pair<int, int>, int> edgeCount;
     vector<int> T(numVertices, 0);
     //define T
-    for(int v = 0; v < numVertices; v++){
+    /*for(int v = 0; v < numVertices; v++){
         for(int vp = 0; vp < v; vp++){
             T[v]+=degree(vp);
         }
+    }*/
+    int degreeSum = 0;
+    for(int v = 0; v < numVertices; v++){
+        T[v] = degreeSum;
+        degreeSum += degree(v);
     }
 
     //the algo
@@ -135,20 +247,18 @@ vector<vector<int>> GraphAdjListVV::count4CyclesEdgeLocalVector() const{
     vector<vector<int>> edgeCount;
     vector<int> T(numVertices, 0);
 
-    
-    auto start = chrono::high_resolution_clock::now();
 
     //define T
-    for(int v = 0; v < numVertices; v++){
+    /*for(int v = 0; v < numVertices; v++){
         for(int vp = 0; vp < v; vp++){
             T[v]+=degree(vp);
         }
+    }*/
+    int degreeSum = 0;
+    for(int v = 0; v < numVertices; v++){
+        T[v] = degreeSum;
+        degreeSum += degree(v);
     }
-
-    
-    auto end = chrono::high_resolution_clock::now();
-    chrono::duration<double> elapsed_seconds = end-start;
-    cout << "T defined in " << elapsed_seconds.count()*1000 << "ms" << endl;
 
     //the algo
     for(int v = 0 ; v < numVertices; v++){
@@ -208,10 +318,15 @@ chrono::duration<double> GraphAdjListVV::count4CyclesEdgeLocalTtime() const{
     auto start = chrono::high_resolution_clock::now();
 
     //define T
-    for(int v = 0; v < numVertices; v++){
+    /*for(int v = 0; v < numVertices; v++){
         for(int vp = 0; vp < v; vp++){
             T[v]+=degree(vp);
         }
+    }*/
+    int degreeSum = 0;
+    for(int v = 0; v < numVertices; v++){
+        T[v] = degreeSum;
+        degreeSum += degree(v);
     }   
     auto end = chrono::high_resolution_clock::now();
     chrono::duration<double> elapsed_seconds = end-start;

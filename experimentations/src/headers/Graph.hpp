@@ -104,7 +104,7 @@ public:
 
     long long int count4CyclesBasic() const;
     std::vector<std::vector<int>> find4Cycles() const;
-    std::vector<int> count4CyclesVertexLocal() const;
+    std::vector<long long int> count4CyclesVertexLocal() const;
 
     long long int count4CyclesGeneralization() const;
     long long int count5CyclesGeneralization() const;
@@ -129,7 +129,11 @@ public:
     void printGraph() const override;
     bool hasEdge(int vrtx1, int vrtx2) const override;
     std::vector<int>& getNeighbors(int v);
+    int countTrianglesNodeIteratorPlusPlus() const;
 
+    long long int count4CyclesBasic() const;
+    std::vector<std::vector<int>> find4Cycles() const;
+    std::vector<long long int> count4CyclesVertexLocal() const;
     std::map<std::pair<int, int>, int> count4CyclesEdgeLocalMap() const;
     std::vector<std::vector<int>> count4CyclesEdgeLocalVector() const;
     std::chrono::duration<double> count4CyclesEdgeLocalTtime() const;
@@ -138,8 +142,8 @@ public:
 
 
 ////////////////////////////////////////////////////////////////
-
-//OLD CLASS
+//OLD CLASS - Testing purposes
+////////////////////////////////////////////////////////////////
 class GraphAdjListVL : public Graph {
 private:
     int numVertices;

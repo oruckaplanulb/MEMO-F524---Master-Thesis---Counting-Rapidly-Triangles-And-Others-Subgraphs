@@ -506,10 +506,10 @@ vector<vector<int>> GraphAdjListVUS::find4Cycles() const {
     return cycles;
 }
 
-vector<int> GraphAdjListVUS::count4CyclesVertexLocal() const{
+vector<long long int> GraphAdjListVUS::count4CyclesVertexLocal() const{
     vector<int> L(numVertices, 0);
     vector<int> Lbis(numVertices, 0);
-    vector<int> count(numVertices, 0);
+    vector<long long int> count(numVertices, 0);
 
     for(int v = 0 ; v < numVertices; v++){
         for(int u : adjacencyList[v]){
