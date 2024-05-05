@@ -16,51 +16,12 @@ using namespace std;
 
 int main(int argc, char *argv[]){ 
 
-    //Test4CycleCounting::testCount4CycleEdgeLocalNMIncreasingTtime(10);
-    
+    Test4CycleCounting::testCount4CycleNMIncreasingVV(10);
+    Test4CycleCounting::testCount4CycleVertexLocalNMIncreasingVV(10);
+    Test4CycleCounting::testCount4CycleEdgeLocalNMIncreasingVV(10);
+
+
     /*GraphFiller *graphFiller = new GraphFiller();
-    GraphAdjMatrixVV *g1 = new GraphAdjMatrixVV();
-    graphFiller->setGraphFromFileMapped(argv[1], g1);
-
-    GraphAdjListVUS *g2 = new GraphAdjListVUS();
-    graphFiller->setGraphFromFileMapped(argv[1], g2);
-
-    cout << "- Graph VUS -" << endl;
-    cout << "Vertices: " << g1->getNumVertices() << endl;
-    cout << "Edges: " << g1->getNumEdges() << endl;
-    
-    long int cpt = 0;
-    auto start = chrono::high_resolution_clock::now();
-    auto end = chrono::high_resolution_clock::now();
-    chrono::duration<double> elapsed_secondsNI;
-    chrono::duration<double> elapsed_secondsNIPP;
-
-    start = chrono::high_resolution_clock::now();
-    cpt = g1->countTrianglesMatrixCube(Matrix::multiplyBlasSSYMM,1);
-    end = chrono::high_resolution_clock::now();
-    elapsed_secondsNI = end - start;
-    cout << "Nb Triangle " << cpt << endl;
-    cout << "Elapsed time: " << elapsed_secondsNI.count()*1000 << "ms" << endl;
-
-    start = chrono::high_resolution_clock::now();
-    cpt = g1->countTrianglesMatrixSquaring(Matrix::multiplyBlasSSYMM,1);
-    end = chrono::high_resolution_clock::now();
-    elapsed_secondsNI = end - start;
-    cout << "Nb Triangle " << cpt << endl;
-    cout << "Elapsed time: " << elapsed_secondsNI.count()*1000 << "ms" << endl;
-
-    start = chrono::high_resolution_clock::now();
-    cpt = g1->count4CyclesMatrixPow4(Matrix::multiplyBlasSSYMM,1);
-    end = chrono::high_resolution_clock::now();
-    elapsed_secondsNI = end - start;
-    cout << "Nb 4Cycles " << cpt << endl;
-    cout << "Elapsed time: " << elapsed_secondsNI.count()*1000 << "ms" << endl;
-
-    delete g1;
-    delete g2;
-    delete graphFiller;*/
-
-    GraphFiller *graphFiller = new GraphFiller();
     GraphAdjListVV *g1 = new GraphAdjListVV();
     graphFiller->setGraphFromFileMapped(argv[1], g1);
     GraphAdjListVUS *g2 = new GraphAdjListVUS();
@@ -70,7 +31,27 @@ int main(int argc, char *argv[]){
     cout << "Vertices: " << g1->getNumVertices() << endl;
     cout << "Edges: " << g1->getNumEdges() << endl;
 
-    vector<vector<int>> edgecount;
+    long long int cpt = 0;
+    auto start = chrono::high_resolution_clock::now();
+    auto end = chrono::high_resolution_clock::now();
+    chrono::duration<double> elapsed_seconds;
+
+    start = chrono::high_resolution_clock::now();
+    cpt = g1->count4CyclesBasic();
+    end = chrono::high_resolution_clock::now();
+    elapsed_seconds = end - start;
+    cout << "Nb 4 Cycle " << cpt << endl;
+    cout << "Elapsed time VV: " << elapsed_seconds.count()*1000 << "ms" << endl;
+
+    start = chrono::high_resolution_clock::now();
+    cpt = g2->count4CyclesBasic();
+    end = chrono::high_resolution_clock::now();
+    elapsed_seconds = end - start;
+    cout << "Nb 4 Cycle " << cpt << endl;
+    cout << "Elapsed time VUS: " << elapsed_seconds.count()*1000 << "ms" << endl;*/
+
+
+    /*vector<vector<int>> edgecount;
     vector<long long int> edgecount2;
     auto start = chrono::high_resolution_clock::now();
     auto end = chrono::high_resolution_clock::now();
@@ -106,7 +87,7 @@ int main(int argc, char *argv[]){
         cpt += edgecount[i][2];
     }
     cout << "Nb 4Cycles " << cpt/4 << endl;
-    cout << "Elapsed time: " << elapsed_secondsNI.count()*1000 << "ms" << endl;
+    cout << "Elapsed time: " << elapsed_secondsNI.count()*1000 << "ms" << endl;*/
 
 
     return 0;

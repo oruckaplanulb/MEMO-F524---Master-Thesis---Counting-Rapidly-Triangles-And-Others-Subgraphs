@@ -1,0 +1,60 @@
+Graph: ../graphs/Social-Network/ego-facebook.txt | Function: Count4CycleFacebookVUS | Result: 144023053
+Min: 155.692 ms Max: 190.367 ms Avg: 166.447 ms
+1. 173.717 ms
+2. 155.692 ms
+3. 156.946 ms
+4. 169.432 ms
+5. 180.874 ms
+6. 190.367 ms
+7. 156.435 ms
+8. 164.957 ms
+9. 158.216 ms
+10. 157.831 ms
+Graph: ../graphs/Social-Network/ego-facebook.txt | Function: Count4CycleVertexLocalFacebookVUS | Result: 4039
+Min: 164.353 ms Max: 223.051 ms Avg: 185.059 ms
+1. 195.014 ms
+2. 171.126 ms
+3. 189.131 ms
+4. 198.744 ms
+5. 172.731 ms
+6. 164.353 ms
+7. 223.051 ms
+8. 199.864 ms
+9. 170.808 ms
+10. 165.763 ms
+Graph: ../graphs/Social-Network/ego-facebook.txt | Function: Count4CycleFacebookVV | Result: 144023053
+Min: 57.9197 ms Max: 69.5866 ms Avg: 59.9568 ms
+1. 69.5866 ms
+2. 61.3536 ms
+3. 58.7619 ms
+4. 58.5744 ms
+5. 57.9548 ms
+6. 59.2159 ms
+7. 58.8416 ms
+8. 58.8461 ms
+9. 57.9197 ms
+10. 58.5136 ms
+Graph: ../graphs/Social-Network/ego-facebook.txt | Function: Count4CycleVertexLocalFacebookVV | Result: 4039
+Min: 65.6713 ms Max: 73.843 ms Avg: 68.0686 ms
+1. 73.843 ms
+2. 68.9882 ms
+3. 65.6713 ms
+4. 66.4573 ms
+5. 68.2726 ms
+6. 66.5062 ms
+7. 69.5657 ms
+8. 67.7735 ms
+9. 66.9997 ms
+10. 66.6083 ms
+Graph: ../graphs/Social-Network/ego-facebook.txt | Function: Count4CycleEdgeLocalFacebookVV | Result: 88234
+Min: 78.3333 ms Max: 91.5604 ms Avg: 86.167 ms
+1. 90.4263 ms
+2. 89.7683 ms
+3. 89.229 ms
+4. 87.0175 ms
+5. 82.8247 ms
+6. 81.703 ms
+7. 91.5604 ms
+8. 89.4602 ms
+9. 78.3333 ms
+10. 81.3471 ms
