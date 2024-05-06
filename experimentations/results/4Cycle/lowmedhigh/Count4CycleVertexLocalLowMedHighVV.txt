@@ -1,0 +1,96 @@
+Graph: ../graphs/Road-Network/roadNet-PA.txt | Function: Count4CycleVertexLocalLowMedHigh | Result: 1088092
+Min: 128.656 ms Max: 142.64 ms Avg: 132.75 ms
+1. 142.64 ms
+2. 129.685 ms
+3. 132.646 ms
+4. 133.641 ms
+5. 131.649 ms
+6. 131.647 ms
+7. 132.645 ms
+8. 128.656 ms
+9. 131.648 ms
+10. 132.639 ms
+Graph: ../graphs/p2p-Gnutella/p2p-Gnutella08.txt | Function: Count4CycleVertexLocalLowMedHigh | Result: 6301
+Min: 2.9815 ms Max: 4.9623 ms Avg: 3.59269 ms
+1. 2.9815 ms
+2. 3.9905 ms
+3. 4.0172 ms
+4. 2.9976 ms
+5. 3.983 ms
+6. 2.9945 ms
+7. 4.9623 ms
+8. 3.9835 ms
+9. 3.0249 ms
+10. 2.9919 ms
+Graph: ../graphs/Social-Network/soc-Slashdot0811.txt | Function: Count4CycleVertexLocalLowMedHigh | Result: 77360
+Min: 352.058 ms Max: 432.844 ms Avg: 373.704 ms
+1. 396.971 ms
+2. 383.941 ms
+3. 432.844 ms
+4. 369.047 ms
+5. 358.006 ms
+6. 357.045 ms
+7. 352.058 ms
+8. 363.063 ms
+9. 363.031 ms
+10. 361.032 ms
+Graph: ../graphs/Web-graph/web-NotreDame.txt | Function: Count4CycleVertexLocalLowMedHigh | Result: 325729
+Min: 241.323 ms Max: 268.276 ms Avg: 249.237 ms
+1. 255.32 ms
+2. 245.375 ms
+3. 243.351 ms
+4. 268.276 ms
+5. 259.282 ms
+6. 246.371 ms
+7. 248.334 ms
+8. 241.323 ms
+9. 241.386 ms
+10. 243.349 ms
+Graph: ../graphs/Network-gtc/com-youtube.txt | Function: Count4CycleVertexLocalLowMedHigh | Result: 1134890
+Min: 2225.05 ms Max: 2263.98 ms Avg: 2241.32 ms
+1. 2263.98 ms
+2. 2243.96 ms
+3. 2227.04 ms
+4. 2225.05 ms
+5. 2243 ms
+6. 2230.16 ms
+7. 2242 ms
+8. 2255.97 ms
+9. 2253.97 ms
+10. 2228.04 ms
+Graph: ../graphs/Communication-Network/WikiTalk.txt | Function: Count4CycleVertexLocalLowMedHigh | Result: 2394385
+Min: 11283.8 ms Max: 11370.6 ms Avg: 11331.2 ms
+1. 11355.7 ms
+2. 11308.7 ms
+3. 11351.6 ms
+4. 11328.4 ms
+5. 11288.8 ms
+6. 11370.6 ms
+7. 11283.8 ms
+8. 11355.7 ms
+9. 11312.4 ms
+10. 11356.5 ms
+Graph: ../graphs/Web-graph/web-BerkStan.txt | Function: Count4CycleVertexLocalLowMedHigh | Result: 685230
+Min: 1831.1 ms Max: 1877.98 ms Avg: 1848.45 ms
+1. 1849.05 ms
+2. 1877.98 ms
+3. 1846.03 ms
+4. 1837.09 ms
+5. 1837.12 ms
+6. 1855.03 ms
+7. 1851.05 ms
+8. 1836.09 ms
+9. 1831.1 ms
+10. 1864.01 ms
+Graph: ../graphs/Web-graph/web-Stanford.txt | Function: Count4CycleVertexLocalLowMedHigh | Result: 281903
+Min: 596.372 ms Max: 614.372 ms Avg: 605.383 ms
+1. 604.375 ms
+2. 598.399 ms
+3. 611.395 ms
+4. 604.352 ms
+5. 604.396 ms
+6. 614.372 ms
+7. 612.368 ms
+8. 596.372 ms
+9. 597.434 ms
+10. 610.37 ms
