@@ -16,9 +16,18 @@ using namespace std;
 
 int main(int argc, char *argv[]){ 
 
-    Test4CycleCounting::testCount4CycleNMIncreasingVV(10);
+    /*Test4CycleCounting::testCount4CycleNMIncreasingVV(10);
     Test4CycleCounting::testCount4CycleVertexLocalNMIncreasingVV(10);
-    Test4CycleCounting::testCount4CycleEdgeLocalNMIncreasingVV(10);
+    Test4CycleCounting::testCount4CycleEdgeLocalNMIncreasingVV(10);*/
+
+    GraphFiller *graphFiller = new GraphFiller();
+    GraphAdjListVV *g1 = new GraphAdjListVV();
+    graphFiller->setGraphFromFileMapped(argv[1], g1);
+    delete graphFiller;
+    g1->count4CyclesEdgeLocalVector();
+    //g1->count4CyclesVertexLocal();
+    //g1->count4CyclesBasic();
+    delete g1;
 
 
     /*GraphFiller *graphFiller = new GraphFiller();

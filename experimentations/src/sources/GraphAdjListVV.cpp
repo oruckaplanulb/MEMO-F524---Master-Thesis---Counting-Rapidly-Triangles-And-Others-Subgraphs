@@ -87,6 +87,11 @@ int GraphAdjListVV::countTrianglesNodeIteratorPlusPlus() const {
 long long int GraphAdjListVV::count4CyclesBasic() const{
     long long int count = 0;
     vector<int> L(numVertices, 0);
+
+    /*cout << "HELLO" << endl;
+    std::this_thread::sleep_for(std::chrono::seconds(40));
+    cout << "HELLOFINISHED" << endl;*/
+
     for(int v = 0 ; v < numVertices; v++){
         for(int u : adjacencyList[v]){
             if(isBiggerOrder(v,u)){
@@ -145,6 +150,10 @@ vector<long long int> GraphAdjListVV::count4CyclesVertexLocal() const{
     vector<int> L(numVertices, 0);
     vector<int> Lbis(numVertices, 0);
     vector<long long int> count(numVertices, 0);
+
+    /*cout << "HELLO" << endl;
+    std::this_thread::sleep_for(std::chrono::seconds(40));
+    cout << "HELLOFINISHED" << endl;*/
 
     for(int v = 0 ; v < numVertices; v++){
         for(int u : adjacencyList[v]){
@@ -247,6 +256,9 @@ vector<vector<int>> GraphAdjListVV::count4CyclesEdgeLocalVector() const{
     vector<vector<int>> edgeCount;
     vector<int> T(numVertices, 0);
 
+    /*cout << "HELLO" << endl;
+    std::this_thread::sleep_for(std::chrono::seconds(40));
+    cout << "HELLOFINISHED" << endl;*/
 
     //define T
     /*for(int v = 0; v < numVertices; v++){
@@ -317,12 +329,6 @@ chrono::duration<double> GraphAdjListVV::count4CyclesEdgeLocalTtime() const{
     
     auto start = chrono::high_resolution_clock::now();
 
-    //define T
-    /*for(int v = 0; v < numVertices; v++){
-        for(int vp = 0; vp < v; vp++){
-            T[v]+=degree(vp);
-        }
-    }*/
     int degreeSum = 0;
     for(int v = 0; v < numVertices; v++){
         T[v] = degreeSum;
