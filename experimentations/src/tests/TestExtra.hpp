@@ -91,6 +91,58 @@ public:
         }
     }
 
+    static void getGraphInfosNb4Cycles() {
+
+        vector<string> graphsPaths;
+        for (const auto& entry : filesystem::recursive_directory_iterator("../graphs")) {
+        if (entry.is_regular_file() && entry.path().extension() == ".txt") {
+            if (entry.path().parent_path() != filesystem::path("../graphs")) {
+                auto s = entry.path().string();
+                std::replace(s.begin(), s.end(), '\\', '/');
+                cout << s << endl;
+                graphsPaths.push_back(s);
+            }
+        }
+        }
+
+        //for each graph Path
+        for (const string& graphPath : graphsPaths) {
+            GraphFiller* graphFiller = new GraphFiller();
+            GraphAdjListVV* g = new GraphAdjListVV();
+            graphFiller->setGraphFromFileMapped(graphPath, g);
+            delete graphFiller;
+            cout << "- Graph -"<< endl;
+            cout << "Vertices: " << g->getNumVertices() << endl;
+            cout << "Edges: " << g->getNumEdges() << endl;
+
+            auto start = chrono::high_resolution_clock::now();
+            auto end = chrono::high_resolution_clock::now();
+            chrono::duration<double> elapsed_seconds;
+            long long int nb4Cycles = 0;
+
+            string resultsPath = "../results/GraphsInfos/4cyclecountinformations.txt";
+            string result;
+
+            cout << "Graph: " << graphPath << " - Infos"<< endl;
+            result = "Graph: " + graphPath + " - Infos\n";
+
+            start = chrono::high_resolution_clock::now();
+            nb4Cycles = g->count4CyclesBasic();
+            end = chrono::high_resolution_clock::now();
+            elapsed_seconds = end-start;
+            cout << "Nb 4-cycles: " << nb4Cycles << " | computed in: "<< elapsed_seconds.count()*1000 << "ms" << endl;
+            result += "Nb 4-cycles: " + to_string(nb4Cycles) + " | computed in: " + to_string(elapsed_seconds.count()*1000) + "ms\n";
+
+            //write results to file
+            ResultsEncoder* resultsEncoder = new ResultsEncoder();
+
+            resultsEncoder->write(resultsPath, result);
+
+            delete g;
+
+        }
+    }
+
 };
 
 #endif

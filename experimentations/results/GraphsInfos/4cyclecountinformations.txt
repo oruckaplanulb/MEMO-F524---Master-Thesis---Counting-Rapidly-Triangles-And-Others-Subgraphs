@@ -1,0 +1,120 @@
+Graph: ../graphs/Amazon/Amazon0302.txt - Infos
+Nb 4-cycles: 2477087 | computed in: 190.526200ms
+
+Graph: ../graphs/Amazon/Amazon0312.txt - Infos
+Nb 4-cycles: 32229022 | computed in: 633.340700ms
+
+Graph: ../graphs/Amazon/Amazon0505.txt - Infos
+Nb 4-cycles: 35492004 | computed in: 634.335400ms
+
+Graph: ../graphs/Amazon/Amazon0601.txt - Infos
+Nb 4-cycles: 35661461 | computed in: 633.326100ms
+
+Graph: ../graphs/Citation-Network/Cit-HepPh.txt - Infos
+Nb 4-cycles: 39015537 | computed in: 175.565300ms
+
+Graph: ../graphs/Citation-Network/Cit-HepTh.txt - Infos
+Nb 4-cycles: 63698507 | computed in: 166.586400ms
+
+Graph: ../graphs/Collaboration-Network/CA-AstroPh.txt - Infos
+Nb 4-cycles: 44916549 | computed in: 85.808000ms
+
+Graph: ../graphs/Collaboration-Network/CA-CondMat.txt - Infos
+Nb 4-cycles: 1505383 | computed in: 15.984100ms
+
+Graph: ../graphs/Collaboration-Network/CA-GrQc.txt - Infos
+Nb 4-cycles: 1054723 | computed in: 2.017300ms
+
+Graph: ../graphs/Collaboration-Network/CA-HepPh.txt - Infos
+Nb 4-cycles: 486866960 | computed in: 85.795500ms
+
+Graph: ../graphs/Collaboration-Network/CA-HepTh.txt - Infos
+Nb 4-cycles: 239081 | computed in: 2.982500ms
+
+Graph: ../graphs/Communication-Network/Email-Enron.txt - Infos
+Nb 4-cycles: 36262229 | computed in: 85.733900ms
+
+Graph: ../graphs/Communication-Network/Email-EuAll.txt - Infos
+Nb 4-cycles: 18421946 | computed in: 119.678900ms
+
+Graph: ../graphs/Communication-Network/WikiTalk.txt - Infos
+Nb 4-cycles: 2152013141 | computed in: 6845.869600ms
+
+Graph: ../graphs/Network-gtc/com-amazon.txt - Infos
+Nb 4-cycles: 3125323 | computed in: 182.544200ms
+
+Graph: ../graphs/Network-gtc/com-dblp.txt - Infos
+Nb 4-cycles: 55107655 | computed in: 233.358400ms
+
+Graph: ../graphs/Network-gtc/com-youtube.txt - Infos
+Nb 4-cycles: 468774021 | computed in: 1523.891700ms
+
+Graph: ../graphs/Network-gtc/email-Eu-core.txt - Infos
+Nb 4-cycles: 4647873 | computed in: 5.985200ms
+
+Graph: ../graphs/p2p-Gnutella/p2p-Gnutella04.txt - Infos
+Nb 4-cycles: 28497 | computed in: 7.013500ms
+
+Graph: ../graphs/p2p-Gnutella/p2p-Gnutella05.txt - Infos
+Nb 4-cycles: 64998 | computed in: 4.967800ms
+
+Graph: ../graphs/p2p-Gnutella/p2p-Gnutella06.txt - Infos
+Nb 4-cycles: 90764 | computed in: 5.021700ms
+
+Graph: ../graphs/p2p-Gnutella/p2p-Gnutella08.txt - Infos
+Nb 4-cycles: 87885 | computed in: 2.978500ms
+
+Graph: ../graphs/p2p-Gnutella/p2p-Gnutella09.txt - Infos
+Nb 4-cycles: 96902 | computed in: 4.989100ms
+
+Graph: ../graphs/p2p-Gnutella/p2p-Gnutella24.txt - Infos
+Nb 4-cycles: 8794 | computed in: 10.997300ms
+
+Graph: ../graphs/p2p-Gnutella/p2p-Gnutella25.txt - Infos
+Nb 4-cycles: 13517 | computed in: 8.011800ms
+
+Graph: ../graphs/p2p-Gnutella/p2p-Gnutella30.txt - Infos
+Nb 4-cycles: 46363 | computed in: 12.964500ms
+
+Graph: ../graphs/p2p-Gnutella/p2p-Gnutella31.txt - Infos
+Nb 4-cycles: 42466 | computed in: 27.949300ms
+
+Graph: ../graphs/Road-Network/roadNet-CA.txt - Infos
+Nb 4-cycles: 262339 | computed in: 228.387800ms
+
+Graph: ../graphs/Road-Network/roadNet-PA.txt - Infos
+Nb 4-cycles: 157802 | computed in: 134.675600ms
+
+Graph: ../graphs/Road-Network/roadNet-TX.txt - Infos
+Nb 4-cycles: 183252 | computed in: 161.603800ms
+
+Graph: ../graphs/Social-Network/ego-facebook.txt - Infos
+Nb 4-cycles: 144023053 | computed in: 63.973200ms
+
+Graph: ../graphs/Social-Network/ego-twitter.txt - Infos
+Nb 4-cycles: 1023837230 | computed in: 893.638400ms
+
+Graph: ../graphs/Social-Network/soc-Epinions1.txt - Infos
+Nb 4-cycles: 166635817 | computed in: 284.238700ms
+
+Graph: ../graphs/Social-Network/soc-Slashdot0811.txt - Infos
+Nb 4-cycles: 49965153 | computed in: 277.291500ms
+
+Graph: ../graphs/Social-Network/soc-Slashdot0922.txt - Infos
+Nb 4-cycles: 58678630 | computed in: 318.178100ms
+
+Graph: ../graphs/Social-Network/wiki-Vote.txt - Infos
+Nb 4-cycles: 57654491 | computed in: 73.836900ms
+
+Graph: ../graphs/Web-graph/web-BerkStan.txt - Infos
+Nb 4-cycles: 127118333411 | computed in: 1485.027900ms
+
+Graph: ../graphs/Web-graph/web-Google.txt - Infos
+Nb 4-cycles: 539575204 | computed in: 960.466700ms
+
+Graph: ../graphs/Web-graph/web-NotreDame.txt - Infos
+Nb 4-cycles: 884960527 | computed in: 217.452900ms
+
+Graph: ../graphs/Web-graph/web-Stanford.txt - Infos
+Nb 4-cycles: 13316840570 | computed in: 516.652800ms
+

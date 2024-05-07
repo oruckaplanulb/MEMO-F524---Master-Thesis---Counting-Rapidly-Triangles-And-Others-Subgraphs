@@ -16,7 +16,7 @@ using namespace std;
 
 int main(int argc, char *argv[]){ 
 
-    Test4CycleCounting::testFind4CycleNMIncreasingVV(10);
+    TestExtra::getGraphInfosNb4Cycles();
 
 
     return 0;
