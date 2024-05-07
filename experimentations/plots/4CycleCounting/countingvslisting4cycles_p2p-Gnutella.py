@@ -28,7 +28,7 @@ alg1_bars = ax.bar(index, counting_times, bar_width, color="#b2e061", label='Nor
 for i, (v, vmin, vmax) in enumerate(zip(counting_times, counting_min, counting_max)):
     ax.errorbar(i, v, yerr=[[v - vmin], [vmax - v]], fmt='', color='black', markersize=5, capsize=5)
 
-alg2_bars = ax.bar([i + bar_width for i in index], listing_times, bar_width, color="#11aa11", label='Listing')
+alg2_bars = ax.bar([i + bar_width for i in index], listing_times, bar_width, color="#AABB77", label='Listing')
 
 for i, (v, vmin, vmax) in enumerate(zip(listing_times, listing_min, listing_max)):
     ax.errorbar(i + bar_width, v, yerr=[[v - vmin], [vmax - v]], fmt='', color='black', markersize=5, capsize=5)
