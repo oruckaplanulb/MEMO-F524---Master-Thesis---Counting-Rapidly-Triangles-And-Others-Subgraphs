@@ -1,0 +1,12 @@
+Graph: ../graphs/Social-Network/ego-facebook.txt | Function: Find4CycleFacebookVV | Result: 144023053
+Min: 25270.5 ms Max: 35708.5 ms Avg: 30274.2 ms
+1. 25270.5 ms
+2. 28669.3 ms
+3. 28260.4 ms
+4. 28527 ms
+5. 28745.1 ms
+6. 30020.7 ms
+7. 31003.1 ms
+8. 32145 ms
+9. 35708.5 ms
+10. 34392 ms

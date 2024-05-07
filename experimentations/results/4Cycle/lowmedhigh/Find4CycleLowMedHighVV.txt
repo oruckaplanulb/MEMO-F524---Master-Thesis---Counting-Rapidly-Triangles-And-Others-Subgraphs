@@ -1,0 +1,36 @@
+Graph: ../graphs/Road-Network/roadNet-PA.txt | Function: Find4CycleLowMedHigh | Result: 157802
+Min: 250.332 ms Max: 270.315 ms Avg: 259.11 ms
+1. 270.315 ms
+2. 258.307 ms
+3. 261.301 ms
+4. 258.31 ms
+5. 261.299 ms
+6. 256.315 ms
+7. 258.31 ms
+8. 258.275 ms
+9. 250.332 ms
+10. 258.341 ms
+Graph: ../graphs/p2p-Gnutella/p2p-Gnutella08.txt | Function: Find4CycleLowMedHigh | Result: 87885
+Min: 19.9479 ms Max: 42.8854 ms Avg: 24.0369 ms
+1. 25.9094 ms
+2. 22.9724 ms
+3. 42.8854 ms
+4. 20.9101 ms
+5. 21.9412 ms
+6. 22.0149 ms
+7. 21.9042 ms
+8. 19.9479 ms
+9. 20.9406 ms
+10. 20.9428 ms
+Graph: ../graphs/Social-Network/soc-Slashdot0811.txt | Function: Find4CycleLowMedHigh | Result: 49965153
+Min: 9378.95 ms Max: 9899.52 ms Avg: 9570.8 ms
+1. 9899.52 ms
+2. 9440.75 ms
+3. 9378.95 ms
+4. 9536.46 ms
+5. 9543.47 ms
+6. 9696.1 ms
+7. 9639.21 ms
+8. 9524.49 ms
+9. 9561.42 ms
+10. 9487.66 ms

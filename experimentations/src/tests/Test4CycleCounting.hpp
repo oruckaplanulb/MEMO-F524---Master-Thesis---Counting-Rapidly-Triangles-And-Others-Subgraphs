@@ -621,6 +621,129 @@ public:
             resultsEncoder->encodeResults("../results/4Cycle/NMIncreasing/Count4CycleEdgeLocalNMIncreasingTtimeVV.txt", graphPath, "Count4CycleEdgeLocalNMIncreasingTtime", Ttimes, 0); 
         }
     }
+
+    //find 4-cycles
+
+    static void testFind4CycleLowMedHighVV(int nbRuns) {
+        vector<string> graphsPaths = {  "../graphs/Road-Network/roadNet-PA.txt",
+                                        "../graphs/p2p-Gnutella/p2p-Gnutella08.txt",
+                                        "../graphs/Social-Network/soc-Slashdot0811.txt"};
+
+        //for each graph Path
+        for (const string& graphPath : graphsPaths) {
+            GraphFiller* graphFiller = new GraphFiller();
+            GraphAdjListVV* g = new GraphAdjListVV();
+            graphFiller->setGraphFromFileMapped(graphPath, g);
+            cout << "- Graph List VV -"<< endl;
+            cout << "Vertices: " << g->getNumVertices() << endl;
+            cout << "Edges: " << g->getNumEdges() << endl;
+
+            long long int cpt = 0;
+            auto start = chrono::high_resolution_clock::now();
+            auto end = chrono::high_resolution_clock::now();
+            chrono::duration<double> elapsed_seconds;
+            chrono::duration<double> total_seconds;
+            vector<chrono::duration<double>> times;
+
+            cout << "Graph: " << graphPath << " | Function: " << "Find4CycleLowMedHigh" << " NbRun: "<< nbRuns << endl;
+            for (int i = 0; i < nbRuns; ++i) {
+                //cout << "Run number: " << i << endl;
+                start = chrono::high_resolution_clock::now();
+                cpt = g->find4Cycles().size();
+                end = chrono::high_resolution_clock::now();
+                elapsed_seconds = end-start;
+                total_seconds += elapsed_seconds;
+                times.push_back(elapsed_seconds);
+            }
+            cout << "Average time: " << total_seconds.count()*(1000/nbRuns) << "ms" << endl;
+            delete g;
+            delete graphFiller;
+
+            ResultsEncoder* resultsEncoder = new ResultsEncoder();
+            resultsEncoder->encodeResults("../results/4Cycle/lowmedhigh/Find4CycleLowMedHighVV.txt", graphPath, "Find4CycleLowMedHigh", times, cpt); 
+        }
+    }
+
+    static void testFind4CycleFacebook(int nbRuns) {
+        string graphPath = "../graphs/Social-Network/ego-facebook.txt";
+        GraphFiller* graphFiller = new GraphFiller();
+        GraphAdjListVV* gVV = new GraphAdjListVV();
+        graphFiller->setGraphFromFileMapped(graphPath, gVV);
+        cout << "- Graph List VUS -"<< endl;
+        cout << "Vertices: " << gVV->getNumVertices() << endl;
+        cout << "Edges: " << gVV->getNumEdges() << endl;
+
+        long long int cpt = 0;
+        auto start = chrono::high_resolution_clock::now();
+        auto end = chrono::high_resolution_clock::now();
+        ResultsEncoder* resultsEncoder = new ResultsEncoder();
+        chrono::duration<double> elapsed_seconds;
+        chrono::duration<double> total_seconds;
+        vector<chrono::duration<double>> times;
+
+
+        //VV
+        cout << "Graph: " << graphPath << " | Function: " << "Find4CycleFacebookVV" << " NbRun: "<< nbRuns << endl;
+        for (int i = 0; i < nbRuns; ++i) {
+            //cout << "Run number: " << i << endl;
+            start = chrono::high_resolution_clock::now();
+            cpt = gVV->find4Cycles().size();
+            end = chrono::high_resolution_clock::now();
+            elapsed_seconds = end-start;
+            total_seconds += elapsed_seconds;
+            times.push_back(elapsed_seconds);
+        }
+        cout << "Average time: " << total_seconds.count()*(1000/nbRuns) << "ms" << endl;
+        total_seconds = chrono::duration<double>(0);
+        resultsEncoder->encodeResults("../results/4Cycle/Find4CycleFacebook.txt", graphPath, "Find4CycleFacebookVV", times, cpt); 
+        times.clear();
+    }
+
+    static void testFind4CycleNMIncreasingVV(int nbRuns) {
+        vector<string> graphsPaths = {  "../graphs/p2p-Gnutella/p2p-Gnutella08.txt",
+                                        "../graphs/p2p-Gnutella/p2p-Gnutella09.txt",
+                                        "../graphs/p2p-Gnutella/p2p-Gnutella06.txt",
+                                        "../graphs/p2p-Gnutella/p2p-Gnutella05.txt",
+                                        "../graphs/p2p-Gnutella/p2p-Gnutella04.txt",
+                                        "../graphs/p2p-Gnutella/p2p-Gnutella25.txt",
+                                        "../graphs/p2p-Gnutella/p2p-Gnutella24.txt",
+                                        "../graphs/p2p-Gnutella/p2p-Gnutella30.txt",
+                                        "../graphs/p2p-Gnutella/p2p-Gnutella31.txt"};
+
+        //for each graph Path
+        for (const string& graphPath : graphsPaths) {
+            GraphFiller* graphFiller = new GraphFiller();
+            GraphAdjListVV* g = new GraphAdjListVV();
+            graphFiller->setGraphFromFileMapped(graphPath, g);
+            cout << "- Graph List VV -"<< endl;
+            cout << "Vertices: " << g->getNumVertices() << endl;
+            cout << "Edges: " << g->getNumEdges() << endl;
+
+            long long int cpt = 0;
+            auto start = chrono::high_resolution_clock::now();
+            auto end = chrono::high_resolution_clock::now();
+            chrono::duration<double> elapsed_seconds;
+            chrono::duration<double> total_seconds;
+            vector<chrono::duration<double>> times;
+
+            cout << "Graph: " << graphPath << " | Function: " << "Find4CycleNMIncreasing" << " NbRun: "<< nbRuns << endl;
+            for (int i = 0; i < nbRuns; ++i) {
+                //cout << "Run number: " << i << endl;
+                start = chrono::high_resolution_clock::now();
+                cpt = g->find4Cycles().size();
+                end = chrono::high_resolution_clock::now();
+                elapsed_seconds = end-start;
+                total_seconds += elapsed_seconds;
+                times.push_back(elapsed_seconds);
+            }
+            cout << "Average time: " << total_seconds.count()*(1000/nbRuns) << "ms" << endl;
+            delete g;
+            delete graphFiller;
+
+            ResultsEncoder* resultsEncoder = new ResultsEncoder();
+            resultsEncoder->encodeResults("../results/4Cycle/NMIncreasing/Find4CycleNMIncreasingVV.txt", graphPath, "Find4CycleNMIncreasing", times, cpt); 
+        }
+    }
     
 
 };
