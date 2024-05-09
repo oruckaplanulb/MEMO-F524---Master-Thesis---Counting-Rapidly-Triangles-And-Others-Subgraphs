@@ -91,6 +91,146 @@ public:
         }
     }
 
+    static void getGraphInfosFB() {
+        vector<string> graphsPaths = {"../graphs/Social-Network/ego-facebook.txt"};
+
+        //for each graph Path
+        for (const string& graphPath : graphsPaths) {
+            GraphFiller* graphFiller = new GraphFiller();
+            GraphAdjListVUS* g = new GraphAdjListVUS();
+            graphFiller->setGraphFromFileMapped(graphPath, g);
+            delete graphFiller;
+            cout << "- Graph -"<< endl;
+            cout << "Vertices: " << g->getNumVertices() << endl;
+            cout << "Edges: " << g->getNumEdges() << endl;
+
+            auto start = chrono::high_resolution_clock::now();
+            auto end = chrono::high_resolution_clock::now();
+            chrono::duration<double> elapsed_seconds;
+            double density = 0;
+            double avgDegeneracy = 0;
+            double avgClusteringCoefficient = 0;
+            vector<int> clusteringCoefficientDistribution;
+
+            string resultsPath = "../results/GraphsInfos/ego-facebook.txt";
+            string result;
+
+            cout << "Graph: " << graphPath << " - Infos"<< endl;
+            result = "Graph: " + graphPath + " - Infos\n";
+
+            start = chrono::high_resolution_clock::now();
+            density = ((double)g->getNumEdges()) / ((double)g->getNumVertices() * ((double)g->getNumVertices() - 1)/2.0);
+            end = chrono::high_resolution_clock::now();
+            elapsed_seconds = end-start;
+            cout << "Density: " << density << " | computed in: "<< elapsed_seconds.count()*1000 << "ms" << endl;
+            result += "Density: " + to_string(density) + " | computed in: " + to_string(elapsed_seconds.count()*1000) + "ms\n";
+
+            start = chrono::high_resolution_clock::now();
+            avgDegeneracy = g->getAverageDegeneracy();
+            end = chrono::high_resolution_clock::now();
+            elapsed_seconds = end-start;
+            cout << "Average Degeneracy: " << avgDegeneracy << " | computed in: "<< elapsed_seconds.count()*1000 << "ms" << endl;
+            result += "Average Degeneracy: " + to_string(avgDegeneracy) + " | computed in: " + to_string(elapsed_seconds.count()*1000) + "ms\n";
+
+            start = chrono::high_resolution_clock::now();
+            avgClusteringCoefficient = g->getAverageClusturingCoefficient();
+            end = chrono::high_resolution_clock::now();
+            elapsed_seconds = end-start;
+            cout << "Average Clustering Coefficient: " << avgClusteringCoefficient << " | computed in: "<< elapsed_seconds.count()*1000 << "ms" << endl;
+            result += "Average Clustering Coefficient: " + to_string(avgClusteringCoefficient) + " | computed in: " + to_string(elapsed_seconds.count()*1000) + "ms\n";
+
+            start = chrono::high_resolution_clock::now();
+            clusteringCoefficientDistribution = g->getClusturingCoefficientDistribution(10);
+            end = chrono::high_resolution_clock::now();
+            elapsed_seconds = end-start;
+            cout << "Clustering Coefficient Distribution: " << " (computed in: "<< elapsed_seconds.count()*1000 << "ms)" << endl;
+            result += "Clustering Coefficient Distribution: (computed in: " + to_string(elapsed_seconds.count()*1000) + "ms)\n";
+            double ccdsize = clusteringCoefficientDistribution.size();
+            for (int i = 0; i < clusteringCoefficientDistribution.size(); i++){
+                cout << "Clustering coefficient " << i/ccdsize << " - " << (i+1)/ccdsize << ": " << clusteringCoefficientDistribution[i] << endl;
+                result += "Clustering coefficient " + to_string(i/ccdsize) + " - " + to_string((i+1)/ccdsize) + ": " + to_string(clusteringCoefficientDistribution[i]) + "\n";
+            }
+
+            //write results to file
+            ResultsEncoder* resultsEncoder = new ResultsEncoder();
+
+            resultsEncoder->write(resultsPath, result);
+
+            delete g;
+
+        }
+    }
+
+    static void getGraphInfosDBLP() {
+        vector<string> graphsPaths = {"../graphs/Network-gtc/com-dblp.txt"};
+
+        //for each graph Path
+        for (const string& graphPath : graphsPaths) {
+            GraphFiller* graphFiller = new GraphFiller();
+            GraphAdjListVUS* g = new GraphAdjListVUS();
+            graphFiller->setGraphFromFileMapped(graphPath, g);
+            delete graphFiller;
+            cout << "- Graph -"<< endl;
+            cout << "Vertices: " << g->getNumVertices() << endl;
+            cout << "Edges: " << g->getNumEdges() << endl;
+
+            auto start = chrono::high_resolution_clock::now();
+            auto end = chrono::high_resolution_clock::now();
+            chrono::duration<double> elapsed_seconds;
+            double density = 0;
+            double avgDegeneracy = 0;
+            double avgClusteringCoefficient = 0;
+            vector<int> clusteringCoefficientDistribution;
+
+            string resultsPath = "../results/GraphsInfos/com-dblp.txt";
+            string result;
+
+            cout << "Graph: " << graphPath << " - Infos"<< endl;
+            result = "Graph: " + graphPath + " - Infos\n";
+
+            start = chrono::high_resolution_clock::now();
+            density = ((double)g->getNumEdges()) / ((double)g->getNumVertices() * ((double)g->getNumVertices() - 1)/2.0);
+            end = chrono::high_resolution_clock::now();
+            elapsed_seconds = end-start;
+            cout << "Density: " << density << " | computed in: "<< elapsed_seconds.count()*1000 << "ms" << endl;
+            result += "Density: " + to_string(density) + " | computed in: " + to_string(elapsed_seconds.count()*1000) + "ms\n";
+
+            start = chrono::high_resolution_clock::now();
+            avgDegeneracy = g->getAverageDegeneracy();
+            end = chrono::high_resolution_clock::now();
+            elapsed_seconds = end-start;
+            cout << "Average Degeneracy: " << avgDegeneracy << " | computed in: "<< elapsed_seconds.count()*1000 << "ms" << endl;
+            result += "Average Degeneracy: " + to_string(avgDegeneracy) + " | computed in: " + to_string(elapsed_seconds.count()*1000) + "ms\n";
+
+            start = chrono::high_resolution_clock::now();
+            avgClusteringCoefficient = g->getAverageClusturingCoefficient();
+            end = chrono::high_resolution_clock::now();
+            elapsed_seconds = end-start;
+            cout << "Average Clustering Coefficient: " << avgClusteringCoefficient << " | computed in: "<< elapsed_seconds.count()*1000 << "ms" << endl;
+            result += "Average Clustering Coefficient: " + to_string(avgClusteringCoefficient) + " | computed in: " + to_string(elapsed_seconds.count()*1000) + "ms\n";
+
+            start = chrono::high_resolution_clock::now();
+            clusteringCoefficientDistribution = g->getClusturingCoefficientDistribution(10);
+            end = chrono::high_resolution_clock::now();
+            elapsed_seconds = end-start;
+            cout << "Clustering Coefficient Distribution: " << " (computed in: "<< elapsed_seconds.count()*1000 << "ms)" << endl;
+            result += "Clustering Coefficient Distribution: (computed in: " + to_string(elapsed_seconds.count()*1000) + "ms)\n";
+            double ccdsize = clusteringCoefficientDistribution.size();
+            for (int i = 0; i < clusteringCoefficientDistribution.size(); i++){
+                cout << "Clustering coefficient " << i/ccdsize << " - " << (i+1)/ccdsize << ": " << clusteringCoefficientDistribution[i] << endl;
+                result += "Clustering coefficient " + to_string(i/ccdsize) + " - " + to_string((i+1)/ccdsize) + ": " + to_string(clusteringCoefficientDistribution[i]) + "\n";
+            }
+
+            //write results to file
+            ResultsEncoder* resultsEncoder = new ResultsEncoder();
+
+            resultsEncoder->write(resultsPath, result);
+
+            delete g;
+
+        }
+    }
+
     static void getGraphInfosNb4Cycles() {
 
         vector<string> graphsPaths;

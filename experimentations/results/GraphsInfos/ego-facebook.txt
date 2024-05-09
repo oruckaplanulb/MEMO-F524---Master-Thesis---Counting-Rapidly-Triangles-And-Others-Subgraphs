@@ -1,0 +1,16 @@
+Graph: ../graphs/Social-Network/ego-facebook.txt - Infos
+Density: 0.010820 | computed in: 0.000000ms
+Average Degeneracy: 147.382619 | computed in: 4.028900ms
+Average Clustering Coefficient: 0.605547 | computed in: 413.885100ms
+Clustering Coefficient Distribution: (computed in: 428.886300ms)
+Clustering coefficient 0.000000 - 0.100000: 81
+Clustering coefficient 0.100000 - 0.200000: 27
+Clustering coefficient 0.200000 - 0.300000: 154
+Clustering coefficient 0.300000 - 0.400000: 344
+Clustering coefficient 0.400000 - 0.500000: 619
+Clustering coefficient 0.500000 - 0.600000: 831
+Clustering coefficient 0.600000 - 0.700000: 711
+Clustering coefficient 0.700000 - 0.800000: 465
+Clustering coefficient 0.800000 - 0.900000: 380
+Clustering coefficient 0.900000 - 1.000000: 427
+

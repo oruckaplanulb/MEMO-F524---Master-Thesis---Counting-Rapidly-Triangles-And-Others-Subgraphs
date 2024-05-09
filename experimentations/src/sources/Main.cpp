@@ -16,7 +16,8 @@ using namespace std;
 
 int main(int argc, char *argv[]){ 
 
-    TestExtra::getGraphInfosNb4Cycles();
+    TestExtra::getGraphInfosDBLP();
+    Test4CycleCounting::testFind4CycleDBLP(10);
 
 
     return 0;

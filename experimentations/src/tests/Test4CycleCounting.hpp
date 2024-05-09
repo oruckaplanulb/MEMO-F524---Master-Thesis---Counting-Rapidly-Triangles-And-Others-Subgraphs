@@ -699,6 +699,41 @@ public:
         times.clear();
     }
 
+    static void testFind4CycleDBLP(int nbRuns) {
+        string graphPath = "../graphs/Network-gtc/com-dblp.txt";
+        GraphFiller* graphFiller = new GraphFiller();
+        GraphAdjListVV* gVV = new GraphAdjListVV();
+        graphFiller->setGraphFromFileMapped(graphPath, gVV);
+        cout << "- Graph List VUS -"<< endl;
+        cout << "Vertices: " << gVV->getNumVertices() << endl;
+        cout << "Edges: " << gVV->getNumEdges() << endl;
+
+        long long int cpt = 0;
+        auto start = chrono::high_resolution_clock::now();
+        auto end = chrono::high_resolution_clock::now();
+        ResultsEncoder* resultsEncoder = new ResultsEncoder();
+        chrono::duration<double> elapsed_seconds;
+        chrono::duration<double> total_seconds;
+        vector<chrono::duration<double>> times;
+
+
+        //VV
+        cout << "Graph: " << graphPath << " | Function: " << "Find4CycleDBLPVV" << " NbRun: "<< nbRuns << endl;
+        for (int i = 0; i < nbRuns; ++i) {
+            //cout << "Run number: " << i << endl;
+            start = chrono::high_resolution_clock::now();
+            cpt = gVV->find4Cycles().size();
+            end = chrono::high_resolution_clock::now();
+            elapsed_seconds = end-start;
+            total_seconds += elapsed_seconds;
+            times.push_back(elapsed_seconds);
+        }
+        cout << "Average time: " << total_seconds.count()*(1000/nbRuns) << "ms" << endl;
+        total_seconds = chrono::duration<double>(0);
+        resultsEncoder->encodeResults("../results/4Cycle/Find4CycleDBLP.txt", graphPath, "Find4CycleDBLPVV", times, cpt); 
+        times.clear();
+    }
+
     static void testFind4CycleNMIncreasingVV(int nbRuns) {
         vector<string> graphsPaths = {  "../graphs/p2p-Gnutella/p2p-Gnutella08.txt",
                                         "../graphs/p2p-Gnutella/p2p-Gnutella09.txt",

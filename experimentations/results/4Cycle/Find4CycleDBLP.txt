@@ -1,0 +1,12 @@
+Graph: ../graphs/Network-gtc/com-dblp.txt | Function: Find4CycleDBLPVV | Result: 55107655
+Min: 9803.78 ms Max: 10918.8 ms Avg: 10212.2 ms
+1. 10390.2 ms
+2. 9833.7 ms
+3. 9803.78 ms
+4. 9922.5 ms
+5. 10004.2 ms
+6. 10192.7 ms
+7. 10190.8 ms
+8. 10238.6 ms
+9. 10626.6 ms
+10. 10918.8 ms

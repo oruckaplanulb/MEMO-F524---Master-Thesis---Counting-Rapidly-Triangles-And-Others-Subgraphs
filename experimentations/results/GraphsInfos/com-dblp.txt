@@ -1,0 +1,16 @@
+Graph: ../graphs/Network-gtc/com-dblp.txt - Infos
+Density: 0.000021 | computed in: 1.001100ms
+Average Degeneracy: 23.424142 | computed in: 94.779600ms
+Average Clustering Coefficient: 0.632431 | computed in: 1401.284600ms
+Clustering Coefficient Distribution: (computed in: 1436.162800ms)
+Clustering coefficient 0.000000 - 0.100000: 55009
+Clustering coefficient 0.100000 - 0.200000: 16465
+Clustering coefficient 0.200000 - 0.300000: 16514
+Clustering coefficient 0.300000 - 0.400000: 19216
+Clustering coefficient 0.400000 - 0.500000: 15432
+Clustering coefficient 0.500000 - 0.600000: 15920
+Clustering coefficient 0.600000 - 0.700000: 13584
+Clustering coefficient 0.700000 - 0.800000: 4355
+Clustering coefficient 0.800000 - 0.900000: 6627
+Clustering coefficient 0.900000 - 1.000000: 153958
+
