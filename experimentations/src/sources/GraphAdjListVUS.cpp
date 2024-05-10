@@ -213,6 +213,30 @@ int GraphAdjListVUS::countTrianglesNodeIterator() const {
     return count/3;
 }
 
+int GraphAdjListVUS::countTrianglesNodeIteratorParallel(int numThreads) const {
+    double count = 0;
+    vector<thread> threads;
+    vector<double> counts(numThreads, 0);
+    for (int i = 0; i < numThreads; ++i) {
+        threads.push_back(thread([this, i, numThreads, &counts]() {
+            for (int v = i; v < numVertices; v += numThreads) {
+                for (const int& u : adjacencyList[v]) {
+                    for (const int& w : adjacencyList[v]) {
+                        if (hasEdge(u, w)) {
+                            counts[i] = counts[i] + 0.5;
+                        }
+                    }
+                }
+            }
+        }));
+    }
+    for (int i = 0; i < numThreads; ++i) {
+        threads[i].join();
+        count += counts[i];
+    }
+    return count/3;
+}
+
 int GraphAdjListVUS::countTrianglesNodeIteratorPlusPlus() const {
     int count = 0;
     for (int v = 0; v < numVertices; ++v) {
@@ -225,6 +249,32 @@ int GraphAdjListVUS::countTrianglesNodeIteratorPlusPlus() const {
                 }
             }
         }
+    }
+    return count;
+}
+
+int GraphAdjListVUS::countTrianglesNodeIteratorPlusPlusParallel(int numThreads) const {
+    int count = 0;
+    vector<thread> threads;
+    vector<int> counts(numThreads, 0);
+    for (int i = 0; i < numThreads; ++i) {
+        threads.push_back(thread([this, i, numThreads, &counts]() {
+            for (int v = i; v < numVertices; v += numThreads) {
+                for (const int& u : adjacencyList[v]) {
+                    if(isBiggerOrder(u, v)){
+                        for (const int& w : adjacencyList[v]) {
+                            if (isBiggerOrder(w,u) && hasEdge(u, w)) {
+                                counts[i]++;
+                            }
+                        }
+                    }
+                }
+            }
+        }));
+    }
+    for (int i = 0; i < numThreads; ++i) {
+        threads[i].join();
+        count += counts[i];
     }
     return count;
 }

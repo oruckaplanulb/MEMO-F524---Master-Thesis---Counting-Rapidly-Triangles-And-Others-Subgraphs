@@ -16,8 +16,83 @@ using namespace std;
 
 int main(int argc, char *argv[]){ 
 
-    TestExtra::getGraphInfosDBLP();
-    Test4CycleCounting::testFind4CycleDBLP(10);
+    GraphFiller* graphFiller = new GraphFiller();
+    GraphAdjListVUS* gVUS = new GraphAdjListVUS();
+    graphFiller->setGraphFromFileMapped(argv[1], gVUS);
+
+    int cpt = 0;
+
+    //set timer
+    auto start = chrono::high_resolution_clock::now();
+    cpt = gVUS->countTrianglesNodeIterator();
+    auto end = chrono::high_resolution_clock::now();
+    chrono::duration<double> elapsed_seconds = end-start;
+    cout << "NodeIterator: " << cpt << " in " << elapsed_seconds.count()*1000 << "ms" << endl;
+
+    //set timer
+    start = chrono::high_resolution_clock::now();
+    cpt = gVUS->countTrianglesNodeIteratorParallel(1);
+    end = chrono::high_resolution_clock::now();
+    elapsed_seconds = end-start;
+    cout << "NodeIteratorParallel1TH: " << cpt << " in " << elapsed_seconds.count()*1000 << "ms" << endl;
+
+    //set timer
+    start = chrono::high_resolution_clock::now();
+    cpt = gVUS->countTrianglesNodeIteratorParallel(2);
+    end = chrono::high_resolution_clock::now();
+    elapsed_seconds = end-start;
+    cout << "NodeIteratorParallel2TH: " << cpt << " in " << elapsed_seconds.count()*1000 << "ms" << endl;
+
+    //set timer
+    start = chrono::high_resolution_clock::now();
+    cpt = gVUS->countTrianglesNodeIteratorParallel(4);
+    end = chrono::high_resolution_clock::now();
+    elapsed_seconds = end-start;
+    cout << "NodeIteratorParallel4TH: " << cpt << " in " << elapsed_seconds.count()*1000 << "ms" << endl;
+
+    //set timer
+    start = chrono::high_resolution_clock::now();
+    cpt = gVUS->countTrianglesNodeIteratorParallel(8);
+    end = chrono::high_resolution_clock::now();
+    elapsed_seconds = end-start;
+    cout << "NodeIteratorParallel8TH: " << cpt << " in " << elapsed_seconds.count()*1000 << "ms" << endl;
+
+    //////////
+
+    //set timer
+    start = chrono::high_resolution_clock::now();
+    cpt = gVUS->countTrianglesNodeIteratorPlusPlus();
+    end = chrono::high_resolution_clock::now();
+    elapsed_seconds = end-start;
+    cout << "NodeIteratorPlusPlus: " << cpt << " in " << elapsed_seconds.count()*1000 << "ms" << endl;
+
+    //set timer
+    start = chrono::high_resolution_clock::now();
+    cpt = gVUS->countTrianglesNodeIteratorPlusPlusParallel(1);
+    end = chrono::high_resolution_clock::now();
+    elapsed_seconds = end-start;
+    cout << "NodeIteratorPlusPlusParallel1TH: " << cpt << " in " << elapsed_seconds.count()*1000 << "ms" << endl;
+
+    //set timer
+    start = chrono::high_resolution_clock::now();
+    cpt = gVUS->countTrianglesNodeIteratorPlusPlusParallel(2);
+    end = chrono::high_resolution_clock::now();
+    elapsed_seconds = end-start;
+    cout << "NodeIteratorPlusPlusParallel2TH: " << cpt << " in " << elapsed_seconds.count()*1000 << "ms" << endl;
+
+    //set timer
+    start = chrono::high_resolution_clock::now();
+    cpt = gVUS->countTrianglesNodeIteratorPlusPlusParallel(4);
+    end = chrono::high_resolution_clock::now();
+    elapsed_seconds = end-start;
+    cout << "NodeIteratorPlusPlusParallel4TH: " << cpt << " in " << elapsed_seconds.count()*1000 << "ms" << endl;
+
+    //set timer
+    start = chrono::high_resolution_clock::now();
+    cpt = gVUS->countTrianglesNodeIteratorPlusPlusParallel(8);
+    end = chrono::high_resolution_clock::now();
+    elapsed_seconds = end-start;
+    cout << "NodeIteratorPlusPlusParallel8TH: " << cpt << " in " << elapsed_seconds.count()*1000 << "ms" << endl;
 
 
     return 0;

@@ -93,7 +93,9 @@ public:
     double nbTwoPathsNodeIterator() const;
     double nbTwoPathsNodeIteratorPlusPlus() const;
     int countTrianglesNodeIterator() const;
+    int countTrianglesNodeIteratorParallel(int numThreads) const;
     int countTrianglesNodeIteratorPlusPlus() const;
+    int countTrianglesNodeIteratorPlusPlusParallel(int numThreads) const;
     int countTrianglesChibaNishizeki() const;
     int countTrianglesForward() const;
 
