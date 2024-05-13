@@ -9,6 +9,7 @@
 #include "../tests/TestChibaNishizeki.hpp"
 #include "../tests/Test4CycleCounting.hpp"
 #include "../tests/TestExtra.hpp"
+#include "../tests/TestGeneralisation.hpp"
 #include <chrono>
 #include <thread>
 
@@ -16,6 +17,9 @@ using namespace std;
 
 int main(int argc, char *argv[]){ 
 
+    TestGeneralisation::testNIncreasingSSYMM(10);
+
+    /*
     GraphFiller* graphFiller = new GraphFiller();
     GraphAdjListVUS* gVUS = new GraphAdjListVUS();
     graphFiller->setGraphFromFileMapped(argv[1], gVUS);
@@ -92,7 +96,7 @@ int main(int argc, char *argv[]){
     cpt = gVUS->countTrianglesNodeIteratorPlusPlusParallel(8);
     end = chrono::high_resolution_clock::now();
     elapsed_seconds = end-start;
-    cout << "NodeIteratorPlusPlusParallel8TH: " << cpt << " in " << elapsed_seconds.count()*1000 << "ms" << endl;
+    cout << "NodeIteratorPlusPlusParallel8TH: " << cpt << " in " << elapsed_seconds.count()*1000 << "ms" << endl;*/
 
 
     return 0;

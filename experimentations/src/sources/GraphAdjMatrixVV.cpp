@@ -250,10 +250,10 @@ int GraphAdjMatrixVV::countTrianglesMatrixCubeParallel(function<vector<vector<in
     return count/6;
 }
 
-int GraphAdjMatrixVV::count4CyclesMatrixPow4(function<vector<vector<int>>(const vector<vector<int>>&, const vector<vector<int>>&, int)> multiplyFunc, int numThreads) const {
-    double countTrace = 0;
-    double countH2 = 0;
-    double countH1 = 0;
+long long int GraphAdjMatrixVV::count4CyclesMatrixPow4(function<vector<vector<int>>(const vector<vector<int>>&, const vector<vector<int>>&, int)> multiplyFunc, int numThreads) const {
+    long long countTrace = 0;
+    long long countH2 = 0;
+    long long countH1 = 0;
     const vector<vector<int>>& A = adjacencyMatrix;
     const vector<vector<int>>& A2 = multiplyFunc(A, A, numThreads);
     const vector<vector<int>>& A4 = multiplyFunc(A2, A2, numThreads);
@@ -269,10 +269,10 @@ int GraphAdjMatrixVV::count4CyclesMatrixPow4(function<vector<vector<int>>(const 
     return (countTrace - (4*countH2) - (2*countH1))/8;
 }
 
-long int GraphAdjMatrixVV::count5CyclesMatrixPow5(function<vector<vector<int>>(const vector<vector<int>>&, const vector<vector<int>>&, int)> multiplyFunc, int numThreads) const {
-    unsigned long int countTrace = 0;
-    unsigned long int countH5 = 0;
-    unsigned long int countC3 = 0;
+long long int GraphAdjMatrixVV::count5CyclesMatrixPow5(function<vector<vector<int>>(const vector<vector<int>>&, const vector<vector<int>>&, int)> multiplyFunc, int numThreads) const {
+    long long int countTrace = 0;
+    long long int countH5 = 0;
+    long long int countC3 = 0;
     const vector<double> passThroughTriangles = getNumberOfTrianglesPassThrough();
     const vector<vector<int>>& A = adjacencyMatrix;
     const vector<vector<int>>& A2 = multiplyFunc(A, A, numThreads);
@@ -295,9 +295,9 @@ long int GraphAdjMatrixVV::count5CyclesMatrixPow5(function<vector<vector<int>>(c
 }
 
 //not finished
-long int GraphAdjMatrixVV::count6CyclesMatrixPow6(function<vector<vector<int>>(const vector<vector<int>>&, const vector<vector<int>>&, int)> multiplyFunc, int numThreads) const {
-    unsigned long int countTrace, countTraceC4 = 0;
-    unsigned long int countH1, countH2, countC3, countH3, countH4, countC4, countH6, countH9, countH11 = 0;
+long long int GraphAdjMatrixVV::count6CyclesMatrixPow6(function<vector<vector<int>>(const vector<vector<int>>&, const vector<vector<int>>&, int)> multiplyFunc, int numThreads) const {
+    long long int countTrace, countTraceC4 = 0;
+    long long int countH1, countH2, countC3, countH3, countH4, countC4, countH6, countH9, countH11 = 0;
 
     const vector<double> passThroughTriangles = getNumberOfTrianglesPassThrough();
     const vector<vector<int>>& A = adjacencyMatrix;
