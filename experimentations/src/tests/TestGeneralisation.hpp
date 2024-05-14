@@ -38,9 +38,10 @@ public:
             vector<chrono::duration<double>> timesCube;
             vector<chrono::duration<double>> timesPOW4;
             vector<chrono::duration<double>> timesPOW5;
+            vector<chrono::duration<double>> timesPOW5WIP;
             ResultsEncoder* resultsEncoder = new ResultsEncoder();
 
-            cout << "Graph: " << graphPath << " | Function: " << "MatrixCubingSSYMM" << " NbRun: "<< nbRuns << endl;
+            /*cout << "Graph: " << graphPath << " | Function: " << "MatrixCubingSSYMM" << " NbRun: "<< nbRuns << endl;
             for (int i = 0; i < nbRuns; ++i) {
                 //cout << "Run number: " << i << endl;
                 start = chrono::high_resolution_clock::now();
@@ -66,9 +67,9 @@ public:
             }
             cout << "Average time: " << total_seconds.count()*(1000/nbRuns) << "ms" << endl;
             total_seconds = chrono::duration<double>();
-            resultsEncoder->encodeResults("../results/Generalisation/NIncreasingSSYMM.txt", graphPath, "MatrixPow4SSYMM", timesPOW4, cpt);
+            resultsEncoder->encodeResults("../results/Generalisation/NIncreasingSSYMM.txt", graphPath, "MatrixPow4SSYMM", timesPOW4, cpt);*/
 
-            cout << "Graph: " << graphPath << " | Function: " << "MatrixPow5SSYMM" << " NbRun: "<< nbRuns << endl;
+            cout << "Graph: " << graphPath << " | Function: " << "MatrixPow5SSYMMWithoutNI" << " NbRun: "<< nbRuns << endl;
             for (int i = 0; i < nbRuns; ++i) {
                 //cout << "Run number: " << i << endl;
                 start = chrono::high_resolution_clock::now();
@@ -76,11 +77,25 @@ public:
                 end = chrono::high_resolution_clock::now();
                 elapsed_seconds = end-start;
                 total_seconds += elapsed_seconds;
+                timesPOW5WIP.push_back(elapsed_seconds);
+            }
+            cout << "Average time: " << total_seconds.count()*(1000/nbRuns) << "ms" << endl;
+            total_seconds = chrono::duration<double>();
+            resultsEncoder->encodeResults("../results/Generalisation/NIncreasingSSYMM.txt", graphPath, "MatrixPow5SSYMMMWithoutNI", timesPOW5WIP, cpt); 
+
+            /*cout << "Graph: " << graphPath << " | Function: " << "MatrixPow5SSYMM" << " NbRun: "<< nbRuns << endl;
+            for (int i = 0; i < nbRuns; ++i) {
+                //cout << "Run number: " << i << endl;
+                start = chrono::high_resolution_clock::now();
+                cpt = graphMatrixVV->count5CyclesMatrixPow5NodeIterator(Matrix::multiplyBlasSSYMM,1); //1 thread
+                end = chrono::high_resolution_clock::now();
+                elapsed_seconds = end-start;
+                total_seconds += elapsed_seconds;
                 timesPOW5.push_back(elapsed_seconds);
             }
             cout << "Average time: " << total_seconds.count()*(1000/nbRuns) << "ms" << endl;
             total_seconds = chrono::duration<double>();
-            resultsEncoder->encodeResults("../results/Generalisation/NIncreasingSSYMM.txt", graphPath, "MatrixPow5SSYMM", timesPOW5, cpt); 
+            resultsEncoder->encodeResults("../results/Generalisation/NIncreasingSSYMM.txt", graphPath, "MatrixPow5SSYMM", timesPOW5, cpt); */
 
             delete graphMatrixVV;
         }
