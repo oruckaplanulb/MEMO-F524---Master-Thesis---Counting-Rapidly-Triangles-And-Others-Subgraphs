@@ -1,0 +1,192 @@
+Graph: ../graphs/Network-gtc/email-eu-core.txt | Function: MatrixPow4Nincreasing1TH | Result: 4647873
+Min: 60.837 ms Max: 66.8599 ms Avg: 62.5366 ms
+1. 66.8599 ms
+2. 62.8289 ms
+3. 60.837 ms
+4. 61.8379 ms
+5. 61.8349 ms
+6. 62.8284 ms
+7. 61.8318 ms
+8. 61.8371 ms
+9. 62.8358 ms
+10. 61.8344 ms
+Graph: ../graphs/Network-gtc/email-eu-core.txt | Function: MatrixPow4Nincreasing2TH | Result: 4647873
+Min: 41.8881 ms Max: 55.8789 ms Avg: 46.1789 ms
+1. 48.8632 ms
+2. 55.8789 ms
+3. 47.8473 ms
+4. 44.9095 ms
+5. 45.8741 ms
+6. 42.886 ms
+7. 46.8402 ms
+8. 41.8881 ms
+9. 43.9145 ms
+10. 42.8877 ms
+Graph: ../graphs/Network-gtc/email-eu-core.txt | Function: MatrixPow4Nincreasing4TH | Result: 4647873
+Min: 33.913 ms Max: 71.7719 ms Avg: 43.8826 ms
+1. 43.8795 ms
+2. 43.8813 ms
+3. 41.8912 ms
+4. 71.7719 ms
+5. 54.8553 ms
+6. 38.8944 ms
+7. 38.8975 ms
+8. 35.9308 ms
+9. 34.9116 ms
+10. 33.913 ms
+Graph: ../graphs/Network-gtc/email-eu-core.txt | Function: MatrixPow4Nincreasing8TH | Result: 4647873
+Min: 34.9062 ms Max: 55.8498 ms Avg: 39.9899 ms
+1. 38.8947 ms
+2. 38.9129 ms
+3. 36.8893 ms
+4. 36.9004 ms
+5. 43.8854 ms
+6. 34.9062 ms
+7. 35.9019 ms
+8. 40.8575 ms
+9. 55.8498 ms
+10. 36.901 ms
+Graph: ../graphs/Social-Network/ego-facebook.txt | Function: MatrixPow4Nincreasing1TH | Result: 144023053
+Min: 2829.43 ms Max: 2989.17 ms Avg: 2871.46 ms
+1. 2911.41 ms
+2. 2929.2 ms
+3. 2989.17 ms
+4. 2841.4 ms
+5. 2877.31 ms
+6. 2837.41 ms
+7. 2838.41 ms
+8. 2830.43 ms
+9. 2830.46 ms
+10. 2829.43 ms
+Graph: ../graphs/Social-Network/ego-facebook.txt | Function: MatrixPow4Nincreasing2TH | Result: 144023053
+Min: 1592.74 ms Max: 1672.52 ms Avg: 1610.09 ms
+1. 1672.52 ms
+2. 1606.74 ms
+3. 1592.74 ms
+4. 1596.73 ms
+5. 1598.69 ms
+6. 1594.77 ms
+7. 1603.68 ms
+8. 1596.73 ms
+9. 1624.69 ms
+10. 1613.65 ms
+Graph: ../graphs/Social-Network/ego-facebook.txt | Function: MatrixPow4Nincreasing4TH | Result: 144023053
+Min: 1026.22 ms Max: 1221.72 ms Avg: 1088.49 ms
+1. 1221.72 ms
+2. 1097.1 ms
+3. 1026.25 ms
+4. 1119 ms
+5. 1114.99 ms
+6. 1094.11 ms
+7. 1081.07 ms
+8. 1076.12 ms
+9. 1028.28 ms
+10. 1026.22 ms
+Graph: ../graphs/Social-Network/ego-facebook.txt | Function: MatrixPow4Nincreasing8TH | Result: 144023053
+Min: 1029.28 ms Max: 1121.96 ms Avg: 1045 ms
+1. 1043.24 ms
+2. 1121.96 ms
+3. 1035.27 ms
+4. 1031.24 ms
+5. 1032.24 ms
+6. 1041.18 ms
+7. 1032.27 ms
+8. 1044.17 ms
+9. 1029.28 ms
+10. 1039.19 ms
+Graph: ../graphs/Social-Network/wiki-Vote.txt | Function: MatrixPow4Nincreasing1TH | Result: 57654491
+Min: 14669.8 ms Max: 14757.5 ms Avg: 14695.8 ms
+1. 14741.6 ms
+2. 14691.7 ms
+3. 14685.8 ms
+4. 14757.5 ms
+5. 14687.7 ms
+6. 14691.7 ms
+7. 14669.8 ms
+8. 14672.7 ms
+9. 14676.7 ms
+10. 14682.8 ms
+Graph: ../graphs/Social-Network/wiki-Vote.txt | Function: MatrixPow4Nincreasing2TH | Result: 57654491
+Min: 8083.38 ms Max: 8511.23 ms Avg: 8216.53 ms
+1. 8167.19 ms
+2. 8137.21 ms
+3. 8086.39 ms
+4. 8083.38 ms
+5. 8233.94 ms
+6. 8511.23 ms
+7. 8185.14 ms
+8. 8251.93 ms
+9. 8276.86 ms
+10. 8231.98 ms
+Graph: ../graphs/Social-Network/wiki-Vote.txt | Function: MatrixPow4Nincreasing4TH | Result: 57654491
+Min: 5433.46 ms Max: 5699.75 ms Avg: 5568.41 ms
+1. 5500.32 ms
+2. 5433.46 ms
+3. 5563.12 ms
+4. 5699.75 ms
+5. 5540.19 ms
+6. 5627.95 ms
+7. 5501.29 ms
+8. 5612.95 ms
+9. 5587.09 ms
+10. 5617.97 ms
+Graph: ../graphs/Social-Network/wiki-Vote.txt | Function: MatrixPow4Nincreasing8TH | Result: 57654491
+Min: 5488.32 ms Max: 5784.53 ms Avg: 5579.78 ms
+1. 5601.05 ms
+2. 5488.32 ms
+3. 5784.53 ms
+4. 5506.24 ms
+5. 5535.23 ms
+6. 5567.11 ms
+7. 5561.13 ms
+8. 5601.98 ms
+9. 5557.17 ms
+10. 5595.04 ms
+Graph: ../graphs/Collaboration-Network/CA-HepPh.txt | Function: MatrixPow4Nincreasing1TH | Result: 486866957
+Min: 68312.3 ms Max: 69506.1 ms Avg: 68528.4 ms
+1. 69506.1 ms
+2. 68373.9 ms
+3. 68511.8 ms
+4. 68312.3 ms
+5. 68440.9 ms
+6. 68369.2 ms
+7. 68426 ms
+8. 68424 ms
+9. 68457.9 ms
+10. 68461.9 ms
+Graph: ../graphs/Collaboration-Network/CA-HepPh.txt | Function: MatrixPow4Nincreasing2TH | Result: 486866957
+Min: 37242.4 ms Max: 38521 ms Avg: 38238.8 ms
+1. 37242.4 ms
+2. 38408.3 ms
+3. 38099.1 ms
+4. 38151 ms
+5. 38335.5 ms
+6. 38341.4 ms
+7. 38521 ms
+8. 38505 ms
+9. 38393.3 ms
+10. 38391.3 ms
+Graph: ../graphs/Collaboration-Network/CA-HepPh.txt | Function: MatrixPow4Nincreasing4TH | Result: 486866957
+Min: 24610.2 ms Max: 26527 ms Avg: 25577.2 ms
+1. 24610.2 ms
+2. 24997.2 ms
+3. 25274.4 ms
+4. 25474.8 ms
+5. 25864.9 ms
+6. 26000.5 ms
+7. 25438.9 ms
+8. 25791 ms
+9. 25793 ms
+10. 26527 ms
+Graph: ../graphs/Collaboration-Network/CA-HepPh.txt | Function: MatrixPow4Nincreasing8TH | Result: 486866957
+Min: 25537.7 ms Max: 28378.1 ms Avg: 26040.7 ms
+1. 28378.1 ms
+2. 26004.4 ms
+3. 25698.2 ms
+4. 25879.8 ms
+5. 25924.6 ms
+6. 25765.1 ms
+7. 25846.9 ms
+8. 25537.7 ms
+9. 25744.1 ms
+10. 25627.5 ms

@@ -1,0 +1,48 @@
+Graph: ../graphs/Social-Network/soc-Epinions1.txt | Function: NodeIterator1TH | Result: 1624481
+Min: 5491.34 ms Max: 5645.9 ms Avg: 5543.7 ms
+1. 5645.9 ms
+2. 5523.27 ms
+3. 5523.46 ms
+4. 5553.73 ms
+5. 5545.17 ms
+6. 5528.21 ms
+7. 5560.13 ms
+8. 5548.83 ms
+9. 5491.34 ms
+10. 5516.98 ms
+Graph: ../graphs/Social-Network/soc-Epinions1.txt | Function: NodeIterator2TH | Result: 1624481
+Min: 2992.99 ms Max: 3305.18 ms Avg: 3039.78 ms
+1. 3305.18 ms
+2. 3007.99 ms
+3. 3022.95 ms
+4. 3002.94 ms
+5. 2995.98 ms
+6. 3009.95 ms
+7. 3014.96 ms
+8. 2992.99 ms
+9. 3034.88 ms
+10. 3009.97 ms
+Graph: ../graphs/Social-Network/soc-Epinions1.txt | Function: NodeIterator4TH | Result: 1624481
+Min: 1766.71 ms Max: 1873.03 ms Avg: 1796.62 ms
+1. 1873.03 ms
+2. 1780.21 ms
+3. 1845.09 ms
+4. 1766.71 ms
+5. 1767.31 ms
+6. 1783.95 ms
+7. 1786.22 ms
+8. 1785.26 ms
+9. 1777.24 ms
+10. 1801.15 ms
+Graph: ../graphs/Social-Network/soc-Epinions1.txt | Function: NodeIterator8TH | Result: 1624481
+Min: 1284.53 ms Max: 1342.45 ms Avg: 1315.68 ms
+1. 1324.46 ms
+2. 1326.45 ms
+3. 1303.51 ms
+4. 1310.53 ms
+5. 1322.23 ms
+6. 1342.45 ms
+7. 1310.68 ms
+8. 1309.53 ms
+9. 1322.47 ms
+10. 1284.53 ms
