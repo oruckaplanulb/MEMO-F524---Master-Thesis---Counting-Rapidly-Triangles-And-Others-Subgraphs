@@ -10,6 +10,7 @@
 #include "../tests/Test4CycleCounting.hpp"
 #include "../tests/TestExtra.hpp"
 #include "../tests/TestGeneralisation.hpp"
+#include "../tests/TestParallel.hpp"
 #include <chrono>
 #include <thread>
 
@@ -17,7 +18,26 @@ using namespace std;
 
 int main(int argc, char *argv[]){ 
 
-    TestGeneralisation::testNIncreasingSSYMM(10);
+    TestParallel::testNodeIteratorFacebook(10);
+    TestParallel::testNodeIteratorPlusPlusFacebook(10);
+
+    /*GraphFiller* graphFiller = new GraphFiller();
+    GraphAdjMatrixVV* graphMatrixVV = new GraphAdjMatrixVV();
+    graphFiller->setGraphFromFileMapped(argv[1], graphMatrixVV);
+
+    //set timer
+    auto start = chrono::high_resolution_clock::now();
+    long long int cpt = graphMatrixVV->count5CyclesMatrixPow5(Matrix::multiplyBlasSSYMM,1);
+    auto end = chrono::high_resolution_clock::now();
+    chrono::duration<double> elapsed_seconds = end-start;
+    cout << "nb 5cycles: " << cpt << " in " << elapsed_seconds.count()*1000 << "ms" << endl;
+
+    //set timer
+    start = chrono::high_resolution_clock::now();
+    cpt = graphMatrixVV->count5CyclesMatrixPow5NodeIterator(Matrix::multiplyBlasSSYMM,1);
+    end = chrono::high_resolution_clock::now();
+    elapsed_seconds = end-start;
+    cout << "nb 5cycles: " << cpt << " in " << elapsed_seconds.count()*1000 << "ms" << endl;*/
 
     /*
     GraphFiller* graphFiller = new GraphFiller();

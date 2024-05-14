@@ -273,6 +273,31 @@ long long int GraphAdjMatrixVV::count5CyclesMatrixPow5(function<vector<vector<in
     long long int countTrace = 0;
     long long int countH5 = 0;
     long long int countC3 = 0;
+    const vector<vector<int>>& A = adjacencyMatrix;
+    const vector<vector<int>>& A2 = multiplyFunc(A, A, numThreads);
+    const vector<vector<int>>& A3 = multiplyFunc(A2, A, numThreads);
+    const vector<vector<int>>& A4 = multiplyFunc(A2, A2, numThreads);
+    const vector<vector<int>>& A5 = multiplyFunc(A4, A, numThreads);
+
+    for(int i = 0; i < numVertices; i++){
+        countTrace += A5[i][i];
+        countH5 += (A3[i][i])*(degree(i)-2);
+        countC3 += A3[i][i];
+    }
+    countH5 = countH5/2;
+    countC3 = countC3/6;
+
+    //cout << "countH5: " << 10*countH5 << endl;
+    //cout << "countC3: " << 30*countC3 << endl;
+    //cout << "countTrace: " << countTrace << endl;
+
+    return (countTrace - (10*countH5) - (30*countC3))/10;
+}
+
+long long int GraphAdjMatrixVV::count5CyclesMatrixPow5NodeIterator(function<vector<vector<int>>(const vector<vector<int>>&, const vector<vector<int>>&, int)> multiplyFunc, int numThreads) const {
+    long long int countTrace = 0;
+    long long int countH5 = 0;
+    long long int countC3 = 0;
     const vector<double> passThroughTriangles = getNumberOfTrianglesPassThrough();
     const vector<vector<int>>& A = adjacencyMatrix;
     const vector<vector<int>>& A2 = multiplyFunc(A, A, numThreads);

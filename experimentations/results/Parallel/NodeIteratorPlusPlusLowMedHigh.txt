@@ -1,0 +1,384 @@
+Graph: ../graphs/Road-Network/roadNet-PA.txt | Function: NodeIteratorPlusPlus1TH | Result: 67150
+Min: 113.017 ms Max: 121.125 ms Avg: 116.145 ms
+1. 120.662 ms
+2. 113.73 ms
+3. 114.688 ms
+4. 116.36 ms
+5. 117.065 ms
+6. 113.017 ms
+7. 116.718 ms
+8. 114.692 ms
+9. 121.125 ms
+10. 113.397 ms
+Graph: ../graphs/Road-Network/roadNet-PA.txt | Function: NodeIteratorPlusPlus2TH | Result: 67150
+Min: 62.8023 ms Max: 72.0232 ms Avg: 65.2267 ms
+1. 67.8185 ms
+2. 65.8251 ms
+3. 63.7611 ms
+4. 63.1382 ms
+5. 63.8335 ms
+6. 66.2048 ms
+7. 62.8631 ms
+8. 62.8023 ms
+9. 63.9976 ms
+10. 72.0232 ms
+Graph: ../graphs/Road-Network/roadNet-PA.txt | Function: NodeIteratorPlusPlus4TH | Result: 67150
+Min: 33.9067 ms Max: 54.8225 ms Avg: 39.196 ms
+1. 41.9172 ms
+2. 54.8225 ms
+3. 39.8946 ms
+4. 39.8941 ms
+5. 42.8832 ms
+6. 34.9139 ms
+7. 34.9119 ms
+8. 33.9067 ms
+9. 34.9065 ms
+10. 33.9095 ms
+Graph: ../graphs/Road-Network/roadNet-PA.txt | Function: NodeIteratorPlusPlus8TH | Result: 67150
+Min: 24.9344 ms Max: 65.8242 ms Avg: 41.988 ms
+1. 51.8653 ms
+2. 45.8769 ms
+3. 24.9344 ms
+4. 44.8788 ms
+5. 42.8855 ms
+6. 38.8955 ms
+7. 65.8242 ms
+8. 32.9127 ms
+9. 35.9033 ms
+10. 35.9037 ms
+Graph: ../graphs/p2p-Gnutella/p2p-Gnutella08.txt | Function: NodeIteratorPlusPlus1TH | Result: 2383
+Min: 3.0264 ms Max: 6.9812 ms Avg: 4.91792 ms
+1. 4.2691 ms
+2. 3.0264 ms
+3. 4.9846 ms
+4. 4.9563 ms
+5. 5.0141 ms
+6. 3.99 ms
+7. 6.9812 ms
+8. 5.9549 ms
+9. 4.9874 ms
+10. 5.0152 ms
+Graph: ../graphs/p2p-Gnutella/p2p-Gnutella08.txt | Function: NodeIteratorPlusPlus2TH | Result: 2383
+Min: 2.8478 ms Max: 36.8987 ms Avg: 7.1689 ms gives => 3.8656 ms
+1. 3.9868 ms
+2. 3.0222 ms
+3. 2.9614 ms
+4. 4.0215 ms
+5. 2.8478 ms
+6. 36.8987 ms //to REMOVE
+7. 4.9862 ms
+8. 2.9934 ms
+9. 3.9872 ms
+10. 5.9838 ms
+Graph: ../graphs/p2p-Gnutella/p2p-Gnutella08.txt | Function: NodeIteratorPlusPlus4TH | Result: 2383
+Min: 0.9971 ms Max: 2.991 ms Avg: 1.73605 ms
+1. 1.9954 ms
+2. 1.9942 ms
+3. 0.9971 ms
+4. 1.9956 ms
+5. 2.991 ms
+6. 0.9994 ms
+7. 1.9934 ms
+8. 0.9986 ms
+9. 2.396 ms
+10. 0.9998 ms
+Graph: ../graphs/p2p-Gnutella/p2p-Gnutella08.txt | Function: NodeIteratorPlusPlus8TH | Result: 2383
+Min: 0.9952 ms Max: 2.9911 ms Avg: 1.69532 ms
+1. 1.9945 ms
+2. 1.9951 ms
+3. 0.9952 ms
+4. 1.9955 ms
+5. 0.996 ms
+6. 1.9985 ms
+7. 1.9924 ms
+8. 0.9967 ms
+9. 2.9911 ms
+10. 0.9982 ms
+Graph: ../graphs/Social-Network/soc-Slashdot0811.txt | Function: NodeIteratorPlusPlus1TH | Result: 551724
+Min: 645.302 ms Max: 695.908 ms Avg: 657.512 ms
+1. 695.908 ms
+2. 650.503 ms
+3. 649.945 ms
+4. 652.213 ms
+5. 645.302 ms
+6. 646.297 ms
+7. 646.273 ms
+8. 658.267 ms
+9. 677.159 ms
+10. 653.256 ms
+Graph: ../graphs/Social-Network/soc-Slashdot0811.txt | Function: NodeIteratorPlusPlus2TH | Result: 551724
+Min: 332.142 ms Max: 373.114 ms Avg: 348.026 ms
+1. 361.062 ms
+2. 345.076 ms
+3. 334.109 ms
+4. 373.114 ms
+5. 358.805 ms
+6. 332.767 ms
+7. 332.142 ms
+8. 337.071 ms
+9. 357.072 ms
+10. 349.038 ms
+Graph: ../graphs/Social-Network/soc-Slashdot0811.txt | Function: NodeIteratorPlusPlus4TH | Result: 551724
+Min: 209.442 ms Max: 345.079 ms Avg: 252.926 ms
+1. 212.429 ms
+2. 228.389 ms
+3. 218.415 ms
+4. 222.406 ms
+5. 268.282 ms
+6. 345.079 ms
+7. 289.224 ms
+8. 324.133 ms
+9. 209.442 ms
+10. 211.461 ms
+Graph: ../graphs/Social-Network/soc-Slashdot0811.txt | Function: NodeIteratorPlusPlus8TH | Result: 551724
+Min: 134.639 ms Max: 226.396 ms Avg: 173.635 ms
+1. 155.583 ms
+2. 134.639 ms
+3. 154.586 ms
+4. 226.396 ms
+5. 221.407 ms
+6. 143.615 ms
+7. 138.63 ms
+8. 138.629 ms
+9. 203.455 ms
+10. 219.414 ms
+Graph: ../graphs/Web-graph/web-NotreDame.txt | Function: NodeIteratorPlusPlus1TH | Result: 8910005
+Min: 319.341 ms Max: 375.001 ms Avg: 336.72 ms
+1. 331.135 ms
+2. 321.913 ms
+3. 321.38 ms
+4. 322.168 ms
+5. 321.129 ms
+6. 319.341 ms
+7. 375.001 ms
+8. 367.048 ms
+9. 342.978 ms
+10. 345.103 ms
+Graph: ../graphs/Web-graph/web-NotreDame.txt | Function: NodeIteratorPlusPlus2TH | Result: 8910005
+Min: 203.489 ms Max: 237.364 ms Avg: 216.829 ms
+1. 237.364 ms
+2. 230.384 ms
+3. 234.409 ms
+4. 207.444 ms
+5. 213.816 ms
+6. 210.437 ms
+7. 208.084 ms
+8. 203.489 ms
+9. 208.409 ms
+10. 214.456 ms
+Graph: ../graphs/Web-graph/web-NotreDame.txt | Function: NodeIteratorPlusPlus4TH | Result: 8910005
+Min: 122.676 ms Max: 167.581 ms Avg: 139.171 ms
+1. 167.581 ms
+2. 132.614 ms
+3. 127.092 ms
+4. 130.653 ms
+5. 139.626 ms
+6. 139.628 ms
+7. 140.623 ms
+8. 122.676 ms
+9. 157.606 ms
+10. 133.611 ms
+Graph: ../graphs/Web-graph/web-NotreDame.txt | Function: NodeIteratorPlusPlus8TH | Result: 8910005
+Min: 109.707 ms Max: 273.269 ms Avg: 176.827 ms
+1. 142.618 ms
+2. 248.337 ms
+3. 120.676 ms
+4. 273.269 ms
+5. 130.651 ms
+6. 109.707 ms
+7. 112.698 ms
+8. 249.333 ms
+9. 125.664 ms
+10. 255.317 ms
+Graph: ../graphs/Network-gtc/com-youtube.txt | Function: NodeIteratorPlusPlus1TH | Result: 3056386
+Min: 2533.38 ms Max: 2710.45 ms Avg: 2604.69 ms
+1. 2577.83 ms
+2. 2683.62 ms
+3. 2710.45 ms
+4. 2629.2 ms
+5. 2539.09 ms
+6. 2657.04 ms
+7. 2558.19 ms
+8. 2621.9 ms
+9. 2536.18 ms
+10. 2533.38 ms
+Graph: ../graphs/Network-gtc/com-youtube.txt | Function: NodeIteratorPlusPlus2TH | Result: 3056386
+Min: 1298.53 ms Max: 1426.18 ms Avg: 1323.67 ms
+1. 1426.18 ms
+2. 1306.76 ms
+3. 1343.38 ms
+4. 1300.16 ms
+5. 1308.51 ms
+6. 1298.53 ms
+7. 1317.5 ms
+8. 1312.54 ms
+9. 1314.72 ms
+10. 1308.48 ms
+Graph: ../graphs/Network-gtc/com-youtube.txt | Function: NodeIteratorPlusPlus4TH | Result: 3056386
+Min: 750.992 ms Max: 975.39 ms Avg: 811.829 ms
+1. 797.916 ms
+2. 822.781 ms
+3. 750.992 ms
+4. 773.9 ms
+5. 787.927 ms
+6. 751.954 ms
+7. 770.939 ms
+8. 768.976 ms
+9. 917.513 ms
+10. 975.39 ms
+Graph: ../graphs/Network-gtc/com-youtube.txt | Function: NodeIteratorPlusPlus8TH | Result: 3056386
+Min: 574.464 ms Max: 799.473 ms Avg: 663.287 ms
+1. 799.473 ms
+2. 679.186 ms
+3. 660.235 ms
+4. 581.444 ms
+5. 613.36 ms
+6. 755.977 ms
+7. 715.088 ms
+8. 581.445 ms
+9. 672.202 ms
+10. 574.464 ms
+Graph: ../graphs/Communication-Network/WikiTalk.txt | Function: NodeIteratorPlusPlus1TH | Result: 9203519
+Min: 8217.33 ms Max: 8709.7 ms Avg: 8472.8 ms
+1. 8475.36 ms
+2. 8217.33 ms
+3. 8386.13 ms
+4. 8646.24 ms
+5. 8635.9 ms
+6. 8338.59 ms
+7. 8331.27 ms
+8. 8611.66 ms
+9. 8375.83 ms
+10. 8709.7 ms
+Graph: ../graphs/Communication-Network/WikiTalk.txt | Function: NodeIteratorPlusPlus2TH | Result: 9203519
+Min: 4358.31 ms Max: 4717.42 ms Avg: 4497.45 ms
+1. 4401.23 ms
+2. 4481.01 ms
+3. 4455.11 ms
+4. 4493.95 ms
+5. 4522.93 ms
+6. 4542.82 ms
+7. 4717.42 ms
+8. 4358.31 ms
+9. 4485.35 ms
+10. 4516.41 ms
+Graph: ../graphs/Communication-Network/WikiTalk.txt | Function: NodeIteratorPlusPlus4TH | Result: 9203519
+Min: 2430.53 ms Max: 2740.67 ms Avg: 2573.13 ms
+1. 2620.06 ms
+2. 2430.53 ms
+3. 2727.71 ms
+4. 2558.16 ms
+5. 2452.44 ms
+6. 2711.72 ms
+7. 2546.19 ms
+8. 2435.52 ms
+9. 2740.67 ms
+10. 2508.29 ms
+Graph: ../graphs/Communication-Network/WikiTalk.txt | Function: NodeIteratorPlusPlus8TH | Result: 9203519
+Min: 1839.06 ms Max: 2299.94 ms Avg: 2028.72 ms
+1. 2221.09 ms
+2. 1839.06 ms
+3. 1869.03 ms
+4. 1956.37 ms
+5. 1982.7 ms
+6. 2159.25 ms
+7. 1871.64 ms
+8. 2034.59 ms
+9. 2299.94 ms
+10. 2053.51 ms
+Graph: ../graphs/Web-graph/web-BerkStan.txt | Function: NodeIteratorPlusPlus1TH | Result: 64690980
+Min: 3386.94 ms Max: 3604.75 ms Avg: 3480.21 ms
+1. 3393.18 ms
+2. 3509.84 ms
+3. 3526.65 ms
+4. 3448.74 ms
+5. 3453.76 ms
+6. 3549.58 ms
+7. 3604.75 ms
+8. 3474.93 ms
+9. 3386.94 ms
+10. 3453.76 ms
+Graph: ../graphs/Web-graph/web-BerkStan.txt | Function: NodeIteratorPlusPlus2TH | Result: 64690980
+Min: 2040.58 ms Max: 2438.47 ms Avg: 2166.1 ms
+1. 2438.47 ms
+2. 2387.62 ms
+3. 2235.32 ms
+4. 2230.07 ms
+5. 2076.77 ms
+6. 2040.58 ms
+7. 2085.89 ms
+8. 2060.26 ms
+9. 2054.51 ms
+10. 2051.51 ms
+Graph: ../graphs/Web-graph/web-BerkStan.txt | Function: NodeIteratorPlusPlus4TH | Result: 64690980
+Min: 1338.45 ms Max: 1486.03 ms Avg: 1384.77 ms
+1. 1444.17 ms
+2. 1403.24 ms
+3. 1357.37 ms
+4. 1373.29 ms
+5. 1382.3 ms
+6. 1338.45 ms
+7. 1339.13 ms
+8. 1370.3 ms
+9. 1353.41 ms
+10. 1486.03 ms
+Graph: ../graphs/Web-graph/web-BerkStan.txt | Function: NodeIteratorPlusPlus8TH | Result: 64690980
+Min: 1075.12 ms Max: 2060.96 ms Avg: 1335.87 ms
+1. 1427.18 ms
+2. 1075.12 ms
+3. 1088.09 ms
+4. 1160.9 ms
+5. 1076.12 ms
+6. 1206.77 ms
+7. 1118.01 ms
+8. 1995.66 ms
+9. 1149.92 ms
+10. 2060.96 ms
+Graph: ../graphs/Web-graph/web-Stanford.txt | Function: NodeIteratorPlusPlus1TH | Result: 11329473
+Min: 975.427 ms Max: 1153.92 ms Avg: 1020.13 ms
+1. 1016.3 ms
+2. 975.427 ms
+3. 1058.16 ms
+4. 976.634 ms
+5. 977.987 ms
+6. 1153.92 ms
+7. 1016.31 ms
+8. 981.375 ms
+9. 1047.85 ms
+10. 997.319 ms
+Graph: ../graphs/Web-graph/web-Stanford.txt | Function: NodeIteratorPlusPlus2TH | Result: 11329473
+Min: 551.745 ms Max: 617.32 ms Avg: 571.646 ms
+1. 609.396 ms
+2. 617.32 ms
+3. 583.469 ms
+4. 567.642 ms
+5. 559.326 ms
+6. 557.535 ms
+7. 557.486 ms
+8. 553.909 ms
+9. 551.745 ms
+10. 558.628 ms
+Graph: ../graphs/Web-graph/web-Stanford.txt | Function: NodeIteratorPlusPlus4TH | Result: 11329473
+Min: 357.045 ms Max: 462.764 ms Avg: 409.88 ms
+1. 442.816 ms
+2. 389.955 ms
+3. 462.764 ms
+4. 395.94 ms
+5. 387.991 ms
+6. 357.045 ms
+7. 388.541 ms
+8. 402.924 ms
+9. 415.921 ms
+10. 454.9 ms
+Graph: ../graphs/Web-graph/web-Stanford.txt | Function: NodeIteratorPlusPlus8TH | Result: 11329473
+Min: 305.184 ms Max: 450.795 ms Avg: 372.803 ms
+1. 359.038 ms
+2. 434.839 ms
+3. 373 ms
+4. 321.141 ms
+5. 393.947 ms
+6. 317.151 ms
+7. 442.816 ms
+8. 330.116 ms
+9. 305.184 ms
+10. 450.795 ms

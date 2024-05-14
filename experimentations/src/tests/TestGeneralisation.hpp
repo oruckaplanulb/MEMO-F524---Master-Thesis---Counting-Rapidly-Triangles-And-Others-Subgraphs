@@ -143,7 +143,7 @@ public:
             for (int i = 0; i < nbRuns; ++i) {
                 cout << "Run number: " << i << endl;
                 start = chrono::high_resolution_clock::now();
-                cpt = graphMatrixVV->count5CyclesMatrixPow5(Matrix::multiplyNaiveParallel,1); //1 thread
+                cpt = graphMatrixVV->count5CyclesMatrixPow5NodeIterator(Matrix::multiplyNaiveParallel,1); //1 thread
                 end = chrono::high_resolution_clock::now();
                 elapsed_seconds = end-start;
                 total_seconds += elapsed_seconds;
