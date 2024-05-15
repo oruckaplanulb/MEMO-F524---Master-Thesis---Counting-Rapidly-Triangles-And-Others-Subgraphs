@@ -13,12 +13,11 @@ using namespace std;
 class TestGeneralisation {
 public:
     static void testNIncreasingSSYMM(int nbRuns) {
-        vector<string> graphsPaths = {  "../graphs/Network-gtc/email-eu-core.txt",
+        vector<string> graphsPaths = { /* "../graphs/Network-gtc/email-eu-core.txt",
                                         "../graphs/Social-Network/ego-facebook.txt",
                                         "../graphs/Social-Network/wiki-Vote.txt",
-                                        "../graphs/Collaboration-Network/CA-HepPh.txt",
-                                        "../graphs/p2p-Gnutella/p2p-Gnutella25.txt",
-                                        "../graphs/Citation-Network/Cit-HepTh.txt"};
+                                        "../graphs/Collaboration-Network/CA-HepPh.txt",*/
+                                        "../graphs/p2p-Gnutella/p2p-Gnutella25.txt"};
 
         //for each graph Path
         for (const string& graphPath : graphsPaths) {
@@ -71,7 +70,7 @@ public:
 
             cout << "Graph: " << graphPath << " | Function: " << "MatrixPow5SSYMMWithoutNI" << " NbRun: "<< nbRuns << endl;
             for (int i = 0; i < nbRuns; ++i) {
-                //cout << "Run number: " << i << endl;
+                cout << "Run number: " << i << endl;
                 start = chrono::high_resolution_clock::now();
                 cpt = graphMatrixVV->count5CyclesMatrixPow5(Matrix::multiplyBlasSSYMM,1); //1 thread
                 end = chrono::high_resolution_clock::now();
