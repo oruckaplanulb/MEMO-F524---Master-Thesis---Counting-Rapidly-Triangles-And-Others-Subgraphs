@@ -1,0 +1,75 @@
+Graph: ../graphs/Network-gtc/email-eu-core.txt | Function: MatrixCubeNincreasingNaive1TH | Result: 105461
+Min: 3050.88 ms Max: 3571.45 ms Avg: 3198.8 ms
+1. 3234.39 ms
+2. 3122.36 ms
+3. 3094.7 ms
+4. 3234.38 ms
+5. 3089.55 ms
+6. 3571.45 ms
+7. 3375.97 ms
+8. 3050.88 ms
+9. 3106.66 ms
+10. 3107.69 ms
+Graph: ../graphs/Network-gtc/email-eu-core.txt | Function: MatrixCubeNincreasingNaive2TH | Result: 105461
+Min: 1604.02 ms Max: 2021.59 ms Avg: 1756.49 ms
+1. 2021.59 ms
+2. 1946.65 ms
+3. 2008.1 ms
+4. 1733.37 ms
+5. 1637.63 ms
+6. 1652.79 ms
+7. 1641.13 ms
+8. 1663.05 ms
+9. 1604.02 ms
+10. 1656.59 ms
+Graph: ../graphs/Network-gtc/email-eu-core.txt | Function: MatrixCubeNincreasingNaive4TH | Result: 105461
+Min: 938.49 ms Max: 1304.51 ms Avg: 1043.69 ms
+1. 1304.51 ms
+2. 1073.62 ms
+3. 991.615 ms
+4. 946.476 ms
+5. 1182.13 ms
+6. 964.422 ms
+7. 1104.05 ms
+8. 938.49 ms
+9. 985.927 ms
+10. 945.701 ms
+Graph: ../graphs/Network-gtc/email-eu-core.txt | Function: MatrixCubeNincreasingNaive8TH | Result: 105461
+Min: 2068.47 ms Max: 2106.37 ms Avg: 2084.33 ms
+1. 2068.47 ms
+2. 2082.43 ms
+3. 2083.43 ms
+4. 2106.37 ms
+5. 2089.41 ms
+6. 2086.42 ms
+7. 2085.43 ms
+8. 2084.43 ms
+9. 2085.43 ms
+10. 2071.46 ms
+Graph: ../graphs/Network-gtc/email-eu-core.txt | Function: MatrixCubeNincreasingNaive16TH | Result: 105461
+Min: 1991.68 ms Max: 2081.44 ms Avg: 2038.45 ms
+1. 2070.47 ms
+2. 2028.58 ms
+3. 2069.47 ms
+4. 2004.64 ms
+5. 1991.68 ms
+6. 2019.64 ms
+7. 2018.57 ms
+8. 2059.52 ms
+9. 2081.44 ms
+10. 2040.52 ms
+Graph: ../graphs/Social-Network/ego-facebook.txt | Function: MatrixCubeNincreasingNaive1TH | Result: 1612010
+Min: 906370 ms Max: 906370 ms Avg: 906370 ms
+1. 906370 ms
+Graph: ../graphs/Social-Network/ego-facebook.txt | Function: MatrixCubeNincreasingNaive2TH | Result: 1612010
+Min: 478138 ms Max: 478138 ms Avg: 478138 ms
+1. 478138 ms
+Graph: ../graphs/Social-Network/ego-facebook.txt | Function: MatrixCubeNincreasingNaive4TH | Result: 1612010
+Min: 315787 ms Max: 315787 ms Avg: 315787 ms
+1. 315787 ms
+Graph: ../graphs/Social-Network/ego-facebook.txt | Function: MatrixCubeNincreasingNaive8TH | Result: 1612010
+Min: 252305 ms Max: 252305 ms Avg: 252305 ms
+1. 252305 ms
+Graph: ../graphs/Social-Network/ego-facebook.txt | Function: MatrixCubeNincreasingNaive16TH | Result: 1612010
+Min: 255982 ms Max: 255982 ms Avg: 255982 ms
+1. 255982 ms

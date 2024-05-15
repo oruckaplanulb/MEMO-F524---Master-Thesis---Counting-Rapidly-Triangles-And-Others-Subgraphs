@@ -46,6 +46,18 @@ Min: 32.9068 ms Max: 46.9089 ms Avg: 36.307 ms
 8. 36.9064 ms
 9. 33.9145 ms
 10. 35.9062 ms
+Graph: ../graphs/Network-gtc/email-eu-core.txt | Function: MatrixCubeNincreasing16TH | Result: 105461
+Min: 99.7328 ms Max: 168.551 ms Avg: 134.64 ms
+1. 168.551 ms
+2. 136.634 ms
+3. 137.632 ms
+4. 119.68 ms
+5. 123.669 ms
+6. 132.646 ms
+7. 138.629 ms
+8. 138.63 ms
+9. 150.598 ms
+10. 99.7328 ms
 Graph: ../graphs/Social-Network/ego-facebook.txt | Function: MatrixCubeNincreasing1TH | Result: 1612010
 Min: 2823.45 ms Max: 3182.52 ms Avg: 2956.99 ms
 1. 2913.24 ms
@@ -94,6 +106,18 @@ Min: 1028.25 ms Max: 1359.35 ms Avg: 1074.93 ms
 8. 1032.24 ms
 9. 1041.21 ms
 10. 1037.23 ms
+Graph: ../graphs/Social-Network/ego-facebook.txt | Function: MatrixCubeNincreasing16TH | Result: 1612010
+Min: 1205.75 ms Max: 1389.29 ms Avg: 1287.76 ms
+1. 1327.43 ms
+2. 1339.45 ms
+3. 1301.49 ms
+4. 1389.29 ms
+5. 1321.5 ms
+6. 1252.65 ms
+7. 1228.68 ms
+8. 1296.57 ms
+9. 1205.75 ms
+10. 1214.78 ms
 Graph: ../graphs/Social-Network/wiki-Vote.txt | Function: MatrixCubeNincreasing1TH | Result: 608389
 Min: 14626.9 ms Max: 14702.7 ms Avg: 14653.1 ms
 1. 14700.4 ms
@@ -142,6 +166,18 @@ Min: 5414.52 ms Max: 5550.16 ms Avg: 5474.06 ms
 8. 5490.28 ms
 9. 5472.39 ms
 10. 5534.17 ms
+Graph: ../graphs/Social-Network/wiki-Vote.txt | Function: MatrixCubeNincreasing16TH | Result: 608389
+Min: 5377.66 ms Max: 5977.02 ms Avg: 5627.56 ms
+1. 5756.61 ms
+2. 5670.84 ms
+3. 5857.38 ms
+4. 5839.39 ms
+5. 5383.57 ms
+6. 5387.6 ms
+7. 5377.66 ms
+8. 5977.02 ms
+9. 5639.89 ms
+10. 5385.6 ms
 Graph: ../graphs/Collaboration-Network/CA-HepPh.txt | Function: MatrixCubeNincreasing1TH | Result: 3358499
 Min: 68312.3 ms Max: 70719.9 ms Avg: 69164.8 ms
 1. 70181.3 ms
@@ -190,3 +226,15 @@ Min: 25267.4 ms Max: 26745.5 ms Avg: 25748.2 ms
 8. 25830.9 ms
 9. 25588.6 ms
 10. 25650.4 ms
+Graph: ../graphs/Collaboration-Network/CA-HepPh.txt | Function: MatrixCubeNincreasing16TH | Result: 3358499
+Min: 23853.2 ms Max: 26534.1 ms Avg: 25255.8 ms
+1. 26058.3 ms
+2. 23853.2 ms
+3. 25049 ms
+4. 25035.1 ms
+5. 24868.5 ms
+6. 25348.2 ms
+7. 26534.1 ms
+8. 24463.6 ms
+9. 25725.2 ms
+10. 25622.5 ms
