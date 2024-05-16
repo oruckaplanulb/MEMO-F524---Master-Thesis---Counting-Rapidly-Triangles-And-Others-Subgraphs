@@ -1,6 +1,6 @@
 Graph: ../graphs/Network-gtc/email-eu-core.txt | Function: MatrixPow5Nincreasing1TH | Result: 245585095
-Min: 110.704 ms Max: 2445.66 ms Avg: 348.492 ms
-1. 2445.66 ms
+Min: 110.704 ms Max: 119.709 ms Avg: 115.473 ms
+1. 2445.66 ms REMOVE
 2. 110.704 ms
 3. 112.699 ms
 4. 119.709 ms

@@ -1,0 +1,240 @@
+Graph: ../graphs/Network-gtc/email-eu-core.txt | Function: MatrixPow5NincreasingNodeIterator1TH | Result: 245585095
+Min: 133.643 ms Max: 145.664 ms Avg: 136.196 ms
+1. 262.427 ms REMOVE
+2. 135.636 ms
+3. 133.643 ms
+4. 134.64 ms
+5. 133.643 ms
+6. 135.647 ms
+7. 136.626 ms
+8. 134.64 ms
+9. 135.637 ms
+10. 145.644 ms
+Graph: ../graphs/Network-gtc/email-eu-core.txt | Function: MatrixPow5NincreasingNodeIterator2TH | Result: 245585095
+Min: 116.685 ms Max: 144.647 ms Avg: 128.759 ms
+1. 144.647 ms
+2. 116.685 ms
+3. 120.679 ms
+4. 119.682 ms
+5. 125.656 ms
+6. 133.616 ms
+7. 133.678 ms
+8. 118.68 ms
+9. 139.594 ms
+10. 134.673 ms
+Graph: ../graphs/Network-gtc/email-eu-core.txt | Function: MatrixPow5NincreasingNodeIterator4TH | Result: 245585095
+Min: 96.74 ms Max: 118.649 ms Avg: 105.521 ms
+1. 115.722 ms
+2. 105.719 ms
+3. 111.666 ms
+4. 107.746 ms
+5. 118.649 ms
+6. 104.753 ms
+7. 97.7402 ms
+8. 98.7351 ms
+9. 97.7397 ms
+10. 96.74 ms
+Graph: ../graphs/Network-gtc/email-eu-core.txt | Function: MatrixPow5NincreasingNodeIterator8TH | Result: 245585096
+Min: 96.7404 ms Max: 116.655 ms Avg: 101.232 ms
+1. 108.74 ms
+2. 97.7396 ms
+3. 96.7404 ms
+4. 98.7364 ms
+5. 116.655 ms
+6. 98.7691 ms
+7. 97.7394 ms
+8. 100.729 ms
+9. 97.7402 ms
+10. 98.7345 ms
+Graph: ../graphs/Network-gtc/email-eu-core.txt | Function: MatrixPow5NincreasingNodeIterator16TH | Result: 245585096
+Min: 179.524 ms Max: 286.235 ms Avg: 234.072 ms
+1. 243.329 ms
+2. 270.278 ms
+3. 286.235 ms
+4. 196.475 ms
+5. 275.264 ms
+6. 251.329 ms
+7. 179.524 ms
+8. 220.407 ms
+9. 194.48 ms
+10. 223.403 ms
+Graph: ../graphs/Social-Network/ego-facebook.txt | Function: MatrixPow5NincreasingNodeIterator1TH | Result: 15676700571
+Min: 4705.42 ms Max: 5340.76 ms Avg: 4927.93 ms
+1. 5340.76 ms
+2. 4793.15 ms
+3. 4707.42 ms
+4. 4705.42 ms
+5. 5183.14 ms
+6. 5264.92 ms
+7. 4885.94 ms
+8. 4717.39 ms
+9. 4831.09 ms
+10. 4850.07 ms
+Graph: ../graphs/Social-Network/ego-facebook.txt | Function: MatrixPow5NincreasingNodeIterator2TH | Result: 15676700572
+Min: 3150.58 ms Max: 3545.49 ms Avg: 3342.07 ms
+1. 3192.5 ms
+2. 3212.38 ms
+3. 3406.89 ms
+4. 3490.7 ms
+5. 3517.59 ms
+6. 3255.3 ms
+7. 3545.49 ms
+8. 3150.58 ms
+9. 3425.84 ms
+10. 3223.41 ms
+Graph: ../graphs/Social-Network/ego-facebook.txt | Function: MatrixPow5NincreasingNodeIterator4TH | Result: 15676700587
+Min: 2256.97 ms Max: 2995.96 ms Avg: 2507.8 ms
+1. 2631.95 ms
+2. 2818.46 ms
+3. 2489.38 ms
+4. 2259.96 ms
+5. 2414.51 ms
+6. 2289.91 ms
+7. 2256.97 ms
+8. 2995.96 ms
+9. 2583.13 ms
+10. 2337.76 ms
+Graph: ../graphs/Social-Network/ego-facebook.txt | Function: MatrixPow5NincreasingNodeIterator8TH | Result: 15676700582
+Min: 2247.03 ms Max: 2668.9 ms Avg: 2339.55 ms
+1. 2668.9 ms
+2. 2250.98 ms
+3. 2464.38 ms
+4. 2265.94 ms
+5. 2401.62 ms
+6. 2269.93 ms
+7. 2267.91 ms
+8. 2247.03 ms
+9. 2268.94 ms
+10. 2289.88 ms
+Graph: ../graphs/Social-Network/ego-facebook.txt | Function: MatrixPow5NincreasingNodeIterator16TH | Result: 15676700610
+Min: 2495.36 ms Max: 2687.82 ms Avg: 2570.13 ms
+1. 2683.86 ms
+2. 2537.21 ms
+3. 2595.06 ms
+4. 2531.23 ms
+5. 2560.16 ms
+6. 2523.22 ms
+7. 2495.36 ms
+8. 2549.19 ms
+9. 2687.82 ms
+10. 2538.22 ms
+Graph: ../graphs/Social-Network/wiki-Vote.txt | Function: MatrixPow5NincreasingNodeIterator1TH | Result: 5260254648
+Min: 22336.3 ms Max: 24407.8 ms Avg: 22952.3 ms
+1. 23040.4 ms
+2. 22520.8 ms
+3. 22811 ms
+4. 22759.2 ms
+5. 22828.9 ms
+6. 22336.3 ms
+7. 22519.8 ms
+8. 22787.1 ms
+9. 23512.1 ms
+10. 24407.8 ms
+Graph: ../graphs/Social-Network/wiki-Vote.txt | Function: MatrixPow5NincreasingNodeIterator2TH | Result: 5260254646
+Min: 13454.1 ms Max: 13858.9 ms Avg: 13579.8 ms
+1. 13577.7 ms
+2. 13658.5 ms
+3. 13454.1 ms
+4. 13858.9 ms
+5. 13493 ms
+6. 13523.8 ms
+7. 13574.7 ms
+8. 13491 ms
+9. 13551.8 ms
+10. 13614.6 ms
+Graph: ../graphs/Social-Network/wiki-Vote.txt | Function: MatrixPow5NincreasingNodeIterator4TH | Result: 5260254648
+Min: 9299.17 ms Max: 10698.4 ms Avg: 9650.6 ms
+1. 9391.92 ms
+2. 9405.86 ms
+3. 10698.4 ms
+4. 9299.17 ms
+5. 9457.72 ms
+6. 9485.61 ms
+7. 9687.14 ms
+8. 9554.43 ms
+9. 9776.86 ms
+10. 9748.97 ms
+Graph: ../graphs/Social-Network/wiki-Vote.txt | Function: MatrixPow5NincreasingNodeIterator8TH | Result: 5260254648
+Min: 9278.2 ms Max: 9577.43 ms Avg: 9328.57 ms
+1. 9577.43 ms
+2. 9278.2 ms
+3. 9300.16 ms
+4. 9282.22 ms
+5. 9293.13 ms
+6. 9301.13 ms
+7. 9307.16 ms
+8. 9343.02 ms
+9. 9317.05 ms
+10. 9286.21 ms
+Graph: ../graphs/Social-Network/wiki-Vote.txt | Function: MatrixPow5NincreasingNodeIterator16TH | Result: 5260254646
+Min: 9797.81 ms Max: 10478 ms Avg: 10103.4 ms
+1. 10367.3 ms
+2. 10250.6 ms
+3. 9890.56 ms
+4. 9996.28 ms
+5. 10478 ms
+6. 9797.81 ms
+7. 10244.6 ms
+8. 10172.8 ms
+9. 10005.2 ms
+10. 9830.72 ms
+Graph: ../graphs/Collaboration-Network/CA-HepPh.txt | Function: MatrixPow5NincreasingNodeIterator1TH | Result: -47990720448
+Min: 101777 ms Max: 103641 ms Avg: 102782 ms
+1. 103097 ms
+2. 102369 ms
+3. 101777 ms
+4. 102198 ms
+5. 103641 ms
+6. 102936 ms
+7. 103049 ms
+8. 102877 ms
+9. 102735 ms
+10. 103142 ms
+Graph: ../graphs/Collaboration-Network/CA-HepPh.txt | Function: MatrixPow5NincreasingNodeIterator2TH | Result: -47990720448
+Min: 57740.6 ms Max: 60585.1 ms Avg: 59214.1 ms
+1. 57740.6 ms
+2. 58111.7 ms
+3. 58914.5 ms
+4. 58870.6 ms
+5. 59360.3 ms
+6. 59523.9 ms
+7. 60176.2 ms
+8. 60585.1 ms
+9. 60010.6 ms
+10. 58847.7 ms
+Graph: ../graphs/Collaboration-Network/CA-HepPh.txt | Function: MatrixPow5NincreasingNodeIterator4TH | Result: -47990720448
+Min: 38346.5 ms Max: 40240.4 ms Avg: 39612.7 ms
+1. 38346.5 ms
+2. 39423.6 ms
+3. 39623.1 ms
+4. 39742.7 ms
+5. 39801.8 ms
+6. 40240.4 ms
+7. 39597.1 ms
+8. 40205.5 ms
+9. 39716.8 ms
+10. 39429.6 ms
+Graph: ../graphs/Collaboration-Network/CA-HepPh.txt | Function: MatrixPow5NincreasingNodeIterator8TH | Result: -47990720455
+Min: 39101.5 ms Max: 40145.7 ms Avg: 39475.4 ms
+1. 39138.4 ms
+2. 39101.5 ms
+3. 39158.3 ms
+4. 39264 ms
+5. 39503.4 ms
+6. 39411.6 ms
+7. 39544.3 ms
+8. 40145.7 ms
+9. 39804.6 ms
+10. 39681.9 ms
+Graph: ../graphs/Collaboration-Network/CA-HepPh.txt | Function: MatrixPow5NincreasingNodeIterator16TH | Result: -47990720455
+Min: 39701.8 ms Max: 43524.7 ms Avg: 41772.1 ms
+1. 42241.1 ms
+2. 42532.3 ms
+3. 40746.1 ms
+4. 39701.8 ms
+5. 39881.4 ms
+6. 41948.9 ms
+7. 42709.8 ms
+8. 41743.4 ms
+9. 43524.7 ms
+10. 42691.9 ms

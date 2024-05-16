@@ -43,10 +43,7 @@ plt.grid(which='minor', linestyle=':', linewidth='1', color='lightgrey', zorder=
 
 plt.ylim(0, 4)
 
-#make the x and y ticks label smaller
 plt.tick_params(axis='both', which='major', labelsize=8)
-
-#Y-axis to be a distance of log 2
 
 plt.tight_layout()
 
