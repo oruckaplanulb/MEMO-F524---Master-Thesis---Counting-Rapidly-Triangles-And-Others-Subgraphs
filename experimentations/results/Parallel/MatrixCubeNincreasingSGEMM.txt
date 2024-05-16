@@ -1,0 +1,240 @@
+Graph: ../graphs/Network-gtc/email-eu-core.txt | Function: MatrixCubeNincreasingSGEMM1TH | Result: 105461
+Min: 58.8407 ms Max: 87.8537 ms Avg: 64.0409 ms
+1. 87.8537 ms
+2. 60.8702 ms
+3. 60.8049 ms
+4. 58.8754 ms
+5. 59.8405 ms
+6. 60.8377 ms
+7. 58.8407 ms
+8. 61.8352 ms
+9. 70.81 ms
+10. 59.8407 ms
+Graph: ../graphs/Network-gtc/email-eu-core.txt | Function: MatrixCubeNincreasingSGEMM2TH | Result: 105461
+Min: 42.8855 ms Max: 72.8309 ms Avg: 50.1687 ms
+1. 72.8309 ms
+2. 50.8347 ms
+3. 43.9146 ms
+4. 42.8861 ms
+5. 43.8503 ms
+6. 47.898 ms
+7. 54.8259 ms
+8. 51.8623 ms
+9. 49.8989 ms
+10. 42.8855 ms
+Graph: ../graphs/Network-gtc/email-eu-core.txt | Function: MatrixCubeNincreasingSGEMM4TH | Result: 105461
+Min: 36.8662 ms Max: 62.8303 ms Avg: 44.9825 ms
+1. 42.9188 ms
+2. 41.8897 ms
+3. 46.8673 ms
+4. 43.8857 ms
+5. 42.8927 ms
+6. 36.8662 ms
+7. 38.9207 ms
+8. 44.8547 ms
+9. 62.8303 ms
+10. 47.8993 ms
+Graph: ../graphs/Network-gtc/email-eu-core.txt | Function: MatrixCubeNincreasingSGEMM8TH | Result: 105461
+Min: 32.9122 ms Max: 52.8536 ms Avg: 37.8981 ms
+1. 52.8536 ms
+2. 41.8866 ms
+3. 33.9096 ms
+4. 38.8972 ms
+5. 34.9045 ms
+6. 35.9043 ms
+7. 36.9012 ms
+8. 35.9045 ms
+9. 32.9122 ms
+10. 34.9069 ms
+Graph: ../graphs/Network-gtc/email-eu-core.txt | Function: MatrixCubeNincreasingSGEMM16TH | Result: 105461
+Min: 87.7639 ms Max: 164.56 ms Avg: 126.462 ms
+1. 125.663 ms
+2. 134.641 ms
+3. 91.7552 ms
+4. 87.7639 ms
+5. 119.68 ms
+6. 130.651 ms
+7. 132.645 ms
+8. 149.6 ms
+9. 164.56 ms
+10. 127.661 ms
+Graph: ../graphs/Social-Network/ego-facebook.txt | Function: MatrixCubeNincreasingSGEMM1TH | Result: 1612010
+Min: 2715.71 ms Max: 3043.86 ms Avg: 2778.18 ms
+1. 2751.68 ms
+2. 2764.6 ms
+3. 3043.86 ms
+4. 2752.64 ms
+5. 2765.61 ms
+6. 2715.71 ms
+7. 2749.68 ms
+8. 2724.72 ms
+9. 2754.63 ms
+10. 2758.63 ms
+Graph: ../graphs/Social-Network/ego-facebook.txt | Function: MatrixCubeNincreasingSGEMM2TH | Result: 1612010
+Min: 1556.84 ms Max: 1677.55 ms Avg: 1591.75 ms
+1. 1677.55 ms
+2. 1598.73 ms
+3. 1584.73 ms
+4. 1566.81 ms
+5. 1565.81 ms
+6. 1581.77 ms
+7. 1591.78 ms
+8. 1575.76 ms
+9. 1556.84 ms
+10. 1617.71 ms
+Graph: ../graphs/Social-Network/ego-facebook.txt | Function: MatrixCubeNincreasingSGEMM4TH | Result: 1612010
+Min: 1081.14 ms Max: 1196.8 ms Avg: 1121.01 ms
+1. 1154.9 ms
+2. 1105.04 ms
+3. 1110.07 ms
+4. 1099.06 ms
+5. 1127.95 ms
+6. 1123 ms
+7. 1099.06 ms
+8. 1113.02 ms
+9. 1196.8 ms
+10. 1081.14 ms
+Graph: ../graphs/Social-Network/ego-facebook.txt | Function: MatrixCubeNincreasingSGEMM8TH | Result: 1612010
+Min: 993.345 ms Max: 1071.11 ms Avg: 1012.59 ms
+1. 1036.24 ms
+2. 1071.11 ms
+3. 993.345 ms
+4. 1010.33 ms
+5. 999.294 ms
+6. 1020.31 ms
+7. 1001.32 ms
+8. 997.334 ms
+9. 994.308 ms
+10. 1002.35 ms
+Graph: ../graphs/Social-Network/ego-facebook.txt | Function: MatrixCubeNincreasingSGEMM16TH | Result: 1612010
+Min: 1132 ms Max: 1344.41 ms Avg: 1200.39 ms
+1. 1344.41 ms
+2. 1144.94 ms
+3. 1199.79 ms
+4. 1146.97 ms
+5. 1241.68 ms
+6. 1203.79 ms
+7. 1179.81 ms
+8. 1178.85 ms
+9. 1132 ms
+10. 1231.71 ms
+Graph: ../graphs/Social-Network/wiki-Vote.txt | Function: MatrixCubeNincreasingSGEMM1TH | Result: 608389
+Min: 13906.8 ms Max: 15484.6 ms Avg: 14426.2 ms
+1. 14071.2 ms
+2. 14376.6 ms
+3. 13983.6 ms
+4. 13913.8 ms
+5. 14102.3 ms
+6. 13906.8 ms
+7. 13993.6 ms
+8. 15205.4 ms
+9. 15484.6 ms
+10. 15224.3 ms
+Graph: ../graphs/Social-Network/wiki-Vote.txt | Function: MatrixCubeNincreasingSGEMM2TH | Result: 608389
+Min: 7855 ms Max: 8945.07 ms Avg: 8037.22 ms
+1. 8945.07 ms
+2. 8281.89 ms
+3. 7913.81 ms
+4. 7911.88 ms
+5. 7891.87 ms
+6. 7884.92 ms
+7. 7871.96 ms
+8. 7855 ms
+9. 7879.94 ms
+10. 7935.82 ms
+Graph: ../graphs/Social-Network/wiki-Vote.txt | Function: MatrixCubeNincreasingSGEMM4TH | Result: 608389
+Min: 5010.61 ms Max: 6561.42 ms Avg: 5926.56 ms
+1. 5249.96 ms
+2. 5034.57 ms
+3. 5010.61 ms
+4. 5169.18 ms
+5. 6533.54 ms
+6. 6561.42 ms
+7. 6532.54 ms
+8. 6125.62 ms
+9. 6546.5 ms
+10. 6501.62 ms
+Graph: ../graphs/Social-Network/wiki-Vote.txt | Function: MatrixCubeNincreasingSGEMM8TH | Result: 608389
+Min: 5424.47 ms Max: 6047.83 ms Avg: 5824.53 ms
+1. 5839.43 ms
+2. 5760.57 ms
+3. 5960.1 ms
+4. 6030.88 ms
+5. 5424.47 ms
+6. 5749.67 ms
+7. 5509.26 ms
+8. 5882.28 ms
+9. 6047.83 ms
+10. 6040.82 ms
+Graph: ../graphs/Social-Network/wiki-Vote.txt | Function: MatrixCubeNincreasingSGEMM16TH | Result: 608389
+Min: 5527.22 ms Max: 6560.44 ms Avg: 6075.26 ms
+1. 6560.44 ms
+2. 6349.03 ms
+3. 6497.66 ms
+4. 6302.16 ms
+5. 5723.7 ms
+6. 5888.26 ms
+7. 6006.94 ms
+8. 5527.22 ms
+9. 5979.02 ms
+10. 5918.18 ms
+Graph: ../graphs/Collaboration-Network/CA-HepPh.txt | Function: MatrixCubeNincreasingSGEMM1TH | Result: 3358499
+Min: 65836 ms Max: 73022.8 ms Avg: 68072.1 ms
+1. 67461.7 ms
+2. 65836 ms
+3. 66166.9 ms
+4. 66645.8 ms
+5. 73022.8 ms
+6. 69732.2 ms
+7. 69685.7 ms
+8. 68471 ms
+9. 67785.8 ms
+10. 65912.8 ms
+Graph: ../graphs/Collaboration-Network/CA-HepPh.txt | Function: MatrixCubeNincreasingSGEMM2TH | Result: 3358499
+Min: 37429 ms Max: 41426.2 ms Avg: 39234.3 ms
+1. 38018.4 ms
+2. 37628.4 ms
+3. 37429 ms
+4. 41426.2 ms
+5. 40670.8 ms
+6. 40358.1 ms
+7. 39799.6 ms
+8. 39624.1 ms
+9. 39322.9 ms
+10. 38065.2 ms
+Graph: ../graphs/Collaboration-Network/CA-HepPh.txt | Function: MatrixCubeNincreasingSGEMM4TH | Result: 3358499
+Min: 24819.7 ms Max: 28499.8 ms Avg: 26623.3 ms
+1. 24949.3 ms
+2. 27542.4 ms
+3. 27679 ms
+4. 26707.6 ms
+5. 26521.1 ms
+6. 27378.8 ms
+7. 28499.8 ms
+8. 26148.1 ms
+9. 25987.5 ms
+10. 24819.7 ms
+Graph: ../graphs/Collaboration-Network/CA-HepPh.txt | Function: MatrixCubeNincreasingSGEMM8TH | Result: 3358499
+Min: 24260.1 ms Max: 27886.5 ms Avg: 25991.4 ms
+1. 24823.7 ms
+2. 24260.1 ms
+3. 27613.2 ms
+4. 27418.7 ms
+5. 25899.8 ms
+6. 25900.8 ms
+7. 27886.5 ms
+8. 26609.9 ms
+9. 24818.6 ms
+10. 24683 ms
+Graph: ../graphs/Collaboration-Network/CA-HepPh.txt | Function: MatrixCubeNincreasingSGEMM16TH | Result: 3358499
+Min: 25724.3 ms Max: 28730.2 ms Avg: 27271.1 ms
+1. 26312.7 ms
+2. 27619.1 ms
+3. 26402.4 ms
+4. 27209.3 ms
+5. 28077.9 ms
+6. 27941.3 ms
+7. 28730.2 ms
+8. 28350.2 ms
+9. 26343.6 ms
+10. 25724.3 ms
