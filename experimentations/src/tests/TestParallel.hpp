@@ -117,7 +117,7 @@ public:
             cout << "Vertices: " << graphListVUS->getNumVertices() << endl;
             cout << "Edges: " << graphListVUS->getNumEdges() << endl;
 
-            for(int nbTH = 1 ; nbTH<=8 ; nbTH*=2){
+            for(int nbTH = 1 ; nbTH<=16 ; nbTH*=2){
                 long long int cpt = 0;
                 auto start = chrono::high_resolution_clock::now();
                 auto end = chrono::high_resolution_clock::now();
@@ -156,7 +156,7 @@ public:
             cout << "Vertices: " << graphListVUS->getNumVertices() << endl;
             cout << "Edges: " << graphListVUS->getNumEdges() << endl;
 
-            for(int nbTH = 1 ; nbTH<=8 ; nbTH*=2){
+            for(int nbTH = 1 ; nbTH<=16 ; nbTH*=2){
                 long long int cpt = 0;
                 auto start = chrono::high_resolution_clock::now();
                 auto end = chrono::high_resolution_clock::now();
@@ -195,7 +195,7 @@ public:
             cout << "Vertices: " << graphListVUS->getNumVertices() << endl;
             cout << "Edges: " << graphListVUS->getNumEdges() << endl;
 
-            for(int nbTH = 1 ; nbTH<=8 ; nbTH*=2){
+            for(int nbTH = 1 ; nbTH<=16 ; nbTH*=2){
                 long long int cpt = 0;
                 auto start = chrono::high_resolution_clock::now();
                 auto end = chrono::high_resolution_clock::now();
@@ -234,7 +234,7 @@ public:
             cout << "Vertices: " << graphListVUS->getNumVertices() << endl;
             cout << "Edges: " << graphListVUS->getNumEdges() << endl;
 
-            for(int nbTH = 1 ; nbTH<=8 ; nbTH*=2){
+            for(int nbTH = 1 ; nbTH<=16 ; nbTH*=2){
                 long long int cpt = 0;
                 auto start = chrono::high_resolution_clock::now();
                 auto end = chrono::high_resolution_clock::now();
@@ -519,6 +519,50 @@ public:
                 cout << "Average time: " << total_seconds.count()*(1000/nbRuns) << "ms" << endl;
                 total_seconds = chrono::duration<double>();
                 resultsEncoder->encodeResults("../results/Parallel/MatrixCubeNincreasingSGEMM.txt", graphPath, "MatrixCubeNincreasingSGEMM"+to_string(nbTH)+"TH", times, cpt);
+            }
+            delete graphMatrixVV;
+        }
+    }
+
+    static void testMatrixCubeNincreasingDSYMM(int nbRuns) {
+        vector<string> graphsPaths = {  "../graphs/Network-gtc/email-eu-core.txt",
+                                        "../graphs/Social-Network/ego-facebook.txt",
+                                        //"../graphs/Social-Network/wiki-Vote.txt",
+                                        //"../graphs/Collaboration-Network/CA-HepPh.txt",
+                                        /*"../graphs/p2p-Gnutella/p2p-Gnutella25.txt",
+                                        "../graphs/Citation-Network/Cit-HepTh.txt"*/};
+
+        //for each graph Path
+        for (const string& graphPath : graphsPaths) {
+            GraphFiller* graphFiller = new GraphFiller();
+            GraphAdjMatrixVV* graphMatrixVV = new GraphAdjMatrixVV();
+            graphFiller->setGraphFromFileMapped(graphPath, graphMatrixVV);
+            delete graphFiller;
+            cout << "- Graph Matrix VV -"<< endl;
+            cout << "Vertices: " << graphMatrixVV->getNumVertices() << endl;
+            cout << "Edges: " << graphMatrixVV->getNumEdges() << endl;
+
+            for(int nbTH = 1 ; nbTH<=16 ; nbTH*=2){
+                long long int cpt = 0;
+                auto start = chrono::high_resolution_clock::now();
+                auto end = chrono::high_resolution_clock::now();
+                chrono::duration<double> elapsed_seconds;
+                chrono::duration<double> total_seconds;
+                vector<chrono::duration<double>> times;
+                ResultsEncoder* resultsEncoder = new ResultsEncoder();
+                cout << "Graph: " << graphPath << " | Function: " << "MatrixCubeNincreasingDSYMM"<< nbTH <<"TH" << " NbRun: "<< nbRuns << endl;
+                for (int i = 0; i < nbRuns; ++i) {
+                    //cout << "Run number: " << i << endl;
+                    start = chrono::high_resolution_clock::now();
+                    cpt = graphMatrixVV->countTrianglesMatrixCube(Matrix::multiplyBlasDSYMM, nbTH);
+                    end = chrono::high_resolution_clock::now();
+                    elapsed_seconds = end-start;
+                    total_seconds += elapsed_seconds;
+                    times.push_back(elapsed_seconds);
+                }
+                cout << "Average time: " << total_seconds.count()*(1000/nbRuns) << "ms" << endl;
+                total_seconds = chrono::duration<double>();
+                resultsEncoder->encodeResults("../results/Parallel/MatrixCubeNincreasingDSYMM.txt", graphPath, "MatrixCubeNincreasingDSYMM"+to_string(nbTH)+"TH", times, cpt);
             }
             delete graphMatrixVV;
         }

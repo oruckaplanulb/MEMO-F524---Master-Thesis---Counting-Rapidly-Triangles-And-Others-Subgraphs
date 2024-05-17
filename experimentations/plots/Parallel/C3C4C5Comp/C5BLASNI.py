@@ -64,7 +64,7 @@ for i in range(len(x)):
 
 plt.xlabel('Number of threads')
 plt.ylabel('Speedup')
-plt.title('Counting C5 in parallel using BLAS SSYMM + NodeIterator in single thread')
+plt.title('Counting C5 in parallel using BLAS SSYMM without passing by A3')
 plt.legend(loc='upper left')
 plt.xscale('log', base=2)
 plt.xticks(x,x)

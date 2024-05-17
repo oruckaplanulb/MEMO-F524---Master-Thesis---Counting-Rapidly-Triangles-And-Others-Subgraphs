@@ -1,48 +1,60 @@
 Graph: ../graphs/Social-Network/soc-Epinions1.txt | Function: NodeIteratorPlusPlus1TH | Result: 1624481
-Min: 746.207 ms Max: 934.821 ms Avg: 807.664 ms
-1. 934.821 ms
-2. 805.699 ms
-3. 873.633 ms
-4. 890.508 ms
-5. 776.145 ms
-6. 765.981 ms
-7. 752.863 ms
-8. 746.207 ms
-9. 747.037 ms
-10. 783.748 ms
+Min: 713.471 ms Max: 772.938 ms Avg: 723.365 ms
+1. 772.938 ms
+2. 729.089 ms
+3. 718.909 ms
+4. 719.049 ms
+5. 715.837 ms
+6. 717.113 ms
+7. 713.471 ms
+8. 714.064 ms
+9. 716.186 ms
+10. 716.992 ms
 Graph: ../graphs/Social-Network/soc-Epinions1.txt | Function: NodeIteratorPlusPlus2TH | Result: 1624481
-Min: 385.969 ms Max: 456.03 ms Avg: 404.833 ms
-1. 412.923 ms
-2. 413.128 ms
-3. 456.03 ms
-4. 424.829 ms
-5. 402.924 ms
-6. 388.959 ms
-7. 387.637 ms
-8. 389.74 ms
-9. 386.189 ms
-10. 385.969 ms
+Min: 372.296 ms Max: 466.749 ms Avg: 405.59 ms
+1. 453.784 ms
+2. 418.911 ms
+3. 466.749 ms
+4. 422.255 ms
+5. 389.198 ms
+6. 372.296 ms
+7. 374.969 ms
+8. 388.007 ms
+9. 383.222 ms
+10. 386.51 ms
 Graph: ../graphs/Social-Network/soc-Epinions1.txt | Function: NodeIteratorPlusPlus4TH | Result: 1624481
-Min: 211.723 ms Max: 264.323 ms Avg: 222.235 ms
-1. 231.383 ms
-2. 213.457 ms
-3. 224.372 ms
-4. 212.429 ms
-5. 211.723 ms
-6. 217.451 ms
-7. 215.394 ms
-8. 264.323 ms
-9. 216.392 ms
-10. 215.43 ms
+Min: 216.423 ms Max: 269.251 ms Avg: 237.123 ms
+1. 248.335 ms
+2. 234.406 ms
+3. 244.344 ms
+4. 227.365 ms
+5. 231.851 ms
+6. 238.398 ms
+7. 216.423 ms
+8. 229.443 ms
+9. 231.413 ms
+10. 269.251 ms
 Graph: ../graphs/Social-Network/soc-Epinions1.txt | Function: NodeIteratorPlusPlus8TH | Result: 1624481
-Min: 148.604 ms Max: 207.444 ms Avg: 167.552 ms
-1. 207.444 ms
-2. 177.526 ms
-3. 185.503 ms
-4. 159.573 ms
-5. 166.554 ms
-6. 148.604 ms
-7. 157.578 ms
-8. 159.573 ms
-9. 154.586 ms
-10. 158.576 ms
+Min: 143.618 ms Max: 174.203 ms Avg: 154.753 ms
+1. 174.203 ms
+2. 159.573 ms
+3. 153.589 ms
+4. 151.595 ms
+5. 143.618 ms
+6. 152.589 ms
+7. 146.61 ms
+8. 152.59 ms
+9. 158.577 ms
+10. 154.587 ms
+Graph: ../graphs/Social-Network/soc-Epinions1.txt | Function: NodeIteratorPlusPlus16TH | Result: 1624481
+Min: 153.588 ms Max: 184.507 ms Avg: 169.447 ms
+1. 184.507 ms
+2. 170.544 ms
+3. 164.562 ms
+4. 171.54 ms
+5. 173.535 ms
+6. 170.544 ms
+7. 167.553 ms
+8. 168.549 ms
+9. 169.547 ms
+10. 153.588 ms

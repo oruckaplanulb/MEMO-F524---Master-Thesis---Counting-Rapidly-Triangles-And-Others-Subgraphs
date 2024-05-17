@@ -1,0 +1,16 @@
+Graph: ../graphs/Social-Network/soc-Epinions1.txt - Infos
+Density: 0.000141 | computed in: 0.986100ms
+Average Degeneracy: 133.208749 | computed in: 49.874200ms
+Average Clustering Coefficient: 0.137756 | computed in: 4790.226100ms
+Clustering Coefficient Distribution: (computed in: 4768.289100ms)
+Clustering coefficient 0.000000 - 0.100000: 54879
+Clustering coefficient 0.100000 - 0.200000: 6287
+Clustering coefficient 0.200000 - 0.300000: 2829
+Clustering coefficient 0.300000 - 0.400000: 2916
+Clustering coefficient 0.400000 - 0.500000: 756
+Clustering coefficient 0.500000 - 0.600000: 1095
+Clustering coefficient 0.600000 - 0.700000: 1167
+Clustering coefficient 0.700000 - 0.800000: 179
+Clustering coefficient 0.800000 - 0.900000: 341
+Clustering coefficient 0.900000 - 1.000000: 5430
+

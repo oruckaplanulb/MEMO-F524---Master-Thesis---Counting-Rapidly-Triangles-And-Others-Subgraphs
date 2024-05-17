@@ -23,18 +23,25 @@ graph_data = {
                       [116493, 21632, 23542, 38656, 35155, 48152, 95057, 37648, 70250, 198645, 0]),
     "web-Stanford": ([0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1], 
                       [46643, 7124, 7567, 15512, 10482, 28541, 40941, 13533, 39042, 72518, 0]),
+    "soc-Epinions1": ([0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
+                        [54879, 6287, 2829, 2916, 756, 1095, 1167, 179, 341, 5430, 0]),
 }
 
 # Plotting each graph's data
 i = 0
 for key, (x_values, y_values) in graph_data.items():
     i += 1
+    if i != 11:
+        continue
     if i in [1, 2, 3]:
         color = '#fd7f6f'
     elif i in [4, 5, 6, 7]:
         color = '#ffb55a'
     else:
         color = '#7eb0d5'
+
+    if i == 11:
+        color = '#ffb55a'
 
     bar_positions = range(len(x_values))
     plt.figure(figsize=(6, 5))

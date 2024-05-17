@@ -1,48 +1,60 @@
 Graph: ../graphs/Social-Network/ego-facebook.txt | Function: NodeIterator1TH | Result: 1612010
-Min: 450.828 ms Max: 490.602 ms Avg: 458.782 ms
-1. 458.807 ms
-2. 456.777 ms
-3. 453.267 ms
-4. 490.602 ms
-5. 468.781 ms
-6. 454.234 ms
-7. 450.985 ms
-8. 450.828 ms
-9. 451.621 ms
-10. 451.916 ms
+Min: 450.622 ms Max: 511.599 ms Avg: 463.111 ms
+1. 465.791 ms
+2. 461.733 ms
+3. 452.661 ms
+4. 511.599 ms
+5. 460.794 ms
+6. 462.247 ms
+7. 452.042 ms
+8. 462.795 ms
+9. 450.622 ms
+10. 450.822 ms
 Graph: ../graphs/Social-Network/ego-facebook.txt | Function: NodeIterator2TH | Result: 1612010
-Min: 259.31 ms Max: 346.108 ms Avg: 283.359 ms
-1. 288.246 ms
-2. 271.274 ms
-3. 297.173 ms
-4. 299.198 ms
-5. 346.108 ms
-6. 281.247 ms
-7. 269.28 ms
-8. 261.421 ms
-9. 259.31 ms
-10. 260.337 ms
+Min: 276.209 ms Max: 358.016 ms Avg: 297.194 ms
+1. 297.233 ms
+2. 358.016 ms
+3. 297.208 ms
+4. 296.206 ms
+5. 291.165 ms
+6. 281.239 ms
+7. 294.214 ms
+8. 299.235 ms
+9. 281.213 ms
+10. 276.209 ms
 Graph: ../graphs/Social-Network/ego-facebook.txt | Function: NodeIterator4TH | Result: 1612010
-Min: 147.607 ms Max: 167.585 ms Avg: 158.317 ms
-1. 167.585 ms
-2. 158.542 ms
-3. 162.565 ms
-4. 147.607 ms
-5. 159.572 ms
-6. 157.578 ms
-7. 155.958 ms
-8. 161.598 ms
-9. 154.597 ms
-10. 157.569 ms
+Min: 173.536 ms Max: 242.318 ms Avg: 189.192 ms
+1. 194.494 ms
+2. 175.526 ms
+3. 184.512 ms
+4. 177.492 ms
+5. 186.502 ms
+6. 173.536 ms
+7. 192.52 ms
+8. 182.516 ms
+9. 182.507 ms
+10. 242.318 ms
 Graph: ../graphs/Social-Network/ego-facebook.txt | Function: NodeIterator8TH | Result: 1612010
-Min: 99.7334 ms Max: 113.695 ms Avg: 106.515 ms
-1. 111.7 ms
-2. 101.728 ms
-3. 103.723 ms
-4. 103.723 ms
-5. 104.72 ms
-6. 106.715 ms
-7. 108.709 ms
-8. 110.704 ms
-9. 113.695 ms
-10. 99.7334 ms
+Min: 101.727 ms Max: 115.69 ms Avg: 108.111 ms
+1. 115.69 ms
+2. 111.702 ms
+3. 101.727 ms
+4. 110.704 ms
+5. 106.715 ms
+6. 107.712 ms
+7. 106.715 ms
+8. 111.701 ms
+9. 106.715 ms
+10. 101.728 ms
+Graph: ../graphs/Social-Network/ego-facebook.txt | Function: NodeIterator16TH | Result: 1612010
+Min: 106.715 ms Max: 129.653 ms Avg: 120.179 ms
+1. 129.653 ms
+2. 117.686 ms
+3. 124.666 ms
+4. 117.686 ms
+5. 116.689 ms
+6. 128.656 ms
+7. 120.677 ms
+8. 106.715 ms
+9. 114.693 ms
+10. 124.667 ms

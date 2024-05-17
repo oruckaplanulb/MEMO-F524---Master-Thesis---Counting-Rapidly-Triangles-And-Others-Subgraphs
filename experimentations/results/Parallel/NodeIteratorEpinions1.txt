@@ -1,48 +1,60 @@
 Graph: ../graphs/Social-Network/soc-Epinions1.txt | Function: NodeIterator1TH | Result: 1624481
-Min: 5491.34 ms Max: 5645.9 ms Avg: 5543.7 ms
-1. 5645.9 ms
-2. 5523.27 ms
-3. 5523.46 ms
-4. 5553.73 ms
-5. 5545.17 ms
-6. 5528.21 ms
-7. 5560.13 ms
-8. 5548.83 ms
-9. 5491.34 ms
-10. 5516.98 ms
+Min: 5410.76 ms Max: 5449.43 ms Avg: 5435.1 ms
+1. 5448.94 ms
+2. 5442.42 ms
+3. 5427.53 ms
+4. 5449.43 ms
+5. 5425.57 ms
+6. 5434.48 ms
+7. 5435.47 ms
+8. 5437.66 ms
+9. 5438.7 ms
+10. 5410.76 ms
 Graph: ../graphs/Social-Network/soc-Epinions1.txt | Function: NodeIterator2TH | Result: 1624481
-Min: 2992.99 ms Max: 3305.18 ms Avg: 3039.78 ms
-1. 3305.18 ms
-2. 3007.99 ms
-3. 3022.95 ms
-4. 3002.94 ms
-5. 2995.98 ms
-6. 3009.95 ms
-7. 3014.96 ms
-8. 2992.99 ms
-9. 3034.88 ms
-10. 3009.97 ms
+Min: 2918.4 ms Max: 3070.18 ms Avg: 2978.99 ms
+1. 3070.18 ms
+2. 2918.4 ms
+3. 2954.14 ms
+4. 3003.96 ms
+5. 2929.84 ms
+6. 3009.99 ms
+7. 3030 ms
+8. 2988.05 ms
+9. 2950.15 ms
+10. 2935.14 ms
 Graph: ../graphs/Social-Network/soc-Epinions1.txt | Function: NodeIterator4TH | Result: 1624481
-Min: 1766.71 ms Max: 1873.03 ms Avg: 1796.62 ms
-1. 1873.03 ms
-2. 1780.21 ms
-3. 1845.09 ms
-4. 1766.71 ms
-5. 1767.31 ms
-6. 1783.95 ms
-7. 1786.22 ms
-8. 1785.26 ms
-9. 1777.24 ms
-10. 1801.15 ms
+Min: 1758.33 ms Max: 1873.96 ms Avg: 1801.59 ms
+1. 1832.13 ms
+2. 1808.13 ms
+3. 1777.25 ms
+4. 1776.29 ms
+5. 1873.96 ms
+6. 1758.33 ms
+7. 1837.06 ms
+8. 1799.22 ms
+9. 1789.22 ms
+10. 1764.28 ms
 Graph: ../graphs/Social-Network/soc-Epinions1.txt | Function: NodeIterator8TH | Result: 1624481
-Min: 1284.53 ms Max: 1342.45 ms Avg: 1315.68 ms
-1. 1324.46 ms
-2. 1326.45 ms
-3. 1303.51 ms
-4. 1310.53 ms
-5. 1322.23 ms
-6. 1342.45 ms
-7. 1310.68 ms
-8. 1309.53 ms
-9. 1322.47 ms
-10. 1284.53 ms
+Min: 1183.87 ms Max: 1232.7 ms Avg: 1200.69 ms
+1. 1232.7 ms
+2. 1216.78 ms
+3. 1199.79 ms
+4. 1188.79 ms
+5. 1186.86 ms
+6. 1196.8 ms
+7. 1189.79 ms
+8. 1194.84 ms
+9. 1216.71 ms
+10. 1183.87 ms
+Graph: ../graphs/Social-Network/soc-Epinions1.txt | Function: NodeIterator16TH | Result: 1624481
+Min: 1088.05 ms Max: 1283.6 ms Avg: 1197.99 ms
+1. 1283.6 ms
+2. 1249.63 ms
+3. 1147.96 ms
+4. 1253.65 ms
+5. 1223.73 ms
+6. 1088.05 ms
+7. 1186.57 ms
+8. 1140.18 ms
+9. 1214.79 ms
+10. 1191.78 ms

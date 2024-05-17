@@ -18,7 +18,10 @@ using namespace std;
 
 int main(int argc, char *argv[]){ 
 
-    TestParallel::testMatrixPow5NincreasingNodeIterator(10);
+    //TestParallel::testNodeIteratorEpinions1(10);
+    //TestParallel::testNodeIteratorPlusPlusEpinions1(10);
+    //TestParallel::testNodeIteratorFacebook(10);
+    TestParallel::testMatrixCubeNincreasingDSYMM(10);
 
     /*GraphFiller* graphFiller = new GraphFiller();
     GraphAdjMatrixVV* graphMatrixVV = new GraphAdjMatrixVV();
