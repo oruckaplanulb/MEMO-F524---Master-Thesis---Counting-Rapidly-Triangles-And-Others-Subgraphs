@@ -10,11 +10,17 @@
 
 using namespace std;
 
+/**
+ * @brief
+ */
 class ResultsEncoder
 {
 public:
     ResultsEncoder() = default;
 
+    /**
+     * @brief
+     */
     void write(const string &path, const string &content)
     {
         ofstream file(path, ios::app);
@@ -28,6 +34,9 @@ public:
         file.close();
     }
 
+    /**
+     * @brief
+     */
     void encodeResults(const string &path, const string &graphName, const string &function, const vector<chrono::duration<double>> &times, const long long int result){
         ofstream file(path, ios::app);
         if (!file.is_open())
@@ -52,6 +61,9 @@ public:
         file.close();
     }
 
+    /**
+     * @brief
+     */
     void encodeResultsAcceleration(const string &path, const string &graphName, const string &function, const vector<chrono::duration<double>> &timesA,
         const vector<chrono::duration<double>> &timesB,  const int resultA, const int resultB, const double expectedNumerator, const double expectedDenominator){
         ofstream file(path, ios::app);
@@ -91,6 +103,10 @@ public:
     }
 
 private:
+
+    /**
+     * @brief
+     */
     void getMinMaxAvg(const std::vector<std::chrono::duration<double>> &times, double &min, double &max, double &avg){
         if (times.empty())
         {

@@ -7,13 +7,17 @@
 #include <vector>
 #include <unordered_map>
 
+/**
+ * @brief
+*/
 class GraphFiller{
 public:
     GraphFiller() = default;
 
-    /*template <typename T>
-    void setGraphFromFile(const std::string &path, Graph<T> *g);*/
 
+    /**
+     * @brief
+    */
     void setGraphFromFileMapped(const std::string &path, Graph *g)
     {
         std::cout << "Path: " << path << std::endl;
@@ -85,9 +89,6 @@ public:
             std::cerr << "Failed to open file: " << path << std::endl;
         }
     }
-
-private:
-    //int getVertexMax(const std::string &path);
 };
 
 #endif

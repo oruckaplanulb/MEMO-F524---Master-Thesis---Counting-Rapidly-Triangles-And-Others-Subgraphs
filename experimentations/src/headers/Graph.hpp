@@ -10,6 +10,9 @@
 #include <cmath>
 #include <chrono>
 
+/**
+ * @brief
+*/
 class Graph {
 public:
     virtual ~Graph() = default;
@@ -22,10 +25,11 @@ public:
     virtual bool isBiggerOrder(int vrtx1, int vrtx2) const = 0;
     virtual void printGraph() const = 0;
     virtual bool hasEdge(int vrtx1, int vrtx2) const = 0;
-
-    //virtual int count4CyclesBasic() const = 0;
 };
 
+/**
+ * @brief
+*/
 class GraphAdjMatrixVV : public Graph {
 private:
     int numVertices;
@@ -49,20 +53,54 @@ public:
 
     std::vector<double> getNumberOfTrianglesPassThrough() const;
 
+    /**
+     * @brief
+    */
     int countTrianglesNodeIterator() const;
+    /**
+     * @brief
+    */
     int countTrianglesNodeIteratorPlusPlus() const;
+    /**
+     * @brief
+    */
     int countTrianglesNodeIteratorPlusPlusWithOrder() const;
+    /**
+     * @brief
+    */
     int countTrianglesMatrixSquaring(std::function<std::vector<std::vector<int>>(const std::vector<std::vector<int>>&, const std::vector<std::vector<int>>&, int)> multiplyFunc, int numThreads) const;
+    /**
+     * @brief
+    */
     int countTrianglesMatrixSquaringParallel(std::function<std::vector<std::vector<int>>(const std::vector<std::vector<int>>&, const std::vector<std::vector<int>>&, int)> multiplyFunc, int numThreadsMM, int numThreads) const;
+    /**
+     * @brief
+    */
     int countTrianglesMatrixCube(std::function<std::vector<std::vector<int>>(const std::vector<std::vector<int>>&, const std::vector<std::vector<int>>&, int)> multiplyFunc, int numThreads) const;
+    /**
+     * @brief
+    */
     int countTrianglesMatrixCubeParallel(std::function<std::vector<std::vector<int>>(const std::vector<std::vector<int>>&, const std::vector<std::vector<int>>&, int)> multiplyFunc, int numThreadsMM, int numThreads) const;
 
+    /**
+     * @brief
+    */
     long long int count4CyclesMatrixPow4(std::function<std::vector<std::vector<int>>(const std::vector<std::vector<int>>&, const std::vector<std::vector<int>>&, int)> multiplyFunc, int numThreads) const;
+    /**
+     * @brief
+    */
     long long int count5CyclesMatrixPow5(std::function<std::vector<std::vector<int>>(const std::vector<std::vector<int>>&, const std::vector<std::vector<int>>&, int)> multiplyFunc, int numThreads) const;
+    /**
+     * @brief
+    */
     long long int count5CyclesMatrixPow5NodeIterator(std::function<std::vector<std::vector<int>>(const std::vector<std::vector<int>>&, const std::vector<std::vector<int>>&, int)> multiplyFunc, int numThreads) const;
+    /*DOES NOT WORK*/
     long long int count6CyclesMatrixPow6(std::function<std::vector<std::vector<int>>(const std::vector<std::vector<int>>&, const std::vector<std::vector<int>>&, int)> multiplyFunc, int numThreads) const;
 };
 
+/**
+ * @brief
+*/
 class GraphAdjListVUS : public Graph {
 private:
     int numVertices;
@@ -83,6 +121,9 @@ public:
     bool hasEdge(int vrtx1, int vrtx2) const override;
     std::unordered_set<int>& getNeighbors(int v);
 
+    /**
+     * @brief
+    */
     std::vector<double> getNumberOfTrianglesPassThrough() const;
     
     int getSumDegreesSquared() const;
@@ -91,28 +132,80 @@ public:
     double getAverageDegeneracy() const;
     double getGraphDensity() const;
 
+    /**
+     * @brief
+    */
     double nbTwoPathsNodeIterator() const;
+    /**
+     * @brief
+    */
     double nbTwoPathsNodeIteratorPlusPlus() const;
+    /**
+     * @brief
+    */
     int countTrianglesNodeIterator() const;
+    /**
+     * @brief
+    */
     int countTrianglesNodeIteratorParallel(int numThreads) const;
+    /**
+     * @brief
+    */
     int countTrianglesNodeIteratorPlusPlus() const;
+    /**
+     * @brief
+    */
     int countTrianglesNodeIteratorPlusPlusParallel(int numThreads) const;
+    /**
+     * @brief
+    */
     int countTrianglesChibaNishizeki() const;
+    /**
+     * @brief
+    */
     int countTrianglesForward() const;
 
+    /**
+     * @brief
+    */
     std::vector<std::vector<int>> findTrianglesNodeIteratorPlusPlus() const;
+    /**
+     * @brief
+    */
     std::vector<std::vector<int>> findTrianglesChibaNishizeki() const;
+    /**
+     * @brief
+    */
     std::vector<std::vector<int>> findTrianglesForward() const;
+    /*DOES NOT WORK*/
     int AYZ_Algorithm() const;
 
+    /**
+     * @brief
+    */
     long long int count4CyclesBasic() const;
+    /**
+     * @brief
+    */
     std::vector<std::vector<int>> find4Cycles() const;
+    /**
+     * @brief
+    */
     std::vector<long long int> count4CyclesVertexLocal() const;
 
+    /**
+     * @brief
+    */
     long long int count4CyclesGeneralization() const;
+    /**
+     * @brief
+    */
     long long int count5CyclesGeneralization() const;
 };
 
+/**
+ * @brief
+*/
 class GraphAdjListVV : public Graph {
 private:
     int numVertices;
@@ -132,17 +225,37 @@ public:
     void printGraph() const override;
     bool hasEdge(int vrtx1, int vrtx2) const override;
     std::vector<int>& getNeighbors(int v);
+
+    /**
+     * @brief
+    */
     int countTrianglesNodeIteratorPlusPlus() const;
 
+    /**
+     * @brief
+    */
     long long int count4CyclesBasic() const;
+    /**
+     * @brief
+    */
     std::vector<std::vector<int>> find4Cycles() const;
+    /**
+     * @brief
+    */
     std::vector<long long int> count4CyclesVertexLocal() const;
+    /**
+     * @brief
+    */
     std::map<std::pair<int, int>, int> count4CyclesEdgeLocalMap() const;
+    /**
+     * @brief
+    */
     std::vector<std::vector<int>> count4CyclesEdgeLocalVector() const;
+    /**
+     * @brief
+    */
     std::chrono::duration<double> count4CyclesEdgeLocalTtime() const;
 };
-
-
 
 ////////////////////////////////////////////////////////////////
 //OLD CLASS - Testing purposes
@@ -171,7 +284,9 @@ public:
     int countTrianglesNodeIteratorPlusPlus() const;
 };
 
-//USELESS CLASS
+////////////////////////////////////////////////////////////////
+//OLD CLASS - Testing purposes
+////////////////////////////////////////////////////////////////
 class GraphEdgListVP : public Graph {
 private:
     int numVertices;
