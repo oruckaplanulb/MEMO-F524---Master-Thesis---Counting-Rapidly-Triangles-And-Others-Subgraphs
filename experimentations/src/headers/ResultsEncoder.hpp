@@ -11,7 +11,7 @@
 using namespace std;
 
 /**
- * @brief
+ * @brief Class to encode results to a file.
  */
 class ResultsEncoder
 {
@@ -19,7 +19,7 @@ public:
     ResultsEncoder() = default;
 
     /**
-     * @brief
+     * @brief Write content to a file.
      */
     void write(const string &path, const string &content)
     {
@@ -35,7 +35,7 @@ public:
     }
 
     /**
-     * @brief
+     * @brief Encode the results of a function to a file.
      */
     void encodeResults(const string &path, const string &graphName, const string &function, const vector<chrono::duration<double>> &times, const long long int result){
         ofstream file(path, ios::app);
@@ -62,7 +62,7 @@ public:
     }
 
     /**
-     * @brief
+     * @brief Encode the results of two functions to a file, in order to compare their speedup.
      */
     void encodeResultsAcceleration(const string &path, const string &graphName, const string &function, const vector<chrono::duration<double>> &timesA,
         const vector<chrono::duration<double>> &timesB,  const int resultA, const int resultB, const double expectedNumerator, const double expectedDenominator){
@@ -105,7 +105,7 @@ public:
 private:
 
     /**
-     * @brief
+     * @brief Get the min, max and average of a vector of durations.
      */
     void getMinMaxAvg(const std::vector<std::chrono::duration<double>> &times, double &min, double &max, double &avg){
         if (times.empty())

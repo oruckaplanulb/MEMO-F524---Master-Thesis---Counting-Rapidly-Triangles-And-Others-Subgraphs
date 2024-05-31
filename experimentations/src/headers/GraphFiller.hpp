@@ -8,7 +8,7 @@
 #include <unordered_map>
 
 /**
- * @brief
+ * @brief Class to fill a graph from a file.
 */
 class GraphFiller{
 public:
@@ -16,7 +16,7 @@ public:
 
 
     /**
-     * @brief
+     * @brief Fill a graph from a file, if the vertices are not consecutive, a map is created to map the vertices to consecutive integers.
     */
     void setGraphFromFileMapped(const std::string &path, Graph *g)
     {

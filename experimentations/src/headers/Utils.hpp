@@ -11,7 +11,7 @@ public:
     Utils() = default;
 
     /**
-     * @brief
+     * @brief Compute the binomial coefficient, n choose k.
      */
     int comb(int n, int k) {
         int result = 1;

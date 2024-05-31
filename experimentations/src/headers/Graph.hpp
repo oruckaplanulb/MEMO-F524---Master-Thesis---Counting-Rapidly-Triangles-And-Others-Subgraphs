@@ -11,7 +11,7 @@
 #include <chrono>
 
 /**
- * @brief
+ * @brief This class is an abstract class that represents a graph.
 */
 class Graph {
 public:
@@ -28,7 +28,7 @@ public:
 };
 
 /**
- * @brief
+ * @brief This class represents a graph using an adjacency matrix of vectors.
 */
 class GraphAdjMatrixVV : public Graph {
 private:
@@ -54,44 +54,44 @@ public:
     std::vector<double> getNumberOfTrianglesPassThrough() const;
 
     /**
-     * @brief
+     * @brief Use the NodeIterator algorithm to count the number of triangles in the graph.
     */
     int countTrianglesNodeIterator() const;
     /**
-     * @brief
+     * @brief Use the NodeIterator++ algorithm to count the number of triangles in the graph.
     */
     int countTrianglesNodeIteratorPlusPlus() const;
     /**
-     * @brief
+     * @brief Use the NodeIterator++ algorithm to count the number of triangles in the graph with pre-computing the total order of each vertex.
     */
     int countTrianglesNodeIteratorPlusPlusWithOrder() const;
     /**
-     * @brief
+     * @brief Use the MatrixSquaring algorithm to count the number of triangles in the graph, only the multiplication function is passed as a parameter can be changed and parallelized.
     */
     int countTrianglesMatrixSquaring(std::function<std::vector<std::vector<int>>(const std::vector<std::vector<int>>&, const std::vector<std::vector<int>>&, int)> multiplyFunc, int numThreads) const;
     /**
-     * @brief
+     * @brief Use the MatrixSquaring algorithm to count the number of triangles in the graph, here the multiplication function is passed as a parameter and the number of threads for the multiplication function and also for the main function.
     */
     int countTrianglesMatrixSquaringParallel(std::function<std::vector<std::vector<int>>(const std::vector<std::vector<int>>&, const std::vector<std::vector<int>>&, int)> multiplyFunc, int numThreadsMM, int numThreads) const;
     /**
-     * @brief
+     * @brief Use the MatrixCube algorithm to count the number of triangles in the graph, only the multiplication function is passed as a parameter can be changed and parallelized.
     */
     int countTrianglesMatrixCube(std::function<std::vector<std::vector<int>>(const std::vector<std::vector<int>>&, const std::vector<std::vector<int>>&, int)> multiplyFunc, int numThreads) const;
     /**
-     * @brief
+     * @brief Use the MatrixCube algorithm to count the number of triangles in the graph, here the multiplication function is passed as a parameter and the number of threads for the multiplication function and also for the main function.
     */
     int countTrianglesMatrixCubeParallel(std::function<std::vector<std::vector<int>>(const std::vector<std::vector<int>>&, const std::vector<std::vector<int>>&, int)> multiplyFunc, int numThreadsMM, int numThreads) const;
 
     /**
-     * @brief
+     * @brief Use the Matrix Pow 4 with the generalisation to count the number of 4-cycles in the graph.
     */
     long long int count4CyclesMatrixPow4(std::function<std::vector<std::vector<int>>(const std::vector<std::vector<int>>&, const std::vector<std::vector<int>>&, int)> multiplyFunc, int numThreads) const;
     /**
-     * @brief
+     * @brief Use the Matrix Pow 5 with the generalisation to count the number of 5-cycles in the graph.
     */
     long long int count5CyclesMatrixPow5(std::function<std::vector<std::vector<int>>(const std::vector<std::vector<int>>&, const std::vector<std::vector<int>>&, int)> multiplyFunc, int numThreads) const;
     /**
-     * @brief
+     * @brief Use the Matrix Pow 5 with the generalisation to count the number of 5-cycles in the graph, to count the triangles homomorphism, it use a variant of NodeIterator instead of A3.
     */
     long long int count5CyclesMatrixPow5NodeIterator(std::function<std::vector<std::vector<int>>(const std::vector<std::vector<int>>&, const std::vector<std::vector<int>>&, int)> multiplyFunc, int numThreads) const;
     /*DOES NOT WORK*/
@@ -99,7 +99,7 @@ public:
 };
 
 /**
- * @brief
+ * @brief This class represents a graph using an adjacency list of unordered sets.
 */
 class GraphAdjListVUS : public Graph {
 private:
@@ -122,7 +122,7 @@ public:
     std::unordered_set<int>& getNeighbors(int v);
 
     /**
-     * @brief
+     * @brief Use the NodeIterator algorithm to count the number of triangles adjacent to each vertex in the graph, used in 5-cycle counting.
     */
     std::vector<double> getNumberOfTrianglesPassThrough() const;
     
@@ -133,78 +133,78 @@ public:
     double getGraphDensity() const;
 
     /**
-     * @brief
+     * @brief Count the number of two-paths checked by the NodeIterator algorithm.
     */
     double nbTwoPathsNodeIterator() const;
     /**
-     * @brief
+     * @brief Count the number of two-paths checked by the NodeIterator++ algorithm.
     */
     double nbTwoPathsNodeIteratorPlusPlus() const;
     /**
-     * @brief
+     * @brief Use the NodeIterator algorithm to count the number of triangles in the graph.
     */
     int countTrianglesNodeIterator() const;
     /**
-     * @brief
+     * @brief Use the NodeIterator algorithm to count the number of triangles in the graph, parallelized.
     */
     int countTrianglesNodeIteratorParallel(int numThreads) const;
     /**
-     * @brief
+     * @brief Use the NodeIterator++ algorithm to count the number of triangles in the graph.
     */
     int countTrianglesNodeIteratorPlusPlus() const;
     /**
-     * @brief
+     * @brief Use the NodeIterator++ algorithm to count the number of triangles in the graph, parallelized.
     */
     int countTrianglesNodeIteratorPlusPlusParallel(int numThreads) const;
     /**
-     * @brief
+     * @brief Use the Chiba-Nishizeki algorithm to count the number of triangles in the graph.
     */
     int countTrianglesChibaNishizeki() const;
     /**
-     * @brief
+     * @brief Use the Forward algorithm to count the number of triangles in the graph.
     */
     int countTrianglesForward() const;
 
     /**
-     * @brief
+     * @brief Use the NodeIterator++ algorithm to list the triangles in the graph.
     */
     std::vector<std::vector<int>> findTrianglesNodeIteratorPlusPlus() const;
     /**
-     * @brief
+     * @brief Use the Chiba-Nishizeki algorithm to list the triangles in the graph.
     */
     std::vector<std::vector<int>> findTrianglesChibaNishizeki() const;
     /**
-     * @brief
+     * @brief Use the Forward algorithm to list the triangles in the graph.
     */
     std::vector<std::vector<int>> findTrianglesForward() const;
     /*DOES NOT WORK*/
     int AYZ_Algorithm() const;
 
     /**
-     * @brief
+     * @brief Use the classical 4-cycle counting algorithm to count the number of 4-cycles in the graph.
     */
     long long int count4CyclesBasic() const;
     /**
-     * @brief
+     * @brief Use the listing algorithm to list the 4-cycles in the graph.
     */
     std::vector<std::vector<int>> find4Cycles() const;
     /**
-     * @brief
+     * @brief Use the vertex-local counting algorithm to count the number of 4-cycles adjacent to each vertex in the graph.
     */
     std::vector<long long int> count4CyclesVertexLocal() const;
 
     /**
-     * @brief
+     * @brief UNUSED in the thesis
     */
     long long int count4CyclesGeneralization() const;
     /**
-     * @brief
+     * @brief UNUSED in the thesis
     */
     long long int count5CyclesGeneralization() const;
 };
 
 /**
- * @brief
+ * @brief This class represents a graph using an adjacency list of vectors.
 */
 class GraphAdjListVV : public Graph {
 private:
@@ -227,32 +227,32 @@ public:
     std::vector<int>& getNeighbors(int v);
 
     /**
-     * @brief
+     * @brief UNUSED in the thesis but allwed me to test if NodeIterator++ is faster with an adjacency list of vectors or unordered sets.
     */
     int countTrianglesNodeIteratorPlusPlus() const;
 
     /**
-     * @brief
+     * @brief Use the classical 4-cycle counting algorithm to count the number of 4-cycles in the graph.
     */
     long long int count4CyclesBasic() const;
     /**
-     * @brief
+     * @brief Use the listing algorithm to list the 4-cycles in the graph.
     */
     std::vector<std::vector<int>> find4Cycles() const;
     /**
-     * @brief
+     * @brief Use the vertex-local counting algorithm to count the number of 4-cycles adjacent to each vertex in the graph.
     */
     std::vector<long long int> count4CyclesVertexLocal() const;
     /**
-     * @brief
+     * @brief Use the edge-local counting algorithm to count the number of 4-cycles adjacent to each edge in the graph, the result is stored in a map. (UNUSED in the thesis)
     */
     std::map<std::pair<int, int>, int> count4CyclesEdgeLocalMap() const;
     /**
-     * @brief
+     * @brief Use the edge-local counting algorithm to count the number of 4-cycles adjacent to each edge in the graph, the result is stored in a vector.
     */
     std::vector<std::vector<int>> count4CyclesEdgeLocalVector() const;
     /**
-     * @brief
+     * @brief Use the edge-local counting algorithm to count the number of 4-cycles adjacent to each edge in the graph, return the time taken initialize the vector T.
     */
     std::chrono::duration<double> count4CyclesEdgeLocalTtime() const;
 };
